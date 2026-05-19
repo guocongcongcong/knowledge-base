@@ -1,0 +1,229 @@
+{
+  "main": {
+    "id": "226037733558ebb6",
+    "type": "split",
+    "children": [
+      {
+        "id": "352b0964c9aafe30",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1350eb59066d624f",
+            "type": "leaf",
+            "state": {
+              "type": "notion-bases-view",
+              "state": {
+                "dbFilePath": "concepts/_database.md"
+              },
+              "icon": "table",
+              "title": "concepts"
+            }
+          },
+          {
+            "id": "5dd98038a1b76e59",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "index.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "index"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "80aa61525c905be7",
+    "type": "split",
+    "children": [
+      {
+        "id": "91a113d363b0be0b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cd77629cac048a1a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": true
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "dc1e416043b14037",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "94581f97afca4b42",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "1096063cb450f7b1",
+    "type": "split",
+    "children": [
+      {
+        "id": "95c72c7ca2d1bb63",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "96e54715ec561068",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "concepts/明知山世界观.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "明知山世界观 的反向链接列表"
+            }
+          },
+          {
+            "id": "5b0c99bf725e9ee9",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "concepts/明知山世界观.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "明知山世界观 的出链列表"
+            }
+          },
+          {
+            "id": "65d89a1e0123bd80",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "fa330eb3b35b64b3",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "8c25ba6b11dc036f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "concepts/明知山世界观.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "明知山世界观 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false,
+      "notion-bases:Notion bases": false
+    }
+  },
+  "active": "5dd98038a1b76e59",
+  "lastOpenFiles": [
+    "concepts/axton-obsidian-visual-skills.md",
+    "concepts/_database.md",
+    "index.md",
+    "log.md",
+    "concepts/cheat-on-content.md",
+    "raw/README.md",
+    "raw/transcripts/douyin-claude-md-over-200-lines.md",
+    "raw/transcripts/douyin-ai-video-editing-hyperframe.md",
+    "raw/transcripts/douyin-claude-code-mcp-browser.md",
+    "raw/transcripts/douyin-claude-md-too-long-agent-ignores.md",
+    "raw/transcripts/douyin-frontend-rendering-revolution.md",
+    "raw/transcripts/douyin-hermes-agent-intro.md",
+    "SCHEMA.md",
+    "concepts/AI-Agent-核心概念对照.md",
+    "concepts/Hermes-日记推送工作流.md",
+    "concepts/Hermes-Agent-三层路由架构设计.md",
+    "concepts/Claude-Code-7个必装Skill.md",
+    "concepts/Claude-Code-6个隐藏能力.md",
+    "AI Agent 核心概念对照.md",
+    "entities/家味协同项目概览.md",
+    "queries/知识库压缩工具调研.md",
+    "concepts/明知山世界观.md",
+    "concepts/力量体系.md",
+    "entities/当代观主.md",
+    "queries/力量体系迭代三.md",
+    "queries/力量体系迭代一.md"
+  ]
+}
