@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日新闻 — 2026年5月26日 星期二</title>
+<style>
+:root {
+  --bg: #f9f9f8;
+  --card-bg: #ffffff;
+  --text-primary: #111110;
+  --text-secondary: #6b6b67;
+  --text-tertiary: #9c9c97;
+  --border: #e8e8e4;
+  --border-hover: #d4d4d0;
+  --accent: #1a6ff5;
+  --accent-light: #e8f1fe;
+  --header-bg: #111110;
+  --header-text: #ffffff;
+  --max-w: 960px;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 2px 8px rgba(0,0,0,0.06);
+  --transition: 160ms ease;
+  --font-mono: 'SF Mono', 'Fira Code', 'Cascadia Code', 'JetBrains Mono', ui-monospace, monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans CJK SC', 'WenQuanYi Micro Hei', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.header {
+  background: linear-gradient(160deg, #111110 0%, #1a1a2e 50%, #111827 100%);
+  color: var(--header-text);
+  padding: 56px 24px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.header::before {
+  content: '';
+  position: absolute;
+  top: -60%;
+  right: -20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(26,111,245,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.header-inner { max-width: var(--max-w); margin: 0 auto; }
+.header-date {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+.header-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,0.55);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+
+.main { max-width: var(--max-w); margin: 0 auto; padding: 40px 24px 60px; }
+
+.section { margin-bottom: 52px; }
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+}
+.section-count {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+
+/* News Grid */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.news-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+.news-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+.news-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.news-rank {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+.news-rank-num { font-size: 16px; color: var(--text-secondary); font-weight: 700; }
+.news-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-left: auto; }
+.news-category {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+.cat-时政 { background: #e8f1fe; color: #2563eb; }
+.cat-科技 { background: #e3f5eb; color: #16a34a; }
+.cat-社会 { background: #fff3e8; color: #ea580c; }
+.cat-国际 { background: #f3edff; color: #7c3aed; }
+.cat-经济 { background: #fef9e7; color: #b8860b; }
+.cat-娱乐 { background: #fde8f1; color: #db2777; }
+.cat-军事 { background: #fde8e8; color: #dc2626; }
+.cat-教育 { background: #e3f5f7; color: #0891b2; }
+.cat-文化 { background: #eeedfc; color: #4f46e5; }
+
+.news-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.news-link:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+.news-title {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+}
+.news-summary {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+.news-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 6px;
+}
+.news-source {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  letter-spacing: 0.03em;
+}
+.news-heat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.heat-bar-wrap {
+  width: 64px;
+  height: 4px;
+  background: #eee;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.heat-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #1a6ff5 0%, #6366f1 60%, #dc2626 100%);
+  transition: width 600ms ease;
+}
+.news-card:hover .heat-bar-fill { filter: brightness(1.1); }
+.heat-value {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-tertiary);
+  font-weight: 500;
+  min-width: 60px;
+  text-align: right;
+}
+
+/* GitHub Grid */
+.gh-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.gh-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  cursor: default;
+}
+.gh-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+.gh-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.gh-rank {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-tertiary);
+}
+.gh-stats {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+.gh-stars-total { color: var(--text-secondary); font-weight: 600; }
+.gh-stars-today { color: #16a34a; font-weight: 600; }
+.gh-repo {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  word-break: break-all;
+}
+.gh-repo-owner { color: var(--text-tertiary); font-weight: 500; }
+.gh-repo-name { color: var(--text-primary); }
+.gh-repo-link { color: var(--accent); text-decoration: none; word-break: break-all; }
+.gh-repo-link:hover { text-decoration: underline; }
+.gh-lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.lang-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.lang-TypeScript .lang-dot { background: #3178c6; }
+.lang-TypeScript { color: #3178c6; }
+.lang-Python .lang-dot { background: #16a34a; }
+.lang-Python { color: #16a34a; }
+.lang-Rust .lang-dot { background: #ea580c; }
+.lang-Rust { color: #ea580c; }
+.lang-Shell .lang-dot { background: #6b7280; }
+.lang-Shell { color: #6b7280; }
+.lang-Markdown .lang-dot { background: #7c3aed; }
+.lang-Markdown { color: #7c3aed; }
+.lang-C\# .lang-dot { background: #7b3fe4; }
+.lang-C\# { color: #7b3fe4; }
+.lang-N\/A .lang-dot { background: #9b9b9b; }
+.lang-N\/A { color: #9b9b9b; }
+.gh-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.gh-detail {
+  font-size: 12.5px;
+  color: var(--text-tertiary);
+  line-height: 1.55;
+  padding-top: 4px;
+  border-top: 1px solid var(--border);
+}
+
+/* Official Media */
+.official-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.official-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.official-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-sm);
+}
+.official-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.official-source {
+  font-size: 11px;
+  font-weight: 700;
+  color: #dc2626;
+  letter-spacing: 0.04em;
+}
+.official-title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--text-primary);
+}
+.official-summary {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.footer {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+.footer-text {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  line-height: 1.7;
+}
+.footer-dot { margin: 0 8px; color: var(--border); }
+
+
+/* International News */
+.intl-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.intl-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.intl-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-sm);
+}
+.intl-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.intl-region {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+}
+.region-中东 { background: #fef3c7; color: #d97706; }
+.region-欧洲 { background: #e8f1fe; color: #2563eb; }
+.region-美洲 { background: #f3edff; color: #7c3aed; }
+.region-俄乌 { background: #fde8e8; color: #dc2626; }
+.region-卫生 { background: #e3f5eb; color: #16a34a; }
+.region-南亚 { background: #fff3e8; color: #ea580c; }
+.region-东亚 { background: #e3f5f7; color: #0891b2; }
+.intl-source {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  letter-spacing: 0.03em;
+}
+.intl-title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--text-primary);
+}
+.intl-summary {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .header { padding: 44px 20px 36px; }
+  .header-date { font-size: 24px; }
+  .header-sub { font-size: 14px; }
+  .main { padding: 28px 16px 40px; }
+  .news-grid,
+  .gh-grid,
+  .official-grid { grid-template-columns: 1fr; gap: 8px; }
+  .section { margin-bottom: 36px; }
+  .section-title { font-size: 18px; }
+  .news-card { padding: 16px 18px; }
+  .gh-card { padding: 16px 18px; }
+  .heat-bar-wrap { width: 48px; }
+  .heat-value { font-size: 10px; }
+}
+@media (max-width: 375px) {
+  .header { padding: 36px 16px 28px; }
+  .header-date { font-size: 21px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1 class="header-date">2026年5月26日</h1>
+    <p class="header-sub">星期二 · GitHub Trending + 官方媒体 + 百度热搜</p>
+  </div>
+</header>
+
+<main class="main">
+
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">GitHub Trending</h2>
+      <span class="section-count">Top 10</span>
+    </div>
+    <div class="gh-grid" id="gh-grid"></div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">官方媒体</h2>
+      <span class="section-count">5 条</span>
+    </div>
+    <div class="official-grid" id="official-grid"></div>
+  </section>
+
+
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">国际新闻</h2>
+      <span class="section-count">10 条</span>
+    </div>
+    <div class="intl-grid" id="intl-grid"></div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">今日热搜</h2>
+      <span class="section-count">Top 20</span>
+    </div>
+    <div class="news-grid" id="news-grid"></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p class="footer-text">数据来源：GitHub Trending <span class="footer-dot">·</span> 官方媒体 <span class="footer-dot">·</span> Google 新闻 <span class="footer-dot">·</span> 百度热搜<br>生成时间：2026-05-26T09:30:00+08:00</p>
+</footer>
+
+<script>
+const newsData = [{"rank": "1", "title": "习近平同塞尔维亚总统举行会谈", "summary": "国家主席习近平在贝尔格莱德同塞尔维亚总统武契奇举行会谈，两国元首共同见证多项合作文件签署", "source": "百度热搜", "category": "时政", "heat": 7904749, "url": "https://www.baidu.com/s?wd=%E4%B9%A0%E8%BF%91%E5%B9%B3%E5%90%8C%E5%A1%9E%E5%B0%94%E7%BB%B4%E4%BA%9A%E6%80%BB%E7%BB%9F%E4%B8%BE%E8%A1%8C%E4%BC%9A%E8%B0%88&sa=fyb_news"}, {"rank": "2", "title": "今年天气系统出现异常", "summary": "气象专家解析2026年极端天气频发成因，多地暴雨、高温交替出现引发广泛关注", "source": "百度热搜", "category": "社会", "heat": 7808043, "url": "https://www.baidu.com/s?wd=%E4%BB%8A%E5%B9%B4%E5%A4%A9%E6%B0%94%E7%B3%BB%E7%BB%9F%E5%87%BA%E7%8E%B0%E5%BC%82%E5%B8%B8&sa=fyb_news"}, {"rank": "3", "title": "行车记录仪时速不到60 监控抓拍121", "summary": "车主晒行车记录仪证明车速58km/h，高速公路监控却抓拍显示121km/h，引发电子警察准确性争议", "source": "百度热搜", "category": "社会", "heat": 7714315, "url": "https://www.baidu.com/s?wd=%E8%A1%8C%E8%BD%A6%E8%AE%B0%E5%BD%95%E4%BB%AA%E6%97%B6%E9%80%9F%E4%B8%8D%E5%88%B060%E7%9B%91%E6%8E%A7%E6%8A%93%E6%8B%8D121&sa=fyb_news"}, {"rank": "4", "title": "多地迎来强降雨 自驾出行需谨慎", "summary": "中央气象台继续发布暴雨橙色预警，湖南湖北广东等省局地有大暴雨，民众出行需注意安全", "source": "百度热搜", "category": "社会", "heat": 7618588, "url": "https://www.baidu.com/s?wd=%E5%A4%9A%E5%9C%B0%E5%BC%BA%E9%99%8D%E9%9B%A8%E8%87%AA%E9%A9%BE%E5%87%BA%E8%A1%8C%E9%9C%80%E8%B0%A8%E6%85%8E&sa=fyb_news"}, {"rank": "5", "title": "盒马“粉木耳”包装惹争议", "summary": "盒马鲜生一款标称“粉木耳”的产品因包装设计引发低俗联想，网友热议商超营销边界", "source": "百度热搜", "category": "社会", "heat": 7523771, "url": "https://www.baidu.com/s?wd=%E7%9B%92%E9%A9%AC%E7%B2%89%E6%9C%A8%E8%80%B3%E5%8C%85%E8%A3%85%E6%83%B9%E4%BA%89%E8%AE%AE&sa=fyb_news"}, {"rank": "6", "title": "郑钦文落泪：我该从低级别赛事打起", "summary": "中国网球名将郑钦文赛后含泪表示状态不佳、应从低级别赛事重新起步，引发球迷心疼热议", "source": "百度热搜", "category": "体育", "heat": 7427022, "url": "https://www.baidu.com/s?wd=%E9%83%91%E9%92%A6%E6%96%87%E8%90%BD%E6%B3%AA%E4%BB%8E%E4%BD%8E%E7%BA%A7%E5%88%AB%E8%B5%9B%E4%BA%8B%E6%89%93%E8%B5%B7&sa=fyb_news"}, {"rank": "7", "title": "5起打击整治网络谣言典型案例公布", "summary": "公安部网安局公布近期打击整治网络谣言5起典型案例，涉及防汛抗灾、社会热点等多个领域", "source": "百度热搜", "category": "社会", "heat": 7332613, "url": "https://www.baidu.com/s?wd=5%E8%B5%B7%E6%89%93%E5%87%BB%E6%95%B4%E6%B2%BB%E7%BD%91%E7%BB%9C%E8%B0%A3%E8%A8%80%E5%85%B8%E5%9E%8B%E6%A1%88%E4%BE%8B%E5%85%AC%E5%B8%83&sa=fyb_news"}, {"rank": "8", "title": "武契奇哽咽：男人最开心时可以流泪", "summary": "塞尔维亚总统武契奇在访华行程中真情流露、谈及两国友谊时哽咽落泪，打动无数中国网友", "source": "百度热搜", "category": "国际", "heat": 7232197, "url": "https://www.baidu.com/s?wd=%E6%AD%A6%E5%A5%91%E5%A5%87%E5%93%BD%E5%92%BD%E7%94%B7%E4%BA%BA%E6%9C%80%E5%BC%80%E5%BF%83%E6%97%B6%E5%8F%AF%E4%BB%A5%E6%B5%81%E6%B3%AA&sa=fyb_news"}, {"rank": "9", "title": "鲁比奥40度高温天穿西装参观泰姬陵", "summary": "美国国务卿鲁比奥在印度近50℃高温下穿全套西装参观泰姬陵引发热议，网友调侃“西装外交”", "source": "百度热搜", "category": "国际", "heat": 7140459, "url": "https://www.baidu.com/s?wd=%E9%B2%81%E6%AF%94%E5%A5%A5%E9%AB%98%E6%B8%A9%E5%A4%A9%E7%A9%BF%E8%A5%BF%E8%A3%85%E5%8F%82%E8%A7%82%E6%B3%B0%E5%A7%AC%E9%99%B5&sa=fyb_news"}, {"rank": "10", "title": "燃油车齐降价 捷豹路虎打对折", "summary": "燃油车市场掀起降价潮，捷豹路虎部分车型价格腰斩，新能源冲击下传统车企被迫“以价换量”", "source": "百度热搜", "category": "经济", "heat": 6946502, "url": "https://www.baidu.com/s?wd=%E7%87%83%E6%B2%B9%E8%BD%A6%E9%BD%90%E9%99%8D%E4%BB%B7%E6%8D%B7%E8%B1%B9%E8%B7%AF%E8%99%8E%E6%89%93%E5%AF%B9%E6%8A%98&sa=fyb_news"}, {"rank": "11", "title": "留神峪煤矿瓦斯爆炸三大疑问追踪", "summary": "山西留神峪煤矿瓦斯爆炸事故引发社会高度关注，记者实地探访追踪安全管理三大核心疑问", "source": "百度热搜", "category": "社会", "heat": 6847584, "url": "https://www.baidu.com/s?wd=%E7%95%99%E7%A5%9E%E5%B3%AA%E7%85%A4%E7%9F%BF%E7%93%A6%E6%96%AF%E7%88%86%E7%82%B8%E4%B8%89%E5%A4%A7%E7%96%91%E9%97%AE%E8%BF%BD%E8%B8%AA&sa=fyb_news"}, {"rank": "12", "title": "30岁男子患癌后想凭意念消除癌细胞", "summary": "一名30岁男子确诊癌症后拒绝常规治疗、宣称要靠意念“想掉”癌细胞，医学专家紧急呼吁科学治疗", "source": "百度热搜", "category": "社会", "heat": 6756893, "url": "https://www.baidu.com/s?wd=30%E5%B2%81%E7%94%B7%E5%AD%90%E6%82%A3%E7%99%8C%E6%83%B3%E5%87%AD%E6%84%8F%E5%BF%B5%E6%B6%88%E9%99%A4%E7%99%8C%E7%BB%86%E8%83%9E&sa=fyb_news"}, {"rank": "13", "title": "西安一女孩在街上遭陌生男子殴打", "summary": "西安街头一名女孩当街遭陌生男子无故殴打，监控视频公开后引发强烈愤慨，警方已介入调查", "source": "百度热搜", "category": "社会", "heat": 6663387, "url": "https://www.baidu.com/s?wd=%E8%A5%BF%E5%AE%89%E5%A5%B3%E5%AD%A9%E8%A1%97%E4%B8%8A%E9%81%AD%E9%99%8C%E7%94%9F%E7%94%B7%E5%AD%90%E6%AE%B4%E6%89%93&sa=fyb_news"}, {"rank": "14", "title": "“自信就是大大方方地献丑”", "summary": "短视频博主金句“自信就是大大方方地献丑”火遍全网，引发年轻人对自信与自洽的热烈讨论", "source": "百度热搜", "category": "社会", "heat": 6572233, "url": "https://www.baidu.com/s?wd=%E8%87%AA%E4%BF%A1%E5%B0%B1%E6%98%AF%E5%A4%A7%E5%A4%A7%E6%96%B9%E6%96%B9%E5%9C%B0%E7%8C%AE%E4%B8%91&sa=fyb_news"}, {"rank": "15", "title": "偷拍被开除男生未入围公务员体检", "summary": "曾因偷拍行为被大学开除的男生报考公务员笔试过线但未进入体检环节，公众对考试资格限制展开讨论", "source": "百度热搜", "category": "社会", "heat": 6466598, "url": "https://www.baidu.com/s?wd=%E5%81%B7%E6%8B%8D%E8%A2%AB%E5%BC%80%E9%99%A4%E7%94%B7%E7%94%9F%E6%9C%AA%E5%85%A5%E5%9B%B4%E5%85%AC%E5%8A%A1%E5%91%98%E4%BD%93%E6%A3%80&sa=fyb_news"}, {"rank": "16", "title": "美军称在伊朗南部实施自卫打击", "summary": "美国军方声明称在伊朗南部对“迫在眉睫的威胁”实施了自卫性打击，中东局势再度紧张升级", "source": "百度热搜", "category": "军事", "heat": 6372714, "url": "https://www.baidu.com/s?wd=%E7%BE%8E%E5%86%9B%E7%A7%B0%E5%9C%A8%E4%BC%8A%E6%9C%97%E5%8D%97%E9%83%A8%E5%AE%9E%E6%96%BD%E8%87%AA%E5%8D%AB%E6%89%93%E5%87%BB&sa=fyb_news"}, {"rank": "17", "title": "女子遭家暴扔下悬崖致死 哥哥发声", "summary": "一起令人心痛的家庭暴力悲剧：女子被丈夫扔下悬崖不幸身亡，其哥哥悲痛发声称妹妹长期遭受家暴", "source": "百度热搜", "category": "社会", "heat": 6282015, "url": "https://www.baidu.com/s?wd=%E5%A5%B3%E5%AD%90%E9%81%AD%E5%AE%B6%E6%9A%B4%E6%89%94%E4%B8%8B%E6%82%AC%E5%B4%96%E8%87%B4%E6%AD%BB&sa=fyb_news"}, {"rank": "18", "title": "儿童牙膏乱象调查", "summary": "记者调查发现市面多款儿童牙膏宣传含氟量与实际不符，部分产品添加禁用成分，家长选购需警惕", "source": "百度热搜", "category": "社会", "heat": 6186922, "url": "https://www.baidu.com/s?wd=%E5%84%BF%E7%AB%A5%E7%89%99%E8%86%8F%E4%B9%B1%E8%B1%A1%E8%B0%83%E6%9F%A5&sa=fyb_news"}, {"rank": "19", "title": "宇树科技科创板IPO将于6月1日上会", "summary": "人形机器人赛道头部企业宇树科技科创板IPO即将上会，拟募资50亿元，资本市场高度关注", "source": "百度热搜", "category": "科技", "heat": 6080934, "url": "https://www.baidu.com/s?wd=%E5%AE%87%E6%A0%91%E7%A7%91%E6%8A%80%E7%A7%91%E5%88%9B%E6%9D%BFIPO%E5%B0%86%E4%BA%8E6%E6%9C%881%E6%97%A5%E4%B8%8A%E4%BC%9A&sa=fyb_news"}, {"rank": "20", "title": "85岁英国教授在中国1个月涨粉超百万", "summary": "85岁英国退休教授在中国社交平台分享中西文化观察，一个月内涨粉超百万，成银发网红", "source": "百度热搜", "category": "社会", "heat": 5984202, "url": "https://www.baidu.com/s?wd=85%E5%B2%81%E8%8B%B1%E5%9B%BD%E6%95%99%E6%8E%88%E5%9C%A8%E4%B8%AD%E5%9B%BD%E6%B6%A8%E7%B2%89%E8%B6%85%E7%99%BE%E4%B8%87&sa=fyb_news"}];
+
+const ghData = [{"rank": "1", "owner": "Lum1104", "name": "Understand-Anything", "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about.", "language": "TypeScript", "stars": "31,117", "starsToday": "5,604", "detail": "将任意代码库转换为可交互知识图谱的开源工具。支持 Claude Code、Codex、Cursor、Copilot、Gemini CLI 等主流 AI 编程助手，通过图结构探索和自然语言问答理解代码架构。今日暴涨 5604 星，AI 代码理解赛道现象级项目。", "url": "https://github.com/Lum1104/Understand-Anything"}, {"rank": "2", "owner": "rohitg00", "name": "ai-engineering-from-scratch", "description": "Learn it. Build it. Ship it for others.", "language": "Python", "stars": "18,573", "starsToday": "3,154", "detail": "从零开始学习 AI 工程的全栈实战课程，覆盖 LLM 应用开发全流程。项目驱动教学，每个章节产出可交付的真实产品，从 fine-tuning、RAG、Agent 到生产部署一应俱全。今日新增 3154 星，累计 18.6K 星。", "url": "https://github.com/rohitg00/ai-engineering-from-scratch"}, {"rank": "3", "owner": "colbymchenry", "name": "codegraph", "description": "Pre-indexed code knowledge graph for AI coding assistants — fewer tokens, fewer tool calls, 100% local.", "language": "TypeScript", "stars": "24,979", "starsToday": "3,161", "detail": "预索引代码知识图谱工具，专为 AI 编程助手优化。相比传统代码搜索大幅减少 token 消耗和工具调用次数，100% 本地运行保护代码隐私。支持 Claude Code、Hermes Agent 等，今日新增 3161 星。", "url": "https://github.com/colbymchenry/codegraph"}, {"rank": "4", "owner": "multica-ai", "name": "andrej-karpathy-skills", "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.", "language": "N/A", "stars": "154,972", "starsToday": "2,749", "detail": "源自 Andrej Karpathy 对 LLM 编程陷阱深刻观察的单文件 CLAUDE.md，已获 155K 星。覆盖 Think Before Coding、Simplicity First 等核心原则，被 Claude Code 自动读取，零配置改善 AI 编程行为。GitHub 现象级项目。", "url": "https://github.com/multica-ai/andrej-karpathy-skills"}, {"rank": "5", "owner": "affaan-m", "name": "ECC", "description": "The agent harness performance optimization system — skills, instincts, memory, security, and research-first development for AI coding agents.", "language": "JavaScript", "stars": "192,358", "starsToday": "2,025", "detail": "AI Agent 性能优化综合系统，为 Claude Code、Codex、Cursor 等主流编程助手提供技能管理、直觉判断、安全加固和研究优先开发框架。总星数超 19 万，是目前 GitHub 最大的 AI Agent 工具生态项目之一。", "url": "https://github.com/affaan-m/ECC"}, {"rank": "6", "owner": "anthropics", "name": "knowledge-work-plugins", "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork.", "language": "Python", "stars": "15,458", "starsToday": "1,441", "detail": "Anthropic 官方开源的 Claude Cowork 知识工作者插件库。面向办公场景，覆盖文档处理、数据分析、项目管理等插件，今日新增 1441 星，企业用户高度关注。", "url": "https://github.com/anthropics/knowledge-work-plugins"}, {"rank": "7", "owner": "mukul975", "name": "Anthropic-Cybersecurity-Skills", "description": "754 structured cybersecurity skills for AI agents, mapped to 5 frameworks: MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, D3FEND & NIST AI RMF.", "language": "Python", "stars": "9,240", "starsToday": "1,004", "detail": "754 个结构化网络安全技能集合，覆盖 MITRE ATT&CK、NIST CSF 2.0 等五大安全框架。支持 20+ AI 编程平台，涵盖 26 个安全领域，Apache 2.0 开源协议。AI + 安全赛道新星。", "url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills"}, {"rank": "8", "owner": "garrytan", "name": "gstack", "description": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA.", "language": "TypeScript", "stars": "102,483", "starsToday": "640", "detail": "Y Combinator CEO Garry Tan 的个人 Claude Code 配置套件，包含 23 个角色化工具，覆盖 CEO、设计、工程管理、发布、文档、QA 等全流程。作为“AI 超级个体”标配工具，总星数突破 10 万。", "url": "https://github.com/garrytan/gstack"}, {"rank": "9", "owner": "manaflow-ai", "name": "cmux", "description": "Ghostty-based macOS terminal with vertical tabs and notifications for AI coding agents.", "language": "Swift", "stars": "19,488", "starsToday": "603", "detail": "基于 Ghostty 的 macOS 终端增强工具，为 AI 编程助手定制。支持垂直标签页、智能通知和多会话管理，专为多 Agent 并行开发场景设计。Swift 原生实现，今日新增 603 星。", "url": "https://github.com/manaflow-ai/cmux"}, {"rank": "10", "owner": "hardikpandya", "name": "stop-slop", "description": "A skill file for removing AI tells from prose.", "language": "N/A", "stars": "4,400", "starsToday": "345", "detail": "去除 AI 生成文本中“机器味儿”的技能文件。通过检测和替换 AI 特有词汇、句式和平淡措辞，让文本更自然。响应了写作者对“AI slop”的普遍不满，今日新增 345 星。", "url": "https://github.com/hardikpandya/stop-slop"}];
+
+function fmtRaw(n) {
+  return n.toLocaleString('zh-CN');
+}
+
+
+const intlData = [{"title": "刚果（金）埃博拉疫情恶化：报告220例疑似死亡病例", "summary": "刚果民主共和国埃博拉疫情持续恶化，已报告220例疑似死亡病例，医疗设施频遭暴力袭击，世卫组织发出紧急警告", "source": "中华军事", "region": "卫生", "url": "https://www.baidu.com/s?wd=%E5%88%9A%E6%9E%9C%E9%87%91%E5%9F%83%E5%8D%9A%E6%8B%89%E7%96%AB%E6%83%85%E6%AD%BB%E4%BA%A1%E7%97%85%E4%BE%8B&sa=fyb_news"}, {"title": "俄外长告知美国务卿：俄军着手报复性打击基辅军事目标", "summary": "俄罗斯外长拉夫罗夫致电美国国务卿鲁比奥，通报俄军将对基辅军事关联目标实施报复性打击，警告美方撤离相关人员", "source": "chinanews.com.cn", "region": "俄乌", "url": "https://www.baidu.com/s?wd=%E4%BF%84%E5%A4%96%E9%95%BF%E5%91%8A%E7%9F%A5%E7%BE%8E%E5%9B%BD%E5%8A%A1%E5%8D%BF%E6%8A%A5%E5%A4%8D%E6%80%A7%E6%89%93%E5%87%BB%E5%9F%BA%E8%BE%85&sa=fyb_news"}, {"title": "俄罗斯连续两晚袭击基辅，“榛树”高超音速导弹参战致16人死亡", "summary": "俄军连续两晚对乌克兰首都基辅发动大规模空袭，首次使用“榛树”高超音速导弹，造成至少16人死亡，为近期最大规模袭击", "source": "美国之音", "region": "俄乌", "url": "https://www.baidu.com/s?wd=%E4%BF%84%E7%BD%97%E6%96%AF%E8%BF%9E%E7%BB%AD%E8%A2%AD%E5%87%BB%E5%9F%BA%E8%BE%85%E6%A6%9B%E6%A0%91%E5%AF%BC%E5%BC%B9&sa=fyb_news"}, {"title": "伊朗总统下令恢复国际互联网接入", "summary": "伊朗总统佩泽希齐扬下令逐步恢复国际互联网接入，被视为美伊谈判取得进展的积极信号", "source": "京报网", "region": "中东", "url": "https://www.baidu.com/s?wd=%E4%BC%8A%E6%9C%97%E6%80%BB%E7%BB%9F%E4%B8%8B%E4%BB%A4%E6%81%A2%E5%A4%8D%E5%9B%BD%E9%99%85%E4%BA%92%E8%81%94%E7%BD%91%E6%8E%A5%E5%85%A5&sa=fyb_news"}, {"title": "智利北部发生6.9级地震", "summary": "智利北部安托法加斯塔地区发生6.9级强震，震源深度约100公里，目前暂无大规模伤亡报告", "source": "新华网", "region": "美洲", "url": "https://www.baidu.com/s?wd=%E6%99%BA%E5%88%A9%E5%8C%97%E9%83%A86.9%E7%BA%A7%E5%9C%B0%E9%9C%87&sa=fyb_news"}, {"title": "特朗普：美伊谈判进展顺利，不会签让伊朗获得核武的协议", "summary": "美国总统特朗普对外表示与伊朗的核谈判进展顺利，但同时强调不会签署任何让伊朗获得核武器的协议", "source": "华尔街见闻", "region": "中东", "url": "https://www.baidu.com/s?wd=%E7%89%B9%E6%9C%97%E6%99%AE%E7%BE%8E%E4%BC%8A%E8%B0%88%E5%88%A4%E4%B8%8D%E4%BC%9A%E7%AD%BE%E8%AE%A9%E4%BC%8A%E6%9C%97%E8%8E%B7%E6%A0%B8%E6%AD%A6%E5%8D%8F%E8%AE%AE&sa=fyb_news"}, {"title": "特朗普要求先签“亚伯拉罕协议” 沙特方面回应", "summary": "特朗普政府施压沙特阿拉伯优先签署“亚伯拉罕协议”以推动阿以关系正常化，沙特方面作出审慎回应", "source": "搜狐网", "region": "中东", "url": "https://www.baidu.com/s?wd=%E7%89%B9%E6%9C%97%E6%99%AE%E4%BA%9A%E4%BC%AF%E6%8B%89%E7%BD%95%E5%8D%8F%E8%AE%AE%E6%B2%99%E7%89%B9%E5%9B%9E%E5%BA%94&sa=fyb_news"}, {"title": "法国遭遇罕见五月热浪 已致多人身亡", "summary": "法国在5月遭遇罕见极端高温天气，部分地区气温突破40℃，已导致多人中暑身亡，政府启动高温应急响应", "source": "中国网新闻中心", "region": "欧洲", "url": "https://www.baidu.com/s?wd=%E6%B3%95%E5%9B%BD%E4%BA%94%E6%9C%88%E7%83%AD%E6%B5%AA%E5%A4%9A%E4%BA%BA%E8%BA%AB%E4%BA%A1&sa=fyb_news"}, {"title": "尼坦雅胡下令以军加强对黎巴嫩真主党打击", "summary": "以色列总理尼坦雅胡下令军方加强对黎巴嫩真主党的军事打击力度，黎巴嫩卫生部称以军袭击已造成3151人丧生", "source": "Google News", "region": "中东", "url": "https://www.baidu.com/s?wd=%E5%B0%BC%E5%9D%A6%E9%9B%85%E8%83%A1%E5%8A%A0%E5%BC%BA%E6%89%93%E5%87%BB%E9%BB%8E%E5%B7%B4%E5%AB%A9%E7%9C%9F%E4%B8%BB%E5%85%9A&sa=fyb_news"}, {"title": "印度极端高温持续 多地突破50℃", "summary": "印度持续遭受极端热浪袭击，多地气温突破50℃，数亿民众面临高温威胁，全球100个最热城市中印度独占98个", "source": "Google News", "region": "南亚", "url": "https://www.baidu.com/s?wd=%E5%8D%B0%E5%BA%A6%E6%9E%81%E7%AB%AF%E9%AB%98%E6%B8%A9%E7%AA%81%E7%A0%B450%E5%BA%A6&sa=fyb_news"}];
+
+function buildIntl() {
+  const grid = document.getElementById('intl-grid');
+  grid.innerHTML = intlData.map(n => {
+    return `<article class="intl-card">
+      <div class="intl-top">
+        <span class="intl-region region-${n.region}">${n.region}</span>
+        <span class="intl-source">${n.source}</span>
+      </div>
+      <h3 class="intl-title"><a href="${n.url}" target="_blank" class="news-link">${n.title}</a></h3>
+      <p class="intl-summary">${n.summary}</p>
+    </article>`;
+  }).join('');
+}
+
+const maxHeat = Math.max(...newsData.map(n => n.heat));
+
+function buildNews() {
+  const grid = document.getElementById('news-grid');
+  grid.innerHTML = newsData.map(n => {
+    const pct = Math.round((n.heat / maxHeat) * 100);
+    return `<article class="news-card">
+      <div class="news-card-top">
+        <span class="news-rank">No.<span class="news-rank-num">${String(n.rank).padStart(2,'0')}</span></span>
+        <span class="news-category cat-${n.category}">${n.category}</span>
+      </div>
+      <h3 class="news-title"><a href="${n.url}" target="_blank" class="news-link">${n.title}</a></h3>
+      <p class="news-summary">${n.summary}</p>
+      <div class="news-bottom">
+        <span class="news-source">${n.source}</span>
+        <div class="news-heat">
+          <div class="heat-bar-wrap"><div class="heat-bar-fill" style="width:${pct}%"></div></div>
+          <span class="heat-value">${fmtRaw(n.heat)}</span>
+        </div>
+      </div>
+    </article>`;
+  }).join('');
+}
+
+function buildGh() {
+  const grid = document.getElementById('gh-grid');
+  grid.innerHTML = ghData.map(p => {
+    return `<article class="gh-card">
+      <div class="gh-card-top">
+        <span class="gh-rank">No.${String(p.rank).padStart(2,'0')}</span>
+        <div class="gh-stats">
+          <span class="gh-stars-total">⭐ ${p.stars}</span>
+          <span class="gh-stars-today">+${p.starsToday}</span>
+        </div>
+      </div>
+      <div class="gh-repo">
+        <a class="gh-repo-link" href="https://github.com/${p.owner}/${p.name}" target="_blank" rel="noopener">
+          <span class="gh-repo-owner">${p.owner}</span><span class="gh-repo-name"> / ${p.name}</span>
+        </a>
+      </div>
+      <span class="gh-lang lang-${p.language}"><span class="lang-dot"></span>${p.language}</span>
+      <p class="gh-desc">${p.description}</p>
+      <p class="gh-detail">${p.detail}</p>
+    </article>`;
+  }).join('');
+}
+
+const officialData = [{"title": "习近平同塞尔维亚总统举行会谈", "summary": "国家主席习近平在贝尔格莱德同塞尔维亚总统武契奇举行会谈，两国元首共同见证基础设施、经贸、科技等领域多项合作文件签署", "source": "人民日报", "url": "https://www.baidu.com/s?wd=%E4%B9%A0%E8%BF%91%E5%B9%B3%E5%A1%9E%E5%B0%94%E7%BB%B4%E4%BA%9A%E6%80%BB%E7%BB%9F%E4%B8%BE%E8%A1%8C%E4%BC%9A%E8%B0%88&sa=fyb_news"}, {"title": "中塞发表深化新时代全面战略伙伴关系联合声明", "summary": "新华社：中国与塞尔维亚发表联合声明，将在基础设施、绿色发展、数字经济等领域深化合作，推动中塞命运共同体建设走深走实", "source": "新华社", "url": "https://www.baidu.com/s?wd=%E4%B8%AD%E5%A1%9E%E5%8F%91%E8%A1%A8%E8%81%94%E5%90%88%E5%A3%B0%E6%98%8E&sa=fyb_news"}, {"title": "公安部公布5起打击整治网络谣言典型案例", "summary": "央视新闻：公安部网安局公布近期打击整治网络谣言5起典型案例，涉及防汛期间夸大灾情、散布社会恐慌等违法行为，多名造谣者已被依法处理", "source": "央视新闻", "url": "https://www.baidu.com/s?wd=%E6%89%93%E5%87%BB%E6%95%B4%E6%B2%BB%E7%BD%91%E7%BB%9C%E8%B0%A3%E8%A8%80%E5%85%B8%E5%9E%8B%E6%A1%88%E4%BE%8B%E5%85%AC%E5%B8%83&sa=fyb_news"}, {"title": "多地强降雨持续 三部门紧急调拨中央救灾物资", "summary": "国家统计局：受持续强降雨影响，5月份工业生产和居民消费数据出现短期波动，相关部门已启动应急响应机制保障经济运行平稳", "source": "国家统计局", "url": "https://www.baidu.com/s?wd=%E4%B8%89%E9%83%A8%E9%97%A8%E7%B4%A7%E6%80%A5%E8%B0%83%E6%8B%A8%E6%95%91%E7%81%BE%E7%89%A9%E8%B5%84&sa=fyb_news"}, {"title": "宇树科技科创板IPO即将上会 人形机器人赛道迎资本热潮", "summary": "科技日报：国内人形机器人头部企业宇树科技科创板IPO将于6月1日上会，拟募资50亿元，标志着国产人形机器人产业进入资本加速期", "source": "科技日报", "url": "https://www.baidu.com/s?wd=%E5%AE%87%E6%A0%91%E7%A7%91%E6%8A%80IPO%E4%BA%BA%E5%BD%A2%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%B5%9B%E9%81%93&sa=fyb_news"}];
+
+function buildOfficial() {
+  const grid = document.getElementById('official-grid');
+  grid.innerHTML = officialData.map(n => {
+    return `<article class="official-card">
+      <div class="official-top">
+        <span class="official-source">${n.source}</span>
+      </div>
+      <h3 class="official-title">${n.title}</h3>
+      <p class="official-summary">${n.summary}</p>
+    </article>`;
+  }).join('');
+}
+
+buildNews();
+buildGh();
+buildOfficial();
+  buildIntl();
+</script>
+
+</body>
+</html>
