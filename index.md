@@ -1,9 +1,10 @@
 # Wiki Index
 
-> 最后更新: 2026-05-19 | 总页面数: 20
+> 最后更新: 2026-05-27 | 总页面数: 22
 
 ## 概念
 
+- [[一日重启协议]] — Dan Koe 爆文：身份重塑×一日实操，获马斯克百万大奖
 - [[马克思主义]] — 辩证唯物主义、政治经济学、科学社会主义
 - [[论持久战]] — 毛泽东1938年抗战纲领：三阶段、人民战争、游击战战略
 - [[AI-Agent-核心概念对照]] — Prompt / System Prompt / Soul / Memory / Skill / CLAUDE.md / Tool / MCP
@@ -24,6 +25,7 @@
 - [[pretext-text-engine]] — Pretext 纯 TS 文本测量引擎：零 DOM reflow，47K⭐
 - [[ai-video-editing-hyperframe]] — AI 视频剪辑（Hyperframe）：智能体驱动全自动剪辑
 - [[cheat-on-content]] — 内容创作 AI 校准系统：Score → Predict → Publish → Retro → Evolve
+- [[claude-code-practical-tips-boris]] — Anthropic Boris 演讲全解析：快捷键、CLAUDE.md、反馈循环、并行工作
 
 ## 项目
 
