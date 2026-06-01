@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-06-01 每日新闻日报 · 星期一</title>
+<style>
+:root{--bg:#f9f9f8;--card-bg:#fff;--text:#1a1a2e;--text2:#52525b;--text3:#a1a1aa;--accent:#4f46e5;--border:#e5e5e7}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,'PingFang SC',sans-serif;min-height:100vh}
+.header{background:linear-gradient(135deg,#1a1a2e 0%,#2d2d44 100%);color:#fff;padding:48px 32px 40px;text-align:center}
+.header h1{font-size:1.5rem;font-weight:600;margin-bottom:6px}
+.header p{font-size:0.875rem;opacity:0.6}
+.container{max-width:960px;margin:0 auto;padding:32px}
+.section-title{font-size:1.1rem;font-weight:600;margin:40px 0 16px;color:var(--text);display:flex;align-items:center;gap:8px}
+.section-title::before{content:'';width:4px;height:20px;background:var(--accent);border-radius:2px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.card{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:16px;transition:all 0.15s}
+.card:hover{border-color:var(--accent);box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.card .rank{font-size:0.75rem;color:var(--accent);font-weight:600;margin-bottom:4px}
+.card h3{font-size:0.9rem;font-weight:500;line-height:1.5;margin-bottom:6px}
+.card h3 a{color:var(--text);text-decoration:none}
+.card h3 a:hover{color:var(--accent);text-decoration:underline}
+.card .meta{font-size:0.75rem;color:var(--text3)}
+.card .heat{display:inline-block;background:var(--accent);color:#fff;font-size:0.65rem;padding:2px 8px;border-radius:10px;margin-left:6px;opacity:0.7}
+.gh-card{padding:18px}
+.gh-card h3{font-size:0.95rem}
+.gh-card h3 a{color:var(--accent)}
+.gh-card .desc{font-size:0.8rem;color:var(--text2);line-height:1.5;margin:6px 0}
+.gh-card .lang{display:inline-block;font-size:0.7rem;color:var(--text3);margin-right:12px}
+.gh-card .lang::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;background:var(--accent)}
+.intl-card{border-left:3px solid var(--accent)}
+.intl-card .region{font-size:0.7rem;padding:2px 6px;border-radius:4px;margin-right:6px;display:inline-block}
+.region-中东{background:#fef3c7;color:#b45309}
+.region-东亚{background:#dbeafe;color:#1d4ed8}
+.region-美洲{background:#ede9fe;color:#6d28d9}
+.region-俄乌{background:#fee2e2;color:#b91c1c}
+.region-南亚{background:#ffedd5;color:#c2410c}
+.region-欧洲{background:#e0e7ff;color:#3730a3}
+.footer{text-align:center;padding:32px;color:var(--text3);font-size:0.75rem;border-top:1px solid var(--border);margin-top:40px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}.container{padding:16px}}
+</style>
+</head>
+<body>
+<header class="header">
+  <h1>2026-06-01 · 星期一</h1>
+  <p>2026年5月29日 · 星期五</p>
+</header>
+
+<div class="container">
+
+<!-- GitHub Trending -->
+<h2 class="section-title">🔥 GitHub Trending</h2>
+<div class="grid2" id="gh-grid"></div>
+
+<!-- 官方媒体 -->
+<h2 class="section-title">📡 官方媒体</h2>
+<div class="grid2" id="official-grid"></div>
+
+<!-- International News -->
+<h2 class="section-title">🌍 国际新闻</h2>
+<div class="grid2" id="intl-grid"></div>
+
+<!-- Baidu Hot Search -->
+<h2 class="section-title">🔥 今日热搜</h2>
+<div class="grid2" id="hot-grid"></div>
+
+</div>
+
+<footer class="footer">数据来源：百度热搜 · GitHub Trending · Google News · 2026-05-29</footer>
+
+<script>
+var ghData = [
+  {
+    "rank": 1,
+    "owner": "harry0703",
+    "name": "MoneyPrinterTurbo",
+    "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+    "description": "利用AI大模型，一键生成高清短视频",
+    "language": "Python",
+    "stars": "75,759",
+    "starsToday": "1,937",
+    "detail": "利用大模型实现一键式短视频生成工具，支持文案AI创作、素材智能匹配、视频合成全流程自动化，是AI内容创作领域的代表性开源项目。"
+  },
+  {
+    "rank": 2,
+    "owner": "microsoft",
+    "name": "markitdown",
+    "url": "https://github.com/microsoft/markitdown",
+    "description": "文件转Markdown转换工具",
+    "language": "Python",
+    "stars": "136,128",
+    "starsToday": "2,798",
+    "detail": "微软开源的文件转Markdown工具，支持PDF、Word、Excel、PPT、图片等多种格式转换为Markdown，是文档处理领域的热门工具，广泛应用于RAG和AI数据处理管线。"
+  },
+  {
+    "rank": 3,
+    "owner": "D4Vinci",
+    "name": "Scrapling",
+    "url": "https://github.com/D4Vinci/Scrapling",
+    "description": "自适应Web Scraping框架",
+    "language": "Python",
+    "stars": "57,228",
+    "starsToday": "606",
+    "detail": "一个自适应Web爬虫框架，从单次请求到全量抓取均可处理。内置反反爬策略、自动翻页、数据结构化提取等功能，是Python生态中最受关注的爬虫工具之一。"
+  },
+  {
+    "rank": 4,
+    "owner": "nesquena",
+    "name": "hermes-webui",
+    "url": "https://github.com/nesquena/hermes-webui",
+    "description": "Hermes Agent的Web管理界面",
+    "language": "TypeScript",
+    "stars": "10,319",
+    "starsToday": "357",
+    "detail": "Hermes Agent的Web界面，支持从浏览器或手机远程管理AI Agent。提供对话管理、技能配置、多平台消息集成等功能，是AI Agent运维的便捷工具。"
+  },
+  {
+    "rank": 5,
+    "owner": "EveryInc",
+    "name": "compound-engineering-plugin",
+    "url": "https://github.com/EveryInc/compound-engineering-plugin",
+    "description": "AI编程助手工程效能插件",
+    "language": "TypeScript",
+    "stars": "18,860",
+    "starsToday": "251",
+    "detail": "面向AI编程助手的工程效能插件，支持Claude Code、Codex、Cursor等主流AI IDE。提供代码审查、测试生成、文档自动补全等功能，提升AI辅助开发的工程化水平。"
+  },
+  {
+    "rank": 6,
+    "owner": "github",
+    "name": "docs",
+    "url": "https://github.com/github/docs",
+    "description": "GitHub官方文档开源仓库",
+    "language": "JavaScript",
+    "stars": "19,810",
+    "starsToday": "27",
+    "detail": "GitHub官方文档的开源仓库，所有docs.github.com内容均来源于此。社区可通过PR贡献文档改进，是了解GitHub产品生态的最佳入口。"
+  },
+  {
+    "rank": 7,
+    "owner": "OpenBMB",
+    "name": "VoxCPM",
+    "url": "https://github.com/OpenBMB/VoxCPM",
+    "description": "Tokenizer-Free语音合成模型",
+    "language": "Python",
+    "stars": "23,834",
+    "starsToday": "635",
+    "detail": "面壁智能开源的无Tokenizer语音合成模型VoxCPM2，支持多语言语音生成、创意声音设计和真实感语音克隆。无需文本分词器，直接从语音信号生成语音。"
+  },
+  {
+    "rank": 8,
+    "owner": "revfactory",
+    "name": "harness",
+    "url": "https://github.com/revfactory/harness",
+    "description": "Agent团队编排元技能框架",
+    "language": "Python",
+    "stars": "4,839",
+    "starsToday": "323",
+    "detail": "一个元技能(Meta-Skill)框架，能够自动设计面向特定领域的AI Agent团队、定义专业Agent角色并生成其使用的技能。是Agent编排与自动化的前沿工具。"
+  },
+  {
+    "rank": 9,
+    "owner": "FareedKhan-dev",
+    "name": "train-llm-from-scratch",
+    "url": "https://github.com/FareedKhan-dev/train-llm-from-scratch",
+    "description": "从零训练LLM的完整教程",
+    "language": "Python",
+    "stars": "8,100",
+    "starsToday": "626",
+    "detail": "一份从数据下载到文本生成的完整LLM训练教程，涵盖数据预处理、模型架构、分布式训练等核心环节。适合想深入理解大模型训练原理的开发者。"
+  },
+  {
+    "rank": 10,
+    "owner": "supermemoryai",
+    "name": "supermemory",
+    "url": "https://github.com/supermemoryai/supermemory",
+    "description": "AI时代的记忆引擎与API",
+    "language": "TypeScript",
+    "stars": "13,200",
+    "starsToday": "264",
+    "detail": "面向AI时代的极速记忆引擎，提供可扩展的记忆API。支持语义搜索、知识图谱构建、长期记忆管理，为AI应用提供持久化知识存储能力。"
+  }
+];
+var intlData = [
+  {
+    "title": "伊朗宣布打击并摧毁美军预定目标",
+    "summary": "伊朗革命卫队称航空航天部队打击了美空军基地并摧毁预定目标。美军同时对伊朗通信塔实施打击，中东局势急剧升级。",
+    "source": "大河网",
+    "region": "中东",
+    "url": "https://www.baidu.com/s?wd=伊朗打击美军目标"
+  },
+  {
+    "title": "韩国韩华航空航天工厂爆炸 5死2伤",
+    "summary": "韩国大田市韩华航空航天公司工厂发生爆炸事故，已造成5人死亡、2人受伤。韩华是韩国最大军工企业之一，李在明要求彻查。",
+    "source": "新华网",
+    "region": "东亚",
+    "url": "https://www.baidu.com/s?wd=韩国韩华航空航天爆炸"
+  },
+  {
+    "title": "以军空袭加沙城海边人群致两死多伤",
+    "summary": "以色列军队空袭加沙城海边聚集人群，造成至少两人死亡多人受伤。内塔尼亚胡宣布扩大在加沙的军事行动，油价应声大涨。",
+    "source": "新华网",
+    "region": "中东",
+    "url": "https://www.baidu.com/s?wd=以军空袭加沙城"
+  },
+  {
+    "title": "哥伦比亚总统拒绝接受大选初步计票结果",
+    "summary": "哥伦比亚现任总统佩特罗拒绝接受总统选举初步计票结果，极右翼与左翼候选人将进入第二轮对决，拉美政局面临不确定性。",
+    "source": "人民网",
+    "region": "美洲",
+    "url": "https://www.baidu.com/s?wd=哥伦比亚总统拒绝选举结果"
+  },
+  {
+    "title": "土耳其一艘载148人游船起火沉没",
+    "summary": "土耳其一艘载有148名乘客的游船在地中海起火后沉没，乘客被迫跳船逃生。目前救援工作正在进行中。",
+    "source": "中国新闻网",
+    "region": "中东",
+    "url": "https://www.baidu.com/s?wd=土耳其游船起火沉没"
+  },
+  {
+    "title": "乌军袭击俄多处油气设施 油价大涨",
+    "summary": "乌克兰军队对俄罗斯境内多处油气设施发动远程打击，国际油价应声大涨重回90美元/桶，全球能源市场承压。",
+    "source": "第一财经",
+    "region": "俄乌",
+    "url": "https://www.baidu.com/s?wd=乌军袭击俄油气设施油价"
+  }
+];
+var officialData = [
+  {
+    "title": "习近平寄语少年儿童：茁壮成长 成为祖国优秀一代",
+    "summary": "在六一国际儿童节到来之际，习近平总书记寄语全国少年儿童，希望他们茁壮成长，成为中国特色社会主义事业的合格建设者和可靠接班人。",
+    "source": "新华社",
+    "url": "https://www.baidu.com/s?wd=茁壮成长成为我们优秀的一代"
+  },
+  {
+    "title": "歼8之父顾诵芬院士逝世 享年95岁",
+    "summary": "我国著名飞机空气动力学家、新中国飞机设计事业奠基人之一、歼8系列飞机总设计师顾诵芬院士因病逝世，享年95岁。",
+    "source": "人民日报",
+    "url": "https://www.baidu.com/s?wd=歼8之父顾诵芬院士逝世"
+  },
+  {
+    "title": "中方回应驱逐纽约时报记者：依法依规处理",
+    "summary": "外交部就驱逐纽约时报一名驻京记者出境一事作出回应，表示该记者在华期间从事与身份不符的活动，中方依法依规处理。",
+    "source": "央视新闻",
+    "url": "https://www.baidu.com/s?wd=中方回应驱逐纽约时报记者"
+  },
+  {
+    "title": "内蒙古根河市六月突降罕见暴雪",
+    "summary": "内蒙古根河市于6月1日突发罕见暴雪天气，积雪深度超20厘米。六月降雪在当地极为罕见，气象部门已发布预警。",
+    "source": "科技日报",
+    "url": "https://www.baidu.com/s?wd=内蒙古根河突发大雪"
+  },
+  {
+    "title": "上海政法学院通报：开除地铁偷拍学生学籍",
+    "summary": "上海政法学院就该校一名学生在地铁偷拍他人一事发布通报，已依规开除该学生学籍，并配合公安机关进一步调查处理。",
+    "source": "国家统计局",
+    "url": "https://www.baidu.com/s?wd=上海政法学院开除偷拍学生学籍"
+  }
+];
+var hotData = [{"rank": 1, "title": "夜空中最亮的星", "heat": "790万", "url": "https://www.baidu.com/s?wd=夜空中最亮的星"}, {"rank": 2, "title": "释永信一审被判24年", "heat": "781万", "url": "https://www.baidu.com/s?wd=释永信一审被判24年"}, {"rank": 3, "title": "新规：禁止幼儿园采购汉堡三明治等", "heat": "771万", "url": "https://www.baidu.com/s?wd=禁止幼儿园采购汉堡三明治"}, {"rank": 4, "title": "国家首次专门发文 这四类人群受益", "heat": "762万", "url": "https://www.baidu.com/s?wd=四类人群受益首次专门发文"}, {"rank": 5, "title": "神二十一航天员乘组回家", "heat": "752万", "url": "https://www.baidu.com/s?wd=神二十一航天员乘组回家"}, {"rank": 6, "title": "越来越多日本人办理“死后离婚”", "heat": "743万", "url": "https://www.baidu.com/s?wd=日本人办理死后离婚"}, {"rank": 7, "title": "诺基亚发布首款微聊手机 售价199元", "heat": "733万", "url": "https://www.baidu.com/s?wd=诺基亚微聊手机199元"}, {"rank": 8, "title": "iPhone18Pro四色实锤", "heat": "724万", "url": "https://www.baidu.com/s?wd=iPhone18Pro四色"}, {"rank": 9, "title": "演员刘红梅病逝 曾出演“水浒传”", "heat": "715万", "url": "https://www.baidu.com/s?wd=演员刘红梅病逝水浒传"}, {"rank": 10, "title": "广东汕头一道路被晒到突然炸开", "heat": "705万", "url": "https://www.baidu.com/s?wd=汕头道路被晒炸开"}, {"rank": 11, "title": "雷军称被何小鹏李斌骗了", "heat": "685万", "url": "https://www.baidu.com/s?wd=雷军被何小鹏李斌骗了"}, {"rank": 12, "title": "“广东高考将用AI批卷”不实", "heat": "676万", "url": "https://www.baidu.com/s?wd=广东高考AI批卷不实"}, {"rank": 13, "title": "日本全境调兵 12万居民转移", "heat": "666万", "url": "https://www.baidu.com/s?wd=日本全境调兵12万居民转移"}, {"rank": 14, "title": "26岁老师赛课时猝死 多方回应", "heat": "656万", "url": "https://www.baidu.com/s?wd=26岁老师赛课猝死"}, {"rank": 15, "title": "开了一晚上空调 女子肺白了大半", "heat": "647万", "url": "https://www.baidu.com/s?wd=开空调女子肺白了大半"}, {"rank": 16, "title": "上海一小摊被韩国人“包围”", "heat": "637万", "url": "https://www.baidu.com/s?wd=上海小摊被韩国人包围"}, {"rank": 17, "title": "博主“哈尼小微”被虫咬后感染去世", "heat": "627万", "url": "https://www.baidu.com/s?wd=哈尼小微被虫咬感染去世"}, {"rank": 18, "title": "患者曝名医让儿子代诊致其流产", "heat": "618万", "url": "https://www.baidu.com/s?wd=名医让儿子代诊致流产"}, {"rank": 19, "title": "江西：坚决拥护党中央决定", "heat": "608万", "url": "https://www.baidu.com/s?wd=江西坚决拥护党中央决定"}, {"rank": 20, "title": "中学校长鼓励孩子们积攒“旧笔芯”", "heat": "599万", "url": "https://www.baidu.com/s?wd=中学校长鼓励积攒旧笔芯"}];
+
+function buildGh() {
+  var g = document.getElementById('gh-grid'), h = '';
+  ghData.forEach(function(r) {
+    h += '<div class="card gh-card"><h3><a href="' + r.url + '" target="_blank">' + r.owner + ' / ' + r.name + '</a></h3><p class="desc">' + r.description + '</p><span class="lang">' + r.language + '</span>⭐ ' + r.stars + ' <span style="color:var(--accent);font-size:0.75rem">+' + r.starsToday + ' today</span></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildOfficial() {
+  var g = document.getElementById('official-grid'), h = '';
+  officialData.forEach(function(r) {
+    h += '<div class="card"><span class="rank" style="color:var(--text3)">' + r.source + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildIntl() {
+  var g = document.getElementById('intl-grid'), h = '';
+  intlData.forEach(function(r) {
+    h += '<div class="card intl-card"><span class="region region-' + r.region + '">' + r.region + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3><p class="meta">' + r.source + '</p></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildHot() {
+  var g = document.getElementById('hot-grid'), h = '';
+  hotData.forEach(function(r) {
+    h += '<div class="card"><span class="rank">#' + r.rank + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3><span class="heat">' + r.heat + '</span></div>';
+  });
+  g.innerHTML = h;
+}
+
+buildGh(); buildOfficial(); buildIntl(); buildHot();
+</script>
+
+</body>
+</html>
