@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日新闻 · 2026-06-03</title>
+<style>
+:root{--bg:#f9f9f8;--card-bg:#fff;--text:#1a1a2e;--text2:#52525b;--text3:#a1a1aa;--accent:#4f46e5;--border:#e5e5e7}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,'PingFang SC',sans-serif;min-height:100vh}
+.header{background:linear-gradient(135deg,#1a1a2e 0%,#2d2d44 100%);color:#fff;padding:48px 32px 40px;text-align:center}
+.header h1{font-size:1.5rem;font-weight:600;margin-bottom:6px}
+.header p{font-size:0.875rem;opacity:0.6}
+.container{max-width:960px;margin:0 auto;padding:32px}
+.section-title{font-size:1.1rem;font-weight:600;margin:40px 0 16px;color:var(--text);display:flex;align-items:center;gap:8px}
+.section-title::before{content:'';width:4px;height:20px;background:var(--accent);border-radius:2px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.card{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:16px;transition:all 0.15s}
+.card:hover{border-color:var(--accent);box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.card .rank{font-size:0.75rem;color:var(--accent);font-weight:600;margin-bottom:4px}
+.card h3{font-size:0.9rem;font-weight:500;line-height:1.5;margin-bottom:6px}
+.card h3 a{color:var(--text);text-decoration:none}
+.card h3 a:hover{color:var(--accent);text-decoration:underline}
+.card .meta{font-size:0.75rem;color:var(--text3)}
+.card .heat{display:inline-block;background:var(--accent);color:#fff;font-size:0.65rem;padding:2px 8px;border-radius:10px;margin-left:6px;opacity:0.7}
+.gh-card{padding:18px}
+.gh-card h3{font-size:0.95rem}
+.gh-card h3 a{color:var(--accent)}
+.gh-card .desc{font-size:0.8rem;color:var(--text2);line-height:1.5;margin:6px 0}
+.gh-card .lang{display:inline-block;font-size:0.7rem;color:var(--text3);margin-right:12px}
+.gh-card .lang::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;background:var(--accent)}
+.intl-card{border-left:3px solid var(--accent)}
+.intl-card .region{font-size:0.7rem;padding:2px 6px;border-radius:4px;margin-right:6px;display:inline-block}
+.region-MiddleEast{background:#fef3c7;color:#b45309}
+.region-EastAsia{background:#dbeafe;color:#1d4ed8}
+.region-Americas{background:#ede9fe;color:#6d28d9}
+.region-RussiaUkraine{background:#fee2e2;color:#b91c1c}
+.region-SouthAsia{background:#ffedd5;color:#c2410c}
+.region-Europe{background:#e0e7ff;color:#3730a3}
+.region-Africa{background:#dcfce7;color:#166534}
+.footer{text-align:center;padding:32px;color:var(--text3);font-size:0.75rem;border-top:1px solid var(--border);margin-top:40px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}.container{padding:16px}}
+</style>
+</head>
+<body>
+<header class="header">
+  <h1>📰 每日新闻日报</h1>
+  <p>2026年6月3日 · 星期三</p>
+</header>
+
+<div class="container">
+
+<!-- GitHub Trending -->
+<h2 class="section-title">🔥 GitHub Trending</h2>
+<div class="grid2" id="gh-grid"></div>
+
+<!-- 官方媒体 -->
+<h2 class="section-title">📡 官方媒体</h2>
+<div class="grid2" id="official-grid"></div>
+
+<!-- International News -->
+<h2 class="section-title">🌍 国际新闻</h2>
+<div class="grid2" id="intl-grid"></div>
+
+<!-- Baidu Hot Search -->
+<h2 class="section-title">🔥 今日热搜</h2>
+<div class="grid2" id="hot-grid"></div>
+
+</div>
+
+<footer class="footer">数据来源：百度热搜 · GitHub Trending · Google News · 2026-06-03</footer>
+
+<script>
+var ghData = [{"rank":1,"owner":"chopratejas","name":"headroom","url":"https://github.com/chopratejas/headroom","description":"LLM\u4e0a\u4e0b\u6587\u538b\u7f29\u5de5\u5177\uff0c\u53ef\u5c06\u5de5\u5177\u8f93\u51fa\u3001\u65e5\u5fd7\u3001\u6587\u4ef6\u548cRAG\u6587\u6863\u5757\u5728\u8fdb\u5165LLM\u524d\u538b\u7f29\uff0c\u51cf\u5c1160-95% token\u6d88\u8017\u540c\u65f6\u4fdd\u6301\u56de\u7b54\u8d28\u91cf\uff0c\u63d0\u4f9b\u5e93/\u4ee3\u7406/MCP\u670d\u52a1\u5668\u4e09\u79cd\u5f62\u6001\uff0c\u89e3\u51b3\u957f\u4e0a\u4e0b\u6587\u6210\u672c\u75db\u70b9\u7684\u524d\u6cbf\u65b9\u6848\u3002","language":"Python","stars":"6,290","starsToday":"1,266"},{"rank":2,"owner":"microsoft","name":"markitdown","url":"https://github.com/microsoft/markitdown","description":"\u5fae\u8f6f\u5f00\u6e90\u7684\u6587\u6863\u8f6cMarkdown\u5de5\u5177\uff0c\u652f\u6301PDF/Word/Excel/PPT/\u56fe\u7247\u7b49\u683c\u5f0f\u4e00\u952e\u8f6c\u6362\u4e3a\u5e72\u51c0Markdown\uff0cAI\u77e5\u8bc6\u5e93\u548cRAG\u7cfb\u7edf\u6784\u5efa\u5fc5\u5907\u9884\u5904\u7406\u5de5\u5177\uff0c\u603b\u661f14.1\u4e07\uff0c\u6301\u7eed\u706b\u7206\u3002","language":"Python","stars":"141,051","starsToday":"3,616"},{"rank":3,"owner":"affaan-m","name":"ECC","url":"https://github.com/affaan-m/ECC","description":"AI\u7f16\u7801\u4ee3\u7406\u7684\u6027\u80fd\u4f18\u5316\u7cfb\u7edf\uff0c\u6db5\u76d6\u6280\u80fd\u7ba1\u7406\u3001\u76f4\u89c9\u53cd\u5e94\u3001\u8bb0\u5fc6\u6301\u4e45\u5316\u3001\u5b89\u5168\u7b56\u7565\u548c\u7814\u7a76\u9a71\u52a8\u5f00\u53d1\uff0c\u540c\u65f6\u9002\u914dClaude Code/Codex/OpenCode/Cursor\u7b49\u4e3b\u6d41AI\u7f16\u7a0b\u5de5\u5177\uff0c20\u4e07\u661f\u7684\u8d85\u4eba\u6c14\u9879\u76ee\u3002","language":"JavaScript","stars":"203,869","starsToday":"1,597"},{"rank":4,"owner":"D4Vinci","name":"Scrapling","url":"https://github.com/D4Vinci/Scrapling","description":"\u81ea\u9002\u5e94\u7f51\u7edc\u722c\u866b\u6846\u67b6\uff0c\u4ece\u5355\u6b21HTTP\u8bf7\u6c42\u5230\u5168\u91cf\u5206\u5e03\u5f0f\u722c\u53d6\u4e00\u5e94\u4ff1\u5168\uff0c\u5185\u7f6e\u53cd\u53cd\u722c\u80fd\u529b\u3001\u81ea\u52a8\u7ffb\u9875\u548c\u5206\u5e03\u5f0f\u6293\u53d6\uff0c\u662fPython\u751f\u6001\u4e2d\u6700\u5f3a\u5927\u7684\u722c\u866b\u6846\u67b6\u4e4b\u4e00\u3002","language":"Python","stars":"59,120","starsToday":"1,196"},{"rank":5,"owner":"nesquena","name":"hermes-webui","url":"https://github.com/nesquena/hermes-webui","description":"Hermes Agent\u5b98\u65b9Web UI\uff0c\u652f\u6301\u4ece\u6d4f\u89c8\u5668\u6216\u624b\u673a\u8fdc\u7a0b\u7ba1\u7406AI\u5bf9\u8bdd\u3001\u6280\u80fd\u7cfb\u7edf\u3001\u63d2\u4ef6\u548c\u5b9a\u65f6\u4efb\u52a1\uff0c\u754c\u9762\u73b0\u4ee3\u54cd\u5e94\u5f0f\uff0cGitHub 1.25\u4e07\u661f\u3002","language":"Python","stars":"12,512","starsToday":"1,725"},{"rank":6,"owner":"reconurge","name":"flowsint","url":"https://github.com/reconurge/flowsint","description":"\u9762\u5411\u7f51\u7edc\u5b89\u5168\u5206\u6790\u5e08\u7684\u53ef\u89c6\u5316\u56fe\u8c03\u67e5\u5e73\u53f0\uff0c\u7075\u6d3b\u53ef\u6269\u5c55\uff0c\u652f\u6301\u57fa\u4e8e\u56fe\u5f62\u7684\u7075\u6d3b\u8c03\u67e5\u5de5\u4f5c\u6d41\uff0c\u9002\u7528\u4e8e\u5b89\u5168\u4e8b\u4ef6\u54cd\u5e94\u548c\u5a01\u80c1\u8ffd\u8e2a\u3002","language":"TypeScript","stars":"4,486","starsToday":"190"},{"rank":7,"owner":"OpenBMB","name":"VoxCPM","url":"https://github.com/OpenBMB/VoxCPM","description":"\u6e05\u534eOpenBMB\u56e2\u961f\u63a8\u51fa\u7684\u65e0Tokenizer TTS\u6a21\u578bVoxCPM2\uff0c\u652f\u6301\u591a\u8bed\u8a00\u8bed\u97f3\u751f\u6210\u3001\u521b\u610f\u97f3\u8272\u8bbe\u8ba1\u548c\u903c\u771f\u58f0\u97f3\u514b\u9686\uff0c2.5\u4e07\u661f\uff0c\u8bed\u97f3AI\u9886\u57df\u660e\u661f\u9879\u76ee\u3002","language":"Python","stars":"25,085","starsToday":"779"},{"rank":8,"owner":"stefan-jansen","name":"machine-learning-for-trading","url":"https://github.com/stefan-jansen/machine-learning-for-trading","description":"\u300aMachine Learning for Algorithmic Trading\u300b\u7b2c\u4e8c\u7248\u914d\u5957\u4ee3\u7801\uff0c\u7cfb\u7edf\u6027\u8bb2\u89e3\u5982\u4f55\u5c06\u673a\u5668\u5b66\u4e60\u5e94\u7528\u4e8e\u91cf\u5316\u4ea4\u6613\u7b56\u7565\uff0c\u91d1\u878d\u4e0eAI\u4ea4\u53c9\u9886\u57df\u7ecf\u5178\u6559\u6750\u3002","language":"Jupyter Notebook","stars":"18,437","starsToday":"570"},{"rank":9,"owner":"jamwithai","name":"production-agentic-rag-course","url":"https://github.com/jamwithai/production-agentic-rag-course","description":"\u9762\u5411\u751f\u4ea7\u73af\u5883\u7684Agentic RAG\u8bfe\u7a0b\uff0c\u4ece\u7406\u8bba\u5230\u5b9e\u8df5\uff0c\u6559\u6388\u6784\u5efa\u751f\u4ea7\u7ea7AI\u4ee3\u7406\u589e\u5f3a\u68c0\u7d22\u7cfb\u7edf\u7684\u5b8c\u6574\u65b9\u6cd5\u8bba\u3002","language":"Python","stars":"6,361","starsToday":"31"},{"rank":10,"owner":"supermemoryai","name":"supermemory","url":"https://github.com/supermemoryai/supermemory","description":"AI\u65f6\u4ee3\u7684\u8bb0\u5fc6\u5f15\u64ceAPI\uff0c\u6781\u81f4\u901f\u5ea6\u4e0e\u53ef\u6269\u5c55\u6027\uff0c\u81ea\u52a8\u4ece\u5bf9\u8bdd\u4e2d\u63d0\u53d6\u4e8b\u5b9e\u3001\u6784\u5efa\u7528\u6237\u753b\u50cf\uff0c\u652f\u6301GDrive/Gmail/Notion/GitHub\u7b49\u8fde\u63a5\u5668\uff0c2.4\u4e07\u661f\u3002","language":"TypeScript","stars":"24,603","starsToday":"677"}];
+var intlData = [{"title":"鲁比奥：美伊仍在谈 协议何时达成不确定","source":"中国网新闻中心","region":"MiddleEast","url":"https://www.baidu.com/s?wd=鲁比奥美伊仍在谈协议何时达成"},{"title":"国际观察｜伊朗"放狠话" 美伊谈判能否迈过这道坎","source":"新华网","region":"MiddleEast","url":"https://www.baidu.com/s?wd=伊朗放狠话美伊谈判能否迈过这道坎"},{"title":"黎巴嫩真主党不接受与以色列"部分停火"","source":"央视网","region":"MiddleEast","url":"https://www.baidu.com/s?wd=黎巴嫩真主党不接受部分停火"},{"title":"俄军袭击乌克兰基辅、第聂伯罗 至少18人丧生","source":"美国之音","region":"RussiaUkraine","url":"https://www.baidu.com/s?wd=俄军袭击乌克兰基辅至少18人丧生"},{"title":"乌克兰多地遭俄军大规模空袭 至少10人死亡","source":"新华网","region":"RussiaUkraine","url":"https://www.baidu.com/s?wd=乌克兰多地遭俄军大规模空袭"},{"title":"美军称"林肯"号航母继续参与对伊朗封锁行动","source":"京报网","region":"MiddleEast","url":"https://www.baidu.com/s?wd=林肯号航母对伊朗封锁行动"},{"title":"特朗普被曝粗口怒斥以色列总理 以军对黎攻势拖宕","source":"财新","region":"MiddleEast","url":"https://www.baidu.com/s?wd=特朗普怒斥以色列总理以黎局势"},{"title":"Anthropic秘密递交IPO招股书 AI军备竞赛再升温","source":"新浪财经","region":"Americas","url":"https://www.baidu.com/s?wd=Anthropic秘密递交IPO招股书"},{"title":"孙正义以2180亿美元身价登顶亚洲首富","source":"新浪财经","region":"EastAsia","url":"https://www.baidu.com/s?wd=孙正义登顶亚洲首富"},{"title":"武契奇：卸任塞总统后不排除出任总理","source":"央视网","region":"Europe","url":"https://www.baidu.com/s?wd=武契奇卸任总统不排除出任总理"}];
+var officialData = [{"title":"人民日报：科研容不得半点虚假 学术诚信需全社会共同守护","source":"人民日报","url":"https://www.baidu.com/s?wd=人民日报科研容不得半点虚假"},{"title":"教育部发布2026年高考预警信息 多地提醒戴眼镜须接受查验","source":"央视新闻","url":"https://www.baidu.com/s?wd=教育部高考预警戴眼镜接受查验"},{"title":"习近平的文化足迹：从三星堆考古新发现看中华文明之光","source":"新华社","url":"https://www.baidu.com/s?wd=习近平文化足迹三星堆考古发现"},{"title":"一文了解汛期知识与避险方法 多地部署安全度汛措施","source":"新华社","url":"https://www.baidu.com/s?wd=一文了解汛期知识避险方法"},{"title":"神舟22号返回舱给月亮"戴帽子" 航天科技成果瞩目","source":"科技日报","url":"https://www.baidu.com/s?wd=神舟22号返回舱给月亮戴帽子"}];
+var hotData = [{"rank":1,"title":"习近平的文化足迹","heat":"790万","url":"https://www.baidu.com/s?wd=习近平的文化足迹"},{"rank":2,"title":"世界杯哨声未响 义乌先赢了","heat":"781万","url":"https://www.baidu.com/s?wd=世界杯哨声未响义乌先赢了"},{"rank":3,"title":"三星堆考古发现11件红玉髓珠","heat":"771万","url":"https://www.baidu.com/s?wd=三星堆考古发现11件红玉髓珠"},{"rank":4,"title":"一文了解汛期知识、避险方法","heat":"762万","url":"https://www.baidu.com/s?wd=一文了解汛期知识避险方法"},{"rank":5,"title":"老乡鸡道歉","heat":"752万","url":"https://www.baidu.com/s?wd=老乡鸡道歉"},{"rank":6,"title":"百万网红卖假牛肉卷 曾承诺假一赔万","heat":"742万","url":"https://www.baidu.com/s?wd=百万网红卖假牛肉卷假一赔万"},{"rank":7,"title":"谢霆锋是《匆匆那年》男主原型","heat":"733万","url":"https://www.baidu.com/s?wd=谢霆锋是匆匆那年男主原型"},{"rank":8,"title":"当你以为送考时妈妈们都会穿红色","heat":"724万","url":"https://www.baidu.com/s?wd=送考妈妈们都会穿红色"},{"rank":9,"title":"教育部发布2026年高考预警信息","heat":"714万","url":"https://www.baidu.com/s?wd=教育部发布2026年高考预警信息"},{"rank":10,"title":"孙正义登顶亚洲首富","heat":"704万","url":"https://www.baidu.com/s?wd=孙正义登顶亚洲首富"},{"rank":11,"title":""林冲"扮演者悼念"高俅"魏宗万","heat":"694万","url":"https://www.baidu.com/s?wd=林冲扮演者悼念高俅魏宗万"},{"rank":12,"title":"湖北一地洪水冲断桥梁系谣言","heat":"685万","url":"https://www.baidu.com/s?wd=湖北洪水冲断桥梁系谣言"},{"rank":13,"title":"山西长治市沁源县委书记赵永进被查","heat":"676万","url":"https://www.baidu.com/s?wd=山西沁源县委书记赵永进被查"},{"rank":14,"title":"南宁街头树上惊现大蛇 消防抓捕","heat":"667万","url":"https://www.baidu.com/s?wd=南宁街头树上惊现大蛇消防抓捕"},{"rank":15,"title":"三轮车顶坐两孩童 目击者追赶喊停","heat":"656万","url":"https://www.baidu.com/s?wd=三轮车顶坐两孩童目击者追赶喊停"},{"rank":16,"title":"安徽省省长深入煤矿井下910多米检查","heat":"648万","url":"https://www.baidu.com/s?wd=安徽省省长深入煤矿井下检查"},{"rank":17,"title":"伊朗将在3座城市为哈梅内伊举办葬礼","heat":"637万","url":"https://www.baidu.com/s?wd=伊朗为哈梅内伊举办葬礼"},{"rank":18,"title":"人民日报：科研容不得半点虚假","heat":"627万","url":"https://www.baidu.com/s?wd=人民日报科研容不得半点虚假"},{"rank":19,"title":"多地提醒：高考戴眼镜须接受查验","heat":"619万","url":"https://www.baidu.com/s?wd=高考戴眼镜须接受查验"},{"rank":20,"title":"武契奇：卸任塞总统后不排除出任总理","heat":"609万","url":"https://www.baidu.com/s?wd=武契奇卸任塞总统不排除出任总理"},{"rank":21,"title":"魏宗万去世前一直看三国演义水浒传","heat":"599万","url":"https://www.baidu.com/s?wd=魏宗万去世前看三国演义水浒传"},{"rank":22,"title":"神舟22号返回舱给月亮"戴帽子"","heat":"589万","url":"https://www.baidu.com/s?wd=神舟22号返回舱给月亮戴帽子"},{"rank":23,"title":"女子为瘦腿爬楼梯 膝关节老得像60岁","heat":"580万","url":"https://www.baidu.com/s?wd=女子为瘦腿爬楼梯膝关节老得像60岁"},{"rank":24,"title":"老挝国家主席夫人和中国萌娃贴贴","heat":"571万","url":"https://www.baidu.com/s?wd=老挝国家主席夫人和中国萌娃贴贴"},{"rank":25,"title":"马宁成20年来唯一世界杯中国主裁判","heat":"562万","url":"https://www.baidu.com/s?wd=马宁成世界杯中国主裁判"},{"rank":26,"title":"保安公司负责人克扣上万顿饭贪20万","heat":"552万","url":"https://www.baidu.com/s?wd=保安公司负责人克扣上万顿饭贪20万"},{"rank":27,"title":"A股或将重返强势格局","heat":"542万","url":"https://www.baidu.com/s?wd=A股或将重返强势格局"},{"rank":28,"title":"巴西女子被鲨鱼咬断一条腿","heat":"533万","url":"https://www.baidu.com/s?wd=巴西女子被鲨鱼咬断一条腿"},{"rank":29,"title":"大理通报执法队与商户发生肢体冲突","heat":"524万","url":"https://www.baidu.com/s?wd=大理执法队与商户发生肢体冲突"},{"rank":30,"title":"警惕！日本新版"特高课"上线","heat":"513万","url":"https://www.baidu.com/s?wd=日本新版特高课上线"}];
+
+function buildGh() {
+  var g = document.getElementById('gh-grid'), h = '';
+  ghData.forEach(function(r) {
+    h += '<div class="card gh-card"><h3><a href="' + r.url + '" target="_blank">' + r.owner + ' / ' + r.name + '</a></h3><p class="desc">' + r.description + '</p><span class="lang">' + r.language + '</span>⭐ ' + r.stars + ' <span style="color:var(--accent);font-size:0.75rem">+' + r.starsToday + ' today</span></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildOfficial() {
+  var g = document.getElementById('official-grid'), h = '';
+  officialData.forEach(function(r) {
+    h += '<div class="card"><span class="rank" style="color:var(--text3)">' + r.source + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildIntl() {
+  var g = document.getElementById('intl-grid'), h = '';
+  intlData.forEach(function(r) {
+    h += '<div class="card intl-card"><span class="region region-' + r.region + '">' + r.region + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3><p class="meta">' + r.source + '</p></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildHot() {
+  var g = document.getElementById('hot-grid'), h = '';
+  hotData.forEach(function(r) {
+    h += '<div class="card"><span class="rank">#' + r.rank + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3><span class="heat">' + r.heat + '</span></div>';
+  });
+  g.innerHTML = h;
+}
+
+buildGh(); buildOfficial(); buildIntl(); buildHot();
+</script>
+
+</body>
+</html>
