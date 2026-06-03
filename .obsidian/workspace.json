@@ -20,17 +20,15 @@
             }
           },
           {
-            "id": "5dd98038a1b76e59",
+            "id": "b3d38a80d3223e20",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "notion-bases-view",
               "state": {
-                "file": "index.md",
-                "mode": "source",
-                "source": false
+                "dbFilePath": "entities/_database.md"
               },
-              "icon": "lucide-file",
-              "title": "index"
+              "icon": "table",
+              "title": "entities"
             }
           }
         ],
@@ -197,11 +195,16 @@
       "notion-bases:Notion bases": false
     }
   },
-  "active": "5dd98038a1b76e59",
+  "active": "cd77629cac048a1a",
   "lastOpenFiles": [
+    "dashboard.md",
+    "news/2026-05-29.html",
+    "index.md",
+    "queries/刚果金-Bundibugyo-病毒疫情推演分析.md",
+    "entities/_database.md",
+    "news/2026-05-22.html",
     "concepts/axton-obsidian-visual-skills.md",
     "concepts/_database.md",
-    "index.md",
     "log.md",
     "concepts/cheat-on-content.md",
     "raw/README.md",
@@ -220,10 +223,6 @@
     "AI Agent 核心概念对照.md",
     "entities/家味协同项目概览.md",
     "queries/知识库压缩工具调研.md",
-    "concepts/明知山世界观.md",
-    "concepts/力量体系.md",
-    "entities/当代观主.md",
-    "queries/力量体系迭代三.md",
-    "queries/力量体系迭代一.md"
+    "concepts/明知山世界观.md"
   ]
 }

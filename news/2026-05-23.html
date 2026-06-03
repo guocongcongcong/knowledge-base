@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日新闻 — 2026年5月23日 星期六</title>
+<style>
+:root {
+  --bg: #f9f9f8;
+  --card-bg: #ffffff;
+  --text-primary: #111110;
+  --text-secondary: #6b6b67;
+  --text-tertiary: #9c9c97;
+  --border: #e8e8e4;
+  --border-hover: #d4d4d0;
+  --accent: #1a6ff5;
+  --accent-light: #e8f1fe;
+  --header-bg: #111110;
+  --header-text: #ffffff;
+  --max-w: 960px;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 2px 8px rgba(0,0,0,0.06);
+  --transition: 160ms ease;
+  --font-mono: 'SF Mono', 'Fira Code', 'Cascadia Code', 'JetBrains Mono', ui-monospace, monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans CJK SC', 'WenQuanYi Micro Hei', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.header {
+  background: linear-gradient(160deg, #111110 0%, #1a1a2e 50%, #111827 100%);
+  color: var(--header-text);
+  padding: 56px 24px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.header::before {
+  content: '';
+  position: absolute;
+  top: -60%;
+  right: -20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(26,111,245,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.header-inner { max-width: var(--max-w); margin: 0 auto; }
+.header-date {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+.header-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,0.55);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+
+.main { max-width: var(--max-w); margin: 0 auto; padding: 40px 24px 60px; }
+
+.section { margin-bottom: 52px; }
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+}
+.section-count {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+
+/* News Grid */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.news-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+.news-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+.news-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.news-rank {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+.news-rank-num { font-size: 16px; color: var(--text-secondary); font-weight: 700; }
+.news-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-left: auto; }
+.news-category {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+.cat-时政 { background: #e8f1fe; color: #2563eb; }
+.cat-科技 { background: #e3f5eb; color: #16a34a; }
+.cat-社会 { background: #fff3e8; color: #ea580c; }
+.cat-国际 { background: #f3edff; color: #7c3aed; }
+.cat-经济 { background: #fef9e7; color: #b8860b; }
+.cat-娱乐 { background: #fde8f1; color: #db2777; }
+.cat-军事 { background: #fde8e8; color: #dc2626; }
+.cat-教育 { background: #e3f5f7; color: #0891b2; }
+.cat-文化 { background: #eeedfc; color: #4f46e5; }
+
+.news-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.news-link:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+.news-title {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+}
+.news-summary {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+.news-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 6px;
+}
+.news-source {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  letter-spacing: 0.03em;
+}
+.news-heat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.heat-bar-wrap {
+  width: 64px;
+  height: 4px;
+  background: #eee;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.heat-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #1a6ff5 0%, #6366f1 60%, #dc2626 100%);
+  transition: width 600ms ease;
+}
+.news-card:hover .heat-bar-fill { filter: brightness(1.1); }
+.heat-value {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-tertiary);
+  font-weight: 500;
+  min-width: 60px;
+  text-align: right;
+}
+
+/* GitHub Grid */
+.gh-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.gh-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  cursor: default;
+}
+.gh-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+.gh-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.gh-rank {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-tertiary);
+}
+.gh-stats {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+.gh-stars-total { color: var(--text-secondary); font-weight: 600; }
+.gh-stars-today { color: #16a34a; font-weight: 600; }
+.gh-repo {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  word-break: break-all;
+}
+.gh-repo-owner { color: var(--text-tertiary); font-weight: 500; }
+.gh-repo-name { color: var(--text-primary); }
+.gh-repo-link { color: var(--accent); text-decoration: none; word-break: break-all; }
+.gh-repo-link:hover { text-decoration: underline; }
+.gh-lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.lang-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.lang-TypeScript .lang-dot { background: #3178c6; }
+.lang-TypeScript { color: #3178c6; }
+.lang-Python .lang-dot { background: #16a34a; }
+.lang-Python { color: #16a34a; }
+.lang-Rust .lang-dot { background: #ea580c; }
+.lang-Rust { color: #ea580c; }
+.lang-Shell .lang-dot { background: #6b7280; }
+.lang-Shell { color: #6b7280; }
+.lang-Markdown .lang-dot { background: #7c3aed; }
+.lang-Markdown { color: #7c3aed; }
+.lang-C\# .lang-dot { background: #7b3fe4; }
+.lang-C\# { color: #7b3fe4; }
+.lang-N\/A .lang-dot { background: #9b9b9b; }
+.lang-N\/A { color: #9b9b9b; }
+.gh-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.gh-detail {
+  font-size: 12.5px;
+  color: var(--text-tertiary);
+  line-height: 1.55;
+  padding-top: 4px;
+  border-top: 1px solid var(--border);
+}
+
+/* Official Media */
+.official-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.official-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.official-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-sm);
+}
+.official-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.official-source {
+  font-size: 11px;
+  font-weight: 700;
+  color: #dc2626;
+  letter-spacing: 0.04em;
+}
+.official-title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--text-primary);
+}
+.official-summary {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.footer {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+.footer-text {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  line-height: 1.7;
+}
+.footer-dot { margin: 0 8px; color: var(--border); }
+
+
+/* International News */
+.intl-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.intl-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.intl-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-sm);
+}
+.intl-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.intl-region {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+}
+.region-中东 { background: #fef3c7; color: #d97706; }
+.region-欧洲 { background: #e8f1fe; color: #2563eb; }
+.region-美洲 { background: #f3edff; color: #7c3aed; }
+.region-俄乌 { background: #fde8e8; color: #dc2626; }
+.region-卫生 { background: #e3f5eb; color: #16a34a; }
+.region-南亚 { background: #fff3e8; color: #ea580c; }
+.region-东亚 { background: #e3f5f7; color: #0891b2; }
+.intl-source {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  letter-spacing: 0.03em;
+}
+.intl-title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--text-primary);
+}
+.intl-summary {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .header { padding: 44px 20px 36px; }
+  .header-date { font-size: 24px; }
+  .header-sub { font-size: 14px; }
+  .main { padding: 28px 16px 40px; }
+  .news-grid,
+  .gh-grid,
+  .official-grid { grid-template-columns: 1fr; gap: 8px; }
+  .section { margin-bottom: 36px; }
+  .section-title { font-size: 18px; }
+  .news-card { padding: 16px 18px; }
+  .gh-card { padding: 16px 18px; }
+  .heat-bar-wrap { width: 48px; }
+  .heat-value { font-size: 10px; }
+}
+@media (max-width: 375px) {
+  .header { padding: 36px 16px 28px; }
+  .header-date { font-size: 21px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1 class="header-date">2026年5月23日</h1>
+    <p class="header-sub">星期六 · GitHub Trending + 官方媒体 + 百度热搜</p>
+  </div>
+</header>
+
+<main class="main">
+
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">GitHub Trending</h2>
+      <span class="section-count">Top 10</span>
+    </div>
+    <div class="gh-grid" id="gh-grid"></div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">官方媒体</h2>
+      <span class="section-count">5 条</span>
+    </div>
+    <div class="official-grid" id="official-grid"></div>
+  </section>
+
+
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">国际新闻</h2>
+      <span class="section-count">10 条</span>
+    </div>
+    <div class="intl-grid" id="intl-grid"></div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">今日热搜</h2>
+      <span class="section-count">Top 20</span>
+    </div>
+    <div class="news-grid" id="news-grid"></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p class="footer-text">数据来源：GitHub Trending <span class="footer-dot">·</span> 官方媒体 <span class="footer-dot">·</span> Google 新闻 <span class="footer-dot">·</span> 百度热搜<br>生成时间：2026-05-23T08:00:00+08:00</p>
+</footer>
+
+<script>
+const newsData = [{"rank": 1, "title": "中俄关系迈上新起点", "summary": "中俄元首外交引领两国战略协作进入新阶段", "source": "百度热搜", "category": "时政", "heat": 7904894, "url": "https://www.baidu.com/s?wd=%E4%B8%AD%E4%BF%84%E5%85%B3%E7%B3%BB%E8%BF%88%E4%B8%8A%E6%96%B0%E8%B5%B7%E7%82%B9&sa=fyb_news"}, {"rank": 2, "title": "中国香港航天员首上太空", "summary": "第四批预备航天员选拔完成，香港载荷专家将执行空间站任务", "source": "百度热搜", "category": "科技", "heat": 7808863, "url": "https://www.baidu.com/s?wd=%E9%A6%99%E6%B8%AF%E8%88%AA%E5%A4%A9%E5%91%98%E9%A6%96%E4%B8%8A%E5%A4%AA%E7%A9%BA&sa=fyb_news"}, {"rank": 3, "title": "烟台老人的纯手工蓑衣火了", "summary": "烟台七旬老人手工编织蓑衣视频走红网络，传统手艺引关注", "source": "百度热搜", "category": "社会", "heat": 7714073, "url": "https://www.baidu.com/s?wd=%E7%83%9F%E5%8F%B0%E8%80%81%E4%BA%BA%E7%BA%AF%E6%89%8B%E5%B7%A5%E8%93%91%E8%A1%A3&sa=fyb_news"}, {"rank": 4, "title": "中国城市地下管网规模全球第一", "summary": "住建部公布最新数据：全国地下管网总里程突破400万公里", "source": "百度热搜", "category": "科技", "heat": 7616613, "url": "https://www.baidu.com/s?wd=%E5%9F%8E%E5%B8%82%E5%9C%B0%E4%B8%8B%E7%AE%A1%E7%BD%91%E8%A7%84%E6%A8%A1%E5%85%A8%E7%90%83%E7%AC%AC%E4%B8%80&sa=fyb_news"}, {"rank": 5, "title": "三地交警护航狂飙280公里失控轿车", "summary": "轿车定速巡航失灵高速狂飙，三地交警紧急联动成功拦截", "source": "百度热搜", "category": "社会", "heat": 7524151, "url": "https://www.baidu.com/s?wd=%E4%B8%89%E5%9C%B0%E4%BA%A4%E8%AD%A6%E6%8A%A4%E8%88%AA%E7%8B%82%E9%A3%99280%E5%85%AC%E9%87%8C%E5%A4%B1%E6%8E%A7%E8%BD%BF%E8%BD%A6&sa=fyb_news"}, {"rank": 6, "title": "「一代人终将老去 包括我跟她妈」", "summary": "一名父亲的感言引发全网共鸣，关于时间与亲情的深刻反思", "source": "百度热搜", "category": "社会", "heat": 7425425, "url": "https://www.baidu.com/s?wd=%E4%B8%80%E4%BB%A3%E4%BA%BA%E7%BB%88%E5%B0%86%E8%80%81%E5%8E%BB&sa=fyb_news"}, {"rank": 7, "title": "净网：涉柳州地震信息系谣言", "summary": "官方辟谣网络流传的柳州地震不实信息，呼吁不信谣不传谣", "source": "百度热搜", "category": "社会", "heat": 7329184, "url": "https://www.baidu.com/s?wd=%E6%B6%89%E6%9F%B3%E5%B7%9E%E5%9C%B0%E9%9C%87%E4%BF%A1%E6%81%AF%E6%98%AF%E8%B0%A3%E8%A8%80&sa=fyb_news"}, {"rank": 8, "title": "神舟二十三号乘组见面会", "summary": "神舟二十三号航天员乘组正式亮相，含港澳首位载荷专家", "source": "百度热搜", "category": "科技", "heat": 7232429, "url": "https://www.baidu.com/s?wd=%E7%A5%9E%E8%88%9F%E4%BA%8C%E5%8D%81%E4%B8%89%E5%8F%B7%E4%B9%98%E7%BB%84%E8%A7%81%E9%9D%A2%E4%BC%9A&sa=fyb_news"}, {"rank": 9, "title": "主食吃多了会变碳水脸？真相来了", "summary": "专家科普碳水摄入与面部浮肿的科学关系，回应公众疑惑", "source": "百度热搜", "category": "科技", "heat": 7135736, "url": "https://www.baidu.com/s?wd=%E4%B8%BB%E9%A3%9F%E5%90%83%E5%A4%9A%E4%BA%86%E4%BC%9A%E5%8F%98%E7%A2%B3%E6%B0%B4%E8%84%B8&sa=fyb_news"}, {"rank": 10, "title": "小虾一代代接力爬上200米悬崖", "summary": "科研团队发现溪虾以世代接力方式完成200米悬崖迁徙", "source": "百度热搜", "category": "科技", "heat": 7040683, "url": "https://www.baidu.com/s?wd=%E5%B0%8F%E8%99%BE%E4%B8%80%E4%BB%A3%E4%BB%A3%E6%8E%A5%E5%8A%9B%E7%88%AC%E4%B8%8A200%E7%B1%B3%E6%82%AC%E5%B4%96&sa=fyb_news"}, {"rank": 11, "title": "黎家盈系港澳地区首位女性载荷专家", "summary": "香港女航天员黎家盈身份揭晓，曾在警务处工作引发全城热议", "source": "百度热搜", "category": "科技", "heat": 6952797, "url": "https://www.baidu.com/s?wd=%E9%BB%8E%E5%AE%B6%E7%9B%88%E6%B8%AF%E6%BE%B3%E5%9C%B0%E5%8C%BA%E9%A6%96%E4%BD%8D%E5%A5%B3%E6%80%A7%E8%BD%BD%E8%8D%B7%E4%B8%93%E5%AE%B6&sa=fyb_news"}, {"rank": 12, "title": "斯凯奇被「清仓」", "summary": "知名运动品牌斯凯奇在中国市场遭遇清仓式调整或退出部分渠道", "source": "百度热搜", "category": "经济", "heat": 6851511, "url": "https://www.baidu.com/s?wd=%E6%96%AF%E5%87%AF%E5%A5%87%E8%A2%AB%E6%B8%85%E4%BB%93&sa=fyb_news"}, {"rank": 13, "title": "山西沁源煤矿事故已致8人死亡", "summary": "山西沁源县煤矿发生安全事故，救援工作持续进行中", "source": "百度热搜", "category": "社会", "heat": 6758493, "url": "https://www.baidu.com/s?wd=%E5%B1%B1%E8%A5%BF%E6%B2%81%E6%BA%90%E7%85%A4%E7%9F%BF%E4%BA%8B%E6%95%85&sa=fyb_news"}, {"rank": 14, "title": "1名航天员将开展1年期在轨驻留试验", "summary": "神舟二十三号将进行中国首次1年期在轨驻留科学试验", "source": "百度热搜", "category": "科技", "heat": 6666329, "url": "https://www.baidu.com/s?wd=1%E5%90%8D%E8%88%AA%E5%A4%A9%E5%91%98%E5%BC%80%E5%B1%951%E5%B9%B4%E6%9C%9F%E5%9C%A8%E8%BD%A8%E9%A9%BB%E7%95%99%E8%AF%95%E9%AA%8C&sa=fyb_news"}, {"rank": 15, "title": "美国再公布UFO文件：发光物追逐战机", "summary": "美国防部公布新一批不明飞行物影像，发光物体高速追逐战机", "source": "百度热搜", "category": "国际", "heat": 6565464, "url": "https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%BD%E5%86%8D%E5%85%AC%E5%B8%83UFO%E6%96%87%E4%BB%B6%E5%8F%91%E5%85%89%E7%89%A9%E8%BF%BD%E9%80%90%E6%88%98%E6%9C%BA&sa=fyb_news"}, {"rank": 16, "title": "李家超祝贺黎家盈成为第四批航天员", "summary": "香港特首李家超祝贺黎家盈入选，称其为香港青年的骄傲", "source": "百度热搜", "category": "时政", "heat": 6468017, "url": "https://www.baidu.com/s?wd=%E6%9D%8E%E5%AE%B6%E8%B6%85%E7%A5%9D%E8%B4%BA%E9%BB%8E%E5%AE%B6%E7%9B%88%E6%88%90%E4%B8%BA%E7%AC%AC%E5%9B%9B%E6%89%B9%E8%88%AA%E5%A4%A9%E5%91%98&sa=fyb_news"}, {"rank": 17, "title": "巴基斯坦航天员与中国航天员一同训练", "summary": "中巴航天合作迈入新阶段，巴方航天员参与中国空间站训练", "source": "百度热搜", "category": "国际", "heat": 6371599, "url": "https://www.baidu.com/s?wd=%E5%B7%B4%E5%9F%BA%E6%96%AF%E5%9D%A6%E8%88%AA%E5%A4%A9%E5%91%98%E4%B8%8E%E4%B8%AD%E5%9B%BD%E8%88%AA%E5%A4%A9%E5%91%98%E4%B8%80%E5%90%8C%E8%AE%AD%E7%BB%83&sa=fyb_news"}, {"rank": 18, "title": "神二十三乘组确定", "summary": "神舟二十三号载人飞行任务乘组正式公布，即将执行发射任务", "source": "百度热搜", "category": "科技", "heat": 6281509, "url": "https://www.baidu.com/s?wd=%E7%A5%9E%E4%BA%8C%E5%8D%81%E4%B8%89%E4%B9%98%E7%BB%84%E7%A1%AE%E5%AE%9A&sa=fyb_news"}, {"rank": 19, "title": "英法德意发表联合声明", "summary": "英法德意四国就国际热点问题发表联合声明，引发各方关注", "source": "百度热搜", "category": "国际", "heat": 6183977, "url": "https://www.baidu.com/s?wd=%E8%8B%B1%E6%B3%95%E5%BE%B7%E6%84%8F%E5%8F%91%E8%A1%A8%E8%81%94%E5%90%88%E5%A3%B0%E6%98%8E&sa=fyb_news"}, {"rank": 20, "title": "香港女航天员首次亮相 现场掌声不断", "summary": "黎家盈在航天员见面会首次公开亮相，现场气氛热烈掌声雷动", "source": "百度热搜", "category": "时政", "heat": 6089566, "url": "https://www.baidu.com/s?wd=%E9%A6%99%E6%B8%AF%E5%A5%B3%E8%88%AA%E5%A4%A9%E5%91%98%E9%A6%96%E6%AC%A1%E4%BA%AE%E7%9B%B8&sa=fyb_news"}];
+
+const ghData = [{"rank": 1, "owner": "anthropics", "name": "claude-plugins-official", "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.", "language": "Python", "stars": "25,147", "starsToday": "2,549", "detail": "Anthropic 官方维护的 Claude Code 插件目录，汇集经过审核的高质量插件。覆盖代码审查、自动化部署、安全审计、数据库管理等场景，是 Claude Code 用户扩展能力的首选入口。", "url": "https://github.com/anthropics/claude-plugins-official"}, {"rank": 2, "owner": "colbymchenry", "name": "codegraph", "description": "Pre-indexed code knowledge graph for Claude Code, Codex, Cursor, OpenCode, and Hermes Agent", "language": "TypeScript", "stars": "16,825", "starsToday": "3,684", "detail": "预索引代码知识图谱工具，为 AI 编程助手预建项目语义索引。通过图谱理解代码结构，大幅减少 token 消耗和工具调用次数，完全本地运行零数据外泄。今日新增 3,684 星增速惊人。", "url": "https://github.com/colbymchenry/codegraph"}, {"rank": 3, "owner": "ruvnet", "name": "RuView", "description": "Turns commodity WiFi signals into real-time spatial intelligence and vital sign monitoring", "language": "Rust", "stars": "64,108", "starsToday": "978", "detail": "将普通 WiFi 信号转化为实时空间智能的创新项目。无需摄像头即可实现人体存在检测、生命体征监测和空间感知，在隐私保护和智能感知间找到优雅平衡。Rust 实现，64K 星。", "url": "https://github.com/ruvnet/RuView"}, {"rank": 4, "owner": "rohitg00", "name": "ai-engineering-from-scratch", "description": "Learn it. Build it. Ship it for others.", "language": "Python", "stars": "12,095", "starsToday": "988", "detail": "从零开始的 AI 工程实践教程，覆盖 LLM 应用开发全栈。fine-tuning、RAG、Agent 到生产部署，以项目驱动方式教学，每个章节对应可交付的真实产品。", "url": "https://github.com/rohitg00/ai-engineering-from-scratch"}, {"rank": 5, "owner": "ChromeDevTools", "name": "chrome-devtools-mcp", "description": "Chrome DevTools for coding agents", "language": "TypeScript", "stars": "41,022", "starsToday": "501", "detail": "Google Chrome 团队官方推出的 DevTools MCP 服务器，让 AI 编程代理能直接操控 Chrome 浏览器进行调试、性能分析和自动化测试。41K 星。", "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp"}, {"rank": 6, "owner": "dotnet", "name": "skills", "description": "Repository for skills to assist AI coding agents with .NET and C#", "language": "C#", "stars": "2,558", "starsToday": "389", "detail": ".NET 官方团队维护的 AI 编程代理技能库，为 C# 和 .NET 生态提供经微软验证的技能定义，涵盖 ASP.NET Core、Entity Framework、MAUI 等主流框架。", "url": "https://github.com/dotnet/skills"}, {"rank": 7, "owner": "Lum1104", "name": "Understand-Anything", "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph.", "language": "TypeScript", "stars": "18,904", "starsToday": "1,393", "detail": "将任意代码库转化为交互式知识图谱。支持 Claude Code/Codex/Cursor/Copilot/Gemini CLI，以图结构呈现代码间依赖和逻辑关系，让开发者像探索维基百科一样浏览代码库。", "url": "https://github.com/Lum1104/Understand-Anything"}, {"rank": 8, "owner": "odoo", "name": "odoo", "description": "Odoo. Open Source Apps To Grow Your Business.", "language": "Python", "stars": "51,166", "starsToday": "79", "detail": "全球最流行的开源 ERP 系统，覆盖 CRM、电商、会计、库存、HR 等 30+ 企业应用模块。模块化架构按需组合，Python 实现易于定制扩展。", "url": "https://github.com/odoo/odoo"}, {"rank": 9, "owner": "byJoey", "name": "cfnew", "description": "Cloudflare 优选 IP 自动更新与监控工具", "language": "Shell", "stars": "13,328", "starsToday": "87", "detail": "Cloudflare 优选 IP 自动化工具，定期检测和更新最佳 CDN 节点 IP 地址，优化网站访问速度。支持多种检测策略和自动切换，在国内网络环境下特别实用。", "url": "https://github.com/byJoey/cfnew"}, {"rank": 10, "owner": "trimstray", "name": "the-book-of-secret-knowledge", "description": "A collection of inspiring lists, manuals, cheatsheets, blogs, hacks, one-liners, cli/web tools.", "language": "Shell", "stars": "223,262", "starsToday": "969", "detail": "系统管理员和 DevOps 工程师的知识宝典，汇集 CLI 工具、Shell 脚本、网络调试、安全加固等实用清单。223K 星的传奇级开源收藏，覆盖 Linux/Unix/macOS 全平台。", "url": "https://github.com/trimstray/the-book-of-secret-knowledge"}];
+
+function fmtRaw(n) {
+  return n.toLocaleString('zh-CN');
+}
+
+
+const intlData = [{"title": "沙特媒体称美伊协议草案或将在数小时内公布", "summary": "中东局势迎来转折点，美伊核协议谈判取得突破性进展", "source": "新华网", "region": "中东", "url": "https://www.baidu.com/s?wd=%E7%BE%8E%E4%BC%8A%E5%8D%8F%E8%AE%AE%E8%8D%89%E6%A1%88%E5%85%AC%E5%B8%83&sa=fyb_news"}, {"title": "世卫上调刚果(金)埃博拉疫情风险至「非常高」", "summary": "刚果(金)埃博拉疫情迅速蔓延，当地出现抗议者焚烧医疗物资事件", "source": "搜狐网", "region": "卫生", "url": "https://www.baidu.com/s?wd=%E5%88%9A%E6%9E%9C%E5%9F%83%E5%8D%9A%E6%8B%89%E7%96%AB%E6%83%85%E9%A3%8E%E9%99%A9&sa=fyb_news"}, {"title": "中方呼吁俄乌冲突方停止攻击平民和民用基础设施", "summary": "安理会召开乌克兰问题公开会，中方谴责任何针对无辜平民的袭击", "source": "东南网", "region": "俄乌", "url": "https://www.baidu.com/s?wd=%E4%BF%84%E4%B9%8C%E5%81%9C%E6%AD%A2%E6%94%BB%E5%87%BB%E5%B9%B3%E6%B0%91&sa=fyb_news"}, {"title": "普京：准备报复！", "summary": "俄罗斯总统普京强硬回应近期针对俄方目标的袭击事件", "source": "每日经济新闻", "region": "俄乌", "url": "https://www.baidu.com/s?wd=%E6%99%AE%E4%BA%AC%E5%87%86%E5%A4%87%E6%8A%A5%E5%A4%8D&sa=fyb_news"}, {"title": "联合国拨款6000万美元加速应对埃博拉疫情", "summary": "多国联动防控：世卫组织警告疫情「迅速蔓延」，联合国紧急拨款", "source": "新京报", "region": "卫生", "url": "https://www.baidu.com/s?wd=%E8%81%94%E5%90%88%E5%9B%BD%E6%8B%A8%E6%AC%BE%E5%9F%83%E5%8D%9A%E6%8B%89%E7%96%AB%E6%83%85&sa=fyb_news"}, {"title": "特朗普与国家安全团队举行会议商讨对伊战事", "summary": "美国前总统特朗普就伊朗局势与安全团队密集磋商", "source": "中华网", "region": "美洲", "url": "https://www.baidu.com/s?wd=%E7%89%B9%E6%9C%97%E6%99%AE%E5%9B%BD%E5%AE%B6%E5%AE%89%E5%85%A8%E5%9B%A2%E9%98%9F%E5%AF%B9%E4%BC%8A%E6%88%98%E4%BA%8B&sa=fyb_news"}, {"title": "古巴民众集会抗议美国起诉劳尔·卡斯特罗", "summary": "美古关系再度紧张，古巴民众大规模集会抗议美国司法行动", "source": "新华网", "region": "美洲", "url": "https://www.baidu.com/s?wd=%E5%8F%A4%E5%B7%B4%E6%8A%97%E8%AE%AE%E7%BE%8E%E5%9B%BD%E8%B5%B7%E8%AF%89%E5%8A%B3%E5%B0%94%E5%8D%A1%E6%96%AF%E7%89%B9%E7%BD%97&sa=fyb_news"}, {"title": "美国再公布UFO文件：发光物追逐战机", "summary": "美国防部公布新一批不明飞行物影像，发光物体高速追逐战机", "source": "百度热搜", "region": "美洲", "url": "https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%BD%E5%86%8D%E5%85%AC%E5%B8%83UFO%E6%96%87%E4%BB%B6&sa=fyb_news"}, {"title": "英法德意发表联合声明", "summary": "英法德意四国就国际热点问题发表联合声明，引发各方关注", "source": "百度热搜", "region": "欧洲", "url": "https://www.baidu.com/s?wd=%E8%8B%B1%E6%B3%95%E5%BE%B7%E6%84%8F%E5%8F%91%E8%A1%A8%E8%81%94%E5%90%88%E5%A3%B0%E6%98%8E&sa=fyb_news"}, {"title": "巴基斯坦航天员与中国航天员一同训练", "summary": "中巴航天合作迈入新阶段，巴方航天员参与中国空间站训练", "source": "百度热搜", "region": "南亚", "url": "https://www.baidu.com/s?wd=%E5%B7%B4%E5%9F%BA%E6%96%AF%E5%9D%A6%E8%88%AA%E5%A4%A9%E5%91%98%E4%B8%8E%E4%B8%AD%E5%9B%BD%E8%88%AA%E5%A4%A9%E5%91%98%E8%AE%AD%E7%BB%83&sa=fyb_news"}];
+
+function buildIntl() {
+  const grid = document.getElementById('intl-grid');
+  grid.innerHTML = intlData.map(n => {
+    return `<article class="intl-card">
+      <div class="intl-top">
+        <span class="intl-region region-${n.region}">${n.region}</span>
+        <span class="intl-source">${n.source}</span>
+      </div>
+      <h3 class="intl-title"><a href="${n.url}" target="_blank" class="news-link">${n.title}</a></h3>
+      <p class="intl-summary">${n.summary}</p>
+    </article>`;
+  }).join('');
+}
+
+const maxHeat = Math.max(...newsData.map(n => n.heat));
+
+function buildNews() {
+  const grid = document.getElementById('news-grid');
+  grid.innerHTML = newsData.map(n => {
+    const pct = Math.round((n.heat / maxHeat) * 100);
+    return `<article class="news-card">
+      <div class="news-card-top">
+        <span class="news-rank">No.<span class="news-rank-num">${String(n.rank).padStart(2,'0')}</span></span>
+        <span class="news-category cat-${n.category}">${n.category}</span>
+      </div>
+      <h3 class="news-title"><a href="${n.url}" target="_blank" class="news-link">${n.title}</a></h3>
+      <p class="news-summary">${n.summary}</p>
+      <div class="news-bottom">
+        <span class="news-source">${n.source}</span>
+        <div class="news-heat">
+          <div class="heat-bar-wrap"><div class="heat-bar-fill" style="width:${pct}%"></div></div>
+          <span class="heat-value">${fmtRaw(n.heat)}</span>
+        </div>
+      </div>
+    </article>`;
+  }).join('');
+}
+
+function buildGh() {
+  const grid = document.getElementById('gh-grid');
+  grid.innerHTML = ghData.map(p => {
+    return `<article class="gh-card">
+      <div class="gh-card-top">
+        <span class="gh-rank">No.${String(p.rank).padStart(2,'0')}</span>
+        <div class="gh-stats">
+          <span class="gh-stars-total">⭐ ${p.stars}</span>
+          <span class="gh-stars-today">+${p.starsToday}</span>
+        </div>
+      </div>
+      <div class="gh-repo">
+        <a class="gh-repo-link" href="https://github.com/${p.owner}/${p.name}" target="_blank" rel="noopener">
+          <span class="gh-repo-owner">${p.owner}</span><span class="gh-repo-name"> / ${p.name}</span>
+        </a>
+      </div>
+      <span class="gh-lang lang-${p.language}"><span class="lang-dot"></span>${p.language}</span>
+      <p class="gh-desc">${p.description}</p>
+      <p class="gh-detail">${p.detail}</p>
+    </article>`;
+  }).join('');
+}
+
+const officialData = [{"title": "光影长卷浓缩牢不可破的中俄友谊", "summary": "新华社发布中俄友谊主题光影长卷 展现两国深厚历史渊源与合作成果", "source": "新华社", "url": "https://www.baidu.com/s?wd=%E4%B8%AD%E4%BF%84%E5%8F%8B%E8%B0%8A%E5%85%89%E5%BD%B1%E9%95%BF%E5%8D%B7&sa=fyb_news"}, {"title": "以教育为桥 夯实中俄友好根基", "summary": "人民日报评中俄教育合作 两国高校交流项目覆盖理工文史全学科", "source": "人民日报", "url": "https://www.baidu.com/s?wd=%E4%B8%AD%E4%BF%84%E6%95%99%E8%82%B2%E5%90%88%E4%BD%9C%E5%8F%8B%E5%A5%BD%E6%A0%B9%E5%9F%BA&sa=fyb_news"}, {"title": "神舟二十三号瞄准明日23时08分发射", "summary": "含港澳载荷专家 空间站将迎史上最年轻乘组执行6个月驻留任务", "source": "央视新闻", "url": "https://www.baidu.com/s?wd=%E7%A5%9E%E8%88%9F%E4%BA%8C%E5%8D%81%E4%B8%89%E5%8F%B7%E5%8F%91%E5%B0%84&sa=fyb_news"}, {"title": "中国城市地下管网总里程突破400万公里", "summary": "住建部公布基础设施最新数据 地下管网规模稳居全球第一", "source": "国家统计局", "url": "https://www.baidu.com/s?wd=%E5%9F%8E%E5%B8%82%E5%9C%B0%E4%B8%8B%E7%AE%A1%E7%BD%91%E8%A7%84%E6%A8%A1%E5%85%A8%E7%90%83%E7%AC%AC%E4%B8%80&sa=fyb_news"}, {"title": "人与青山两不负——「林区三问」的十年答卷", "summary": "科技日报聚焦东北林区生态转型 从砍树到护林的十年蝶变之路", "source": "科技日报", "url": "https://www.baidu.com/s?wd=%E6%9E%97%E5%8C%BA%E4%B8%89%E9%97%AE%E5%8D%81%E5%B9%B4%E7%AD%94%E5%8D%B7&sa=fyb_news"}];
+
+function buildOfficial() {
+  const grid = document.getElementById('official-grid');
+  grid.innerHTML = officialData.map(n => {
+    return `<article class="official-card">
+      <div class="official-top">
+        <span class="official-source">${n.source}</span>
+      </div>
+      <h3 class="official-title">${n.title}</h3>
+      <p class="official-summary">${n.summary}</p>
+    </article>`;
+  }).join('');
+}
+
+buildNews();
+buildGh();
+buildOfficial();
+  buildIntl();
+</script>
+
+</body>
+</html>

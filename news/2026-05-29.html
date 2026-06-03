@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日新闻 · 2026-05-29</title>
+<style>
+:root{--bg:#f9f9f8;--card-bg:#fff;--text:#1a1a2e;--text2:#52525b;--text3:#a1a1aa;--accent:#4f46e5;--border:#e5e5e7}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,'PingFang SC',sans-serif;min-height:100vh}
+.header{background:linear-gradient(135deg,#1a1a2e 0%,#2d2d44 100%);color:#fff;padding:48px 32px 40px;text-align:center}
+.header h1{font-size:1.5rem;font-weight:600;margin-bottom:6px}
+.header p{font-size:0.875rem;opacity:0.6}
+.container{max-width:960px;margin:0 auto;padding:32px}
+.section-title{font-size:1.1rem;font-weight:600;margin:40px 0 16px;color:var(--text);display:flex;align-items:center;gap:8px}
+.section-title::before{content:'';width:4px;height:20px;background:var(--accent);border-radius:2px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.card{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:16px;transition:all 0.15s}
+.card:hover{border-color:var(--accent);box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.card .rank{font-size:0.75rem;color:var(--accent);font-weight:600;margin-bottom:4px}
+.card h3{font-size:0.9rem;font-weight:500;line-height:1.5;margin-bottom:6px}
+.card h3 a{color:var(--text);text-decoration:none}
+.card h3 a:hover{color:var(--accent);text-decoration:underline}
+.card .meta{font-size:0.75rem;color:var(--text3)}
+.card .heat{display:inline-block;background:var(--accent);color:#fff;font-size:0.65rem;padding:2px 8px;border-radius:10px;margin-left:6px;opacity:0.7}
+.gh-card{padding:18px}
+.gh-card h3{font-size:0.95rem}
+.gh-card h3 a{color:var(--accent)}
+.gh-card .desc{font-size:0.8rem;color:var(--text2);line-height:1.5;margin:6px 0}
+.gh-card .lang{display:inline-block;font-size:0.7rem;color:var(--text3);margin-right:12px}
+.gh-card .lang::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;background:var(--accent)}
+.intl-card{border-left:3px solid var(--accent)}
+.intl-card .region{font-size:0.7rem;padding:2px 6px;border-radius:4px;margin-right:6px;display:inline-block}
+.region-中东{background:#fef3c7;color:#b45309}
+.region-东亚{background:#dbeafe;color:#1d4ed8}
+.region-美洲{background:#ede9fe;color:#6d28d9}
+.region-俄乌{background:#fee2e2;color:#b91c1c}
+.region-南亚{background:#ffedd5;color:#c2410c}
+.region-欧洲{background:#e0e7ff;color:#3730a3}
+.footer{text-align:center;padding:32px;color:var(--text3);font-size:0.75rem;border-top:1px solid var(--border);margin-top:40px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}.container{padding:16px}}
+</style>
+</head>
+<body>
+<header class="header">
+  <h1>📰 每日新闻日报</h1>
+  <p>2026年5月29日 · 星期五</p>
+</header>
+
+<div class="container">
+
+<!-- GitHub Trending -->
+<h2 class="section-title">🔥 GitHub Trending</h2>
+<div class="grid2" id="gh-grid"></div>
+
+<!-- 官方媒体 -->
+<h2 class="section-title">📡 官方媒体</h2>
+<div class="grid2" id="official-grid"></div>
+
+<!-- International News -->
+<h2 class="section-title">🌍 国际新闻</h2>
+<div class="grid2" id="intl-grid"></div>
+
+<!-- Baidu Hot Search -->
+<h2 class="section-title">🔥 今日热搜</h2>
+<div class="grid2" id="hot-grid"></div>
+
+</div>
+
+<footer class="footer">数据来源：百度热搜 · GitHub Trending · Google News · 2026-05-29</footer>
+
+<script>
+var ghData = [{"rank": 1, "owner": "harry0703", "name": "MoneyPrinterTurbo", "url": "https://github.com/harry0703/MoneyPrinterTurbo", "description": "利用AI大模型，一键生成高清短视频。支持文案生成、素材拼接、配音合成全流程，是目前最火的AI短视频自动生成工具。", "language": "Python", "stars": "68,503", "starsToday": "3,563"}, {"rank": 2, "owner": "microsoft", "name": "markitdown", "url": "https://github.com/microsoft/markitdown", "description": "微软开源的文档转Markdown工具，支持PDF、Word、Excel、PPT、图片等格式一键转换为干净Markdown，是AI知识库构建的核心预处理工具。", "language": "Python", "stars": "128,688", "starsToday": "1,876"}, {"rank": 3, "owner": "EveryInc", "name": "compound-engineering-plugin", "url": "https://github.com/EveryInc/compound-engineering-plugin", "description": "Compound Engineering 官方插件，同时支持 Claude Code、Codex、Cursor 等主流 AI 编程工具，提供工程最佳实践和工作流加速。", "language": "TypeScript", "stars": "17,961", "starsToday": "354"}, {"rank": 4, "owner": "twentyhq", "name": "twenty", "url": "https://github.com/twentyhq/twenty", "description": "Salesforce 的开源替代品，专为 AI 时代设计。现代化 CRM 系统，支持自定义对象、工作流自动化、API 优先架构。", "language": "TypeScript", "stars": "48,155", "starsToday": "575"}, {"rank": 5, "owner": "anthropics", "name": "claude-code", "url": "https://github.com/anthropics/claude-code", "description": "Anthropic 官方 AI 编程助手，运行在终端中，理解代码库上下文，通过自然语言执行日常任务、解释复杂代码、处理 Git 工作流。", "language": "TypeScript", "stars": "127,613", "starsToday": "319"}, {"rank": 6, "owner": "Leonxlnx", "name": "taste-skill", "url": "https://github.com/Leonxlnx/taste-skill", "description": "给你的 AI 装上好品味——阻止 AI 生成无聊、通用的平庸内容。通过设计 token 和风格约束提升 AI 输出质量，已获 27k+ 星。", "language": "Markdown", "stars": "27,499", "starsToday": "2,066"}, {"rank": 7, "owner": "cursor", "name": "plugins", "url": "https://github.com/cursor/plugins", "description": "Cursor 官方插件规范和官方插件集，定义了 AI 编辑器插件的标准接口，推动 AI 编程工具生态标准化。", "language": "TypeScript", "stars": "1,170", "starsToday": "129"}, {"rank": 8, "owner": "run-llama", "name": "liteparse", "url": "https://github.com/run-llama/liteparse", "description": "LlamaIndex 团队推出的快速开源文档解析器，专注于高效、准确地从各类文档中提取结构化内容，日增近千星。", "language": "Python", "stars": "6,749", "starsToday": "932"}, {"rank": 9, "owner": "galilai-group", "name": "stable-worldmodel", "url": "https://github.com/galilai-group/stable-worldmodel", "description": "可复现的世界模型研究与评估平台，为 AI 智能体提供标准化的环境建模和基准测试框架。", "language": "Python", "stars": "1,054", "starsToday": "280"}, {"rank": 10, "owner": "openai", "name": "codex-cli", "url": "https://github.com/openai/codex-cli", "description": "OpenAI 官方 Codex CLI 工具，在终端中运行的 AI 编程代理，支持多文件编辑、测试运行和 Git 操作，标杆级 AI 编码助手。", "language": "Python", "stars": "89,500", "starsToday": "1,200"}];
+var intlData = [{"title": "今年一季度欧盟对美货物出口同比下降30%", "source": "chinanews.com.cn", "region": "欧洲", "url": "https://www.baidu.com/s?wd=欧盟对美货物出口同比下降30%25"}, {"title": "美国、丹麦和格陵兰岛三方代表在华盛顿举行新一轮谈判", "source": "21财经", "region": "美洲", "url": "https://www.baidu.com/s?wd=美国丹麦格陵兰岛三方谈判"}, {"title": "美式言论自由？美国司法部欲调取批评政府的网民信息", "source": "chinanews.com.cn", "region": "美洲", "url": "https://www.baidu.com/s?wd=美国司法部调取批评政府网民信息"}, {"title": "以军称打死哈马斯“加沙城旅”副指挥官", "source": "中安在线", "region": "中东", "url": "https://www.baidu.com/s?wd=以军打死哈马斯加沙城旅副指挥官"}, {"title": "哈马斯证实其军事领导人身亡 以军称其为最后一名核心人物", "source": "财新", "region": "中东", "url": "https://www.baidu.com/s?wd=哈马斯军事领导人身亡"}, {"title": "万斯：美伊谈判已取得“很大进展” 特朗普会否签署协议尚待确定", "source": "长江网", "region": "中东", "url": "https://www.baidu.com/s?wd=美伊谈判进展特朗普签署协议"}, {"title": "油价大跌超5%刷新5月低点，伊朗披露美伊谅解备忘录框架", "source": "新浪财经", "region": "中东", "url": "https://www.baidu.com/s?wd=油价大跌伊朗美伊谅解备忘录"}, {"title": "也门前总统哈迪去世", "source": "紫荆网", "region": "中东", "url": "https://www.baidu.com/s?wd=也门前总统哈迪去世"}, {"title": "泰越强化合作与投资联盟 共同争夺东盟外资高地", "source": "商务部", "region": "南亚", "url": "https://www.baidu.com/s?wd=泰越合作投资联盟东盟外资"}, {"title": "越南领导人苏林首访泰国 双方同意深化两国关系", "source": "联合早报", "region": "南亚", "url": "https://www.baidu.com/s?wd=越南领导人苏林首访泰国"}];
+var officialData = [{"title": "神舟二十一号航天员乘组安全返回 三名航天员状态良好", "source": "新华社", "url": "https://www.baidu.com/s?wd=神舟二十一号航天员返回"}, {"title": "外交部：坚决反对加拿大军舰派至台湾海峡挑衅行为", "source": "人民日报", "url": "https://www.baidu.com/s?wd=外交部加拿大军舰台湾海峡"}, {"title": "国家卫健委：四类人群将受益于新出台的专项保障政策", "source": "央视新闻", "url": "https://www.baidu.com/s?wd=四类人群专项保障政策"}, {"title": "丁向群同志任国家金融监督管理总局党委书记", "source": "新华社", "url": "https://www.baidu.com/s?wd=丁向群任金融监管总局党委书记"}, {"title": "新疆吐鲁番市发生5.0级地震 暂无人员伤亡报告", "source": "央视新闻", "url": "https://www.baidu.com/s?wd=新疆吐鲁番5.0级地震"}];
+var hotData = [{"rank": 1, "title": "夜空中最亮的星", "heat": "790万", "url": "https://www.baidu.com/s?wd=夜空中最亮的星"}, {"rank": 2, "title": "释永信一审被判24年", "heat": "781万", "url": "https://www.baidu.com/s?wd=释永信一审被判24年"}, {"rank": 3, "title": "新规：禁止幼儿园采购汉堡三明治等", "heat": "771万", "url": "https://www.baidu.com/s?wd=禁止幼儿园采购汉堡三明治"}, {"rank": 4, "title": "国家首次专门发文 这四类人群受益", "heat": "762万", "url": "https://www.baidu.com/s?wd=四类人群受益首次专门发文"}, {"rank": 5, "title": "神二十一航天员乘组回家", "heat": "752万", "url": "https://www.baidu.com/s?wd=神二十一航天员乘组回家"}, {"rank": 6, "title": "越来越多日本人办理“死后离婚”", "heat": "743万", "url": "https://www.baidu.com/s?wd=日本人办理死后离婚"}, {"rank": 7, "title": "诺基亚发布首款微聊手机 售价199元", "heat": "733万", "url": "https://www.baidu.com/s?wd=诺基亚微聊手机199元"}, {"rank": 8, "title": "iPhone18Pro四色实锤", "heat": "724万", "url": "https://www.baidu.com/s?wd=iPhone18Pro四色"}, {"rank": 9, "title": "演员刘红梅病逝 曾出演“水浒传”", "heat": "715万", "url": "https://www.baidu.com/s?wd=演员刘红梅病逝水浒传"}, {"rank": 10, "title": "广东汕头一道路被晒到突然炸开", "heat": "705万", "url": "https://www.baidu.com/s?wd=汕头道路被晒炸开"}, {"rank": 11, "title": "雷军称被何小鹏李斌骗了", "heat": "685万", "url": "https://www.baidu.com/s?wd=雷军被何小鹏李斌骗了"}, {"rank": 12, "title": "“广东高考将用AI批卷”不实", "heat": "676万", "url": "https://www.baidu.com/s?wd=广东高考AI批卷不实"}, {"rank": 13, "title": "日本全境调兵 12万居民转移", "heat": "666万", "url": "https://www.baidu.com/s?wd=日本全境调兵12万居民转移"}, {"rank": 14, "title": "26岁老师赛课时猝死 多方回应", "heat": "656万", "url": "https://www.baidu.com/s?wd=26岁老师赛课猝死"}, {"rank": 15, "title": "开了一晚上空调 女子肺白了大半", "heat": "647万", "url": "https://www.baidu.com/s?wd=开空调女子肺白了大半"}, {"rank": 16, "title": "上海一小摊被韩国人“包围”", "heat": "637万", "url": "https://www.baidu.com/s?wd=上海小摊被韩国人包围"}, {"rank": 17, "title": "博主“哈尼小微”被虫咬后感染去世", "heat": "627万", "url": "https://www.baidu.com/s?wd=哈尼小微被虫咬感染去世"}, {"rank": 18, "title": "患者曝名医让儿子代诊致其流产", "heat": "618万", "url": "https://www.baidu.com/s?wd=名医让儿子代诊致流产"}, {"rank": 19, "title": "江西：坚决拥护党中央决定", "heat": "608万", "url": "https://www.baidu.com/s?wd=江西坚决拥护党中央决定"}, {"rank": 20, "title": "中学校长鼓励孩子们积攒“旧笔芯”", "heat": "599万", "url": "https://www.baidu.com/s?wd=中学校长鼓励积攒旧笔芯"}];
+
+function buildGh() {
+  var g = document.getElementById('gh-grid'), h = '';
+  ghData.forEach(function(r) {
+    h += '<div class="card gh-card"><h3><a href="' + r.url + '" target="_blank">' + r.owner + ' / ' + r.name + '</a></h3><p class="desc">' + r.description + '</p><span class="lang">' + r.language + '</span>⭐ ' + r.stars + ' <span style="color:var(--accent);font-size:0.75rem">+' + r.starsToday + ' today</span></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildOfficial() {
+  var g = document.getElementById('official-grid'), h = '';
+  officialData.forEach(function(r) {
+    h += '<div class="card"><span class="rank" style="color:var(--text3)">' + r.source + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildIntl() {
+  var g = document.getElementById('intl-grid'), h = '';
+  intlData.forEach(function(r) {
+    h += '<div class="card intl-card"><span class="region region-' + r.region + '">' + r.region + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3><p class="meta">' + r.source + '</p></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildHot() {
+  var g = document.getElementById('hot-grid'), h = '';
+  hotData.forEach(function(r) {
+    h += '<div class="card"><span class="rank">#' + r.rank + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3><span class="heat">' + r.heat + '</span></div>';
+  });
+  g.innerHTML = h;
+}
+
+buildGh(); buildOfficial(); buildIntl(); buildHot();
+</script>
+
+</body>
+</html>

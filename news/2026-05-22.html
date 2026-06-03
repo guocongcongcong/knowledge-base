@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日新闻 — 2026年5月22日 星期五</title>
+<style>
+:root {
+  --bg: #f9f9f8;
+  --card-bg: #ffffff;
+  --text-primary: #111110;
+  --text-secondary: #6b6b67;
+  --text-tertiary: #9c9c97;
+  --border: #e8e8e4;
+  --border-hover: #d4d4d0;
+  --accent: #1a6ff5;
+  --accent-light: #e8f1fe;
+  --header-bg: #111110;
+  --header-text: #ffffff;
+  --max-w: 960px;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 2px 8px rgba(0,0,0,0.06);
+  --transition: 160ms ease;
+  --font-mono: 'SF Mono', 'Fira Code', 'Cascadia Code', 'JetBrains Mono', ui-monospace, monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans CJK SC', 'WenQuanYi Micro Hei', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.header {
+  background: linear-gradient(160deg, #111110 0%, #1a1a2e 50%, #111827 100%);
+  color: var(--header-text);
+  padding: 56px 24px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.header::before {
+  content: '';
+  position: absolute;
+  top: -60%;
+  right: -20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(26,111,245,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.header-inner { max-width: var(--max-w); margin: 0 auto; }
+.header-date {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+.header-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,0.55);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+
+.main { max-width: var(--max-w); margin: 0 auto; padding: 40px 24px 60px; }
+
+.section { margin-bottom: 52px; }
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+}
+.section-count {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+
+/* News Grid */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.news-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+.news-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+.news-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.news-rank {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+.news-rank-num { font-size: 16px; color: var(--text-secondary); font-weight: 700; }
+.news-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-left: auto; }
+.news-category {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+.cat-时政 { background: #e8f1fe; color: #2563eb; }
+.cat-科技 { background: #e3f5eb; color: #16a34a; }
+.cat-社会 { background: #fff3e8; color: #ea580c; }
+.cat-国际 { background: #f3edff; color: #7c3aed; }
+.cat-经济 { background: #fef9e7; color: #b8860b; }
+.cat-娱乐 { background: #fde8f1; color: #db2777; }
+.cat-军事 { background: #fde8e8; color: #dc2626; }
+.cat-教育 { background: #e3f5f7; color: #0891b2; }
+.cat-文化 { background: #eeedfc; color: #4f46e5; }
+
+.news-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.news-link:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+.news-title {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+}
+.news-summary {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+.news-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 6px;
+}
+.news-source {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  letter-spacing: 0.03em;
+}
+.news-heat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.heat-bar-wrap {
+  width: 64px;
+  height: 4px;
+  background: #eee;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.heat-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #1a6ff5 0%, #6366f1 60%, #dc2626 100%);
+  transition: width 600ms ease;
+}
+.news-card:hover .heat-bar-fill { filter: brightness(1.1); }
+.heat-value {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-tertiary);
+  font-weight: 500;
+  min-width: 60px;
+  text-align: right;
+}
+
+/* GitHub Grid */
+.gh-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.gh-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  cursor: default;
+}
+.gh-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+.gh-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.gh-rank {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-tertiary);
+}
+.gh-stats {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+.gh-stars-total { color: var(--text-secondary); font-weight: 600; }
+.gh-stars-today { color: #16a34a; font-weight: 600; }
+.gh-repo {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  word-break: break-all;
+}
+.gh-repo-owner { color: var(--text-tertiary); font-weight: 500; }
+.gh-repo-name { color: var(--text-primary); }
+.gh-repo-link { color: var(--accent); text-decoration: none; word-break: break-all; }
+.gh-repo-link:hover { text-decoration: underline; }
+.gh-lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.lang-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.lang-TypeScript .lang-dot { background: #3178c6; }
+.lang-TypeScript { color: #3178c6; }
+.lang-Python .lang-dot { background: #16a34a; }
+.lang-Python { color: #16a34a; }
+.lang-Rust .lang-dot { background: #ea580c; }
+.lang-Rust { color: #ea580c; }
+.lang-Shell .lang-dot { background: #6b7280; }
+.lang-Shell { color: #6b7280; }
+.lang-Markdown .lang-dot { background: #7c3aed; }
+.lang-Markdown { color: #7c3aed; }
+.lang-C\# .lang-dot { background: #7b3fe4; }
+.lang-C\# { color: #7b3fe4; }
+.lang-N\/A .lang-dot { background: #9b9b9b; }
+.lang-N\/A { color: #9b9b9b; }
+.gh-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.gh-detail {
+  font-size: 12.5px;
+  color: var(--text-tertiary);
+  line-height: 1.55;
+  padding-top: 4px;
+  border-top: 1px solid var(--border);
+}
+
+/* Official Media */
+.official-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.official-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.official-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-sm);
+}
+.official-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.official-source {
+  font-size: 11px;
+  font-weight: 700;
+  color: #dc2626;
+  letter-spacing: 0.04em;
+}
+.official-title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--text-primary);
+}
+.official-summary {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.footer {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+.footer-text {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  line-height: 1.7;
+}
+.footer-dot { margin: 0 8px; color: var(--border); }
+
+@media (max-width: 768px) {
+  .header { padding: 44px 20px 36px; }
+  .header-date { font-size: 24px; }
+  .header-sub { font-size: 14px; }
+  .main { padding: 28px 16px 40px; }
+  .news-grid,
+  .gh-grid,
+  .official-grid { grid-template-columns: 1fr; gap: 8px; }
+  .section { margin-bottom: 36px; }
+  .section-title { font-size: 18px; }
+  .news-card { padding: 16px 18px; }
+  .gh-card { padding: 16px 18px; }
+  .heat-bar-wrap { width: 48px; }
+  .heat-value { font-size: 10px; }
+}
+@media (max-width: 375px) {
+  .header { padding: 36px 16px 28px; }
+  .header-date { font-size: 21px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1 class="header-date">2026年5月22日</h1>
+    <p class="header-sub">星期五 · GitHub Trending + 官方媒体 + 百度热搜</p>
+  </div>
+</header>
+
+<main class="main">
+
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">GitHub Trending</h2>
+      <span class="section-count">Top 10</span>
+    </div>
+    <div class="gh-grid" id="gh-grid"></div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">官方媒体</h2>
+      <span class="section-count">5 条</span>
+    </div>
+    <div class="official-grid" id="official-grid"></div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">今日热搜</h2>
+      <span class="section-count">Top 20</span>
+    </div>
+    <div class="news-grid" id="news-grid"></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p class="footer-text">数据来源：百度热搜 <span class="footer-dot">·</span> GitHub Trending <span class="footer-dot">·</span> 新华社/人民日报/央视新闻<br>生成时间：2026-05-22T08:00:00+08:00</p>
+</footer>
+
+<script>
+const newsData = [{"rank": 1, "title": "寄望中俄关系发展", "summary": "中俄元首外交引领两国战略协作进入新阶段，多领域合作深化", "source": "百度热搜", "category": "时政", "heat": 7900000, "url": "https://www.baidu.com/s?wd=寄望中俄关系发展&sa=fyb_news"}, {"rank": 2, "title": "微信回应为何只能撤回2分钟内消息", "summary": "微信团队解释消息撤回机制的设计逻辑：平衡用户需求与信息安全", "source": "百度热搜", "category": "科技", "heat": 7800000, "url": "https://www.baidu.com/s?wd=微信回应为何只能撤回2分钟内消息&sa=fyb_news"}, {"rank": 3, "title": "一只潦草小狗带火20亿元商圈", "summary": "成都一商场因手工潦草小狗IP爆红，周边商圈经济快速升温", "source": "百度热搜", "category": "社会", "heat": 7710000, "url": "https://www.baidu.com/s?wd=一只潦草小狗带火20亿元商圈&sa=fyb_news"}, {"rank": 4, "title": "2026文化强国建设高峰论坛在深圳开幕", "summary": "全国文化领域顶级盛会召开，探讨文化自信与创新驱动战略", "source": "百度热搜", "category": "文化", "heat": 7610000, "url": "https://www.baidu.com/s?wd=2026文化强国建设高峰论坛在深圳开幕&sa=fyb_news"}, {"rank": 5, "title": "女子向回收箱投近40斤旧衣提现被拒", "summary": "旧衣回收平台积分规则争议，消费者维权引发公众讨论", "source": "百度热搜", "category": "社会", "heat": 7520000, "url": "https://www.baidu.com/s?wd=女子向回收箱投近40斤旧衣提现被拒&sa=fyb_news"}, {"rank": 6, "title": "印媒：中国38个月建成世界最大火车站", "summary": "印度媒体关注中国基建速度，深圳西丽站刷新全球最大记录", "source": "百度热搜", "category": "国际", "heat": 7420000, "url": "https://www.baidu.com/s?wd=印媒中国38个月建成世界最大火车站&sa=fyb_news"}, {"rank": 7, "title": "净网：拍到野生华南虎系谣言", "summary": "官方辟谣网络流传的华南虎照片，呼吁公众不信谣不传谣", "source": "百度热搜", "category": "社会", "heat": 7330000, "url": "https://www.baidu.com/s?wd=拍到野生华南虎系谣言&sa=fyb_news"}, {"rank": 8, "title": "遭总统痛批后韩媒就涉华假新闻道歉", "summary": "韩国媒体在中韩关系敏感期发布不实涉华报道引发外交风波", "source": "百度热搜", "category": "国际", "heat": 7230000, "url": "https://www.baidu.com/s?wd=韩媒就涉华假新闻道歉&sa=fyb_news"}, {"rank": 9, "title": "老爷爷为妻子摘花花主人改警示牌", "summary": "暖心故事：老爷爷为患病妻子偷摘花，花主人被感动改写告示", "source": "百度热搜", "category": "社会", "heat": 7130000, "url": "https://www.baidu.com/s?wd=老爷爷为妻子摘花花主人改警示牌&sa=fyb_news"}, {"rank": 10, "title": "电影澎湖海战官宣定档", "summary": "历史战争大片《澎湖海战》正式公布上映日期，引发影迷期待", "source": "百度热搜", "category": "娱乐", "heat": 7040000, "url": "https://www.baidu.com/s?wd=澎湖海战官宣定档&sa=fyb_news"}, {"rank": 11, "title": "省的油钱全贴进修车费了", "summary": "新能源车主吐槽：电费省了但维修保养成本超预期", "source": "百度热搜", "category": "社会", "heat": 6940000, "url": "https://www.baidu.com/s?wd=省的油钱全贴进修车费了&sa=fyb_news"}, {"rank": 12, "title": "大量百元面试裙穿过后被退货退款", "summary": "电商退货乱象：面试专用服装遭大量短期使用后恶意退货", "source": "百度热搜", "category": "社会", "heat": 6850000, "url": "https://www.baidu.com/s?wd=面试裙穿过后被退货退款&sa=fyb_news"}, {"rank": 13, "title": "疑似景甜代孕协议曝光工作室回应", "summary": "网络流传明星代孕协议，景甜工作室紧急发文澄清并保留法律追究权", "source": "百度热搜", "category": "娱乐", "heat": 6750000, "url": "https://www.baidu.com/s?wd=景甜代孕协议&sa=fyb_news"}, {"rank": 14, "title": "父母弄散儿子拼3天的积木感觉天塌了", "summary": "亲子关系引发热议：父母不小心弄散孩子心爱的积木作品", "source": "百度热搜", "category": "社会", "heat": 6660000, "url": "https://www.baidu.com/s?wd=父母弄散儿子拼3天积木&sa=fyb_news"}, {"rank": 15, "title": "流动瓜摊老板往西瓜上抹不明液体", "summary": "食品安全警示：路边流动瓜摊疑似使用添加剂引发消费者担忧", "source": "百度热搜", "category": "社会", "heat": 6560000, "url": "https://www.baidu.com/s?wd=瓜摊老板往西瓜上抹不明液体&sa=fyb_news"}, {"rank": 16, "title": "奶奶跨越5000公里探望5胞胎泪洒现场", "summary": "感人一幕：年迈奶奶远赴千里首次见到孙辈五胞胎", "source": "百度热搜", "category": "社会", "heat": 6460000, "url": "https://www.baidu.com/s?wd=奶奶探望5胞胎泪洒现场&sa=fyb_news"}, {"rank": 17, "title": "孕妇江边失联丈夫崩溃我们感情很好", "summary": "重庆孕妇江边散步失联超24小时，丈夫跪地痛哭引发社会关注", "source": "百度热搜", "category": "社会", "heat": 6370000, "url": "https://www.baidu.com/s?wd=孕妇江边失联&sa=fyb_news"}, {"rank": 18, "title": "为何AI总会一本正经地胡说八道", "summary": "AI幻觉现象深度解读：大语言模型为何会自信满满地输出错误信息", "source": "百度热搜", "category": "科技", "heat": 6280000, "url": "https://www.baidu.com/s?wd=AI一本正经胡说八道&sa=fyb_news"}, {"rank": 19, "title": "今夜请为他们的17岁呐喊", "summary": "世界儿童日特别策划：关注青少年心理健康与成长保护", "source": "百度热搜", "category": "社会", "heat": 6190000, "url": "https://www.baidu.com/s?wd=为17岁呐喊&sa=fyb_news"}, {"rank": 20, "title": "李在明批评韩媒涉华不实报道", "summary": "韩国在野党领袖谴责部分媒体对华负面炒作，呼吁客观报道", "source": "百度热搜", "category": "国际", "heat": 6080000, "url": "https://www.baidu.com/s?wd=李在明批评韩媒涉华不实报道&sa=fyb_news"}];
+
+const ghData = [{"rank": 1, "owner": "anthropics", "name": "claude-plugins-official", "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.", "language": "Python", "stars": "23,022", "starsToday": "682", "forks": "-", "detail": "Anthropic 官方维护的 Claude Code 插件目录，汇集经过审核的高质量插件。覆盖代码审查、自动化部署、安全审计、数据库管理等场景。每个插件经过 Anthropic 团队验证，确保安全性和兼容性，是 Claude Code 用户扩展能力的首选入口。", "url": "https://github.com/anthropics/claude-plugins-official"}, {"rank": 2, "owner": "colbymchenry", "name": "codegraph", "description": "Pre-indexed code knowledge graph for Claude Code, Codex, Cursor, and OpenCode — fewer tokens, fewer tool calls, 100% local", "language": "TypeScript", "stars": "14,482", "starsToday": "4,294", "forks": "-", "detail": "预索引的代码知识图谱工具，为 Claude Code/Codex/Cursor/OpenCode 预建项目索引。通过语义图谱理解代码结构，让 AI 编程助手用更少 token 和工具调用完成任务。完全本地运行，零数据外泄。", "url": "https://github.com/colbymchenry/codegraph"}, {"rank": 3, "owner": "multica-ai", "name": "andrej-karpathy-skills", "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.", "language": "N/A", "stars": "143,931", "starsToday": "2,614", "forks": "-", "detail": "源自 Andrej Karpathy 对 LLM 编程的深度观察，一个 CLAUDE.md 文件即可显著改善 Claude Code 行为——避免过度工程化、减少幻觉、提升代码质量。14 万星证明其方法论被 AI 编程社区广泛认可。", "url": "https://github.com/multica-ai/andrej-karpathy-skills"}, {"rank": 4, "owner": "dotnet", "name": "skills", "description": "Repository for skills to assist AI coding agents with .NET and C#", "language": "C#", "stars": "2,292", "starsToday": "129", "forks": "-", "detail": ".NET 官方团队维护的 AI 编程代理技能库，专注于 C# 和 .NET 生态。为 AI 编码助手提供经过微软验证的技能定义，涵盖 ASP.NET Core、Entity Framework、MAUI 等主流框架场景。", "url": "https://github.com/dotnet/skills"}, {"rank": 5, "owner": "obra", "name": "superpowers", "description": "An agentic skills framework & software development methodology that works.", "language": "Shell", "stars": "201,904", "starsToday": "1,576", "forks": "-", "detail": "一套面向 AI 编程代理的技能框架与软件开发方法论。定义了从需求→设计→实现→审查→部署的完整 Agent 驱动工作流。20 万星，是 AI 编程社区最广泛使用的 Agent 框架。", "url": "https://github.com/obra/superpowers"}, {"rank": 6, "owner": "HKUDS", "name": "CLI-Anything", "description": "CLI-Anything: Making ALL Software Agent-Native -- CLI-Hub: https://clianything.cc/", "language": "Python", "stars": "39,285", "starsToday": "656", "forks": "-", "detail": "香港大学数据科学实验室出品，让所有软件以代理原生方式通过命令行交互。配套 CLI-Hub 平台提供命令行工具索引，使 AI 代理能够操作各种软件，极大扩展了 AI 助手与外部工具的互操作能力。", "url": "https://github.com/HKUDS/CLI-Anything"}, {"rank": 7, "owner": "rmyndharis", "name": "OpenWA", "description": "Free, Open Source, Self-Hosted WhatsApp API Gateway", "language": "TypeScript", "stars": "5,521", "starsToday": "730", "forks": "-", "detail": "免费、开源、自托管的 WhatsApp API 网关。开发者可以通过标准 API 发送消息、管理群组、处理媒体文件，无需依赖官方 WhatsApp Business API，降低了 WhatsApp 自动化集成的门槛。", "url": "https://github.com/rmyndharis/OpenWA"}, {"rank": 8, "owner": "ChromeDevTools", "name": "chrome-devtools-mcp", "description": "Chrome DevTools for coding agents", "language": "TypeScript", "stars": "40,617", "starsToday": "151", "forks": "-", "detail": "Chrome 官方 DevTools 团队发布的 MCP 服务器，让 AI 编程助手直接操控 Chrome 浏览器。支持页面截图、DOM 查询、性能分析、网络请求拦截、Console 日志读取等全部 DevTools 能力。", "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp"}, {"rank": 9, "owner": "rohitg00", "name": "ai-engineering-from-scratch", "description": "Learn it. Build it. Ship it for others.", "language": "Python", "stars": "11,000", "starsToday": "1,333", "forks": "-", "detail": "AI 工程从零开始系统教程。覆盖 Agent 开发全流程：环境搭建→模型选择→工具设计→Agent Loop→部署上线。强调实践：Learn it → Build it → Ship it。", "url": "https://github.com/rohitg00/ai-engineering-from-scratch"}, {"rank": 10, "owner": "teng-lin", "name": "notebooklm-py", "description": "Unofficial Python API and agentic skill for Google NotebookLM. Full programmatic access via Python, CLI, and AI agents.", "language": "Python", "stars": "2,003", "starsToday": "186", "forks": "-", "detail": "非官方 Google NotebookLM Python API 和 Agent Skill。提供对 NotebookLM 的完整编程访问，包括网页 UI 未暴露的功能。支持通过 Python/CLI/AI Agent 程序化操作 NotebookLM。", "url": "https://github.com/teng-lin/notebooklm-py"}];
+
+function fmtRaw(n) {
+  return n.toLocaleString('zh-CN');
+}
+
+const maxHeat = Math.max(...newsData.map(n => n.heat));
+
+function buildNews() {
+  const grid = document.getElementById('news-grid');
+  grid.innerHTML = newsData.map(n => {
+    const pct = Math.round((n.heat / maxHeat) * 100);
+    return `<article class="news-card">
+      <div class="news-card-top">
+        <span class="news-rank">No.<span class="news-rank-num">${String(n.rank).padStart(2,'0')}</span></span>
+        <span class="news-category cat-${n.category}">${n.category}</span>
+      </div>
+      <h3 class="news-title"><a href="${n.url}" target="_blank" class="news-link">${n.title}</a></h3>
+      <p class="news-summary">${n.summary}</p>
+      <div class="news-bottom">
+        <span class="news-source">${n.source}</span>
+        <div class="news-heat">
+          <div class="heat-bar-wrap"><div class="heat-bar-fill" style="width:${pct}%"></div></div>
+          <span class="heat-value">${fmtRaw(n.heat)}</span>
+        </div>
+      </div>
+    </article>`;
+  }).join('');
+}
+
+function buildGh() {
+  const grid = document.getElementById('gh-grid');
+  grid.innerHTML = ghData.map(p => {
+    return `<article class="gh-card">
+      <div class="gh-card-top">
+        <span class="gh-rank">No.${String(p.rank).padStart(2,'0')}</span>
+        <div class="gh-stats">
+          <span class="gh-stars-total">⭐ ${p.stars}</span>
+          <span class="gh-stars-today">+${p.starsToday}</span>
+        </div>
+      </div>
+      <div class="gh-repo">
+        <a class="gh-repo-link" href="https://github.com/${p.owner}/${p.name}" target="_blank" rel="noopener">
+          <span class="gh-repo-owner">${p.owner}</span><span class="gh-repo-name"> / ${p.name}</span>
+        </a>
+      </div>
+      <span class="gh-lang lang-${p.language}"><span class="lang-dot"></span>${p.language}</span>
+      <p class="gh-desc">${p.description}</p>
+      <p class="gh-detail">${p.detail}</p>
+    </article>`;
+  }).join('');
+}
+
+const officialData = [{"title": "2026文化强国建设高峰论坛在深圳开幕", "summary": "全国文化领域顶级盛会召开 探讨文化自信与创新驱动战略", "source": "新华社", "url": "https://www.baidu.com/s?wd=2026文化强国建设高峰论坛&sa=fyb_news"}, {"title": "30多万名不符合条件执法人员被清退", "summary": "全国行政执法队伍大清理 规范执法主体资格提升执法公信力", "source": "人民日报", "url": "https://www.baidu.com/s?wd=不符合条件执法人员被清退&sa=fyb_news"}, {"title": "四部门发文要求中小学座椅有靠背", "summary": "教育部等四部门联合印发通知 保障中小学生健康学习环境", "source": "央视新闻", "url": "https://www.baidu.com/s?wd=中小学座椅有靠背&sa=fyb_news"}, {"title": "前4月全国快递业务量超600亿件", "summary": "快递业保持稳定增长 反映消费市场持续回暖和经济韧性强劲", "source": "国家统计局", "url": "https://www.baidu.com/s?wd=全国快递业务量&sa=fyb_news"}, {"title": "为何AI总会一本正经地胡说八道", "summary": "科技日报深度解读AI幻觉现象：大语言模型自信输出错误信息的根因", "source": "科技日报", "url": "https://www.baidu.com/s?wd=AI一本正经胡说八道&sa=fyb_news"}];
+
+function buildOfficial() {
+  const grid = document.getElementById('official-grid');
+  grid.innerHTML = officialData.map(n => {
+    return `<article class="official-card">
+      <div class="official-top">
+        <span class="official-source">${n.source}</span>
+      </div>
+      <h3 class="official-title">${n.title}</h3>
+      <p class="official-summary">${n.summary}</p>
+    </article>`;
+  }).join('');
+}
+
+buildNews();
+buildGh();
+buildOfficial();
+</script>
+
+</body>
+</html>
