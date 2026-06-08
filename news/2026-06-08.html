@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日新闻 · 2026-06-08</title>
+<style>
+:root{--bg:#f9f9f8;--card-bg:#fff;--text:#1a1a2e;--text2:#52525b;--text3:#a1a1aa;--accent:#4f46e5;--border:#e5e5e7}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,'PingFang SC',sans-serif;min-height:100vh}
+.header{background:linear-gradient(135deg,#1a1a2e 0%,#2d2d44 100%);color:#fff;padding:48px 32px 40px;text-align:center}
+.header h1{font-size:1.5rem;font-weight:600;margin-bottom:6px}
+.header p{font-size:0.875rem;opacity:0.6}
+.container{max-width:960px;margin:0 auto;padding:32px}
+.section-title{font-size:1.1rem;font-weight:600;margin:40px 0 16px;color:var(--text);display:flex;align-items:center;gap:8px}
+.section-title::before{content:'';width:4px;height:20px;background:var(--accent);border-radius:2px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.card{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:16px;transition:all 0.15s}
+.card:hover{border-color:var(--accent);box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.card .rank{font-size:0.75rem;color:var(--accent);font-weight:600;margin-bottom:4px}
+.card h3{font-size:0.9rem;font-weight:500;line-height:1.5;margin-bottom:6px}
+.card h3 a{color:var(--text);text-decoration:none}
+.card h3 a:hover{color:var(--accent);text-decoration:underline}
+.card .meta{font-size:0.75rem;color:var(--text3)}
+.card .heat{display:inline-block;background:var(--accent);color:#fff;font-size:0.65rem;padding:2px 8px;border-radius:10px;margin-left:6px;opacity:0.7}
+.gh-card{padding:18px}
+.gh-card h3{font-size:0.95rem}
+.gh-card h3 a{color:var(--accent)}
+.gh-card .desc{font-size:0.8rem;color:var(--text2);line-height:1.5;margin:6px 0}
+.gh-card .lang{display:inline-block;font-size:0.7rem;color:var(--text3);margin-right:12px}
+.gh-card .lang::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;background:var(--accent)}
+.intl-card{border-left:3px solid var(--accent)}
+.intl-card .region{font-size:0.7rem;padding:2px 6px;border-radius:4px;margin-right:6px;display:inline-block}
+.region-MiddleEast{background:#fef3c7;color:#b45309}
+.region-EastAsia{background:#dbeafe;color:#1d4ed8}
+.region-Americas{background:#ede9fe;color:#6d28d9}
+.region-RussiaUkraine{background:#fee2e2;color:#b91c1c}
+.region-SouthAsia{background:#ffedd5;color:#c2410c}
+.region-Europe{background:#e0e7ff;color:#3730a3}
+.region-Africa{background:#dcfce7;color:#166534}
+.footer{text-align:center;padding:32px;color:var(--text3);font-size:0.75rem;border-top:1px solid var(--border);margin-top:40px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}.container{padding:16px}}
+</style>
+</head>
+<body>
+<header class="header">
+  <h1>📰 每日新闻日报</h1>
+  <p>2026年6月8日 · 星期一</p>
+</header>
+
+<div class="container">
+
+<!-- GitHub Trending -->
+<h2 class="section-title">🔥 GitHub Trending</h2>
+<div class="grid2" id="gh-grid"></div>
+
+<!-- 官方媒体 -->
+<h2 class="section-title">📡 官方媒体</h2>
+<div class="grid2" id="official-grid"></div>
+
+<!-- International News -->
+<h2 class="section-title">🌍 国际新闻</h2>
+<div class="grid2" id="intl-grid"></div>
+
+<!-- Baidu Hot Search -->
+<h2 class="section-title">🔥 今日热搜</h2>
+<div class="grid2" id="hot-grid"></div>
+
+</div>
+
+<footer class="footer">数据来源：百度热搜 · GitHub Trending · Google News · 2026-06-08</footer>
+
+<script>
+var ghData = [{"rank": 1, "owner": "mvanhorn", "name": "last30days-skill", "url": "https://github.com/mvanhorn/last30days-skill", "description": "AI Agent 技能包，可跨 Reddit/X/YouTube/HN/Polymarket 研究任意话题并合成精炼摘要，30天内横扫 3.1 万星。", "language": "Python", "stars": "31,144", "starsToday": "1,111"}, {"rank": 2, "owner": "NousResearch", "name": "hermes-agent", "url": "https://github.com/NousResearch/hermes-agent", "description": "随你成长的AI代理。支持多平台消息、多模型切换、插件系统和知识库管理，18.6万星持续火爆。", "language": "Python", "stars": "185,999", "starsToday": "1,112"}, {"rank": 3, "owner": "Leonxlnx", "name": "taste-skill", "url": "https://github.com/Leonxlnx/taste-skill", "description": "给你的AI加品味——阻止AI生成无聊、通用的\"流水线内容\"。3.6万星，设计质量的守护者。", "language": "TypeScript", "stars": "36,743", "starsToday": "1,103"}, {"rank": 4, "owner": "lfnovo", "name": "open-notebook", "url": "https://github.com/lfnovo/open-notebook", "description": "Notebook LM 的开源替代品，功能更灵活更丰富，支持多语言和自定义知识库，2.7万星。", "language": "Python", "stars": "27,293", "starsToday": "554"}, {"rank": 5, "owner": "aaif-goose", "name": "goose", "url": "https://github.com/aaif-goose/goose", "description": "开源可扩展AI代理，超越代码建议——安装、执行、编辑、测试，支持任意LLM，4.7万星。", "language": "TypeScript", "stars": "47,528", "starsToday": "322"}, {"rank": 6, "owner": "Crosstalk-Solutions", "name": "project-nomad", "url": "https://github.com/Crosstalk-Solutions/project-nomad", "description": "自包含离线生存计算机，内置关键工具、知识和AI，随时随地保持信息畅通和生存能力，近3万星。", "language": "Python", "stars": "29,746", "starsToday": "309"}, {"rank": 7, "owner": "ggml-org", "name": "llama.cpp", "url": "https://github.com/ggml-org/llama.cpp", "description": "C/C++ 高性能LLM推理引擎，支持CPU/GPU混合推理，开源社区的基石项目，11.5万星。", "language": "C++", "stars": "115,349", "starsToday": "289"}, {"rank": 8, "owner": "opencv", "name": "opencv", "url": "https://github.com/opencv/opencv", "description": "开源计算机视觉库，涵盖图像处理、目标检测、人脸识别等经典CV任务，8.8万星老牌标杆。", "language": "C++", "stars": "88,107", "starsToday": "65"}];
+var intlData = [{"title": "菲律宾7.9级强震：房屋坍塌 多国发布海啸预警", "source": "观察者网", "region": "EastAsia", "url": "https://www.baidu.com/s?wd=菲律宾7.9级地震多国海啸预警"}, {"title": "伊朗向以色列发射多轮导弹 以称将\"强力回应\"", "source": "同花顺财经", "region": "MiddleEast", "url": "https://www.baidu.com/s?wd=伊朗向以色列发射导弹强力回应"}, {"title": "中东局势升温：国际油价拉升超2% 特朗普催促重返谈判桌", "source": "新华网", "region": "MiddleEast", "url": "https://www.baidu.com/s?wd=中东局势油价飙升特朗普催促谈判"}, {"title": "韩国股市暴跌8%触发熔断 全球市场震荡", "source": "第一财经", "region": "EastAsia", "url": "https://www.baidu.com/s?wd=韩国股市暴跌8%触发熔断"}, {"title": "叙利亚和伊拉克暂时关闭领空 中东紧张加剧", "source": "中国新闻网", "region": "MiddleEast", "url": "https://www.baidu.com/s?wd=叙利亚伊拉克关闭领空"}, {"title": "苏拉威西海6.6级地震 震感波及多国", "source": "第一财经", "region": "EastAsia", "url": "https://www.baidu.com/s?wd=苏拉威西海6.6级地震"}, {"title": "美防长访问法国 6名子女随行遭美媒吐槽", "source": "环球网", "region": "Europe", "url": "https://www.baidu.com/s?wd=美防长访问法国子女随行"}, {"title": "平壤街头挂起中朝国旗 习近平金正恩互动引关注", "source": "参考消息", "region": "EastAsia", "url": "https://www.baidu.com/s?wd=平壤街头中朝国旗习近平金正恩"}, {"title": "A股开盘暴跌 全球市场避险情绪升温", "source": "证券时报", "region": "EastAsia", "url": "https://www.baidu.com/s?wd=A股开盘暴跌全球市场避险"}, {"title": "泰国百万只粉色海参集体上岸 引发环境担忧", "source": "新浪新闻", "region": "SouthAsia", "url": "https://www.baidu.com/s?wd=泰国粉色海参集体上岸"}];
+var officialData = [{"title": "习近平同金正恩交往的精彩瞬间", "source": "新华社", "url": "https://www.baidu.com/s?wd=习近平同金正恩交往的精彩瞬间"}, {"title": "菲律宾7.9级强震引发海啸预警 中国领事馆紧急提醒", "source": "人民日报", "url": "https://www.baidu.com/s?wd=菲律宾7.9级地震海啸预警"}, {"title": "伊朗向以色列发动导弹袭击 中东局势骤然升级", "source": "央视新闻", "url": "https://www.baidu.com/s?wd=伊朗向以色列发动导弹袭击"}, {"title": "解放军新052D驱逐舰入列 台军震动", "source": "新华社", "url": "https://www.baidu.com/s?wd=解放军新052D入列台军震动"}, {"title": "飞行汽车来了 有望拉动10万亿级市场", "source": "科技日报", "url": "https://www.baidu.com/s?wd=飞行汽车拉动10万亿级市场"}];
+var hotData = [{"rank": 1, "title": "习近平同金正恩交往的精彩瞬间", "heat": "790万", "url": "https://www.baidu.com/s?wd=习近平同金正恩交往的精彩瞬间"}, {"rank": 2, "title": "菲律宾群岛地区发生7.9级地震", "heat": "780万", "url": "https://www.baidu.com/s?wd=菲律宾7.9级地震"}, {"rank": 3, "title": "\"考一半突然发现自己在高考\"", "heat": "771万", "url": "https://www.baidu.com/s?wd=考一半发现自己在高考"}, {"rank": 4, "title": "高考首日这些瞬间让人印象深刻", "heat": "761万", "url": "https://www.baidu.com/s?wd=高考首日瞬间"}, {"rank": 5, "title": "江苏一考生8点59才发现走错考场", "heat": "752万", "url": "https://www.baidu.com/s?wd=江苏考生走错考场"}, {"rank": 6, "title": "火车出发7小时后折返 12306回应", "heat": "742万", "url": "https://www.baidu.com/s?wd=火车折返12306回应"}, {"rank": 7, "title": "时隔两个月 伊朗向以发动导弹袭击", "heat": "733万", "url": "https://www.baidu.com/s?wd=伊朗向以色列发动导弹袭击"}, {"rank": 8, "title": "女孩考完数学自信估分149到150分", "heat": "713万", "url": "https://www.baidu.com/s?wd=女孩考完数学估分149"}, {"rank": 9, "title": "国际宇航科学院：不要擅自回复外星人", "heat": "704万", "url": "https://www.baidu.com/s?wd=不要擅自回复外星人"}, {"rank": 10, "title": "\"锦鲤老师\"精准押中文言文原题", "heat": "694万", "url": "https://www.baidu.com/s?wd=锦鲤老师押中文言文原题"}, {"rank": 11, "title": "以色列正在攻击伊朗境内目标", "heat": "675万", "url": "https://www.baidu.com/s?wd=以色列攻击伊朗境内目标"}, {"rank": 12, "title": "解放军新052D入列 台军为空前震动", "heat": "665万", "url": "https://www.baidu.com/s?wd=解放军新052D入列台军震动"}, {"rank": 13, "title": "直击菲律宾强震：有房屋坍塌成废墟", "heat": "656万", "url": "https://www.baidu.com/s?wd=直击菲律宾强震房屋坍塌"}, {"rank": 14, "title": "A股开盘暴跌", "heat": "647万", "url": "https://www.baidu.com/s?wd=A股开盘暴跌"}, {"rank": 15, "title": "平壤街头已挂起中朝两国国旗", "heat": "637万", "url": "https://www.baidu.com/s?wd=平壤街头中朝两国国旗"}, {"rank": 16, "title": "张桂梅收到了杜富国的微信", "heat": "627万", "url": "https://www.baidu.com/s?wd=张桂梅收到杜富国微信"}, {"rank": 17, "title": "韩国股市暴跌8%触发熔断", "heat": "541万", "url": "https://www.baidu.com/s?wd=韩国股市暴跌熔断"}, {"rank": 18, "title": "飞行汽车来了 有望拉动10万亿级市场", "heat": "571万", "url": "https://www.baidu.com/s?wd=飞行汽车10万亿级市场"}, {"rank": 19, "title": "央视曝光小作坊用拖鞋边角料做牙刷", "heat": "417万", "url": "https://www.baidu.com/s?wd=拖鞋边角料做牙刷曝光"}, {"rank": 20, "title": "记者安慰考生 对方：我已经考上了", "heat": "579万", "url": "https://www.baidu.com/s?wd=记者安慰考生已经考上"}];
+
+function buildGh() {
+  var g = document.getElementById('gh-grid'), h = '';
+  ghData.forEach(function(r) {
+    h += '<div class="card gh-card"><h3><a href="' + r.url + '" target="_blank">' + r.owner + ' / ' + r.name + '</a></h3><p class="desc">' + r.description + '</p><span class="lang">' + r.language + '</span>⭐ ' + r.stars + ' <span style="color:var(--accent);font-size:0.75rem">+' + r.starsToday + ' today</span></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildOfficial() {
+  var g = document.getElementById('official-grid'), h = '';
+  officialData.forEach(function(r) {
+    h += '<div class="card"><span class="rank" style="color:var(--text3)">' + r.source + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildIntl() {
+  var g = document.getElementById('intl-grid'), h = '';
+  intlData.forEach(function(r) {
+    h += '<div class="card intl-card"><span class="region region-' + r.region + '">' + r.region + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3><p class="meta">' + r.source + '</p></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildHot() {
+  var g = document.getElementById('hot-grid'), h = '';
+  hotData.forEach(function(r) {
+    h += '<div class="card"><span class="rank">#' + r.rank + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3><span class="heat">' + r.heat + '</span></div>';
+  });
+  g.innerHTML = h;
+}
+
+buildGh(); buildOfficial(); buildIntl(); buildHot();
+</script>
+
+</body>
+</html>
