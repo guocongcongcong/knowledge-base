@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日新闻 · 2026-06-09</title>
+<style>
+:root{--bg:#f9f9f8;--card-bg:#fff;--text:#1a1a2e;--text2:#52525b;--text3:#a1a1aa;--accent:#4f46e5;--border:#e5e5e7}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,'PingFang SC',sans-serif;min-height:100vh}
+.header{background:linear-gradient(135deg,#1a1a2e 0%,#2d2d44 100%);color:#fff;padding:48px 32px 40px;text-align:center}
+.header h1{font-size:1.5rem;font-weight:600;margin-bottom:6px}
+.header p{font-size:0.875rem;opacity:0.6}
+.container{max-width:960px;margin:0 auto;padding:32px}
+.section-title{font-size:1.1rem;font-weight:600;margin:40px 0 16px;color:var(--text);display:flex;align-items:center;gap:8px}
+.section-title::before{content:'';width:4px;height:20px;background:var(--accent);border-radius:2px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.card{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:16px;transition:all 0.15s}
+.card:hover{border-color:var(--accent);box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.card .rank{font-size:0.75rem;color:var(--accent);font-weight:600;margin-bottom:4px}
+.card h3{font-size:0.9rem;font-weight:500;line-height:1.5;margin-bottom:6px}
+.card h3 a{color:var(--text);text-decoration:none}
+.card h3 a:hover{color:var(--accent);text-decoration:underline}
+.card .meta{font-size:0.75rem;color:var(--text3)}
+.card .heat{display:inline-block;background:var(--accent);color:#fff;font-size:0.65rem;padding:2px 8px;border-radius:10px;margin-left:6px;opacity:0.7}
+.gh-card{padding:18px}
+.gh-card h3{font-size:0.95rem}
+.gh-card h3 a{color:var(--accent)}
+.gh-card .desc{font-size:0.8rem;color:var(--text2);line-height:1.5;margin:6px 0}
+.gh-card .lang{display:inline-block;font-size:0.7rem;color:var(--text3);margin-right:12px}
+.gh-card .lang::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;background:var(--accent)}
+.intl-card{border-left:3px solid var(--accent)}
+.intl-card .region{font-size:0.7rem;padding:2px 6px;border-radius:4px;margin-right:6px;display:inline-block}
+.region-MiddleEast{background:#fef3c7;color:#b45309}
+.region-EastAsia{background:#dbeafe;color:#1d4ed8}
+.region-Americas{background:#ede9fe;color:#6d28d9}
+.region-RussiaUkraine{background:#fee2e2;color:#b91c1c}
+.region-SouthAsia{background:#ffedd5;color:#c2410c}
+.region-Europe{background:#e0e7ff;color:#3730a3}
+.region-Africa{background:#dcfce7;color:#166534}
+.footer{text-align:center;padding:32px;color:var(--text3);font-size:0.75rem;border-top:1px solid var(--border);margin-top:40px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}.container{padding:16px}}
+</style>
+</head>
+<body>
+<header class="header">
+  <h1>📰 每日新闻日报</h1>
+  <p>2026年6月8日 · 星期一</p>
+</header>
+
+<div class="container">
+
+<!-- GitHub Trending -->
+<h2 class="section-title">🔥 GitHub Trending</h2>
+<div class="grid2" id="gh-grid"></div>
+
+<!-- 官方媒体 -->
+<h2 class="section-title">📡 官方媒体</h2>
+<div class="grid2" id="official-grid"></div>
+
+<!-- International News -->
+<h2 class="section-title">🌍 国际新闻</h2>
+<div class="grid2" id="intl-grid"></div>
+
+<!-- Baidu Hot Search -->
+<h2 class="section-title">🔥 今日热搜</h2>
+<div class="grid2" id="hot-grid"></div>
+
+</div>
+
+<footer class="footer">数据来源：百度热搜 · GitHub Trending · Google News · 2026-06-09</footer>
+
+<script>
+var ghData = [{"rank": 1, "owner": "mvanhorn", "name": "last30days-skill", "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary", "starsToday": "3,177"}, {"rank": 2, "owner": "RyanCodrai", "name": "turbovec", "description": "A vector index built on TurboQuant, written in Rust with Python bindings", "starsToday": "1,800"}, {"rank": 3, "owner": "roboflow", "name": "supervision", "description": "We write your reusable computer vision tools", "starsToday": "735"}, {"rank": 4, "owner": "opencv", "name": "opencv", "description": "Open Source Computer Vision Library", "starsToday": "395"}, {"rank": 5, "owner": "refactoringhq", "name": "tolaria", "description": "Desktop app to manage markdown knowledge bases", "starsToday": "821"}, {"rank": 6, "owner": "aaif-goose", "name": "goose", "description": "an open source, extensible AI agent that goes beyond code suggestions", "starsToday": "490"}, {"rank": 7, "owner": "Andyyyy64", "name": "whichllm", "description": "Find the local LLM that actually runs and performs best on your hardware", "starsToday": "631"}, {"rank": 8, "owner": "TapXWorld", "name": "ChinaTextbook", "description": "所有小初高、大学PDF教材", "starsToday": "517"}, {"rank": 9, "owner": "yikart", "name": "AiToEarn", "description": "Let's use AI to Earn!", "starsToday": "786"}, {"rank": 10, "owner": "santifer", "name": "career-ops", "description": "AI-powered job search system built on Claude Code. 14 skill modes, Go dashboard, PDF generation, batch processing", "starsToday": "1,114"}];
+var intlData = [{"title": "特朗普称美伊谈判进入\"最后关头\"", "summary": "美伊和平协议或两三天内签署，伊以停火", "source": "中国网/财新", "region": "中东"}, {"title": "美军\"阿帕奇\"直升机在霍尔木兹海峡坠毁", "summary": "特朗普发声：人员平安", "source": "央视网/观察者", "region": "中东"}, {"title": "北爱尔兰贝尔法斯特发生恶性持刀袭击事件", "summary": "多人受伤，警方已介入调查", "source": "中国新闻网", "region": "欧洲"}, {"title": "日本民间团体人士：必须阻止日本强军扩武进程", "summary": "日本\"国家情报会议\"法案或将引上危险道路", "source": "新华网/人民网", "region": "东亚"}, {"title": "伊朗革命卫队：已对以色列袭击伊石化企业行为作出回应", "summary": "伊以冲突持续升级", "source": "央视网", "region": "中东"}, {"title": "菲律宾棉兰老岛附近海域发生5.4级地震", "summary": "地震详情待进一步披露", "source": "央广网", "region": "南亚"}, {"title": "印尼解除此前发布的海啸预警", "summary": "预警已解除，暂无重大伤亡", "source": "新华网", "region": "南亚"}, {"title": "特朗普总统呼吁后，以色列和伊朗停止了冲突", "summary": "美正与德黑兰进行\"最后谈判\"", "source": "美国之音", "region": "中东"}];
+var officialData = [{"title": "习近平结束对朝鲜国事访问回到北京", "summary": "中共中央总书记、国家主席习近平圆满结束对朝鲜的国事访问，于6月8日下午乘专机回到北京", "source": "新华社"}, {"title": "外交部：敦促韩方能恪守一个中国原则", "summary": "中方就韩国涉台问题表明严正立场", "source": "人民日报"}, {"title": "中方回应\"美请求恢复对日稀土出口\"", "summary": "中方有关部门将依法依规作出决定", "source": "央视新闻"}, {"title": "单笔受贿11.03亿 白天辉的死刑不冤", "summary": "最高人民法院依法核准对白天辉的死刑判决", "source": "新华社"}, {"title": "中国首颗时间胶囊落地四川", "summary": "\"时间胶囊\"项目正式启动，旨在为未来文明留下数字档案", "source": "科技日报"}];
+var hotData = [{"rank": 1, "title": "习近平结束对朝鲜国事访问回到北京", "heat": "790万"}, {"rank": 2, "title": "美国曾关闭GPS让中国船漂泊大海33天", "heat": "780万"}, {"rank": 3, "title": "张桂梅作废了之前的话", "heat": "771万"}, {"rank": 4, "title": "花篮见证这一刻", "heat": "761万"}, {"rank": 5, "title": "康小伟突发疾病在国家队集训驻地逝世", "heat": "752万"}, {"rank": 6, "title": "王传福：5年后比亚迪规模全球第一", "heat": "742万"}, {"rank": 7, "title": "高考结束厨师爸妈集体\"罢工\"", "heat": "733万"}, {"rank": 8, "title": "国足0比0战平泰国队 全场射门24次", "heat": "723万"}, {"rank": 9, "title": "顾客仅退款1000件衣服被商家找上门", "heat": "713万"}, {"rank": 10, "title": "浙A255T0为你点赞", "heat": "704万"}, {"rank": 11, "title": "U23国足3比0再胜塔吉克斯坦队", "heat": "694万"}, {"rank": 12, "title": "\"浙江一地要热上50℃\"不实", "heat": "684万"}, {"rank": 13, "title": "最近北京的蓝天白云 背后是它在助力", "heat": "675万"}, {"rank": 14, "title": "新疆\"富贵小羊\"摊主累出两层眼袋", "heat": "665万"}, {"rank": 15, "title": "泰国前总理他信获特赦", "heat": "647万"}, {"rank": 16, "title": "北京天空现爱心云 网友：太标准了吧", "heat": "636万"}, {"rank": 17, "title": "男子食用见手青后翻出27楼窗户往下爬", "heat": "627万"}, {"rank": 18, "title": "上海一财务1年给自己多发780万工资", "heat": "617万"}, {"rank": 19, "title": "2小时60通电话 女子确诊过度恋爱脑", "heat": "608万"}, {"rank": 20, "title": "80岁黄百鸣被判处入狱5个月", "heat": "599万"}];
+
+function buildGh() {
+  var g = document.getElementById('gh-grid'), h = '';
+  ghData.forEach(function(r) {
+    h += '<div class="card gh-card"><h3><a href="' + r.url + '" target="_blank">' + r.owner + ' / ' + r.name + '</a></h3><p class="desc">' + r.description + '</p><span class="lang">' + r.language + '</span>⭐ ' + r.stars + ' <span style="color:var(--accent);font-size:0.75rem">+' + r.starsToday + ' today</span></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildOfficial() {
+  var g = document.getElementById('official-grid'), h = '';
+  officialData.forEach(function(r) {
+    h += '<div class="card"><span class="rank" style="color:var(--text3)">' + r.source + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildIntl() {
+  var g = document.getElementById('intl-grid'), h = '';
+  intlData.forEach(function(r) {
+    h += '<div class="card intl-card"><span class="region region-' + r.region + '">' + r.region + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3><p class="meta">' + r.source + '</p></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildHot() {
+  var g = document.getElementById('hot-grid'), h = '';
+  hotData.forEach(function(r) {
+    h += '<div class="card"><span class="rank">#' + r.rank + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3><span class="heat">' + r.heat + '</span></div>';
+  });
+  g.innerHTML = h;
+}
+
+buildGh(); buildOfficial(); buildIntl(); buildHot();
+</script>
+
+</body>
+</html>
