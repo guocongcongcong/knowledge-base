@@ -30,9 +30,21 @@
               "icon": "table",
               "title": "entities"
             }
+          },
+          {
+            "id": "cf7a1b2d3e4f5a6c",
+            "type": "leaf",
+            "state": {
+              "type": "notion-bases-view",
+              "state": {
+                "dbFilePath": "checklists/_database.md"
+              },
+              "icon": "table",
+              "title": "checklists"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -195,8 +207,13 @@
       "notion-bases:Notion bases": false
     }
   },
-  "active": "cd77629cac048a1a",
+  "active": "cf7a1b2d3e4f5a6c",
   "lastOpenFiles": [
+    "concepts/道家核心概念.md",
+    "checklists/_database.md",
+    "queries/_database.md",
+    "raw/_database.md",
+    "未命名.base",
     "dashboard.md",
     "news/2026-05-29.html",
     "index.md",
@@ -220,9 +237,6 @@
     "concepts/Hermes-Agent-三层路由架构设计.md",
     "concepts/Claude-Code-7个必装Skill.md",
     "concepts/Claude-Code-6个隐藏能力.md",
-    "AI Agent 核心概念对照.md",
-    "entities/家味协同项目概览.md",
-    "queries/知识库压缩工具调研.md",
-    "concepts/明知山世界观.md"
+    "AI Agent 核心概念对照.md"
   ]
 }

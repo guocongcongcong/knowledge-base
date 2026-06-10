@@ -1,6 +1,6 @@
 # Wiki Index
 
-共 31 个页面 + checklists
+共 32 个页面 + checklists
 
 > 最后更新: 2026-06-10
 
@@ -11,6 +11,7 @@
 ## 概念
 
 - [[agent-loop-engineering]] — Agent 循环工程全景：ReAct/Plan-Execute/Reflexion 等 5 大模式 + 4 大框架对比
+- [[agent-loop-清华鑫哥]] — 清华鑫哥抖音视频笔记：Loop Engineering 5 步法/6 种拓扑/7 大场景
 - [[一日重启协议]] — Dan Koe 爆文：身份重塑×一日实操，获马斯克百万大奖
 - [[马克思主义]] — 辩证唯物主义、政治经济学、科学社会主义
 - [[论持久战]] — 毛泽东1938年抗战纲领：三阶段、人民战争、游击战战略

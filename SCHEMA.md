@@ -11,6 +11,16 @@
 - **Layer 2 — concepts/ entities/ queries/**: Wiki 页面，LLM 编写维护。**已配置为 Notion Bases 数据库**（表格/看板视图），每页的 frontmatter 自动映射为数据库列。
 - **Layer 3 — SCHEMA.md**: 行为规范，约束 LLM 操作。
 - **Templates/**: Obsidian 模板，LLM 通过模板格式写入新页面。Hermes 不读模板文件，直接按模板格式 write_file。
+- **checklists/**: 行动追踪目录——待校验列表、备忘清单、TODO。与 concepts 区分：concepts 是知识（名词），checklists 是行动（动词）。
+
+## Checklists 规范 (checklists/)
+
+- AI 遇到需要追踪的事项（待校验、待办、备忘）→ 写到 `checklists/` 目录，不散落在日记或对话中
+- 文件名：描述性中文或英文，如 `gh-projects-verification.md`
+- Frontmatter 必含 `created`、`updated`、`status`（pending | in_progress | done）
+- 每条事项用 `- [ ]` 或 `- [x]`，末尾用 `[[wikilink]]` 链回相关概念页
+- 完成的 checklist 保留不删，作为历史记录
+- Dashboard 和 index.md 自动引用 checklists 中的待办项
 
 ## Conventions
 - 文件名: 中文或小写英文+连字符

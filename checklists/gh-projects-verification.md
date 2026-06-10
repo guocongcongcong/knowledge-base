@@ -1,3 +1,11 @@
+---
+created: 2026-06-08
+updated: 2026-06-08
+status: pending
+tags: [github, verification, skills]
+category: checklist
+---
+
 # GitHub 热门项目待校验列表
 
 > 2026-06-08 · 来源：GitHub Trending Daily

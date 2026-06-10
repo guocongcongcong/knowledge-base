@@ -66,3 +66,7 @@ views:
     columnWidths: {}
     groupByColumnId: confidence
 ---
+
+# 查询与研究
+
+> 调研对比、推演分析、学习路线。
