@@ -1,15 +1,16 @@
 # Wiki Index
 
-共 30 个页面 + checklists
+共 31 个页面 + checklists
 
 > 最后更新: 2026-06-10
 
 ## 行动追踪
 
-- [[checklists/gh-projects-verification]] — GitHub 热门项目待校验：last30days-skill / taste-skill / open-notebook
+- [[checklists/gh-projects-verification]] — GitHub 热门项目待校验
 
 ## 概念
 
+- [[agent-loop-engineering]] — Agent 循环工程全景：ReAct/Plan-Execute/Reflexion 等 5 大模式 + 4 大框架对比
 - [[一日重启协议]] — Dan Koe 爆文：身份重塑×一日实操，获马斯克百万大奖
 - [[马克思主义]] — 辩证唯物主义、政治经济学、科学社会主义
 - [[论持久战]] — 毛泽东1938年抗战纲领：三阶段、人民战争、游击战战略
