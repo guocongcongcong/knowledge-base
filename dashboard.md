@@ -245,12 +245,12 @@ cssclass: dashboard
   <div class="db-stats">
     <div class="db-stat-card">
       <div class="db-stat-icon">📄</div>
-      <div class="db-stat-number">43</div>
+      <div class="db-stat-number">45</div>
       <p class="db-stat-label">笔记总数</p>
     </div>
     <div class="db-stat-card">
       <div class="db-stat-icon">🧠</div>
-      <div class="db-stat-number">28</div>
+      <div class="db-stat-number">30</div>
       <p class="db-stat-label">概念笔记</p>
     </div>
     <div class="db-stat-card">
@@ -260,7 +260,7 @@ cssclass: dashboard
     </div>
     <div class="db-stat-card">
       <div class="db-stat-icon">📊</div>
-      <div class="db-stat-number">142K</div>
+      <div class="db-stat-number">150K</div>
       <p class="db-stat-label">总字符数</p>
     </div>
   </div>
@@ -271,7 +271,7 @@ cssclass: dashboard
     <a href="concepts/" class="db-quick-link">
       <span class="icon">🧠</span>
       <span class="label">概念库</span>
-      <span class="sub">28 篇笔记</span>
+      <span class="sub">30 篇笔记</span>
     </a>
     <a href="entities/" class="db-quick-link">
       <span class="icon">📦</span>
@@ -334,7 +334,7 @@ cssclass: dashboard
     </a>
     <a href="concepts/_database.md" class="db-trigger">
       <span class="icon">🗃️</span>
-      <span><span class="t-label">概念数据库</span><br><span class="t-desc">28 条概念条目</span></span>
+      <span><span class="t-label">概念数据库</span><br><span class="t-desc">30 条概念条目</span></span>
     </a>
     <a href="entities/_database.md" class="db-trigger">
       <span class="icon">📦</span>
@@ -346,11 +346,11 @@ cssclass: dashboard
   <p class="db-section-title">🕐 最近更新</p>
   <div class="db-card" style="margin-bottom: 48px;">
     <ul class="db-card-list">
-        <li>[[log]] <span class="meta">2026-06-10</span></li>
-        <li>[[index]] <span class="meta">2026-06-10</span></li>
-        <li>[[last30days-skill]] <span class="meta">2026-06-10</span></li>
         <li>[[dashboard]] <span class="meta">2026-06-10</span></li>
-        <li>[[_database]] <span class="meta">2026-06-08</span></li>
+        <li>[[index]] <span class="meta">2026-06-10</span></li>
+        <li>[[agent-loop-清华鑫哥]] <span class="meta">2026-06-10</span></li>
+        <li>[[agent-loop-engineering]] <span class="meta">2026-06-10</span></li>
+        <li>[[log]] <span class="meta">2026-06-10</span></li>
 
     </ul>
   </div>
@@ -373,8 +373,8 @@ cssclass: dashboard
 
   <!-- Footer -->
   <div class="db-footer">
-    <span>🔗 最近提交 · <span class="highlight">37d377e</span> 知识库: 新增last30days-skill中英双语概念页</span>
-    <span>📊 总字符 <span class="highlight">142,290</span> · 2026-06-10 星期三</span>
+    <span>🔗 最近提交 · <span class="highlight">9ab3ff9</span> 知识库: 新增清华鑫哥Agent Loop视频笔记</span>
+    <span>📊 总字符 <span class="highlight">150,777</span> · 2026-06-10 星期三</span>
   </div>
 
 </div>
