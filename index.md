@@ -1,8 +1,12 @@
 # Wiki Index
 
-共 29 个页面
+共 30 个页面 + checklists
 
-> 最后更新: 2026-06-03
+> 最后更新: 2026-06-10
+
+## 行动追踪
+
+- [[checklists/gh-projects-verification]] — GitHub 热门项目待校验：last30days-skill / taste-skill / open-notebook
 
 ## 概念
 
@@ -15,6 +19,7 @@
 
 ## AI 工具与开发
 
+- [[last30days-skill]] — 12+ 平台跨源 AI 搜索技能：Reddit/X/YT/TikTok 30天内的真实讨论+参与度排名
 - [[Claude-Code-6个隐藏能力]] — /init、Plan Mode、/compact、自定义命令、Sub Agent、Hooks
 - [[Claude-Code-7个必装Skill]] — Superpowers / PDF / humanizer-zh 等 7 个 Claude Code 必备 Skill
 - [[如何写出一个好的Skill]] — 程序员Sunday：Skill 五要素定义、三层架构、实战编写与验证全流程

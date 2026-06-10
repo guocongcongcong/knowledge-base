@@ -1,5 +1,9 @@
 # Wiki Log
 
+## [2026-06-10] create | last30days-skill
+- 来源: GitHub mvanhorn/last30days-skill（37k+⭐）
+- 创建: concepts/last30days-skill.md（中英双语，含架构/配置/安装/数据源详解）
+
 ## [2026-06-03] create | Production Agentic RAG Course
 - 来源: GitHub jamwithai/production-agentic-rag-course（6.4k⭐）
 - 创建: entities/Production-Agentic-RAG-Course.md
