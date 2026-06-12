@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日新闻 · 2026-06-12</title>
+<style>
+:root{--bg:#f9f9f8;--card-bg:#fff;--text:#1a1a2e;--text2:#52525b;--text3:#a1a1aa;--accent:#4f46e5;--border:#e5e5e7}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,'PingFang SC',sans-serif;min-height:100vh}
+.header{background:linear-gradient(135deg,#1a1a2e 0%,#2d2d44 100%);color:#fff;padding:48px 32px 40px;text-align:center}
+.header h1{font-size:1.5rem;font-weight:600;margin-bottom:6px}
+.header p{font-size:0.875rem;opacity:0.6}
+.container{max-width:960px;margin:0 auto;padding:32px}
+.section-title{font-size:1.1rem;font-weight:600;margin:40px 0 16px;color:var(--text);display:flex;align-items:center;gap:8px}
+.section-title::before{content:'';width:4px;height:20px;background:var(--accent);border-radius:2px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.card{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:16px;transition:all 0.15s}
+.card:hover{border-color:var(--accent);box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.card .rank{font-size:0.75rem;color:var(--accent);font-weight:600;margin-bottom:4px}
+.card h3{font-size:0.9rem;font-weight:500;line-height:1.5;margin-bottom:6px}
+.card h3 a{color:var(--text);text-decoration:none}
+.card h3 a:hover{color:var(--accent);text-decoration:underline}
+.card .meta{font-size:0.75rem;color:var(--text3)}
+.card .heat{display:inline-block;background:var(--accent);color:#fff;font-size:0.65rem;padding:2px 8px;border-radius:10px;margin-left:6px;opacity:0.7}
+.gh-card{padding:18px}
+.gh-card h3{font-size:0.95rem}
+.gh-card h3 a{color:var(--accent)}
+.gh-card .desc{font-size:0.8rem;color:var(--text2);line-height:1.5;margin:6px 0}
+.gh-card .lang{display:inline-block;font-size:0.7rem;color:var(--text3);margin-right:12px}
+.gh-card .lang::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;background:var(--accent)}
+.intl-card{border-left:3px solid var(--accent)}
+.intl-card .region{font-size:0.7rem;padding:2px 6px;border-radius:4px;margin-right:6px;display:inline-block}
+.region-MiddleEast{background:#fef3c7;color:#b45309}
+.region-EastAsia{background:#dbeafe;color:#1d4ed8}
+.region-Americas{background:#ede9fe;color:#6d28d9}
+.region-RussiaUkraine{background:#fee2e2;color:#b91c1c}
+.region-SouthAsia{background:#ffedd5;color:#c2410c}
+.region-Europe{background:#e0e7ff;color:#3730a3}
+.region-Africa{background:#dcfce7;color:#166534}
+.footer{text-align:center;padding:32px;color:var(--text3);font-size:0.75rem;border-top:1px solid var(--border);margin-top:40px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}.container{padding:16px}}
+</style>
+</head>
+<body>
+<header class="header">
+  <h1>📰 每日新闻日报</h1>
+  <p>2026年6月12日 · 星期五</p>
+</header>
+
+<div class="container">
+
+<!-- GitHub Trending -->
+<h2 class="section-title">🔥 GitHub Trending</h2>
+<div class="grid2" id="gh-grid"></div>
+
+<!-- 官方媒体 -->
+<h2 class="section-title">📡 官方媒体</h2>
+<div class="grid2" id="official-grid"></div>
+
+<!-- International News -->
+<h2 class="section-title">🌍 国际新闻</h2>
+<div class="grid2" id="intl-grid"></div>
+
+<!-- Baidu Hot Search -->
+<h2 class="section-title">🔥 今日热搜</h2>
+<div class="grid2" id="hot-grid"></div>
+
+</div>
+
+<footer class="footer">数据来源：百度热搜 · GitHub Trending · Google News · 2026-06-12</footer>
+
+<script>
+var ghData = [{"rank": 1, "owner": "apple", "name": "container", "url": "https://github.com/apple/container", "description": "Apple开源的macOS容器工具，使用Swift编写并针对Apple Silicon优化，通过轻量级虚拟机在Mac上运行Linux容器，标志着Apple正式进军容器生态领域。", "language": "Swift", "stars": "32,697", "starsToday": "2,430"}, {"rank": 2, "owner": "addyosmani", "name": "agent-skills", "url": "https://github.com/addyosmani/agent-skills", "description": "面向AI编程Agent的生产级工程技能库，提供从代码生成到测试部署的端到端技能模板，已成为AI Agent生态中事实标准的技能集合。", "language": "Shell", "stars": "54,914", "starsToday": "3,278"}, {"rank": 3, "owner": "phuryn", "name": "pm-skills", "url": "https://github.com/phuryn/pm-skills", "description": "产品经理技能市场，100+个AI Agent技能、命令和插件，覆盖从产品发现、策略制定、执行、发布到增长的全生命周期。", "language": "N/A", "stars": "16,276", "starsToday": "1,978"}, {"rank": 4, "owner": "msitarzewski", "name": "agency-agents", "url": "https://github.com/msitarzewski/agency-agents", "description": "完整的AI数字代理机构，从前端精灵到Reddit社区运营、创意注入到现实检查，每个Agent都是具有个性和流程的专业专家。", "language": "Shell", "stars": "111,647", "starsToday": "1,599"}, {"rank": 5, "owner": "obra", "name": "superpowers", "url": "https://github.com/obra/superpowers", "description": "Agent技能框架与软件开发方法论，定义了AI Agent技能的标准规范和最佳实践，已被广泛采纳为AI编程Agent的技能基础设施。", "language": "Shell", "stars": "224,918", "starsToday": "1,322"}, {"rank": 6, "owner": "soxoj", "name": "maigret", "url": "https://github.com/soxoj/maigret", "description": "开源情报收集工具，通过用户名在3000+网站自动搜集个人档案信息，广泛用于网络安全调查和数字足迹分析。", "language": "Python", "stars": "32,643", "starsToday": "661"}, {"rank": 7, "owner": "refactoringhq", "name": "tolaria", "url": "https://github.com/refactoringhq/tolaria", "description": "桌面端Markdown知识库管理应用，支持双向链接、全文搜索、所见即所得编辑，定位为Notion/Obsidian的开源替代品。", "language": "TypeScript", "stars": "15,428", "starsToday": "604"}, {"rank": 8, "owner": "masterking32", "name": "MasterDnsVPN", "url": "https://github.com/masterking32/MasterDnsVPN", "description": "高级DNS隧道VPN工具，针对翻墙场景优化，超越DNSTT和SlipStream，具备低开销ARQ、解析器负载均衡和高丢包稳定性。", "language": "Go", "stars": "5,721", "starsToday": "507"}, {"rank": 9, "owner": "maziyarpanahi", "name": "openmed", "url": "https://github.com/maziyarpanahi/openmed", "description": "开源医疗AI平台，将前沿AI技术应用于医疗健康领域，支持医学影像分析、诊断辅助和健康数据管理等场景。", "language": "Python", "stars": "2,796", "starsToday": "426"}, {"rank": 10, "owner": "x1xhlol", "name": "system-prompts-and-models-of-ai-tools", "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools", "description": "全面收录主流AI编程工具的系统提示词与模型信息，覆盖Claude Code、Cursor、Windsurf、Devin等30+工具的内部提示词和AI模型配置。", "language": "N/A", "stars": "139,891", "starsToday": "368"}];
+var intlData = [{"title": "尹锡悦因「无人机事件」一审被判30年 单人牢房视频首公开", "summary": "韩国前总统尹锡悦涉指示平壤无人机渗透案一审被判有期徒刑30年，法务部首次公开其单人牢房视频", "source": "川观新闻", "region": "东亚", "regionClass": "EastAsia", "url": "https://www.baidu.com/s?wd=%E5%B0%B9%E9%94%A1%E6%82%A6%E4%B8%80%E5%AE%A1%E8%A2%AB%E5%88%A430%E5%B9%B4&sa=fyb_news"}, {"title": "泰国长公主帕查拉吉迪雅帕因病逝世 昏迷超3年", "summary": "泰国长公主帕查拉吉迪雅帕因病医治无效逝世，享年47岁，作为现任国王女儿，其去世引发泰国全国哀悼", "source": "中国网", "region": "东亚", "regionClass": "EastAsia", "url": "https://www.baidu.com/s?wd=%E6%B3%B0%E5%9B%BD%E9%95%BF%E5%85%AC%E4%B8%BB%E9%80%9D%E4%B8%96&sa=fyb_news"}, {"title": "伊朗外交部：伊美协议尚未达成最终结论", "summary": "伊朗外交部表示伊美两国就核协议等问题谈判仍在进行，尚未达成最终结论，双方存在多项分歧", "source": "新华网", "region": "中东", "regionClass": "MiddleEast", "url": "https://www.baidu.com/s?wd=%E4%BC%8A%E6%9C%97%E4%BC%8A%E7%BE%8E%E5%8D%8F%E8%AE%AE%E6%9C%AA%E8%BE%BE%E6%88%90&sa=fyb_news"}, {"title": "五角大楼发生危险品事故被封 美媒称传感器误报", "summary": "美国国防部五角大楼发生危险品事故，部分楼层被封锁并下令就地避难，后美媒报道称传感器系统误报，虚惊一场", "source": "chinanews.com.cn", "region": "美洲", "regionClass": "Americas", "url": "https://www.baidu.com/s?wd=%E4%BA%94%E8%A7%92%E5%A4%A7%E6%A5%BC%E5%8D%B1%E9%99%A9%E5%93%81%E4%BA%8B%E6%95%85%E8%99%9A%E6%83%8A&sa=fyb_news"}, {"title": "特朗普提名杰伊·克莱顿出任美国家情报总监", "summary": "美国总统特朗普宣布提名前SEC主席杰伊·克莱顿出任国家情报总监，同时众院否决延长监控法", "source": "美国之音", "region": "美洲", "regionClass": "Americas", "url": "https://www.baidu.com/s?wd=%E7%89%B9%E6%9C%97%E6%99%AE%E6%8F%90%E5%90%8D%E5%9B%BD%E5%AE%B6%E6%83%85%E6%8A%A5%E6%80%BB%E7%9B%91&sa=fyb_news"}, {"title": "美股收高道指上涨930点 特朗普称美伊很快签署协议", "summary": "6月12日隔夜美股三大指数收高，道指大涨930点，特朗普声称美伊很快将签署协议，油价下挫金价攀升", "source": "新浪财经", "region": "美洲", "regionClass": "Americas", "url": "https://www.baidu.com/s?wd=%E7%BE%8E%E8%82%A1%E9%81%93%E6%8C%87%E4%B8%8A%E6%B6%A8930%E7%82%B9&sa=fyb_news"}, {"title": "世界杯开幕：墨西哥2-0南非 揭幕战红牌比进球多", "summary": "2026年美加墨世界杯揭幕战，墨西哥2比0战胜南非取得开门红，全场多张红牌成为焦点", "source": "百度热搜", "region": "美洲", "regionClass": "Americas", "url": "https://www.baidu.com/s?wd=%E4%B8%96%E7%95%8C%E6%9D%AF%E5%BC%80%E5%B9%95%E5%A2%A8%E8%A5%BF%E5%93%A52%E6%AF%940%E5%8D%97%E9%9D%9E&sa=fyb_news"}, {"title": "韩国vs捷克世界杯小组赛即将开战", "summary": "世界杯小组赛韩国队对阵捷克队，孙兴慈领衔出战，受到亚洲球迷高度关注", "source": "百度热搜", "region": "东亚", "regionClass": "EastAsia", "url": "https://www.baidu.com/s?wd=%E4%B8%96%E7%95%8C%E6%9D%AF%E9%9F%A9%E5%9B%BDvs%E6%8D%B7%E5%85%8B&sa=fyb_news"}, {"title": "SpaceX创纪录IPO上市 估值突破万亿美元", "summary": "埃隆·马斯克旗下SpaceX完成创纪录IPO，估值突破万亿美元大关，成为史上最大科技股上市案", "source": "百度热搜", "region": "美洲", "regionClass": "Americas", "url": "https://www.baidu.com/s?wd=SpaceX%E5%88%9B%E7%BA%AA%E5%BD%95IPO%E4%B8%8A%E5%B8%82&sa=fyb_news"}, {"title": "山西82死矿难后 7名官员接连落马", "summary": "山西重大矿难致82人死亡后，官方追责力度空前，7名相关官员接连被查处落马", "source": "百度热搜", "region": "东亚", "regionClass": "EastAsia", "url": "https://www.baidu.com/s?wd=%E5%B1%B1%E8%A5%BF%E7%9F%BF%E9%9A%BE7%E5%90%8D%E5%AE%98%E5%91%98%E8%90%BD%E9%A9%AC&sa=fyb_news"}];
+var officialData = [{"title": "尹锡悦「无人机事件」一审被判有期徒刑30年", "summary": "韩国首尔中央地方法院就前总统尹锡悦涉嫌指示平壤无人机渗透事件作出一审判决，判处有期徒刑30年", "source": "新华社", "url": "https://www.baidu.com/s?wd=%E5%B0%B9%E9%94%A1%E6%82%A6%E6%97%A0%E4%BA%BA%E6%9C%BA%E4%BA%8B%E4%BB%B6%E4%B8%80%E5%AE%A1%E8%A2%AB%E5%88%A430%E5%B9%B4&sa=fyb_news"}, {"title": "全国夏粮收获进度超八成 丰收已成定局", "summary": "农业农村部最新调度显示，全国夏粮收获进度已过八成，小麦主产区单产普遍提高，夏粮丰收已成定局", "source": "央视新闻", "url": "https://www.baidu.com/s?wd=%E5%85%A8%E5%9B%BD%E5%A4%8F%E7%B2%AE%E6%94%B6%E8%8E%B7%E8%BF%9B%E5%BA%A6%E8%B6%85%E5%85%AB%E6%88%90&sa=fyb_news"}, {"title": "泰国长公主帕查拉吉迪雅帕因病逝世 享年47岁", "summary": "泰国王室宫务处发布公告，泰国长公主帕查拉吉迪雅帕因病医治无效逝世，享年47岁，王室公布民众吊唰安排", "source": "人民日报", "url": "https://www.baidu.com/s?wd=%E6%B3%B0%E5%9B%BD%E9%95%BF%E5%85%AC%E4%B8%BB%E9%80%9D%E4%B8%96%E4%BA%AB%E5%B9%B447%E5%B2%81&sa=fyb_news"}, {"title": "伊朗外交部：尚未就伊美协议达成最终结论", "summary": "伊朗外交部发言人表示，伊美两国就核协议等问题的谈判仍在进行中，尚未达成最终结论", "source": "新华社", "url": "https://www.baidu.com/s?wd=%E4%BC%8A%E6%9C%97%E5%A4%96%E4%BA%A4%E9%83%A8%E4%BC%8A%E7%BE%8E%E5%8D%8F%E8%AE%AE%E6%9C%AA%E8%BE%BE%E6%88%90%E6%9C%80%E7%BB%88%E7%BB%93%E8%AE%BA&sa=fyb_news"}, {"title": "网警披露未履行个人信息保护义务典型案例", "summary": "公安部网安局公布一批未履行个人信息保护义务的典型案例，涉及违规收集、超范围使用个人信息等问题", "source": "科技日报", "url": "https://www.baidu.com/s?wd=%E7%BD%91%E8%AD%A6%E6%8A%AB%E9%9C%B2%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF%E4%BF%9D%E6%8A%A4%E4%B9%89%E5%8A%A1%E6%A1%88&sa=fyb_news"}];
+var hotData = [{"rank": 1, "title": "友谊牢不可破", "heat": "790万", "url": "https://www.baidu.com/s?wd=%E5%8F%8B%E8%B0%8A%E7%89%A2%E4%B8%8D%E5%8F%AF%E7%A0%B4&sa=fyb_news"}, {"rank": 2, "title": "世界杯开幕式大半夜吓我一跳", "heat": "781万", "url": "https://www.baidu.com/s?wd=%E4%B8%96%E7%95%8C%E6%9D%AF%E5%BC%80%E5%B9%95%E5%BC%8F%E5%A4%A7%E5%8D%8A%E5%A4%9C%E5%90%93%E6%88%91%E4%B8%80%E8%B7%B3&sa=fyb_news"}, {"rank": 3, "title": "世界杯：韩国vs捷克", "heat": "771万", "url": "https://www.baidu.com/s?wd=%E4%B8%96%E7%95%8C%E6%9D%AF%E9%9F%A9%E5%9B%BDvs%E6%8D%B7%E5%85%8B&sa=fyb_news"}, {"rank": 4, "title": "高考报志愿 考生最关心的都在这里", "heat": "762万", "url": "https://www.baidu.com/s?wd=%E9%AB%98%E8%80%83%E6%8A%A5%E5%BF%97%E6%84%BF%E8%80%83%E7%94%9F%E6%9C%80%E5%85%B3%E5%BF%83%E7%9A%84%E9%83%BD%E5%9C%A8%E8%BF%99%E9%87%8C&sa=fyb_news"}, {"rank": 5, "title": "韩国男记者被墨西哥女球迷搜住强吻", "heat": "752万", "url": "https://www.baidu.com/s?wd=%E9%9F%A9%E5%9B%BD%E7%94%B7%E8%AE%B0%E8%80%85%E8%A2%AB%E5%A2%A8%E8%A5%BF%E5%93%A5%E5%A5%B3%E7%90%83%E8%BF%B7%E5%BC%BA%E5%90%BB&sa=fyb_news"}, {"rank": 6, "title": "赵丽娜在世界杯开幕式偶遇大张伟", "heat": "743万", "url": "https://www.baidu.com/s?wd=%E8%B5%B5%E4%B8%BD%E5%A8%9C%E4%B8%96%E7%95%8C%E6%9D%AF%E5%BC%80%E5%B9%95%E5%BC%8F%E5%81%B6%E9%81%87%E5%A4%A7%E5%BC%A0%E4%BC%9F&sa=fyb_news"}, {"rank": 7, "title": "网警披露未履行个人信息保护义务案", "heat": "733万", "url": "https://www.baidu.com/s?wd=%E7%BD%91%E8%AD%A6%E6%8A%AB%E9%9C%B2%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF%E4%BF%9D%E6%8A%A4%E4%B9%89%E5%8A%A1%E6%A1%88&sa=fyb_news"}, {"rank": 8, "title": "泰国长公主因病逝世 享年47岁", "heat": "724万", "url": "https://www.baidu.com/s?wd=%E6%B3%B0%E5%9B%BD%E9%95%BF%E5%85%AC%E4%B8%BB%E9%80%9D%E4%B8%96%E4%BA%AB%E5%B9%B447%E5%B2%81&sa=fyb_news"}, {"rank": 9, "title": "流水的世界杯 铁打的夏奇拉", "heat": "714万", "url": "https://www.baidu.com/s?wd=%E6%B5%81%E6%B0%B4%E7%9A%84%E4%B8%96%E7%95%8C%E6%9D%AF%E9%93%81%E6%89%93%E7%9A%84%E5%A4%8F%E5%A5%87%E6%8B%89&sa=fyb_news"}, {"rank": 10, "title": "尹锡悦无人机事件一审被判30年", "heat": "704万", "url": "https://www.baidu.com/s?wd=%E5%B0%B9%E9%94%A1%E6%82%A6%E4%B8%80%E5%AE%A1%E8%A2%AB%E5%88%A430%E5%B9%B4&sa=fyb_news"}, {"rank": 11, "title": "女子点外卖备注牛蛙不要烧收到活蛙", "heat": "695万", "url": "https://www.baidu.com/s?wd=%E5%A5%B3%E5%AD%90%E7%82%B9%E5%A4%96%E5%8D%96%E5%A4%87%E6%B3%A8%E7%89%9B%E8%9B%99%E4%B8%8D%E8%A6%81%E7%83%A7%E6%94%B6%E5%88%B0%E6%B4%BB%E8%9B%99&sa=fyb_news"}, {"rank": 12, "title": "新疆一校车载20名小学生坠河不实", "heat": "686万", "url": "https://www.baidu.com/s?wd=%E6%96%B0%E7%96%86%E6%A0%A1%E8%BD%A6%E5%9D%A0%E6%B2%B3%E4%B8%8D%E5%AE%9E&sa=fyb_news"}, {"rank": 13, "title": "全世界都看得目瞪口呆", "heat": "676万", "url": "https://www.baidu.com/s?wd=%E5%85%A8%E4%B8%96%E7%95%8C%E9%83%BD%E7%9C%8B%E5%BE%97%E7%9B%AE%E7%9E%AA%E5%8F%A3%E5%91%86&sa=fyb_news"}, {"rank": 14, "title": "12岁女孩喊累一年确诊全身器官缺氧", "heat": "666万", "url": "https://www.baidu.com/s?wd=12%E5%B2%81%E5%A5%B3%E5%AD%A9%E5%96%8A%E7%B4%AF%E4%B8%80%E5%B9%B4%E7%A1%AE%E8%AF%8A%E5%85%A8%E8%BA%AB%E5%99%A8%E5%AE%98%E7%BC%BA%E6%B0%A7&sa=fyb_news"}, {"rank": 15, "title": "山西82死矿难后 7名官员接连落马", "heat": "657万", "url": "https://www.baidu.com/s?wd=%E5%B1%B1%E8%A5%BF%E7%9F%BF%E9%9A%BE7%E5%AE%98%E5%91%98%E8%90%BD%E9%A9%AC&sa=fyb_news"}, {"rank": 16, "title": "A股四大股指高开 半导体板块活跃", "heat": "647万", "url": "https://www.baidu.com/s?wd=A%E8%82%A1%E9%AB%98%E5%BC%80%E5%8D%8A%E5%AF%BC%E4%BD%93%E6%B4%BB%E8%B7%83&sa=fyb_news"}, {"rank": 17, "title": "北京天气好像开了挂", "heat": "638万", "url": "https://www.baidu.com/s?wd=%E5%8C%97%E4%BA%AC%E5%A4%A9%E6%B0%94%E5%A5%BD%E5%83%8F%E5%BC%80%E4%BA%86%E6%8C%82&sa=fyb_news"}, {"rank": 18, "title": "NBA主持人让霉霉滚出去", "heat": "628万", "url": "https://www.baidu.com/s?wd=NBA%E4%B8%BB%E6%8C%81%E4%BA%BA%E8%AE%A9%E9%9C%89%E9%9C%89%E6%BB%9A%E5%87%BA%E5%8E%BB&sa=fyb_news"}, {"rank": 19, "title": "女子演唱会见到偶像被帅晕", "heat": "618万", "url": "https://www.baidu.com/s?wd=%E5%A5%B3%E5%AD%90%E6%BC%94%E5%94%B1%E4%BC%9A%E8%A7%81%E5%88%B0%E5%81%B6%E5%83%8F%E8%A2%AB%E5%B8%85%E6%99%95&sa=fyb_news"}, {"rank": 20, "title": "世界杯中国队首发：LABUBU和马宁", "heat": "610万", "url": "https://www.baidu.com/s?wd=%E4%B8%96%E7%95%8C%E6%9D%AFLABUBU%E5%92%8C%E9%A9%AC%E5%AE%81&sa=fyb_news"}];
+
+function buildGh() {
+  var g = document.getElementById('gh-grid'), h = '';
+  ghData.forEach(function(r) {
+    h += '<div class="card gh-card"><h3><a href="' + r.url + '" target="_blank">' + r.owner + ' / ' + r.name + '</a></h3><p class="desc">' + r.description + '</p><span class="lang">' + r.language + '</span>⭐ ' + r.stars + ' <span style="color:var(--accent);font-size:0.75rem">+' + r.starsToday + ' today</span></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildOfficial() {
+  var g = document.getElementById('official-grid'), h = '';
+  officialData.forEach(function(r) {
+    h += '<div class="card"><span class="rank" style="color:var(--text3)">' + r.source + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildIntl() {
+  var g = document.getElementById('intl-grid'), h = '';
+  intlData.forEach(function(r) {
+    h += '<div class="card intl-card"><span class="region region-' + r.regionClass + '">' + r.region + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3><p class="meta">' + r.source + '</p></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildHot() {
+  var g = document.getElementById('hot-grid'), h = '';
+  hotData.forEach(function(r) {
+    h += '<div class="card"><span class="rank">#' + r.rank + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3><span class="heat">' + r.heat + '</span></div>';
+  });
+  g.innerHTML = h;
+}
+
+buildGh(); buildOfficial(); buildIntl(); buildHot();
+</script>
+
+</body>
+</html>
