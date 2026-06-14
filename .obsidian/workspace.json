@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "1350eb59066d624f",
+            "id": "02cad8b32a8920a4",
             "type": "leaf",
             "state": {
               "type": "notion-bases-view",
@@ -20,27 +20,31 @@
             }
           },
           {
-            "id": "b3d38a80d3223e20",
+            "id": "54dd7350dd48448a",
             "type": "leaf",
             "state": {
-              "type": "notion-bases-view",
+              "type": "markdown",
               "state": {
-                "dbFilePath": "entities/_database.md"
+                "file": "concepts/苏格拉底·七 系统分析.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "table",
-              "title": "entities"
+              "icon": "lucide-file",
+              "title": "苏格拉底·七 系统分析"
             }
           },
           {
-            "id": "cf7a1b2d3e4f5a6c",
+            "id": "f1d19e7b5c886154",
             "type": "leaf",
             "state": {
-              "type": "notion-bases-view",
+              "type": "markdown",
               "state": {
-                "dbFilePath": "checklists/_database.md"
+                "file": "concepts/AI造书方法论-Prompt工程.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "table",
-              "title": "checklists"
+              "icon": "lucide-file",
+              "title": "AI造书方法论-Prompt工程"
             }
           }
         ],
@@ -207,8 +211,13 @@
       "notion-bases:Notion bases": false
     }
   },
-  "active": "cf7a1b2d3e4f5a6c",
+  "active": "f1d19e7b5c886154",
   "lastOpenFiles": [
+    "concepts/苏格拉底·七 系统分析.md",
+    "concepts/学习方法论全景-提取式学习的演化与图谱.md",
+    "concepts/AI造书方法论-Prompt工程.md",
+    "concepts/Socratopia-苏格拉底加二次元学习法.md",
+    "concepts/_database.md",
     "concepts/道家核心概念.md",
     "checklists/_database.md",
     "queries/_database.md",
@@ -221,7 +230,6 @@
     "entities/_database.md",
     "news/2026-05-22.html",
     "concepts/axton-obsidian-visual-skills.md",
-    "concepts/_database.md",
     "log.md",
     "concepts/cheat-on-content.md",
     "raw/README.md",
@@ -233,10 +241,6 @@
     "raw/transcripts/douyin-hermes-agent-intro.md",
     "SCHEMA.md",
     "concepts/AI-Agent-核心概念对照.md",
-    "concepts/Hermes-日记推送工作流.md",
-    "concepts/Hermes-Agent-三层路由架构设计.md",
-    "concepts/Claude-Code-7个必装Skill.md",
-    "concepts/Claude-Code-6个隐藏能力.md",
-    "AI Agent 核心概念对照.md"
+    "concepts/Hermes-日记推送工作流.md"
   ]
 }

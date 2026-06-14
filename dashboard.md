@@ -238,19 +238,19 @@ cssclass: dashboard
   <!-- Header -->
   <div class="db-header">
     <h1>✦ 知识库</h1>
-    <p class="sub">AI Agent · 工作流 · 深度研究 · 星期三 自动刷新 ⚡</p>
+    <p class="sub">AI Agent · 工作流 · 深度研究 · 星期日 自动刷新 ⚡</p>
   </div>
 
   <!-- Stats -->
   <div class="db-stats">
     <div class="db-stat-card">
       <div class="db-stat-icon">📄</div>
-      <div class="db-stat-number">45</div>
+      <div class="db-stat-number">47</div>
       <p class="db-stat-label">笔记总数</p>
     </div>
     <div class="db-stat-card">
       <div class="db-stat-icon">🧠</div>
-      <div class="db-stat-number">30</div>
+      <div class="db-stat-number">32</div>
       <p class="db-stat-label">概念笔记</p>
     </div>
     <div class="db-stat-card">
@@ -260,7 +260,7 @@ cssclass: dashboard
     </div>
     <div class="db-stat-card">
       <div class="db-stat-icon">📊</div>
-      <div class="db-stat-number">150K</div>
+      <div class="db-stat-number">156K</div>
       <p class="db-stat-label">总字符数</p>
     </div>
   </div>
@@ -271,7 +271,7 @@ cssclass: dashboard
     <a href="concepts/" class="db-quick-link">
       <span class="icon">🧠</span>
       <span class="label">概念库</span>
-      <span class="sub">30 篇笔记</span>
+      <span class="sub">32 篇笔记</span>
     </a>
     <a href="entities/" class="db-quick-link">
       <span class="icon">📦</span>
@@ -283,7 +283,7 @@ cssclass: dashboard
       <span class="label">研究查询</span>
       <span class="sub">5 条查询</span>
     </a>
-    <a href="2026-06-10.html" class="db-quick-link">
+    <a href="2026-06-13.html" class="db-quick-link">
       <span class="icon">📰</span>
       <span class="label">今日新闻</span>
       <span class="sub">最新日报</span>
@@ -334,7 +334,7 @@ cssclass: dashboard
     </a>
     <a href="concepts/_database.md" class="db-trigger">
       <span class="icon">🗃️</span>
-      <span><span class="t-label">概念数据库</span><br><span class="t-desc">30 条概念条目</span></span>
+      <span><span class="t-label">概念数据库</span><br><span class="t-desc">32 条概念条目</span></span>
     </a>
     <a href="entities/_database.md" class="db-trigger">
       <span class="icon">📦</span>
@@ -346,23 +346,23 @@ cssclass: dashboard
   <p class="db-section-title">🕐 最近更新</p>
   <div class="db-card" style="margin-bottom: 48px;">
     <ul class="db-card-list">
-        <li>[[dashboard]] <span class="meta">2026-06-10</span></li>
+        <li>[[苏格拉底·七 系统分析]] <span class="meta">2026-06-14</span></li>
+        <li>[[Socratopia-苏格拉底加二次元学习法]] <span class="meta">2026-06-14</span></li>
+        <li>[[dashboard]] <span class="meta">2026-06-14</span></li>
+        <li>[[ai-agent-learning-guide]] <span class="meta">2026-06-10</span></li>
         <li>[[index]] <span class="meta">2026-06-10</span></li>
-        <li>[[agent-loop-清华鑫哥]] <span class="meta">2026-06-10</span></li>
-        <li>[[agent-loop-engineering]] <span class="meta">2026-06-10</span></li>
-        <li>[[log]] <span class="meta">2026-06-10</span></li>
 
     </ul>
   </div>
 
   <p class="db-section-title">每日新闻</p>
   <div class="db-news">
-    <a href="news/2026-06-10.html" style="text-decoration: none;">
+    <a href="news/2026-06-13.html" style="text-decoration: none;">
       <div class="db-news-card">
         <div class="db-news-left">
           <span class="icon">📰</span>
           <div>
-            <div class="title">新闻日报 · 2026-06-10</div>
+            <div class="title">新闻日报 · 2026-06-13</div>
             <div class="desc">百度热搜 + GitHub Trending + 官方媒体</div>
           </div>
         </div>
@@ -373,8 +373,8 @@ cssclass: dashboard
 
   <!-- Footer -->
   <div class="db-footer">
-    <span>🔗 最近提交 · <span class="highlight">9ab3ff9</span> 知识库: 新增清华鑫哥Agent Loop视频笔记</span>
-    <span>📊 总字符 <span class="highlight">150,777</span> · 2026-06-10 星期三</span>
+    <span>🔗 最近提交 · <span class="highlight">585ea31</span> 日报: 2026-06-13 星期六</span>
+    <span>📊 总字符 <span class="highlight">156,452</span> · 2026-06-14 星期日</span>
   </div>
 
 </div>
