@@ -213,6 +213,9 @@
   },
   "active": "f1d19e7b5c886154",
   "lastOpenFiles": [
+    "concepts/Clone-Wars-开源克隆项目索引.md",
+    "concepts/freeCodeCamp-开源编程教育平台.md",
+    "news/2026-06-14.html",
     "concepts/苏格拉底·七 系统分析.md",
     "concepts/学习方法论全景-提取式学习的演化与图谱.md",
     "concepts/AI造书方法论-Prompt工程.md",
@@ -239,8 +242,6 @@
     "raw/transcripts/douyin-claude-md-too-long-agent-ignores.md",
     "raw/transcripts/douyin-frontend-rendering-revolution.md",
     "raw/transcripts/douyin-hermes-agent-intro.md",
-    "SCHEMA.md",
-    "concepts/AI-Agent-核心概念对照.md",
-    "concepts/Hermes-日记推送工作流.md"
+    "SCHEMA.md"
   ]
 }
