@@ -35,3 +35,9 @@
 ## [2026-05-27] create query | 刚果金 Bundibugyo 病毒疫情推演分析
 
 ## [2026-05-29] create | AI漫剧制作全流程
+
+## [2026-06-15] create | socratic-verse entities (from docs migration)
+- 创建: entities/socratic-verse-business-plan.md（商业企划书）
+- 创建: entities/socratic-verse-marketing-plan.md（推广方案）
+- 创建: entities/socratic-verse-zhihu-article-v2.md（知乎文章）
+- 创建: entities/socratic-verse-technical-architecture.md（技术架构）

@@ -213,6 +213,10 @@
   },
   "active": "f1d19e7b5c886154",
   "lastOpenFiles": [
+    "entities/socratic-verse-technical-architecture.md",
+    "entities/socratic-verse-zhihu-article-v2.md",
+    "entities/socratic-verse-marketing-plan.md",
+    "entities/socratic-verse-business-plan.md",
     "raw/articles/吴乐旻-高效学习方法-苏格拉底七原文.md",
     "concepts/Clone-Wars-开源克隆项目索引.md",
     "concepts/freeCodeCamp-开源编程教育平台.md",
@@ -238,10 +242,6 @@
     "concepts/cheat-on-content.md",
     "raw/README.md",
     "raw/transcripts/douyin-claude-md-over-200-lines.md",
-    "raw/transcripts/douyin-ai-video-editing-hyperframe.md",
-    "raw/transcripts/douyin-claude-code-mcp-browser.md",
-    "raw/transcripts/douyin-claude-md-too-long-agent-ignores.md",
-    "raw/transcripts/douyin-frontend-rendering-revolution.md",
-    "raw/transcripts/douyin-hermes-agent-intro.md"
+    "raw/transcripts/douyin-ai-video-editing-hyperframe.md"
   ]
 }

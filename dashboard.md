@@ -373,8 +373,8 @@ cssclass: dashboard
 
   <!-- Footer -->
   <div class="db-footer">
-    <span>🔗 最近提交 · <span class="highlight">6d48992</span> index: 重建 — 51篇笔记分类索引 (2026-06-16)</span>
-    <span>📊 总字符 <span class="highlight">173,808</span> · 2026-06-15 星期一</span>
+    <span>🔗 最近提交 · <span class="highlight">1b9a948</span> feat: 吴乐旻原文入库 — 苏格拉底·七起源文章 + dashboard自动刷新</span>
+    <span>📊 总字符 <span class="highlight">173,816</span> · 2026-06-15 星期一</span>
   </div>
 
 </div>
