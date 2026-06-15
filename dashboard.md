@@ -245,7 +245,7 @@ cssclass: dashboard
   <div class="db-stats">
     <div class="db-stat-card">
       <div class="db-stat-icon">📄</div>
-      <div class="db-stat-number">51</div>
+      <div class="db-stat-number">55</div>
       <p class="db-stat-label">笔记总数</p>
     </div>
     <div class="db-stat-card">
@@ -260,7 +260,7 @@ cssclass: dashboard
     </div>
     <div class="db-stat-card">
       <div class="db-stat-icon">📊</div>
-      <div class="db-stat-number">173K</div>
+      <div class="db-stat-number">184K</div>
       <p class="db-stat-label">总字符数</p>
     </div>
   </div>
@@ -276,7 +276,7 @@ cssclass: dashboard
     <a href="entities/" class="db-quick-link">
       <span class="icon">📦</span>
       <span class="label">项目实体</span>
-      <span class="sub">3 个项目</span>
+      <span class="sub">7 个项目</span>
     </a>
     <a href="queries/" class="db-quick-link">
       <span class="icon">🔍</span>
@@ -338,7 +338,7 @@ cssclass: dashboard
     </a>
     <a href="entities/_database.md" class="db-trigger">
       <span class="icon">📦</span>
-      <span><span class="t-label">实体数据库</span><br><span class="t-desc">3 个项目档案</span></span>
+      <span><span class="t-label">实体数据库</span><br><span class="t-desc">7 个项目档案</span></span>
     </a>
   </div>
 
@@ -346,11 +346,11 @@ cssclass: dashboard
   <p class="db-section-title">🕐 最近更新</p>
   <div class="db-card" style="margin-bottom: 48px;">
     <ul class="db-card-list">
-        <li>[[dashboard]] <span class="meta">2026-06-15</span></li>
-        <li>[[index]] <span class="meta">2026-06-15</span></li>
-        <li>[[Clone-Wars-开源克隆项目索引]] <span class="meta">2026-06-15</span></li>
-        <li>[[freeCodeCamp-开源编程教育平台]] <span class="meta">2026-06-15</span></li>
-        <li>[[AI造书方法论-Prompt工程]] <span class="meta">2026-06-14</span></li>
+        <li>[[socratic-verse-zhihu-article-v2]] <span class="meta">2026-06-15</span></li>
+        <li>[[log]] <span class="meta">2026-06-15</span></li>
+        <li>[[socratic-verse-technical-architecture]] <span class="meta">2026-06-15</span></li>
+        <li>[[socratic-verse-marketing-plan]] <span class="meta">2026-06-15</span></li>
+        <li>[[socratic-verse-business-plan]] <span class="meta">2026-06-15</span></li>
 
     </ul>
   </div>
@@ -373,8 +373,8 @@ cssclass: dashboard
 
   <!-- Footer -->
   <div class="db-footer">
-    <span>🔗 最近提交 · <span class="highlight">1b9a948</span> feat: 吴乐旻原文入库 — 苏格拉底·七起源文章 + dashboard自动刷新</span>
-    <span>📊 总字符 <span class="highlight">173,816</span> · 2026-06-15 星期一</span>
+    <span>🔗 最近提交 · <span class="highlight">ec98bed</span> 知乎文章：添加对 Socratopia 原始经验的致谢和改进说明</span>
+    <span>📊 总字符 <span class="highlight">184,201</span> · 2026-06-15 星期一</span>
   </div>
 
 </div>
