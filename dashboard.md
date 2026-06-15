@@ -260,7 +260,7 @@ cssclass: dashboard
     </div>
     <div class="db-stat-card">
       <div class="db-stat-icon">📊</div>
-      <div class="db-stat-number">172K</div>
+      <div class="db-stat-number">173K</div>
       <p class="db-stat-label">总字符数</p>
     </div>
   </div>
@@ -347,10 +347,10 @@ cssclass: dashboard
   <div class="db-card" style="margin-bottom: 48px;">
     <ul class="db-card-list">
         <li>[[dashboard]] <span class="meta">2026-06-15</span></li>
+        <li>[[index]] <span class="meta">2026-06-15</span></li>
         <li>[[Clone-Wars-开源克隆项目索引]] <span class="meta">2026-06-15</span></li>
         <li>[[freeCodeCamp-开源编程教育平台]] <span class="meta">2026-06-15</span></li>
         <li>[[AI造书方法论-Prompt工程]] <span class="meta">2026-06-14</span></li>
-        <li>[[学习方法论全景-提取式学习的演化与图谱]] <span class="meta">2026-06-14</span></li>
 
     </ul>
   </div>
@@ -373,8 +373,8 @@ cssclass: dashboard
 
   <!-- Footer -->
   <div class="db-footer">
-    <span>🔗 最近提交 · <span class="highlight">97d9ae6</span> feat: freeCodeCamp + Clone-Wars 分析入库</span>
-    <span>📊 总字符 <span class="highlight">172,478</span> · 2026-06-15 星期一</span>
+    <span>🔗 最近提交 · <span class="highlight">6d48992</span> index: 重建 — 51篇笔记分类索引 (2026-06-16)</span>
+    <span>📊 总字符 <span class="highlight">173,808</span> · 2026-06-15 星期一</span>
   </div>
 
 </div>
