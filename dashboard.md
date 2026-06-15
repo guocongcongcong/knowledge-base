@@ -346,11 +346,11 @@ cssclass: dashboard
   <p class="db-section-title">🕐 最近更新</p>
   <div class="db-card" style="margin-bottom: 48px;">
     <ul class="db-card-list">
+        <li>[[dashboard]] <span class="meta">2026-06-15</span></li>
         <li>[[socratic-verse-zhihu-article-v2]] <span class="meta">2026-06-15</span></li>
         <li>[[log]] <span class="meta">2026-06-15</span></li>
         <li>[[socratic-verse-technical-architecture]] <span class="meta">2026-06-15</span></li>
         <li>[[socratic-verse-marketing-plan]] <span class="meta">2026-06-15</span></li>
-        <li>[[socratic-verse-business-plan]] <span class="meta">2026-06-15</span></li>
 
     </ul>
   </div>
@@ -373,8 +373,8 @@ cssclass: dashboard
 
   <!-- Footer -->
   <div class="db-footer">
-    <span>🔗 最近提交 · <span class="highlight">ec98bed</span> 知乎文章：添加对 Socratopia 原始经验的致谢和改进说明</span>
-    <span>📊 总字符 <span class="highlight">184,201</span> · 2026-06-15 星期一</span>
+    <span>🔗 最近提交 · <span class="highlight">c565686</span> Rewrite tone: position Socratic Verse as learner/practitione</span>
+    <span>📊 总字符 <span class="highlight">184,279</span> · 2026-06-15 星期一</span>
   </div>
 
 </div>

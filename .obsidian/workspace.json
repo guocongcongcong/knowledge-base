@@ -213,6 +213,7 @@
   },
   "active": "f1d19e7b5c886154",
   "lastOpenFiles": [
+    "concepts/Voice-Reader-项目详解.md",
     "entities/socratic-verse-technical-architecture.md",
     "entities/socratic-verse-zhihu-article-v2.md",
     "entities/socratic-verse-marketing-plan.md",
@@ -241,7 +242,6 @@
     "log.md",
     "concepts/cheat-on-content.md",
     "raw/README.md",
-    "raw/transcripts/douyin-claude-md-over-200-lines.md",
-    "raw/transcripts/douyin-ai-video-editing-hyperframe.md"
+    "raw/transcripts/douyin-claude-md-over-200-lines.md"
   ]
 }
