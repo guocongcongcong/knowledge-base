@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日新闻 · 2026-06-14</title>
+<style>
+:root{--bg:#f9f9f8;--card-bg:#fff;--text:#1a1a2e;--text2:#52525b;--text3:#a1a1aa;--accent:#4f46e5;--border:#e5e5e7}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,'PingFang SC',sans-serif;min-height:100vh}
+.header{background:linear-gradient(135deg,#1a1a2e 0%,#2d2d44 100%);color:#fff;padding:48px 32px 40px;text-align:center}
+.header h1{font-size:1.5rem;font-weight:600;margin-bottom:6px}
+.header p{font-size:0.875rem;opacity:0.6}
+.container{max-width:960px;margin:0 auto;padding:32px}
+.section-title{font-size:1.1rem;font-weight:600;margin:40px 0 16px;color:var(--text);display:flex;align-items:center;gap:8px}
+.section-title::before{content:'';width:4px;height:20px;background:var(--accent);border-radius:2px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.card{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:16px;transition:all 0.15s}
+.card:hover{border-color:var(--accent);box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.card .rank{font-size:0.75rem;color:var(--accent);font-weight:600;margin-bottom:4px}
+.card h3{font-size:0.9rem;font-weight:500;line-height:1.5;margin-bottom:6px}
+.card h3 a{color:var(--text);text-decoration:none}
+.card h3 a:hover{color:var(--accent);text-decoration:underline}
+.card .meta{font-size:0.75rem;color:var(--text3)}
+.card .heat{display:inline-block;background:var(--accent);color:#fff;font-size:0.65rem;padding:2px 8px;border-radius:10px;margin-left:6px;opacity:0.7}
+.gh-card{padding:18px}
+.gh-card h3{font-size:0.95rem}
+.gh-card h3 a{color:var(--accent)}
+.gh-card .desc{font-size:0.8rem;color:var(--text2);line-height:1.5;margin:6px 0}
+.gh-card .lang{display:inline-block;font-size:0.7rem;color:var(--text3);margin-right:12px}
+.gh-card .lang::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;background:var(--accent)}
+.intl-card{border-left:3px solid var(--accent)}
+.intl-card .region{font-size:0.7rem;padding:2px 6px;border-radius:4px;margin-right:6px;display:inline-block}
+.region-MiddleEast{background:#fef3c7;color:#b45309}
+.region-EastAsia{background:#dbeafe;color:#1d4ed8}
+.region-Americas{background:#ede9fe;color:#6d28d9}
+.region-RussiaUkraine{background:#fee2e2;color:#b91c1c}
+.region-SouthAsia{background:#ffedd5;color:#c2410c}
+.region-Europe{background:#e0e7ff;color:#3730a3}
+.region-Africa{background:#dcfce7;color:#166534}
+.footer{text-align:center;padding:32px;color:var(--text3);font-size:0.75rem;border-top:1px solid var(--border);margin-top:40px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}.container{padding:16px}}
+</style>
+</head>
+<body>
+<header class="header">
+  <h1>📰 每日新闻日报</h1>
+  <p>2026年06月16日 · 周二</p>
+</header>
+
+<div class="container">
+
+<!-- GitHub Trending -->
+<h2 class="section-title">🔥 GitHub Trending</h2>
+<div class="grid2" id="gh-grid"></div>
+
+<!-- 官方媒体 -->
+<h2 class="section-title">📡 官方媒体</h2>
+<div class="grid2" id="official-grid"></div>
+
+<!-- International News -->
+<h2 class="section-title">🌍 国际新闻</h2>
+<div class="grid2" id="intl-grid"></div>
+
+<!-- Baidu Hot Search -->
+<h2 class="section-title">🔥 今日热搜</h2>
+<div class="grid2" id="hot-grid"></div>
+
+</div>
+
+<footer class="footer">数据来源：百度热搜 · GitHub Trending · Google News · 2026-06-16</footer>
+
+<script>
+var ghData = [{"rank": 1, "owner": "iptv-org", "name": "iptv", "url": "https://github.com/iptv-org/iptv", "description": "全球公开IPTV频道合集，收录来自世界各地的8000+电视频道流，是最大的开源互联网电视直播频道索引项目，支持M3U播放列表格式", "language": "TypeScript", "stars": "122,908", "starsToday": "2,657"}, {"rank": 2, "owner": "Panniantong", "name": "Agent-Reach", "url": "https://github.com/Panniantong/Agent-Reach", "description": "为AI Agent提供互联网视觉的开源工具，一站式搜索Twitter/Reddit/YouTube/GitHub/B站/小红书，命令行操作无需API费用", "language": "Python", "stars": "30,205", "starsToday": "1,100"}, {"rank": 3, "owner": "NVIDIA", "name": "SkillSpector", "url": "https://github.com/NVIDIA/SkillSpector", "description": "NVIDIA开源的AI Agent技能安全扫描工具，可检测恶意模式、注入攻击路径和敏感信息泄露风险，为AI Agent生态提供安全审计", "language": "Python", "stars": "6,383", "starsToday": "1,079"}, {"rank": 4, "owner": "freeCodeCamp", "name": "freeCodeCamp", "url": "https://github.com/freeCodeCamp/freeCodeCamp", "description": "全球最大免费编程学习平台的开源代码库与课程体系，涵盖数学、编程、计算机科学，3000+小时教学内容，数百万学习者使用", "language": "TypeScript", "stars": "447,904", "starsToday": "736"}, {"rank": 5, "owner": "rohitg00", "name": "ai-engineering-from-scratch", "url": "https://github.com/rohitg00/ai-engineering-from-scratch", "description": "从零学习AI工程化的实践教程项目，涵盖AI Agent、计算机视觉等方向，从理论到部署全流程实战", "language": "Python", "stars": "33,094", "starsToday": "562"}, {"rank": 6, "owner": "Introduction-to-Autonomous-Robots", "name": "Introduction-to-Autonomous-Robots", "url": "https://github.com/Introduction-to-Autonomous-Robots/Introduction-to-Autonomous-Robots", "description": "科罗拉多大学开源教材《自主机器人导论》，系统讲解机器人运动学、感知、定位与规划等核心理论", "language": "TeX", "stars": "3,070", "starsToday": "489"}, {"rank": 7, "owner": "chatwoot", "name": "chatwoot", "url": "https://github.com/chatwoot/chatwoot", "description": "开源全渠道客服平台，支持实时聊天、邮件、社交媒体统一接入，是Intercom和Zendesk的自托管替代方案", "language": "Ruby", "stars": "31,698", "starsToday": "431"}, {"rank": 8, "owner": "shiyu-coder", "name": "Kronos", "url": "https://github.com/shiyu-coder/Kronos", "description": "金融市场基座模型Kronos，专为金融时序数据设计的基础大模型，可理解金融市场的价格与交易量时序语言", "language": "Python", "stars": "30,282", "starsToday": "396"}, {"rank": 9, "owner": "jwasham", "name": "coding-interview-university", "url": "https://github.com/jwasham/coding-interview-university", "description": "软件工程师面试学习计划，涵盖算法、数据结构、系统设计等全方位计算机科学知识体系，GitHub超35万星标", "language": "Markdown", "stars": "352,315", "starsToday": "364"}, {"rank": 10, "owner": "Free-TV", "name": "IPTV", "url": "https://github.com/Free-TV/IPTV", "description": "免费电视频道M3U播放列表合集，汇聚全球公开免费电视频道流链接，即开即用的IPTV播放方案", "language": "Python", "stars": "17,288", "starsToday": "361"}];
+var intlData = [{"title": "美伊达成停火协议 各方反应不一", "summary": "美伊正式达成谅解备忘录，全线永久停战并解除海上封锁。伊朗披露五点关键细节，以色列不认可协议或破坏停火进程", "source": "新华社", "region": "中东", "regionClass": "MiddleEast", "url": "https://www.baidu.com/s?wd=%E7%BE%8E%E4%BC%8A%E8%BE%BE%E6%88%90%E5%81%9C%E7%81%AB%E5%8D%8F%E8%AE%AE&sa=fyb_news"}, {"title": "世界杯：佛得角0-0逼平西班牙 创最大冷门", "summary": "世界排名第67位的佛得角爆冷逼平夺冠热门西班牙，40岁门将沃齐尼亚7次神扑，助球队拿到队史首个世界杯积分", "source": "央视新闻", "region": "非洲", "regionClass": "Africa", "url": "https://www.baidu.com/s?wd=%E4%BD%9B%E5%BE%97%E8%A7%92%E9%80%BC%E5%B9%B3%E8%A5%BF%E7%8F%AD%E7%89%99&sa=fyb_news"}, {"title": "美军B-52轰炸机坠毁致8人全部死亡", "summary": "美空军一架B-52轰炸机在加州南部坠毁，机上8人全部遇难。事故原因尚在调查中，近年来美军最严重的航空事故之一", "source": "路透社", "region": "美洲", "regionClass": "Americas", "url": "https://www.baidu.com/s?wd=%E7%BE%8E%E5%86%9BB52%E8%BD%B0%E7%82%B8%E6%9C%BA%E5%9D%A0%E6%AF%81&sa=fyb_news"}, {"title": "伊朗男足佩戴徽章纪念168名遇难儿童", "summary": "伊朗男足在世界杯比赛中佩戴特殊徽章，纪念此前遭美以袭击丧生的168名儿童。伊朗使馆发AI生成视频引关注", "source": "环球网", "region": "中东", "regionClass": "MiddleEast", "url": "https://www.baidu.com/s?wd=%E4%BC%8A%E6%9C%97%E7%94%B7%E8%B6%B3%E9%81%87%E9%9A%BE%E5%84%BF%E7%AB%A5%E5%BE%BD%E7%AB%A0&sa=fyb_news"}, {"title": "姆巴佩领衔法国队 \"雪耻之战\"将打响", "summary": "法国队时隔24年迎战塞内加尔，姆巴佩领衔出征。当年一球之差落败，此番能否雪耻成为焦点", "source": "体坛周报", "region": "欧洲", "regionClass": "Europe", "url": "https://www.baidu.com/s?wd=%E6%B3%95%E5%9B%BD%E9%9B%AA%E8%80%BB%E4%B9%8B%E6%88%98&sa=fyb_news"}, {"title": "乌龙球领跑世界杯射手榜 小组赛已3球", "summary": "本届世界杯已产生3粒乌龙球，超2022年整届总数。若视乌龙球为虚拟射手，其已独自领跑射手榜", "source": "新华社", "region": "美洲", "regionClass": "Americas", "url": "https://www.baidu.com/s?wd=%E4%B9%8C%E9%BE%99%E7%90%83%E9%A2%86%E8%B7%91%E4%B8%96%E7%95%8C%E6%9D%AF%E5%B0%84%E6%89%8B%E6%A6%9C&sa=fyb_news"}, {"title": "伊朗用AI生成球员牵遇难儿童入场视频", "summary": "伊朗多个驻外使馆发布AI生成视频，展示球员牵着遇难儿童入场，纪念遭袭丧生的168名儿童", "source": "法新社", "region": "中东", "regionClass": "MiddleEast", "url": "https://www.baidu.com/s?wd=%E4%BC%8A%E6%9C%97AI%E7%90%83%E5%91%98%E7%89%B5%E5%84%BF%E7%AB%A5%E5%85%A5%E5%9C%BA&sa=fyb_news"}, {"title": "德国战车即将登场 球迷热议死亡之组", "summary": "2026世界杯德国队即将登场，本届赛事多个死亡之组引全球球迷热议，欧美强队扎堆对决", "source": "新华社", "region": "欧洲", "regionClass": "Europe", "url": "https://www.baidu.com/s?wd=%E5%BE%B7%E5%9B%BD%E6%88%98%E8%BD%A6%E7%99%BB%E5%9C%BA&sa=fyb_news"}];
+var officialData = [{"title": "习近平党建思想内涵要义：全国党建工作座谈会部署学习贯彻", "summary": "全国党建工作座谈会在京召开，对学习贯彻习近平党建思想作出工作部署", "source": "人民日报", "url": "https://www.baidu.com/s?wd=%E4%B9%A0%E8%BF%91%E5%B9%B3%E5%85%9A%E5%BB%BA%E6%80%9D%E6%83%B3%E5%86%85%E6%B6%B5%E8%A6%81%E4%B9%89&sa=fyb_news"}, {"title": "\"六张网\"为新基建强筋健骨：水网电网算力网等全面部署", "summary": "中央部署水网、新型电网、算力网、通信网、地下管网、物流网建设", "source": "新华社", "url": "https://www.baidu.com/s?wd=%E5%85%AD%E5%BC%A0%E7%BD%91%E4%B8%BA%E6%96%B0%E5%9F%BA%E5%BB%BA%E5%BC%BA%E7%AD%8B%E5%81%A5%E9%AA%A8&sa=fyb_news"}, {"title": "多所\"双一流\"高校宣布2026年本科扩招，聚焦AI等战略领域", "summary": "东南大学、上海交大、南京大学等十余所双一流高校宣布扩招", "source": "央视新闻", "url": "https://www.baidu.com/s?wd=%E5%8F%8C%E4%B8%80%E6%B5%81%E9%AB%98%E6%A0%A1%E5%AE%A3%E5%B8%83%E6%89%A9%E6%8B%9B&sa=fyb_news"}, {"title": "2万亿存款去哪儿了：居民存款连续两月减少逾2万亿元", "summary": "2026年4-5月居民存款连续两月减少2.05万亿，资金转向理财、基金等产品", "source": "国家统计局", "url": "https://www.baidu.com/s?wd=2%E4%B8%87%E4%BA%BF%E5%AD%98%E6%AC%BE%E5%8E%BB%E5%93%AA%E5%84%BF%E4%BA%86&sa=fyb_news"}, {"title": "广东汕尾暴雨致民房被淹水深近3米，群众安全转移", "summary": "汕尾陆丰遭暴雨致河水倒灌，部分区域积水近3米，救援队伍及时到场", "source": "科技日报", "url": "https://www.baidu.com/s?wd=%E5%B9%BF%E4%B8%9C%E6%B1%95%E5%B0%BE%E6%9A%B4%E9%9B%A8%E6%B0%91%E6%88%BF%E8%A2%AB%E6%B7%B9&sa=fyb_news"}];
+var hotData = [{"rank": 1, "title": "习近平党建思想内涵要义", "heat": "790万", "url": "https://www.baidu.com/s?wd=%E4%B9%A0%E8%BF%91%E5%B9%B3%E5%85%9A%E5%BB%BA%E6%80%9D%E6%83%B3%E5%86%85%E6%B6%B5%E8%A6%81%E4%B9%89&sa=fyb_news"}, {"rank": 2, "title": "世界杯开赛以来最大冷门诞生", "heat": "781万", "url": "https://www.baidu.com/s?wd=%E4%B8%96%E7%95%8C%E6%9D%AF%E5%BC%80%E8%B5%9B%E4%BB%A5%E6%9D%A5%E6%9C%80%E5%A4%A7%E5%86%B7%E9%97%A8%E8%AF%9E%E7%94%9F&sa=fyb_news"}, {"rank": 3, "title": "佛得角爆冷逼平西班牙", "heat": "771万", "url": "https://www.baidu.com/s?wd=%E4%BD%9B%E5%BE%97%E8%A7%92%E7%88%86%E5%86%B7%E9%80%BC%E5%B9%B3%E8%A5%BF%E7%8F%AD%E7%89%99&sa=fyb_news"}, {"rank": 4, "title": "\"六张网\"为新基建强筋健骨", "heat": "762万", "url": "https://www.baidu.com/s?wd=%E5%85%AD%E5%BC%A0%E7%BD%91%E4%B8%BA%E6%96%B0%E5%9F%BA%E5%BB%BA%E5%BC%BA%E7%AD%8B%E5%81%A5%E9%AA%A8&sa=fyb_news"}, {"rank": 5, "title": "美军一B52轰炸机坠毁致8死", "heat": "752万", "url": "https://www.baidu.com/s?wd=%E7%BE%8E%E5%86%9BB52%E8%BD%B0%E7%82%B8%E6%9C%BA%E5%9D%A0%E6%AF%81%E8%87%B48%E6%AD%BB&sa=fyb_news"}, {"rank": 6, "title": "世界杯：伊朗vs新西兰", "heat": "742万", "url": "https://www.baidu.com/s?wd=%E4%B8%96%E7%95%8C%E6%9D%AF%E4%BC%8A%E6%9C%97vs%E6%96%B0%E8%A5%BF%E5%85%B0&sa=fyb_news"}, {"rank": 7, "title": "美伊达成协议 谁赢了", "heat": "733万", "url": "https://www.baidu.com/s?wd=%E7%BE%8E%E4%BC%8A%E8%BE%BE%E6%88%90%E5%8D%8F%E8%AE%AE%E8%B0%81%E8%B5%A2%E4%BA%86&sa=fyb_news"}, {"rank": 8, "title": "副部级降为副处级8年后 王铁再被查", "heat": "724万", "url": "https://www.baidu.com/s?wd=%E5%89%AF%E9%83%A8%E7%BA%A7%E9%99%8D%E4%B8%BA%E5%89%AF%E5%A4%84%E7%BA%A78%E5%B9%B4%E5%90%8E%E7%8E%8B%E9%93%81%E5%86%8D%E8%A2%AB%E6%9F%A5&sa=fyb_news"}, {"rank": 9, "title": "删了几千张照片结果内存没变", "heat": "714万", "url": "https://www.baidu.com/s?wd=%E5%88%A0%E4%BA%86%E5%87%A0%E5%8D%83%E5%BC%A0%E7%85%A7%E7%89%87%E7%BB%93%E6%9E%9C%E5%86%85%E5%AD%98%E6%B2%A1%E5%8F%98&sa=fyb_news"}, {"rank": 10, "title": "2万亿存款去哪儿了", "heat": "705万", "url": "https://www.baidu.com/s?wd=2%E4%B8%87%E4%BA%BF%E5%AD%98%E6%AC%BE%E5%8E%BB%E5%93%AA%E5%84%BF%E4%BA%86&sa=fyb_news"}, {"rank": 11, "title": "伊朗用AI让球员牵遇难儿童入场", "heat": "695万", "url": "https://www.baidu.com/s?wd=%E4%BC%8A%E6%9C%97%E7%94%A8AI%E8%AE%A9%E7%90%83%E5%91%98%E7%89%B5%E9%81%87%E9%9A%BE%E5%84%BF%E7%AB%A5%E5%85%A5%E5%9C%BA&sa=fyb_news"}, {"rank": 12, "title": "博主编造涉货车司机与货主谣言被罚", "heat": "685万", "url": "https://www.baidu.com/s?wd=%E5%8D%9A%E4%B8%BB%E7%BC%96%E9%80%A0%E6%B6%89%E8%B4%A7%E8%BD%A6%E5%8F%B8%E6%9C%BA%E4%B8%8E%E8%B4%A7%E4%B8%BB%E8%B0%A3%E8%A8%80%E8%A2%AB%E7%BD%9A&sa=fyb_news"}, {"rank": 13, "title": "女子全副武装防晒反致烂脸", "heat": "676万", "url": "https://www.baidu.com/s?wd=%E5%A5%B3%E5%AD%90%E5%85%A8%E5%89%AF%E6%AD%A6%E8%A3%85%E9%98%B2%E6%99%92%E5%8F%8D%E8%87%B4%E7%83%82%E8%84%B8&sa=fyb_news"}, {"rank": 14, "title": "南太行失联19天小伙遗体已找到", "heat": "666万", "url": "https://www.baidu.com/s?wd=%E5%8D%97%E5%A4%AA%E8%A1%8C%E5%A4%B1%E8%81%9419%E5%A4%A9%E5%B0%8F%E4%BC%99%E9%81%97%E4%BD%93%E5%B7%B2%E6%89%BE%E5%88%B0&sa=fyb_news"}, {"rank": 15, "title": "发多少个\"哈\"才是真的笑了", "heat": "656万", "url": "https://www.baidu.com/s?wd=%E5%8F%91%E5%A4%9A%E5%B0%91%E4%B8%AA%E5%93%88%E6%89%8D%E6%98%AF%E7%9C%9F%E7%9A%84%E7%AC%91%E4%BA%86&sa=fyb_news"}, {"rank": 16, "title": "广东汕尾暴雨有民房被淹水深近3米", "heat": "647万", "url": "https://www.baidu.com/s?wd=%E5%B9%BF%E4%B8%9C%E6%B1%95%E5%B0%BE%E6%9A%B4%E9%9B%A8%E6%B0%91%E6%88%BF%E8%A2%AB%E6%B7%B9&sa=fyb_news"}, {"rank": 17, "title": "佛得角门将赛后涨粉170万", "heat": "628万", "url": "https://www.baidu.com/s?wd=%E4%BD%9B%E5%BE%97%E8%A7%92%E9%97%A8%E5%B0%86%E8%B5%9B%E5%90%8E%E6%B6%A8%E7%B2%89170%E4%B8%87&sa=fyb_news"}, {"rank": 18, "title": "宝妈产子55天遭家暴离婚案将开庭", "heat": "618万", "url": "https://www.baidu.com/s?wd=%E5%AE%9D%E5%A6%88%E4%BA%A7%E5%AD%9055%E5%A4%A9%E9%81%AD%E5%AE%B6%E6%9A%B4%E7%A6%BB%E5%A9%9A%E6%A1%88%E5%B0%86%E5%BC%80%E5%BA%AD&sa=fyb_news"}, {"rank": 19, "title": "姆巴佩领衔 法国\"雪耻之战\"将打响", "heat": "609万", "url": "https://www.baidu.com/s?wd=%E5%A7%86%E5%B7%B4%E4%BD%A9%E9%A2%86%E8%A1%94%E6%B3%95%E5%9B%BD%E9%9B%AA%E8%80%BB%E4%B9%8B%E6%88%98&sa=fyb_news"}, {"rank": 20, "title": "多所\"双一流\"高校宣布扩招", "heat": "599万", "url": "https://www.baidu.com/s?wd=%E5%8F%8C%E4%B8%80%E6%B5%81%E9%AB%98%E6%A0%A1%E5%AE%A3%E5%B8%83%E6%89%A9%E6%8B%9B&sa=fyb_news"}];
+
+function buildGh() {
+  var g = document.getElementById('gh-grid'), h = '';
+  ghData.forEach(function(r) {
+    h += '<div class="card gh-card"><h3><a href="' + r.url + '" target="_blank">' + r.owner + ' / ' + r.name + '</a></h3><p class="desc">' + r.description + '</p><span class="lang">' + r.language + '</span>⭐ ' + r.stars + ' <span style="color:var(--accent);font-size:0.75rem">+' + r.starsToday + ' today</span></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildOfficial() {
+  var g = document.getElementById('official-grid'), h = '';
+  officialData.forEach(function(r) {
+    h += '<div class="card"><span class="rank" style="color:var(--text3)">' + r.source + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildIntl() {
+  var g = document.getElementById('intl-grid'), h = '';
+  intlData.forEach(function(r) {
+    h += '<div class="card intl-card"><span class="region region-' + r.regionClass + '">' + r.region + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3><p class="meta">' + r.source + '</p></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildHot() {
+  var g = document.getElementById('hot-grid'), h = '';
+  hotData.forEach(function(r) {
+    h += '<div class="card"><span class="rank">#' + r.rank + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3><span class="heat">' + r.heat + '</span></div>';
+  });
+  g.innerHTML = h;
+}
+
+buildGh(); buildOfficial(); buildIntl(); buildHot();
+</script>
+
+</body>
+</html>
