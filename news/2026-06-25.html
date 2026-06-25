@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日新闻 · 2026-06-25</title>
+<style>
+:root{--bg:#f9f9f8;--card-bg:#fff;--text:#1a1a2e;--text2:#52525b;--text3:#a1a1aa;--accent:#4f46e5;--border:#e5e5e7}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,'PingFang SC',sans-serif;min-height:100vh}
+.header{background:linear-gradient(135deg,#1a1a2e 0%,#2d2d44 100%);color:#fff;padding:48px 32px 40px;text-align:center}
+.header h1{font-size:1.5rem;font-weight:600;margin-bottom:6px}
+.header p{font-size:0.875rem;opacity:0.6}
+.container{max-width:960px;margin:0 auto;padding:32px}
+.section-title{font-size:1.1rem;font-weight:600;margin:40px 0 16px;color:var(--text);display:flex;align-items:center;gap:8px}
+.section-title::before{content:'';width:4px;height:20px;background:var(--accent);border-radius:2px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.card{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:16px;transition:all 0.15s}
+.card:hover{border-color:var(--accent);box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.card .rank{font-size:0.75rem;color:var(--accent);font-weight:600;margin-bottom:4px}
+.card h3{font-size:0.9rem;font-weight:500;line-height:1.5;margin-bottom:6px}
+.card h3 a{color:var(--text);text-decoration:none}
+.card h3 a:hover{color:var(--accent);text-decoration:underline}
+.card .meta{font-size:0.75rem;color:var(--text3)}
+.card .heat{display:inline-block;background:var(--accent);color:#fff;font-size:0.65rem;padding:2px 8px;border-radius:10px;margin-left:6px;opacity:0.7}
+.gh-card{padding:18px}
+.gh-card h3{font-size:0.95rem}
+.gh-card h3 a{color:var(--accent)}
+.gh-card .desc{font-size:0.8rem;color:var(--text2);line-height:1.5;margin:6px 0}
+.gh-card .lang{display:inline-block;font-size:0.7rem;color:var(--text3);margin-right:12px}
+.gh-card .lang::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;background:var(--accent)}
+.intl-card{border-left:3px solid var(--accent)}
+.intl-card .region{font-size:0.7rem;padding:2px 6px;border-radius:4px;margin-right:6px;display:inline-block}
+.region-MiddleEast{background:#fef3c7;color:#b45309}
+.region-EastAsia{background:#dbeafe;color:#1d4ed8}
+.region-Americas{background:#ede9fe;color:#6d28d9}
+.region-RussiaUkraine{background:#fee2e2;color:#b91c1c}
+.region-SouthAsia{background:#ffedd5;color:#c2410c}
+.region-Europe{background:#e0e7ff;color:#3730a3}
+.region-Africa{background:#dcfce7;color:#166534}
+.region-Global{background:#f3f4f6;color:#374151}
+.footer{text-align:center;padding:32px;color:var(--text3);font-size:0.75rem;border-top:1px solid var(--border);margin-top:40px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}.container{padding:16px}}
+</style>
+</head>
+<body>
+<header class="header">
+  <h1>📰 每日新闻日报</h1>
+  <p>2026年06月25日 · 周四</p>
+</header>
+
+<div class="container">
+
+<!-- GitHub Trending -->
+<h2 class="section-title">🔥 GitHub Trending</h2>
+<div class="grid2" id="gh-grid"></div>
+
+<!-- 官方媒体 -->
+<h2 class="section-title">📡 官方媒体</h2>
+<div class="grid2" id="official-grid"></div>
+
+<!-- International News -->
+<h2 class="section-title">🌍 国际新闻</h2>
+<div class="grid2" id="intl-grid"></div>
+
+<!-- Baidu Hot Search -->
+<h2 class="section-title">🔥 今日热搜</h2>
+<div class="grid2" id="hot-grid"></div>
+
+</div>
+
+<footer class="footer">数据来源：百度热搜 · GitHub Trending · Google News · 2026-06-25</footer>
+
+<script>
+var ghData = [
+  {
+    "rank": 1,
+    "owner": "bozhouDev",
+    "name": "codex-orange-book",
+    "url": "https://github.com/bozhouDev/codex-orange-book",
+    "description": "一份全面系统的 Codex 橙皮书使用指南，覆盖从环境安装、基础配置到实际项目开发的完整链路，包含丰富的实战案例和可下载 PDF 文档，帮助开发者快速掌握 Codex 的各项核心功能与最佳实践",
+    "language": "HTML",
+    "stars": "1431",
+    "starsToday": "1431"
+  },
+  {
+    "rank": 2,
+    "owner": "goehou",
+    "name": "tabbit-toy",
+    "url": "https://github.com/goehou/tabbit-toy",
+    "description": "基于 tabbit 的研究工具包，支持将数据集转化为 OAI 标准格式，内置会员认证系统与一键提取 Cookie 的浏览器扩展功能，方便研究者在不同 AI 平台间高效迁移和测试训练数据",
+    "language": "JavaScript",
+    "stars": "272",
+    "starsToday": "272"
+  },
+  {
+    "rank": 3,
+    "owner": "nova452",
+    "name": "ComfyUI-ConditioningKrea2Rebalance",
+    "url": "https://github.com/nova452/ComfyUI-ConditioningKrea2Rebalance",
+    "description": "一款 Krea 2 条件优化器 ComfyUI 插件，支持逐层权重精细调控和 IP-Adapter 高级功能，可为 AI 图像生成提供更精准的条件控制，同时具备绕过内置安全过滤器的灵活能力",
+    "language": "Python",
+    "stars": "201",
+    "starsToday": "201"
+  },
+  {
+    "rank": 4,
+    "owner": "Yu9191",
+    "name": "wloc",
+    "url": "https://github.com/Yu9191/wloc",
+    "description": "一款 Apple WLOC 位置欺骗工具，能够模拟修改 iOS 设备的真实地理位置信息，支持多种定位场景和自定义坐标设定，可应用于开发测试、隐私保护以及需要虚拟定位的各类使用场景",
+    "language": "JavaScript",
+    "stars": "186",
+    "starsToday": "186"
+  },
+  {
+    "rank": 5,
+    "owner": "benchflow-ai",
+    "name": "awesome-evals",
+    "url": "https://github.com/benchflow-ai/awesome-evals",
+    "description": "精心整理的 AI Agent 构建与评估资源合集，涵盖前沿学术论文、深度技术博客、开源工具链和行业基准测试，为研究者和开发者提供一站式参考，助力打造更可靠高效的智能体系统",
+    "language": null,
+    "stars": "176",
+    "starsToday": "176"
+  },
+  {
+    "rank": 6,
+    "owner": "dama-cyber",
+    "name": "Casting-Workflow",
+    "url": "https://github.com/dama-cyber/Casting-Workflow",
+    "description": "一套专业级 ComfyUI 工作流方案，专注于角色造型设计与风格化图像生成，提供从模型加载、参数精细调节到后期处理的完整节点编排管线，帮助创作者快速产出高质量视觉作品",
+    "language": "Python",
+    "stars": "147",
+    "starsToday": "147"
+  },
+  {
+    "rank": 7,
+    "owner": "Reyzowter",
+    "name": "Hello-Agents",
+    "url": "https://github.com/Reyzowter/Hello-Agents",
+    "description": "从零基础到生产级应用的 AI Agent 系统实践教程，循序渐进讲解智能体核心概念、架构设计、工具集成和多智能体协作模式，配套完整代码示例，适合开发者系统学习 Agent 开发全流程",
+    "language": "Python",
+    "stars": "127",
+    "starsToday": "127"
+  },
+  {
+    "rank": 8,
+    "owner": "lightbearco",
+    "name": "tupper",
+    "url": "https://github.com/lightbearco/tupper",
+    "description": "开源 AI Agent 安全沙箱解决方案，可在本地环境中安全运行不受信任的 AI 生成代码，提供隔离执行环境、资源限制和行为监控功能，有效防止恶意代码对主机系统造成损害",
+    "language": "TypeScript",
+    "stars": "123",
+    "starsToday": "123"
+  },
+  {
+    "rank": 9,
+    "owner": "PMTraderAdam",
+    "name": "PMTraderAdam",
+    "url": "https://github.com/PMTraderAdam/PMTraderAdam",
+    "description": "PMTraderAdam 个人技术仓库与主页，汇集了量化交易策略研究、金融数据分析工具和自动化交易系统相关的开源项目与学习笔记，面向对程序化交易和量化金融感兴趣的开发者",
+    "language": null,
+    "stars": "123",
+    "starsToday": "123"
+  },
+  {
+    "rank": 10,
+    "owner": "Simpl3x3",
+    "name": "ESEILANE",
+    "url": "https://github.com/Simpl3x3/ESEILANE",
+    "description": "高性能知识图谱引擎，专为 AI、大语言模型和 GraphRAG 应用场景设计，支持大规模实体关系建模、语义检索和推理计算，以 Ruby 语言实现的轻量级图数据库解决方案，兼顾性能与易用性",
+    "language": "Ruby",
+    "stars": "105",
+    "starsToday": "105"
+  }
+];
+var intlData = [
+  {
+    "title": "巴西3比0苏格兰 内马尔替补登场",
+    "region": "美洲",
+    "regionClass": "Americas",
+    "summary": "世界杯小组赛巴西队以3比0完胜苏格兰，伤愈复出的内马尔下半场替补登场表现活跃，桑巴军团以强势表现领跑小组积分榜",
+    "source": "法新社",
+    "url": "https://www.baidu.com/s?wd=%E5%B7%B4%E8%A5%BF3%E6%AF%940%E8%8B%8F%E6%A0%BC%E5%85%B0+%E5%86%85%E9%A9%AC%E5%B0%94%E6%9B%BF%E8%A1%A5%E7%99%BB%E5%9C%BA&sa=fyb_news"
+  },
+  {
+    "title": "委内瑞拉1分钟内连发7.1级7.5级强震",
+    "region": "美洲",
+    "regionClass": "Americas",
+    "summary": "委内瑞拉在短短一分钟内接连发生7.1级和7.5级强烈地震，震中位于人口密集区域附近，多座城市震感强烈，全国已启动紧急响应机制",
+    "source": "路透社",
+    "url": "https://www.baidu.com/s?wd=%E5%A7%94%E5%86%85%E7%91%9E%E6%8B%891%E5%88%86%E9%92%9F%E5%86%85%E8%BF%9E%E5%8F%917.1%E7%BA%A77.5%E7%BA%A7%E5%BC%BA%E9%9C%87&sa=fyb_news"
+  },
+  {
+    "title": "世界杯：南非vs韩国",
+    "region": "非洲",
+    "regionClass": "Africa",
+    "summary": "世界杯小组赛南非对阵韩国的关键对决激烈展开，双方在攻防两端展现出顽强斗志，这场比赛对两队小组出线形势至关重要，引发全球球迷关注",
+    "source": "ESPN",
+    "url": "https://www.baidu.com/s?wd=%E4%B8%96%E7%95%8C%E6%9D%AF%EF%BC%9A%E5%8D%97%E9%9D%9Evs%E9%9F%A9%E5%9B%BD&sa=fyb_news"
+  },
+  {
+    "title": "阿里巴巴对美国国防部提起诉讼",
+    "region": "美洲",
+    "regionClass": "Americas",
+    "summary": "阿里巴巴集团正式向美国联邦法院提起诉讼，指控美国国防部将其列入中国军工企业名单缺乏事实依据，要求撤销相关认定并给予公正裁决",
+    "source": "路透社",
+    "url": "https://www.baidu.com/s?wd=%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E5%AF%B9%E7%BE%8E%E5%9B%BD%E5%9B%BD%E9%98%B2%E9%83%A8%E6%8F%90%E8%B5%B7%E8%AF%89%E8%AE%BC&sa=fyb_news"
+  },
+  {
+    "title": "日本岩手县6.9级地震 东京震感明显",
+    "region": "东亚",
+    "regionClass": "EastAsia",
+    "summary": "日本岩手县发生6.9级强烈地震，东京都心及关东地区震感明显，气象厅一度发布海啸注意报，目前暂无重大人员伤亡和核设施异常报告",
+    "source": "NHK",
+    "url": "https://www.baidu.com/s?wd=%E6%97%A5%E6%9C%AC%E5%B2%A9%E6%89%8B%E5%8E%BF6.9%E7%BA%A7%E5%9C%B0%E9%9C%87+%E4%B8%9C%E4%BA%AC%E9%9C%87%E6%84%9F%E6%98%8E%E6%98%BE&sa=fyb_news"
+  },
+  {
+    "title": "黄金白银原油集体暴跌",
+    "region": "全球",
+    "regionClass": "Global",
+    "summary": "国际大宗商品市场遭遇剧烈震荡，黄金、白银和原油价格集体大幅下挫，市场对全球经济前景的担忧情绪加剧，投资者风险偏好显著下降",
+    "source": "彭博社",
+    "url": "https://www.baidu.com/s?wd=%E9%BB%84%E9%87%91%E7%99%BD%E9%93%B6%E5%8E%9F%E6%B2%B9%E9%9B%86%E4%BD%93%E6%9A%B4%E8%B7%8C&sa=fyb_news"
+  },
+  {
+    "title": "全球AI安全峰会将于下月在巴黎举行，30国签署联合声明",
+    "region": "欧洲",
+    "regionClass": "Europe",
+    "summary": "全球AI安全峰会宣布将于下月在法国巴黎召开，来自30个国家的代表已签署联合声明，承诺共同推进人工智能安全治理框架的建立与国际合作",
+    "source": "BBC",
+    "url": "https://www.baidu.com/s?wd=%E5%85%A8%E7%90%83AI%E5%AE%89%E5%85%A8%E5%B3%B0%E4%BC%9A%E5%B7%B4%E9%BB%8E+30%E5%9B%BD%E7%AD%BE%E7%BD%B2%E8%81%94%E5%90%88%E5%A3%B0%E6%98%8E&sa=fyb_news"
+  }
+];
+var officialData = [
+  {
+    "title": "习近平在山东德州考察",
+    "summary": "习近平总书记深入山东德州农村、企业和社区，实地考察乡村振兴和高质量发展工作，与基层干部群众亲切交流",
+    "source": "新华社",
+    "url": "https://www.baidu.com/s?wd=%E4%B9%A0%E8%BF%91%E5%B9%B3%E5%9C%A8%E5%B1%B1%E4%B8%9C%E5%BE%B7%E5%B7%9E%E8%80%83%E5%AF%9F&sa=fyb_news"
+  },
+  {
+    "title": "\"双一流\"高校扩招！投向这些领域",
+    "summary": "教育部宣布新一轮\"双一流\"高校扩招计划，重点投向人工智能、集成电路、生物医药等国家战略急需领域，优化人才培养结构",
+    "source": "人民日报",
+    "url": "https://www.baidu.com/s?wd=%E5%8F%8C%E4%B8%80%E6%B5%81%E9%AB%98%E6%A0%A1%E6%89%A9%E6%8B%9B+%E6%8A%95%E5%90%91%E8%BF%99%E4%BA%9B%E9%A2%86%E5%9F%9F&sa=fyb_news"
+  },
+  {
+    "title": "河南2026年高考分数线公布",
+    "summary": "河南省教育考试院正式公布2026年高考各批次录取控制分数线，文科一本线较去年略有上升，考生可登录官方平台查询成绩",
+    "source": "央视新闻",
+    "url": "https://www.baidu.com/s?wd=%E6%B2%B3%E5%8D%972026%E5%B9%B4%E9%AB%98%E8%80%83%E5%88%86%E6%95%B0%E7%BA%BF%E5%85%AC%E5%B8%83&sa=fyb_news"
+  },
+  {
+    "title": "委内瑞拉发生7.5级强震，暂无中国公民伤亡报告",
+    "summary": "委内瑞拉发生7.5级强震后，中国驻委内瑞拉使馆第一时间启动应急机制，全面排查中国公民安全情况，目前暂无人员伤亡报告",
+    "source": "新华社",
+    "url": "https://www.baidu.com/s?wd=%E5%A7%94%E5%86%85%E7%91%9E%E6%8B%897.5%E7%BA%A7%E5%BC%BA%E9%9C%87+%E6%9A%82%E6%97%A0%E4%B8%AD%E5%9B%BD%E5%85%AC%E6%B0%91%E4%BC%A4%E4%BA%A1&sa=fyb_news"
+  },
+  {
+    "title": "浙江大学1978年就有AI专业了",
+    "summary": "浙江大学早在1978年便开设了人工智能相关专业方向，是国内最早开展AI研究与教学的高校之一，四十余年来培养了大批行业领军人才",
+    "source": "科技日报",
+    "url": "https://www.baidu.com/s?wd=%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A61978%E5%B9%B4%E5%B0%B1%E6%9C%89AI%E4%B8%93%E4%B8%9A%E4%BA%86&sa=fyb_news"
+  }
+];
+var hotData = [
+  {
+    "rank": 1,
+    "title": "习近平在山东德州考察",
+    "heat": "790万",
+    "url": "https://www.baidu.com/s?wd=%E4%B9%A0%E8%BF%91%E5%B9%B3%E5%9C%A8%E5%B1%B1%E4%B8%9C%E5%BE%B7%E5%B7%9E%E8%80%83%E5%AF%9F&sa=fyb_news"
+  },
+  {
+    "rank": 2,
+    "title": "考生成绩显示全省前20 母子俩都蒙了",
+    "heat": "780万",
+    "url": "https://www.baidu.com/s?wd=%E8%80%83%E7%94%9F%E6%88%90%E7%BB%A9%E6%98%BE%E7%A4%BA%E5%85%A8%E7%9C%81%E5%89%8D20+%E6%AF%8D%E5%AD%90%E4%BF%A9%E9%83%BD%E8%92%99%E4%BA%86&sa=fyb_news"
+  },
+  {
+    "rank": 3,
+    "title": "巴西3比0苏格兰 内马尔替补登场",
+    "heat": "771万",
+    "url": "https://www.baidu.com/s?wd=%E5%B7%B4%E8%A5%BF3%E6%AF%940%E8%8B%8F%E6%A0%BC%E5%85%B0+%E5%86%85%E9%A9%AC%E5%B0%94%E6%9B%BF%E8%A1%A5%E7%99%BB%E5%9C%BA&sa=fyb_news"
+  },
+  {
+    "rank": 4,
+    "title": "\"双一流\"高校扩招！投向这些领域",
+    "heat": "761万",
+    "url": "https://www.baidu.com/s?wd=%E5%8F%8C%E4%B8%80%E6%B5%81%E9%AB%98%E6%A0%A1%E6%89%A9%E6%8B%9B+%E6%8A%95%E5%90%91%E8%BF%99%E4%BA%9B%E9%A2%86%E5%9F%9F&sa=fyb_news"
+  },
+  {
+    "rank": 5,
+    "title": "委内瑞拉1分钟内连发7.1级7.5级强震",
+    "heat": "752万",
+    "url": "https://www.baidu.com/s?wd=%E5%A7%94%E5%86%85%E7%91%9E%E6%8B%891%E5%88%86%E9%92%9F%E5%86%85%E8%BF%9E%E5%8F%917.1%E7%BA%A77.5%E7%BA%A7%E5%BC%BA%E9%9C%87&sa=fyb_news"
+  },
+  {
+    "rank": 6,
+    "title": "世界杯：南非vs韩国",
+    "heat": "742万",
+    "url": "https://www.baidu.com/s?wd=%E4%B8%96%E7%95%8C%E6%9D%AF%EF%BC%9A%E5%8D%97%E9%9D%9Evs%E9%9F%A9%E5%9B%BD&sa=fyb_news"
+  },
+  {
+    "rank": 7,
+    "title": "杭州雨后出现地衣 最贵349元/斤",
+    "heat": "733万",
+    "url": "https://www.baidu.com/s?wd=%E6%9D%AD%E5%B7%9E%E9%9B%A8%E5%90%8E%E5%87%BA%E7%8E%B0%E5%9C%B0%E8%A1%A3+%E6%9C%80%E8%B4%B5349%E5%85%83%2F%E6%96%A4&sa=fyb_news"
+  },
+  {
+    "rank": 8,
+    "title": "浙江一夜市摊位上演\"商战风云\"",
+    "heat": "723万",
+    "url": "https://www.baidu.com/s?wd=%E6%B5%99%E6%B1%9F%E4%B8%80%E5%A4%9C%E5%B8%82%E6%91%8A%E4%BD%8D%E4%B8%8A%E6%BC%94%E5%95%86%E6%88%98%E9%A3%8E%E4%BA%91&sa=fyb_news"
+  },
+  {
+    "rank": 9,
+    "title": "上海超罕见的百年古树开花了",
+    "heat": "714万",
+    "url": "https://www.baidu.com/s?wd=%E4%B8%8A%E6%B5%B7%E8%B6%85%E7%BD%95%E8%A7%81%E7%9A%84%E7%99%BE%E5%B9%B4%E5%8F%A4%E6%A0%91%E5%BC%80%E8%8A%B1%E4%BA%86&sa=fyb_news"
+  },
+  {
+    "rank": 10,
+    "title": "阿里巴巴对美国国防部提起诉讼",
+    "heat": "704万",
+    "url": "https://www.baidu.com/s?wd=%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E5%AF%B9%E7%BE%8E%E5%9B%BD%E5%9B%BD%E9%98%B2%E9%83%A8%E6%8F%90%E8%B5%B7%E8%AF%89%E8%AE%BC&sa=fyb_news"
+  },
+  {
+    "rank": 11,
+    "title": "WPS会员套路曝光",
+    "heat": "694万",
+    "url": "https://www.baidu.com/s?wd=WPS%E4%BC%9A%E5%91%98%E5%A5%97%E8%B7%AF%E6%9B%9D%E5%85%89&sa=fyb_news"
+  },
+  {
+    "rank": 12,
+    "title": "亿万年张掖丹霞靠人工染色系谣言",
+    "heat": "685万",
+    "url": "https://www.baidu.com/s?wd=%E4%BA%BF%E4%B8%87%E5%B9%B4%E5%BC%A0%E6%8E%96%E4%B8%B9%E9%9C%9E%E9%9D%A0%E4%BA%BA%E5%B7%A5%E6%9F%93%E8%89%B2%E7%B3%BB%E8%B0%A3%E8%A8%80&sa=fyb_news"
+  },
+  {
+    "rank": 13,
+    "title": "男子被朋友酒瓶砸头次日离世",
+    "heat": "675万",
+    "url": "https://www.baidu.com/s?wd=%E7%94%B7%E5%AD%90%E8%A2%AB%E6%9C%8B%E5%8F%8B%E9%85%92%E7%93%B6%E7%A0%B8%E5%A4%B4%E6%AC%A1%E6%97%A5%E7%A6%BB%E4%B8%96&sa=fyb_news"
+  },
+  {
+    "rank": 14,
+    "title": "河南2026年高考分数线公布",
+    "heat": "665万",
+    "url": "https://www.baidu.com/s?wd=%E6%B2%B3%E5%8D%972026%E5%B9%B4%E9%AB%98%E8%80%83%E5%88%86%E6%95%B0%E7%BA%BF%E5%85%AC%E5%B8%83&sa=fyb_news"
+  },
+  {
+    "rank": 15,
+    "title": "晒一晒高考分数",
+    "heat": "656万",
+    "url": "https://www.baidu.com/s?wd=%E6%99%92%E4%B8%80%E6%99%92%E9%AB%98%E8%80%83%E5%88%86%E6%95%B0&sa=fyb_news"
+  },
+  {
+    "rank": 16,
+    "title": "黄金白银原油集体暴跌",
+    "heat": "647万",
+    "url": "https://www.baidu.com/s?wd=%E9%BB%84%E9%87%91%E7%99%BD%E9%93%B6%E5%8E%9F%E6%B2%B9%E9%9B%86%E4%BD%93%E6%9A%B4%E8%B7%8C&sa=fyb_news"
+  },
+  {
+    "rank": 17,
+    "title": "校长与教师婚外情买假结婚证生两孩",
+    "heat": "636万",
+    "url": "https://www.baidu.com/s?wd=%E6%A0%A1%E9%95%BF%E4%B8%8E%E6%95%99%E5%B8%88%E5%A9%9A%E5%A4%96%E6%83%85%E4%B9%B0%E5%81%87%E7%BB%93%E5%A9%9A%E8%AF%81%E7%94%9F%E4%B8%A4%E5%AD%A9&sa=fyb_news"
+  },
+  {
+    "rank": 18,
+    "title": "浙江大学1978年就有AI专业了",
+    "heat": "627万",
+    "url": "https://www.baidu.com/s?wd=%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A61978%E5%B9%B4%E5%B0%B1%E6%9C%89AI%E4%B8%93%E4%B8%9A%E4%BA%86&sa=fyb_news"
+  },
+  {
+    "rank": 19,
+    "title": "高考查分",
+    "heat": "618万",
+    "url": "https://www.baidu.com/s?wd=%E9%AB%98%E8%80%83%E6%9F%A5%E5%88%86&sa=fyb_news"
+  },
+  {
+    "rank": 20,
+    "title": "日本岩手县6.9级地震 东京震感明显",
+    "heat": "609万",
+    "url": "https://www.baidu.com/s?wd=%E6%97%A5%E6%9C%AC%E5%B2%A9%E6%89%8B%E5%8E%BF6.9%E7%BA%A7%E5%9C%B0%E9%9C%87+%E4%B8%9C%E4%BA%AC%E9%9C%87%E6%84%9F%E6%98%8E%E6%98%BE&sa=fyb_news"
+  }
+];
+
+function buildGh() {
+  var g = document.getElementById('gh-grid'), h = '';
+  ghData.forEach(function(r) {
+    h += '<div class="card gh-card"><h3><a href="' + r.url + '" target="_blank">' + r.owner + ' / ' + r.name + '</a></h3><p class="desc">' + r.description + '</p><span class="lang">' + (r.language || 'Other') + '</span>⭐ ' + r.stars + ' <span style="color:var(--accent);font-size:0.75rem">+' + r.starsToday + ' today</span></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildOfficial() {
+  var g = document.getElementById('official-grid'), h = '';
+  officialData.forEach(function(r) {
+    h += '<div class="card"><span class="rank" style="color:var(--text3)">' + r.source + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildIntl() {
+  var g = document.getElementById('intl-grid'), h = '';
+  intlData.forEach(function(r) {
+    h += '<div class="card intl-card"><span class="region region-' + r.regionClass + '">' + r.region + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3><p class="meta">' + r.source + '</p></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildHot() {
+  var g = document.getElementById('hot-grid'), h = '';
+  hotData.forEach(function(r) {
+    h += '<div class="card"><span class="rank">#' + r.rank + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3><span class="heat">' + r.heat + '</span></div>';
+  });
+  g.innerHTML = h;
+}
+
+buildGh(); buildOfficial(); buildIntl(); buildHot();
+</script>
+
+</body>
+</html>
