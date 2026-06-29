@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日新闻 · 2026-06-29</title>
+<style>
+:root{--bg:#f9f9f8;--card-bg:#fff;--text:#1a1a2e;--text2:#52525b;--text3:#a1a1aa;--accent:#4f46e5;--border:#e5e5e7}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,'PingFang SC',sans-serif;min-height:100vh}
+.header{background:linear-gradient(135deg,#1a1a2e 0%,#2d2d44 100%);color:#fff;padding:48px 32px 40px;text-align:center}
+.header h1{font-size:1.5rem;font-weight:600;margin-bottom:6px}
+.header p{font-size:0.875rem;opacity:0.6}
+.container{max-width:960px;margin:0 auto;padding:32px}
+.section-title{font-size:1.1rem;font-weight:600;margin:40px 0 16px;color:var(--text);display:flex;align-items:center;gap:8px}
+.section-title::before{content:'';width:4px;height:20px;background:var(--accent);border-radius:2px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.card{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:16px;transition:all 0.15s}
+.card:hover{border-color:var(--accent);box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.card .rank{font-size:0.75rem;color:var(--accent);font-weight:600;margin-bottom:4px}
+.card h3{font-size:0.9rem;font-weight:500;line-height:1.5;margin-bottom:6px}
+.card h3 a{color:var(--text);text-decoration:none}
+.card h3 a:hover{color:var(--accent);text-decoration:underline}
+.card .meta{font-size:0.75rem;color:var(--text3)}
+.card .heat{display:inline-block;background:var(--accent);color:#fff;font-size:0.65rem;padding:2px 8px;border-radius:10px;margin-left:6px;opacity:0.7}
+.gh-card{padding:18px}
+.gh-card h3{font-size:0.95rem}
+.gh-card h3 a{color:var(--accent)}
+.gh-card .desc{font-size:0.8rem;color:var(--text2);line-height:1.5;margin:6px 0}
+.gh-card .lang{display:inline-block;font-size:0.7rem;color:var(--text3);margin-right:12px}
+.gh-card .lang::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;background:var(--accent)}
+.intl-card{border-left:3px solid var(--accent)}
+.intl-card .region{font-size:0.7rem;padding:2px 6px;border-radius:4px;margin-right:6px;display:inline-block}
+.region-MiddleEast{background:#fef3c7;color:#b45309}
+.region-EastAsia{background:#dbeafe;color:#1d4ed8}
+.region-Americas{background:#ede9fe;color:#6d28d9}
+.region-RussiaUkraine{background:#fee2e2;color:#b91c1c}
+.region-SouthAsia{background:#ffedd5;color:#c2410c}
+.region-Europe{background:#e0e7ff;color:#3730a3}
+.region-Africa{background:#dcfce7;color:#166534}
+.region-Global{background:#f3f4f6;color:#374151}
+.footer{text-align:center;padding:32px;color:var(--text3);font-size:0.75rem;border-top:1px solid var(--border);margin-top:40px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}.container{padding:16px}}
+</style>
+</head>
+<body>
+<header class="header">
+  <h1>📰 每日新闻日报</h1>
+  <p>2026年06月29日 · 周一</p>
+</header>
+
+<div class="container">
+
+<!-- GitHub Trending -->
+<h2 class="section-title">🔥 GitHub Trending</h2>
+<div class="grid2" id="gh-grid"></div>
+
+<!-- 官方媒体 -->
+<h2 class="section-title">📡 官方媒体</h2>
+<div class="grid2" id="official-grid"></div>
+
+<!-- International News -->
+<h2 class="section-title">🌍 国际新闻</h2>
+<div class="grid2" id="intl-grid"></div>
+
+<!-- Baidu Hot Search -->
+<h2 class="section-title">🔥 今日热搜</h2>
+<div class="grid2" id="hot-grid"></div>
+
+</div>
+
+<footer class="footer">数据来源：百度热搜 · GitHub Trending · Google News · 2026-06-29</footer>
+
+<script>
+var ghData = [
+  {
+    "rank": 1,
+    "owner": "DeusData",
+    "name": "codebase-memory-mcp",
+    "url": "https://github.com/DeusData/codebase-memory-mcp",
+    "description": "高性能代码智能 MCP 服务器，可将任意代码库索引为持久化知识图谱，支持 158 种编程语言和亚毫秒级查询。以单静态二进制文件零依赖部署，能将 AI 编码助手的上下文 Token 消耗降低 99%，大幅提升代码理解效率与响应速度。",
+    "language": "C",
+    "stars": "19713",
+    "starsToday": "2190"
+  },
+  {
+    "rank": 2,
+    "owner": "xbtlin",
+    "name": "ai-berkshire",
+    "url": "https://github.com/xbtlin/ai-berkshire",
+    "description": "AI 时代的价值投资研究框架，融合巴菲特、芒格、段永平、李录四大投资大师的方法论体系。基于 Claude Code 与 Codex 构建，支持多 Agent 并行对抗性研究，为 A 股及港美股投资者提供 AI 驱动的基本面深度分析工具。",
+    "language": "Python",
+    "stars": "5354",
+    "starsToday": "1445"
+  },
+  {
+    "rank": 3,
+    "owner": "simplex-chat",
+    "name": "simplex-chat",
+    "url": "https://github.com/simplex-chat/simplex-chat",
+    "description": "全球首个完全不依赖用户标识符的即时通讯网络，从协议层面实现 100% 隐私保护。无需手机号或邮箱即可使用，采用端到端加密和双重棘轮算法，支持 iOS、Android 和桌面端，是隐私优先通讯领域的标杆级开源方案。",
+    "language": "Haskell",
+    "stars": "15058",
+    "starsToday": "1180"
+  },
+  {
+    "rank": 4,
+    "owner": "ripienaar",
+    "name": "free-for-dev",
+    "url": "https://github.com/ripienaar/free-for-dev",
+    "description": "精心整理的开发者免费资源宝典，汇集了 SaaS、PaaS、IaaS 等各类云服务中提供免费层级的优质工具。覆盖数据库、CI/CD、监控、存储、域名等数十个类别，帮助开发者和基础设施工程师发现并利用各类免费开发资源。",
+    "language": "HTML",
+    "stars": "125263",
+    "starsToday": "495"
+  },
+  {
+    "rank": 5,
+    "owner": "HKUDS",
+    "name": "Vibe-Trading",
+    "url": "https://github.com/HKUDS/Vibe-Trading",
+    "description": "香港大学数据科学实验室推出的 AI 驱动交易助手，支持多智能体协作完成量化策略的自动回测与实时交易。集成 MCP 协议和大语言模型，涵盖技术面分析、基本面研究和市场情绪感知，让个人交易者也能拥有机构级 AI 交易能力。",
+    "language": "Python",
+    "stars": "14339",
+    "starsToday": "492"
+  },
+  {
+    "rank": 6,
+    "owner": "opendatalab",
+    "name": "MinerU",
+    "url": "https://github.com/opendatalab/MinerU",
+    "description": "强大的智能文档解析引擎，可将 PDF、Word、PPT 等复杂格式文档一键转化为大模型友好的 Markdown 和 JSON 格式。支持版式分析、OCR 识别与表格提取，是构建 Agent 工作流和 RAG 系统不可或缺的文档预处理利器。",
+    "language": "Python",
+    "stars": "71613",
+    "starsToday": "380"
+  },
+  {
+    "rank": 7,
+    "owner": "Robbyant",
+    "name": "lingbot-map",
+    "url": "https://github.com/Robbyant/lingbot-map",
+    "description": "前馈式三维基础模型，能够从流式传感器数据中实时重建高精度三维场景地图。在计算机视觉与自动驾驶领域具有重要应用价值，可高效处理连续帧数据并生成结构化的三维环境表示，为机器人导航和空间感知提供关键能力。",
+    "language": "Python",
+    "stars": "8238",
+    "starsToday": "372"
+  },
+  {
+    "rank": 8,
+    "owner": "altic-dev",
+    "name": "FluidVoice",
+    "url": "https://github.com/altic-dev/FluidVoice",
+    "description": "macOS 平台最快的离线语音转文字应用，完全本地运行无需联网，充分保护用户隐私。采用 Swift 原生开发，利用 Apple Silicon 神经引擎实现高精度、低延迟的实时语音识别，为会议记录、写作辅助等场景提供流畅的语音输入体验。",
+    "language": "Swift",
+    "stars": "3752",
+    "starsToday": "365"
+  },
+  {
+    "rank": 9,
+    "owner": "commaai",
+    "name": "openpilot",
+    "url": "https://github.com/commaai/openpilot",
+    "description": "开源机器人操作系统，目前主要应用于汽车高级驾驶辅助系统，已支持超过 300 种车型。通过摄像头和深度学习算法实现自适应巡航、车道保持和自动变道等功能，是消费级自动驾驶领域最具影响力和社区活跃度的开源项目之一。",
+    "language": "Python",
+    "stars": "62401",
+    "starsToday": "266"
+  },
+  {
+    "rank": 10,
+    "owner": "ByteByteGoHq",
+    "name": "system-design-101",
+    "url": "https://github.com/ByteByteGoHq/system-design-101",
+    "description": "以可视化图表和通俗易懂的语言解析复杂系统架构的开源学习资源，覆盖微服务、数据库、消息队列、缓存、分布式系统等核心主题。是准备系统设计面试和理解大规模系统架构的绝佳入门资料，已获超过八万四千星标。",
+    "language": "Other",
+    "stars": "84472",
+    "starsToday": "250"
+  }
+];
+var intlData = [
+  {
+    "title": "普京：俄面临命运攸关时刻",
+    "region": "俄乌",
+    "regionClass": "RussiaUkraine",
+    "summary": "俄罗斯总统普京发表最新全国电视讲话，称俄罗斯正面临命运攸关的历史时刻，强调国家主权和领土完整不可妥协，引发国际社会对俄乌局势走向的广泛关注与讨论",
+    "source": "路透社",
+    "url": "https://www.baidu.com/s?wd=%E6%99%AE%E4%BA%AC%EF%BC%9A%E4%BF%84%E9%9D%A2%E4%B8%B4%E5%91%BD%E8%BF%90%E6%94%B8%E5%85%B3%E6%97%B6%E5%88%BB&sa=fyb_news"
+  },
+  {
+    "title": "美伊同意停止互袭 30日在多哈谈判",
+    "region": "中东",
+    "regionClass": "MiddleEast",
+    "summary": "美国与伊朗经过多轮间接沟通后达成临时协议，双方同意立即停止在波斯湾地区的相互军事袭击行为，并定于本月30日在卡塔尔多哈举行面对面谈判，地区紧张局势有望降温",
+    "source": "半岛电视台",
+    "url": "https://www.baidu.com/s?wd=%E7%BE%8E%E4%BC%8A%E5%90%8C%E6%84%8F%E5%81%9C%E6%AD%A2%E4%BA%92%E8%A2%AD%2030%E6%97%A5%E5%9C%A8%E5%A4%9A%E5%93%88%E8%B0%88%E5%88%A4&sa=fyb_news"
+  },
+  {
+    "title": "韩国队差旅费亏麻了",
+    "region": "东亚",
+    "regionClass": "EastAsia",
+    "summary": "世界杯期间韩国国家足球队因差旅费用严重超支引发国内争议，据报道韩国足协为球队及工作人员安排的出行和住宿预算大幅超标，引发公众对足协财务管理混乱的强烈批评",
+    "source": "韩联社",
+    "url": "https://www.baidu.com/s?wd=%E9%9F%A9%E5%9B%BD%E9%98%9F%E5%B7%AE%E6%97%85%E8%B4%B9%E4%BA%8F%E9%BA%BB%E4%BA%86&sa=fyb_news"
+  },
+  {
+    "title": "加拿大92分钟绝杀南非",
+    "region": "美洲",
+    "regionClass": "Americas",
+    "summary": "世界杯小组赛中，加拿大男足在补时第92分钟打入制胜一球，以戏剧性的方式绝杀南非队，拿下关键三分。这场胜利使加拿大队在小组出线形势中占据有利位置，全队赛后激情庆祝",
+    "source": "ESPN",
+    "url": "https://www.baidu.com/s?wd=%E5%8A%A0%E6%8B%BF%E5%A4%A792%E5%88%86%E9%92%9F%E7%BB%9D%E6%9D%80%E5%8D%97%E9%9D%9E&sa=fyb_news"
+  },
+  {
+    "title": "欧洲极端高温 美的\u201c卡bug\u201d空调卖爆",
+    "region": "欧洲",
+    "regionClass": "Europe",
+    "summary": "欧洲多地遭遇罕见极端高温天气，中国空调品牌美的凭借高能效和快速供货能力在欧销量暴增。通过绕开传统经销渠道、利用跨境电商快速铺货等卡bug式策略，抢占欧洲空调市场先机",
+    "source": "BBC",
+    "url": "https://www.baidu.com/s?wd=%E6%AC%A7%E6%B4%B2%E6%9E%81%E7%AB%AF%E9%AB%98%E6%B8%A9%20%E7%BE%8E%E7%9A%84%E2%80%9C%E5%8D%A1bug%E2%80%9D%E7%A9%BA%E8%B0%83%E5%8D%96%E7%88%86&sa=fyb_news"
+  }
+];
+var officialData = [
+  {
+    "title": "四川宜宾5.5级地震救援工作全面展开",
+    "summary": "四川宜宾发生5.5级地震后，应急管理部立即启动四级应急响应，消防救援队伍第一时间赶赴震中区域开展人员搜救和灾情排查工作，目前已有13人受轻微伤得到妥善救治",
+    "source": "新华社",
+    "url": "https://www.baidu.com/s?wd=%E5%9B%9B%E5%B7%9D%E5%AE%9C%E5%AE%BE5.5%E7%BA%A7%E5%9C%B0%E9%9C%87%E6%95%91%E6%8F%B4%E5%B7%A5%E4%BD%9C%E5%85%A8%E9%9D%A2%E5%B1%95%E5%BC%80&sa=fyb_news"
+  },
+  {
+    "title": "未来5年充电供热供暖将迎来大变化",
+    "summary": "国家能源局正式发布充电供热供暖基础设施发展规划，明确提出未来五年将全面推进充电桩下乡、清洁供暖改造和智慧供热体系建设，预计带动相关产业链投资超过万亿元",
+    "source": "人民日报",
+    "url": "https://www.baidu.com/s?wd=%E6%9C%AA%E6%9D%A55%E5%B9%B4%E5%85%85%E7%94%B5%E4%BE%9B%E7%83%AD%E4%BE%9B%E6%9A%96%E5%B0%86%E6%9C%89%E5%A4%A7%E5%8F%98%E5%8C%96&sa=fyb_news"
+  },
+  {
+    "title": "中国避暑神器出海：空调风扇在欧洲出口暴增",
+    "summary": "央视新闻报道，随着欧洲多国遭遇极端高温天气，中国生产的空调、电风扇、移动空调等避暑电器出口量大幅攀升，部分品类同比增长超200%，中国家电企业凭借完整供应链优势抢占欧洲市场份额",
+    "source": "央视新闻",
+    "url": "https://www.baidu.com/s?wd=%E4%B8%AD%E5%9B%BD%E9%81%BF%E6%9A%91%E7%A5%9E%E5%99%A8%E5%9C%A8%E6%AC%A7%E6%B4%B2%E5%8D%96%E7%88%86%E4%BA%86&sa=fyb_news"
+  },
+  {
+    "title": "利率持续下行 存款搬家趋势引关注",
+    "summary": "国家统计局数据显示，今年以来银行存款利率多次下调，居民储蓄存款增速放缓，部分资金开始向理财、基金和保险等多元渠道分流。专家建议居民理性配置资产，关注长期稳健投资产品",
+    "source": "国家统计局",
+    "url": "https://www.baidu.com/s?wd=%E5%88%A9%E7%8E%87%E4%B8%80%E5%86%8D%E9%99%8D%20%E5%AD%98%E6%AC%BE%E6%90%AC%E5%AE%B6%E6%90%AC%E5%8E%BB%E5%93%AA&sa=fyb_news"
+  },
+  {
+    "title": "世界杯用球技术创新引发门将适应挑战",
+    "summary": "本届世界杯官方比赛用球采用全新空气动力学设计，球速和飞行轨迹较往届更难以预测，多位参赛门将公开表示对用球特性不适应。科技日报分析认为，足球科技的快速迭代正深刻改变比赛战术格局",
+    "source": "科技日报",
+    "url": "https://www.baidu.com/s?wd=%E4%B8%96%E7%95%8C%E6%9D%AF%E7%94%A8%E7%90%83%E6%88%90%E9%83%A8%E5%88%86%E9%97%A8%E5%B0%86%E5%99%A9%E6%A2%A6&sa=fyb_news"
+  }
+];
+var hotData = [
+  {
+    "rank": 1,
+    "title": "细节之中抓作风",
+    "heat": "790.4万",
+    "url": "https://www.baidu.com/s?wd=%E7%BB%86%E8%8A%82%E4%B9%8B%E4%B8%AD%E6%8A%93%E4%BD%9C%E9%A3%8E&sa=fyb_news"
+  },
+  {
+    "rank": 2,
+    "title": "宜宾发生5.5级地震 成都震感明显",
+    "heat": "780.8万",
+    "url": "https://www.baidu.com/s?wd=%E5%AE%9C%E5%AE%BE%E5%8F%91%E7%94%9F5.5%E7%BA%A7%E5%9C%B0%E9%9C%87%20%E6%88%90%E9%83%BD%E9%9C%87%E6%84%9F%E6%98%8E%E6%98%BE&sa=fyb_news"
+  },
+  {
+    "rank": 3,
+    "title": "普京：俄面临命运攸关时刻",
+    "heat": "771.5万",
+    "url": "https://www.baidu.com/s?wd=%E6%99%AE%E4%BA%AC%EF%BC%9A%E4%BF%84%E9%9D%A2%E4%B8%B4%E5%91%BD%E8%BF%90%E6%94%B8%E5%85%B3%E6%97%B6%E5%88%BB&sa=fyb_news"
+  },
+  {
+    "rank": 4,
+    "title": "未来5年 充电供热供暖将有大变化",
+    "heat": "761.8万",
+    "url": "https://www.baidu.com/s?wd=%E6%9C%AA%E6%9D%A55%E5%B9%B4%20%E5%85%85%E7%94%B5%E4%BE%9B%E7%83%AD%E4%BE%9B%E6%9A%96%E5%B0%86%E6%9C%89%E5%A4%A7%E5%8F%98%E5%8C%96&sa=fyb_news"
+  },
+  {
+    "rank": 5,
+    "title": "宜宾地震瞬间鱼群乱跳",
+    "heat": "752.0万",
+    "url": "https://www.baidu.com/s?wd=%E5%AE%9C%E5%AE%BE%E5%9C%B0%E9%9C%87%E7%9E%AC%E9%97%B4%E9%B1%BC%E7%BE%A4%E4%B9%B1%E8%B7%B3&sa=fyb_news"
+  },
+  {
+    "rank": 6,
+    "title": "韩国队差旅费亏麻了",
+    "heat": "742.5万",
+    "url": "https://www.baidu.com/s?wd=%E9%9F%A9%E5%9B%BD%E9%98%9F%E5%B7%AE%E6%97%85%E8%B4%B9%E4%BA%8F%E9%BA%BB%E4%BA%86&sa=fyb_news"
+  },
+  {
+    "rank": 7,
+    "title": "中国避暑神器在欧洲卖爆了",
+    "heat": "733.3万",
+    "url": "https://www.baidu.com/s?wd=%E4%B8%AD%E5%9B%BD%E9%81%BF%E6%9A%91%E7%A5%9E%E5%99%A8%E5%9C%A8%E6%AC%A7%E6%B4%B2%E5%8D%96%E7%88%86%E4%BA%86&sa=fyb_news"
+  },
+  {
+    "rank": 8,
+    "title": "四川宜宾地震致13人受轻微伤",
+    "heat": "723.3万",
+    "url": "https://www.baidu.com/s?wd=%E5%9B%9B%E5%B7%9D%E5%AE%9C%E5%AE%BE%E5%9C%B0%E9%9C%87%E8%87%B413%E4%BA%BA%E5%8F%97%E8%BD%BB%E5%BE%AE%E4%BC%A4&sa=fyb_news"
+  },
+  {
+    "rank": 9,
+    "title": "直击宜宾地震：监控剧烈摇晃",
+    "heat": "714.2万",
+    "url": "https://www.baidu.com/s?wd=%E7%9B%B4%E5%87%BB%E5%AE%9C%E5%AE%BE%E5%9C%B0%E9%9C%87%EF%BC%9A%E7%9B%91%E6%8E%A7%E5%89%A7%E7%83%88%E6%91%87%E6%99%83&sa=fyb_news"
+  },
+  {
+    "rank": 10,
+    "title": "女子跑步4年不拉伸小腿肌肉硬如铁",
+    "heat": "704.0万",
+    "url": "https://www.baidu.com/s?wd=%E5%A5%B3%E5%AD%90%E8%B7%91%E6%AD%A54%E5%B9%B4%E4%B8%8D%E6%8B%89%E4%BC%B8%E5%B0%8F%E8%85%BF%E8%82%8C%E8%82%89%E7%A1%AC%E5%A6%82%E9%93%81&sa=fyb_news"
+  },
+  {
+    "rank": 11,
+    "title": "加拿大92分钟绝杀南非",
+    "heat": "694.9万",
+    "url": "https://www.baidu.com/s?wd=%E5%8A%A0%E6%8B%BF%E5%A4%A792%E5%88%86%E9%92%9F%E7%BB%9D%E6%9D%80%E5%8D%97%E9%9D%9E&sa=fyb_news"
+  },
+  {
+    "rank": 12,
+    "title": "农业谣言岂能如此\u201c变态\u201d",
+    "heat": "685.7万",
+    "url": "https://www.baidu.com/s?wd=%E5%86%9C%E4%B8%9A%E8%B0%A3%E8%A8%80%E5%B2%82%E8%83%BD%E5%A6%82%E6%AD%A4%E2%80%9C%E5%8F%98%E6%80%81%E2%80%9D&sa=fyb_news"
+  },
+  {
+    "rank": 13,
+    "title": "男子撸铁后擦汗 脸部感染\u201c脚气\u201d",
+    "heat": "675.9万",
+    "url": "https://www.baidu.com/s?wd=%E7%94%B7%E5%AD%90%E6%92%B8%E9%93%81%E5%90%8E%E6%93%A6%E6%B1%97%20%E8%84%B8%E9%83%A8%E6%84%9F%E6%9F%93%E2%80%9C%E8%84%9A%E6%B0%94%E2%80%9D&sa=fyb_news"
+  },
+  {
+    "rank": 14,
+    "title": "鸭子洪水中摆渡救鸡 课文照进现实",
+    "heat": "665.8万",
+    "url": "https://www.baidu.com/s?wd=%E9%B8%AD%E5%AD%90%E6%B4%AA%E6%B0%B4%E4%B8%AD%E6%91%86%E6%B8%A1%E6%95%91%E9%B8%A1%20%E8%AF%BE%E6%96%87%E7%85%A7%E8%BF%9B%E7%8E%B0%E5%AE%9E&sa=fyb_news"
+  },
+  {
+    "rank": 15,
+    "title": "利率一再降 \u201c存款搬家\u201d搬去哪",
+    "heat": "656.2万",
+    "url": "https://www.baidu.com/s?wd=%E5%88%A9%E7%8E%87%E4%B8%80%E5%86%8D%E9%99%8D%20%E2%80%9C%E5%AD%98%E6%AC%BE%E6%90%AC%E5%AE%B6%E2%80%9D%E6%90%AC%E5%8E%BB%E5%93%AA&sa=fyb_news"
+  },
+  {
+    "rank": 16,
+    "title": "韩国队主帅洪明甫下课",
+    "heat": "647.6万",
+    "url": "https://www.baidu.com/s?wd=%E9%9F%A9%E5%9B%BD%E9%98%9F%E4%B8%BB%E5%B8%85%E6%B4%AA%E6%98%8E%E7%94%AB%E4%B8%8B%E8%AF%BE&sa=fyb_news"
+  },
+  {
+    "rank": 17,
+    "title": "美伊同意停止互袭 30日在多哈谈判",
+    "heat": "636.7万",
+    "url": "https://www.baidu.com/s?wd=%E7%BE%8E%E4%BC%8A%E5%90%8C%E6%84%8F%E5%81%9C%E6%AD%A2%E4%BA%92%E8%A2%AD%2030%E6%97%A5%E5%9C%A8%E5%A4%9A%E5%93%88%E8%B0%88%E5%88%A4&sa=fyb_news"
+  },
+  {
+    "rank": 18,
+    "title": "世界杯用球成部分门将噩梦",
+    "heat": "628.1万",
+    "url": "https://www.baidu.com/s?wd=%E4%B8%96%E7%95%8C%E6%9D%AF%E7%94%A8%E7%90%83%E6%88%90%E9%83%A8%E5%88%86%E9%97%A8%E5%B0%86%E5%99%A9%E6%A2%A6&sa=fyb_news"
+  },
+  {
+    "rank": 19,
+    "title": "线路错接女子替7户邻居交17年电费",
+    "heat": "618.0万",
+    "url": "https://www.baidu.com/s?wd=%E7%BA%BF%E8%B7%AF%E9%94%99%E6%8E%A5%E5%A5%B3%E5%AD%90%E6%9B%BF7%E6%88%B7%E9%82%BB%E5%B1%85%E4%BA%A417%E5%B9%B4%E7%94%B5%E8%B4%B9&sa=fyb_news"
+  },
+  {
+    "rank": 20,
+    "title": "欧洲极端高温 美的\u201c卡bug\u201d空调卖爆",
+    "heat": "608.2万",
+    "url": "https://www.baidu.com/s?wd=%E6%AC%A7%E6%B4%B2%E6%9E%81%E7%AB%AF%E9%AB%98%E6%B8%A9%20%E7%BE%8E%E7%9A%84%E2%80%9C%E5%8D%A1bug%E2%80%9D%E7%A9%BA%E8%B0%83%E5%8D%96%E7%88%86&sa=fyb_news"
+  }
+];
+
+function buildGh() {
+  var g = document.getElementById('gh-grid'), h = '';
+  ghData.forEach(function(r) {
+    h += '<div class="card gh-card"><h3><a href="' + r.url + '" target="_blank">' + r.owner + ' / ' + r.name + '</a></h3><p class="desc">' + r.description + '</p><span class="lang">' + (r.language || 'Other') + '</span>⭐ ' + r.stars + ' <span style="color:var(--accent);font-size:0.75rem">+' + r.starsToday + ' today</span></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildOfficial() {
+  var g = document.getElementById('official-grid'), h = '';
+  officialData.forEach(function(r) {
+    h += '<div class="card"><span class="rank" style="color:var(--text3)">' + r.source + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildIntl() {
+  var g = document.getElementById('intl-grid'), h = '';
+  intlData.forEach(function(r) {
+    h += '<div class="card intl-card"><span class="region region-' + r.regionClass + '">' + r.region + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3><p class="meta">' + r.source + '</p></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildHot() {
+  var g = document.getElementById('hot-grid'), h = '';
+  hotData.forEach(function(r) {
+    h += '<div class="card"><span class="rank">#' + r.rank + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3><span class="heat">' + r.heat + '</span></div>';
+  });
+  g.innerHTML = h;
+}
+
+buildGh(); buildOfficial(); buildIntl(); buildHot();
+</script>
+
+</body>
+</html>
