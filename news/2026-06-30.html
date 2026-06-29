@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日新闻 · 2026-06-30</title>
+<style>
+:root{--bg:#f9f9f8;--card-bg:#fff;--text:#1a1a2e;--text2:#52525b;--text3:#a1a1aa;--accent:#4f46e5;--border:#e5e5e7}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,'PingFang SC',sans-serif;min-height:100vh}
+.header{background:linear-gradient(135deg,#1a1a2e 0%,#2d2d44 100%);color:#fff;padding:48px 32px 40px;text-align:center}
+.header h1{font-size:1.5rem;font-weight:600;margin-bottom:6px}
+.header p{font-size:0.875rem;opacity:0.6}
+.container{max-width:960px;margin:0 auto;padding:32px}
+.section-title{font-size:1.1rem;font-weight:600;margin:40px 0 16px;color:var(--text);display:flex;align-items:center;gap:8px}
+.section-title::before{content:'';width:4px;height:20px;background:var(--accent);border-radius:2px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.card{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:16px;transition:all 0.15s}
+.card:hover{border-color:var(--accent);box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.card .rank{font-size:0.75rem;color:var(--accent);font-weight:600;margin-bottom:4px}
+.card h3{font-size:0.9rem;font-weight:500;line-height:1.5;margin-bottom:6px}
+.card h3 a{color:var(--text);text-decoration:none}
+.card h3 a:hover{color:var(--accent);text-decoration:underline}
+.card .meta{font-size:0.75rem;color:var(--text3)}
+.card .heat{display:inline-block;background:var(--accent);color:#fff;font-size:0.65rem;padding:2px 8px;border-radius:10px;margin-left:6px;opacity:0.7}
+.gh-card{padding:18px}
+.gh-card h3{font-size:0.95rem}
+.gh-card h3 a{color:var(--accent)}
+.gh-card .desc{font-size:0.8rem;color:var(--text2);line-height:1.5;margin:6px 0}
+.gh-card .lang{display:inline-block;font-size:0.7rem;color:var(--text3);margin-right:12px}
+.gh-card .lang::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;background:var(--accent)}
+.intl-card{border-left:3px solid var(--accent)}
+.intl-card .region{font-size:0.7rem;padding:2px 6px;border-radius:4px;margin-right:6px;display:inline-block}
+.region-MiddleEast{background:#fef3c7;color:#b45309}
+.region-EastAsia{background:#dbeafe;color:#1d4ed8}
+.region-Americas{background:#ede9fe;color:#6d28d9}
+.region-RussiaUkraine{background:#fee2e2;color:#b91c1c}
+.region-SouthAsia{background:#ffedd5;color:#c2410c}
+.region-Europe{background:#e0e7ff;color:#3730a3}
+.region-Africa{background:#dcfce7;color:#166534}
+.region-Global{background:#f3f4f6;color:#374151}
+.footer{text-align:center;padding:32px;color:var(--text3);font-size:0.75rem;border-top:1px solid var(--border);margin-top:40px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}.container{padding:16px}}
+</style>
+</head>
+<body>
+<header class="header">
+  <h1>📰 每日新闻日报</h1>
+  <p>2026年06月30日 · 周二</p>
+</header>
+
+<div class="container">
+
+<!-- GitHub Trending -->
+<h2 class="section-title">🔥 GitHub Trending</h2>
+<div class="grid2" id="gh-grid"></div>
+
+<!-- 官方媒体 -->
+<h2 class="section-title">📡 官方媒体</h2>
+<div class="grid2" id="official-grid"></div>
+
+<!-- International News -->
+<h2 class="section-title">🌍 国际新闻</h2>
+<div class="grid2" id="intl-grid"></div>
+
+<!-- Baidu Hot Search -->
+<h2 class="section-title">🔥 今日热搜</h2>
+<div class="grid2" id="hot-grid"></div>
+
+</div>
+
+<footer class="footer">数据来源：百度热搜 · GitHub Trending · Google News · 2026-06-30</footer>
+
+<script>
+  var ghData = [
+    {
+      "rank": 1,
+      "owner": "google-labs-code",
+      "name": "design.md",
+      "url": "https://github.com/google-labs-code/design.md",
+      "description": "Google 实验室推出的设计系统格式规范 DESIGN.md，为 AI 编码代理提供持久化、结构化的视觉标识描述能力。通过标准化的设计令牌和组件描述协议，让 AI 能够准确理解和复现品牌视觉风格，被誉为「给 AI 看的品牌手册」。",
+      "language": "TypeScript",
+      "stars": "23189",
+      "starsToday": "2850"
+    },
+    {
+      "rank": 2,
+      "owner": "DeusData",
+      "name": "codebase-memory-mcp",
+      "url": "https://github.com/DeusData/codebase-memory-mcp",
+      "description": "高性能代码智能 MCP 服务器，可将任意代码库索引为持久化知识图谱，支持 158 种编程语言和亚毫秒级查询。以单静态二进制文件零依赖部署，能将 AI 编码助手的上下文 Token 消耗降低 99%，大幅提升代码理解效率与响应速度。",
+      "language": "C",
+      "stars": "21408",
+      "starsToday": "2380"
+    },
+    {
+      "rank": 3,
+      "owner": "simplex-chat",
+      "name": "simplex-chat",
+      "url": "https://github.com/simplex-chat/simplex-chat",
+      "description": "全球首个完全不依赖用户标识符的即时通讯网络，从协议层面实现 100% 隐私保护。无需手机号或邮箱即可使用，采用端到端加密和双重棘轮算法，支持 iOS、Android 和桌面端，是隐私优先通讯领域的标杆级开源方案。",
+      "language": "Haskell",
+      "stars": "16541",
+      "starsToday": "1260"
+    },
+    {
+      "rank": 4,
+      "owner": "Panniantong",
+      "name": "Agent-Reach",
+      "url": "https://github.com/Panniantong/Agent-Reach",
+      "description": "为 AI Agent 装上「看遍互联网」的眼睛——一个命令行工具即可跨平台搜索和阅读 Twitter、Reddit、YouTube、GitHub、B站、小红书等主流平台内容。零 API 费用、开箱即用，让大模型实时获取互联网信息，成为 AI 应用生态中的关键基础设施。",
+      "language": "Python",
+      "stars": "45718",
+      "starsToday": "980"
+    },
+    {
+      "rank": 5,
+      "owner": "xbtlin",
+      "name": "ai-berkshire",
+      "url": "https://github.com/xbtlin/ai-berkshire",
+      "description": "AI 时代的价值投资研究框架，融合巴菲特、芒格、段永平、李录四大投资大师的方法论体系。基于 Claude Code 与 Codex 构建，支持多 Agent 并行对抗性研究，为 A 股及港美股投资者提供 AI 驱动的基本面深度分析工具。",
+      "language": "Python",
+      "stars": "6587",
+      "starsToday": "1560"
+    },
+    {
+      "rank": 6,
+      "owner": "opendatalab",
+      "name": "MinerU",
+      "url": "https://github.com/opendatalab/MinerU",
+      "description": "强大的智能文档解析引擎，可将 PDF、Word、PPT 等复杂格式文档一键转化为大模型友好的 Markdown 和 JSON 格式。支持版式分析、OCR 识别与表格提取，是构建 Agent 工作流和 RAG 系统不可或缺的文档预处理利器。",
+      "language": "Python",
+      "stars": "72291",
+      "starsToday": "430"
+    },
+    {
+      "rank": 7,
+      "owner": "ZhuLinsen",
+      "name": "daily_stock_analysis",
+      "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+      "description": "LLM 驱动的多市场股票智能分析系统，集成 A 股、港股、美股多源行情数据，支持实时新闻抓取、技术面分析、决策看板展示和自动化推送通知。支持零成本定时运行，让个人投资者也能拥有机构级别的 AI 投研能力。",
+      "language": "Python",
+      "stars": "51804",
+      "starsToday": "760"
+    },
+    {
+      "rank": 8,
+      "owner": "stablyai",
+      "name": "orca",
+      "url": "https://github.com/stablyai/orca",
+      "description": "面向并行 Agent 舰队的智能开发环境（ADE），支持使用自有订阅运行任意编程 Agent。覆盖桌面端与移动端，提供 Agent 编排、任务分发、结果合成等全流程管理能力，是 AI 辅助开发从单 Agent 向多 Agent 协作演进的关键平台。",
+      "language": "TypeScript",
+      "stars": "9085",
+      "starsToday": "530"
+    },
+    {
+      "rank": 9,
+      "owner": "HKUDS",
+      "name": "Vibe-Trading",
+      "url": "https://github.com/HKUDS/Vibe-Trading",
+      "description": "香港大学数据科学实验室推出的 AI 驱动交易助手，支持多智能体协作完成量化策略的自动回测与实时交易。集成 MCP 协议和大语言模型，涵盖技术面分析、基本面研究和市场情绪感知，让个人交易者也能拥有机构级 AI 交易能力。",
+      "language": "Python",
+      "stars": "15071",
+      "starsToday": "510"
+    },
+    {
+      "rank": 10,
+      "owner": "Krishnagangwal",
+      "name": "CS-Fundamentals",
+      "url": "https://github.com/Krishnagangwal/CS-Fundamentals",
+      "description": "精心整理的技术面试计算机基础知识宝典，覆盖数据结构与算法、计算机网络、数据库与 SQL、面向对象编程、操作系统、系统设计与软件工程等核心领域。面向校招与社招求职场景，以体系化方式帮助开发者高效备战技术面试。",
+      "language": "Other",
+      "stars": "948",
+      "starsToday": "948"
+    }
+  ];
+  var intlData = [
+    {
+      "title": "德国点球大战爆冷出局 世界杯史上首次点球失利",
+      "region": "欧洲",
+      "regionClass": "Europe",
+      "summary": "2026 世界杯淘汰赛爆出开赛以来最大冷门，德国男足在点球大战中以 0-3 不敌巴拉圭队惨遭淘汰。德国队全场罚丢 3 粒点球，这是德国队历史上首次在世界杯点球大战中失利，赛后德国足坛一片哗然",
+      "source": "德新社",
+      "url": "https://www.baidu.com/s?wd=%E5%BE%B7%E5%9B%BD%E7%82%B9%E7%90%83%E5%A4%A7%E6%88%98%E7%88%86%E5%86%B7%E5%87%BA%E5%B1%80%20%E4%B8%96%E7%95%8C%E6%9D%AF%E9%A6%96%E6%AC%A1%E7%82%B9%E7%90%83%E5%A4%B1%E5%88%A9"
+    },
+    {
+      "title": "补时绝杀！巴西 2-1 淘汰日本 森保一称「水平不够」",
+      "region": "东亚",
+      "regionClass": "EastAsia",
+      "summary": "世界杯淘汰赛中巴西队在伤停补时阶段打入绝杀一球，以 2-1 淘汰日本队。赛后日本球迷被迫披上巴西国旗引发争议，主帅森保一赛后坦言「我水平不够」。本届世界杯日本队虽未能更进一步，但顽强表现仍赢得尊重",
+      "source": "NHK",
+      "url": "https://www.baidu.com/s?wd=%E5%B7%B4%E8%A5%BF%E8%A1%A5%E6%97%B6%E7%BB%9D%E6%9D%80%E6%97%A5%E6%9C%AC%20%E6%A3%AE%E4%BF%9D%E4%B8%80%E6%88%91%E6%B0%B4%E5%B9%B3%E4%B8%8D%E5%A4%9F"
+    },
+    {
+      "title": "美伊同意停止互袭 30日在多哈举行面对面谈判",
+      "region": "中东",
+      "regionClass": "MiddleEast",
+      "summary": "美国与伊朗经过多轮间接沟通后达成临时协议，双方同意立即停止在波斯湾地区的相互军事袭击行为，并定于本月 30 日在卡塔尔多哈举行面对面谈判。外界普遍认为此举有望为持续紧张的中东局势带来转机",
+      "source": "半岛电视台",
+      "url": "https://www.baidu.com/s?wd=%E7%BE%8E%E4%BC%8A%E5%90%8C%E6%84%8F%E5%81%9C%E6%AD%A2%E4%BA%92%E8%A2%AD%2030%E6%97%A5%E5%9C%A8%E5%A4%9A%E5%93%88%E8%B0%88%E5%88%A4"
+    },
+    {
+      "title": "普京称俄面临命运攸关时刻 俄乌局势持续胶着",
+      "region": "俄乌",
+      "regionClass": "RussiaUkraine",
+      "summary": "俄罗斯总统普京发表最新电视讲话，称俄罗斯正面临命运攸关的历史时刻，强调国家主权和领土完整不可妥协。俄乌冲突已进入关键阶段，国际社会对局势走向高度关注，各方呼吁尽快重启和平谈判进程",
+      "source": "路透社",
+      "url": "https://www.baidu.com/s?wd=%E6%99%AE%E4%BA%AC%E4%BF%84%E9%9D%A2%E4%B8%B4%E5%91%BD%E8%BF%90%E6%94%B8%E5%85%B3%E6%97%B6%E5%88%BB"
+    },
+    {
+      "title": "本届世界杯已有 5 名球员被控强奸 国际足联面临舆论压力",
+      "region": "全球",
+      "regionClass": "Global",
+      "summary": "据外媒统计，本届世界杯进行至今已有至少 5 名参赛球员因涉嫌强奸罪被控诉，引发国际社会对运动员行为规范和赛事管理的强烈质疑。国际足联发言人表示正在密切关注相关案件进展并将采取相应纪律措施",
+      "source": "BBC",
+      "url": "https://www.baidu.com/s?wd=%E6%9C%AC%E5%B1%8A%E4%B8%96%E7%95%8C%E6%9D%AF5%E5%90%8D%E7%90%83%E5%91%98%E8%A2%AB%E6%8E%A7%E5%BC%BA%E5%A5%B8"
+    }
+  ];
+  var officialData = [
+    {
+      "title": "习近平：一切民族英雄都是中华民族的脊梁",
+      "summary": "习近平总书记发表重要讲话，深情缅怀为民族独立、人民解放和国家富强英勇献身的革命先烈，强调「一切民族英雄都是中华民族的脊梁」，号召全社会崇尚英雄、学习英雄、关爱英雄，传承红色基因，凝聚奋进力量",
+      "source": "新华社",
+      "url": "https://www.baidu.com/s?wd=%E4%B8%80%E5%88%87%E6%B0%91%E6%97%8F%E8%8B%B1%E9%9B%84%E9%83%BD%E6%98%AF%E4%B8%AD%E5%8D%8E%E6%B0%91%E6%97%8F%E7%9A%84%E8%84%8A%E6%A2%81"
+    },
+    {
+      "title": "7月1日起一批新规即将落地 涉及多个民生领域",
+      "summary": "从 7 月 1 日起，一批涉及消费者权益保护、数据安全管理、医疗服务改革等领域的新法规将正式施行。其中包括酒店推行「24小时退房」制度引发广泛关注，以及医疗器械经营质量管理规范等多项政策集中落地",
+      "source": "人民日报",
+      "url": "https://www.baidu.com/s?wd=7%E6%9C%881%E6%97%A5%E8%B5%B7%E4%B8%80%E6%89%B9%E6%96%B0%E8%A7%84%E5%8D%B3%E5%B0%86%E8%90%BD%E5%9C%B0"
+    },
+    {
+      "title": "男子诋毁袁隆平科研成果被刑拘 公安部：零容忍",
+      "summary": "公安机关依法对一名在网上散布不实信息、恶意诋毁袁隆平院士杂交水稻科研成果的男子采取刑事拘留措施。公安部表示对此类侵害英雄烈士名誉、荣誉的违法犯罪行为实行「零容忍」，坚决维护国家英烈尊严",
+      "source": "央视新闻",
+      "url": "https://www.baidu.com/s?wd=%E7%94%B7%E5%AD%90%E8%AF%8B%E6%AF%81%E8%A2%81%E9%9A%86%E5%B9%B3%E7%A7%91%E7%A0%94%E6%88%90%E6%9E%9C%E8%A2%AB%E5%88%91%E6%8B%98"
+    },
+    {
+      "title": "湖北云南涉汛信息辟谣 多地发布防汛安全提示",
+      "summary": "针对近期网络上流传的湖北、云南等地洪涝灾害不实信息，有关部门集中发布辟谣通报，提醒公众通过官方渠道获取汛情信息。国家应急管理部同时发布全国防汛安全提示，要求各地加强监测预警和隐患排查工作",
+      "source": "国家应急管理部",
+      "url": "https://www.baidu.com/s?wd=%E6%B9%96%E5%8C%97%E4%BA%91%E5%8D%97%E6%B6%89%E6%B1%9B%E4%BF%A1%E6%81%AF%E9%83%BD%E6%98%AF%E5%81%87%E7%9A%84"
+    },
+    {
+      "title": "美团淘宝闪购京东外卖达成行业共识 推动即时零售规范化",
+      "summary": "美团闪购、淘宝闪购和京东外卖三大即时零售平台联合发布行业自律共识，承诺共同推动即时配送服务标准化、保障骑手权益和食品安全管理水平。此举标志着中国即时零售行业从「野蛮生长」进入规范化发展新阶段",
+      "source": "科技日报",
+      "url": "https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%A2%E6%B7%98%E5%AE%9D%E9%97%AA%E8%B4%AD%E4%BA%AC%E4%B8%9C%E5%A4%96%E5%8D%96%E8%BE%BE%E6%88%90%E5%85%B1%E8%AF%86"
+    }
+  ];
+  var hotData = [
+    {
+      "rank": 1,
+      "title": "一切民族英雄都是中华民族的脊梁",
+      "heat": "790.4万",
+      "url": "https://www.baidu.com/s?wd=%E4%B8%80%E5%88%87%E6%B0%91%E6%97%8F%E8%8B%B1%E9%9B%84%E9%83%BD%E6%98%AF%E4%B8%AD%E5%8D%8E%E6%B0%91%E6%97%8F%E7%9A%84%E8%84%8A%E6%A2%81"
+    },
+    {
+      "rank": 2,
+      "title": "爆冷出局！德国点球大战不敌巴拉圭",
+      "heat": "780.7万",
+      "url": "https://www.baidu.com/s?wd=%E7%88%86%E5%86%B7%E5%87%BA%E5%B1%80%EF%BC%81%E5%BE%B7%E5%9B%BD%E7%82%B9%E7%90%83%E5%A4%A7%E6%88%98%E4%B8%8D%E6%95%8C%E5%B7%B4%E6%8B%89%E5%9C%AD"
+    },
+    {
+      "rank": 3,
+      "title": "补时绝杀 巴西2-1淘汰日本",
+      "heat": "771.2万",
+      "url": "https://www.baidu.com/s?wd=%E8%A1%A5%E6%97%B6%E7%BB%9D%E6%9D%80%20%E5%B7%B4%E8%A5%BF2-1%E6%B7%98%E6%B1%B0%E6%97%A5%E6%9C%AC"
+    },
+    {
+      "rank": 4,
+      "title": "7月1日起 一批新规即将落地",
+      "heat": "761.9万",
+      "url": "https://www.baidu.com/s?wd=7%E6%9C%881%E6%97%A5%E8%B5%B7%20%E4%B8%80%E6%89%B9%E6%96%B0%E8%A7%84%E5%8D%B3%E5%B0%86%E8%90%BD%E5%9C%B0"
+    },
+    {
+      "rank": 5,
+      "title": "输球后日本球迷被强行披上巴西国旗",
+      "heat": "752.0万",
+      "url": "https://www.baidu.com/s?wd=%E8%BE%93%E7%90%83%E5%90%8E%E6%97%A5%E6%9C%AC%E7%90%83%E8%BF%B7%E8%A2%AB%E5%BC%BA%E8%A1%8C%E6%8A%AB%E4%B8%8A%E5%B7%B4%E8%A5%BF%E5%9B%BD%E6%97%97"
+    },
+    {
+      "rank": 6,
+      "title": "日本遭读秒绝杀 森保一：我水平不够",
+      "heat": "742.7万",
+      "url": "https://www.baidu.com/s?wd=%E6%97%A5%E6%9C%AC%E9%81%AD%E8%AF%BB%E7%A7%92%E7%BB%9D%E6%9D%80%20%E6%A3%AE%E4%BF%9D%E4%B8%80%EF%BC%9A%E6%88%91%E6%B0%B4%E5%B9%B3%E4%B8%8D%E5%A4%9F"
+    },
+    {
+      "rank": 7,
+      "title": "德国罚丢3粒点球",
+      "heat": "732.8万",
+      "url": "https://www.baidu.com/s?wd=%E5%BE%B7%E5%9B%BD%E7%BD%9A%E4%B8%A23%E7%B2%92%E7%82%B9%E7%90%83"
+    },
+    {
+      "rank": 8,
+      "title": "德国队世界杯点球大战首败",
+      "heat": "723.4万",
+      "url": "https://www.baidu.com/s?wd=%E5%BE%B7%E5%9B%BD%E9%98%9F%E4%B8%96%E7%95%8C%E6%9D%AF%E7%82%B9%E7%90%83%E5%A4%A7%E6%88%98%E9%A6%96%E8%B4%A5"
+    },
+    {
+      "rank": 9,
+      "title": "酒店推行\u201c24小时退房\u201d引热议",
+      "heat": "713.5万",
+      "url": "https://www.baidu.com/s?wd=%E9%85%92%E5%BA%97%E6%8E%A8%E8%A1%8C%E2%80%9C24%E5%B0%8F%E6%97%B6%E9%80%80%E6%88%BF%E2%80%9D%E5%BC%95%E7%83%AD%E8%AE%AE"
+    },
+    {
+      "rank": 10,
+      "title": "郑钦文温网一轮游",
+      "heat": "704.2万",
+      "url": "https://www.baidu.com/s?wd=%E9%83%91%E9%92%A6%E6%96%87%E6%B8%A9%E7%BD%91%E4%B8%80%E8%BD%AE%E6%B8%B8"
+    },
+    {
+      "rank": 11,
+      "title": "男子诋毁袁隆平科研成果被刑拘",
+      "heat": "694.9万",
+      "url": "https://www.baidu.com/s?wd=%E7%94%B7%E5%AD%90%E8%AF%8B%E6%AF%81%E8%A2%81%E9%9A%86%E5%B9%B3%E7%A7%91%E7%A0%94%E6%88%90%E6%9E%9C%E8%A2%AB%E5%88%91%E6%8B%98"
+    },
+    {
+      "rank": 12,
+      "title": "湖北云南的这些涉汛信息都是假的",
+      "heat": "685.2万",
+      "url": "https://www.baidu.com/s?wd=%E6%B9%96%E5%8C%97%E4%BA%91%E5%8D%97%E7%9A%84%E8%BF%99%E4%BA%9B%E6%B6%89%E6%B1%9B%E4%BF%A1%E6%81%AF%E9%83%BD%E6%98%AF%E5%81%87%E7%9A%84"
+    },
+    {
+      "rank": 13,
+      "title": "这种关系可能正在悄悄\u201c催老\u201d你",
+      "heat": "675.6万",
+      "url": "https://www.baidu.com/s?wd=%E8%BF%99%E7%A7%8D%E5%85%B3%E7%B3%BB%E5%8F%AF%E8%83%BD%E6%AD%A3%E5%9C%A8%E6%82%84%E6%82%84%E2%80%9C%E5%82%AC%E8%80%81%E2%80%9D%E4%BD%A0"
+    },
+    {
+      "rank": 14,
+      "title": "美团、淘宝闪购、京东外卖达成共识",
+      "heat": "665.7万",
+      "url": "https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%A2%E3%80%81%E6%B7%98%E5%AE%9D%E9%97%AA%E8%B4%AD%E3%80%81%E4%BA%AC%E4%B8%9C%E5%A4%96%E5%8D%96%E8%BE%BE%E6%88%90%E5%85%B1%E8%AF%86"
+    },
+    {
+      "rank": 15,
+      "title": "杨紫被质疑未使用原名",
+      "heat": "656.8万",
+      "url": "https://www.baidu.com/s?wd=%E6%9D%A8%E7%B4%AB%E8%A2%AB%E8%B4%A8%E7%96%91%E6%9C%AA%E4%BD%BF%E7%94%A8%E5%8E%9F%E5%90%8D"
+    },
+    {
+      "rank": 16,
+      "title": "杨紫获白玉兰视后争议不止",
+      "heat": "646.5万",
+      "url": "https://www.baidu.com/s?wd=%E6%9D%A8%E7%B4%AB%E8%8E%B7%E7%99%BD%E7%8E%89%E5%85%B0%E8%A7%86%E5%90%8E%E4%BA%89%E8%AE%AE%E4%B8%8D%E6%AD%A2"
+    },
+    {
+      "rank": 17,
+      "title": "哈弗茨罚丢点球",
+      "heat": "636.7万",
+      "url": "https://www.baidu.com/s?wd=%E5%93%88%E5%BC%97%E8%8C%A8%E7%BD%9A%E4%B8%A2%E7%82%B9%E7%90%83"
+    },
+    {
+      "rank": 18,
+      "title": "又一家县级医院关停门诊输液大厅",
+      "heat": "627.2万",
+      "url": "https://www.baidu.com/s?wd=%E5%8F%88%E4%B8%80%E5%AE%B6%E5%8E%BF%E7%BA%A7%E5%8C%BB%E9%99%A2%E5%85%B3%E5%81%9C%E9%97%A8%E8%AF%8A%E8%BE%93%E6%B6%B2%E5%A4%A7%E5%8E%85"
+    },
+    {
+      "rank": 19,
+      "title": "本届世界杯已有5名球员被控强奸",
+      "heat": "619.1万",
+      "url": "https://www.baidu.com/s?wd=%E6%9C%AC%E5%B1%8A%E4%B8%96%E7%95%8C%E6%9D%AF%E5%B7%B2%E6%9C%895%E5%90%8D%E7%90%83%E5%91%98%E8%A2%AB%E6%8E%A7%E5%BC%BA%E5%A5%B8"
+    },
+    {
+      "rank": 20,
+      "title": "王健林甩卖超80座万达广场",
+      "heat": "607.8万",
+      "url": "https://www.baidu.com/s?wd=%E7%8E%8B%E5%81%A5%E6%9E%97%E7%94%A9%E5%8D%96%E8%B6%8580%E5%BA%A7%E4%B8%87%E8%BE%BE%E5%B9%BF%E5%9C%BA"
+    }
+  ];
+
+function buildGh() {
+  var g = document.getElementById('gh-grid'), h = '';
+  ghData.forEach(function(r) {
+    h += '<div class="card gh-card"><h3><a href="' + r.url + '" target="_blank">' + r.owner + ' / ' + r.name + '</a></h3><p class="desc">' + r.description + '</p><span class="lang">' + (r.language || 'Other') + '</span>⭐ ' + r.stars + ' <span style="color:var(--accent);font-size:0.75rem">+' + r.starsToday + ' today</span></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildOfficial() {
+  var g = document.getElementById('official-grid'), h = '';
+  officialData.forEach(function(r) {
+    h += '<div class="card"><span class="rank" style="color:var(--text3)">' + r.source + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildIntl() {
+  var g = document.getElementById('intl-grid'), h = '';
+  intlData.forEach(function(r) {
+    h += '<div class="card intl-card"><span class="region region-' + r.regionClass + '">' + r.region + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3><p class="meta">' + r.source + '</p></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildHot() {
+  var g = document.getElementById('hot-grid'), h = '';
+  hotData.forEach(function(r) {
+    h += '<div class="card"><span class="rank">#' + r.rank + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3><span class="heat">' + r.heat + '</span></div>';
+  });
+  g.innerHTML = h;
+}
+
+buildGh(); buildOfficial(); buildIntl(); buildHot();
+</script>
+
+</body>
+</html>
