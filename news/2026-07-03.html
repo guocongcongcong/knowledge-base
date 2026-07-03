@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日新闻 · 2026-07-03</title>
+<style>
+:root{--bg:#f9f9f8;--card-bg:#fff;--text:#1a1a2e;--text2:#52525b;--text3:#a1a1aa;--accent:#4f46e5;--border:#e5e5e7}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,'PingFang SC',sans-serif;min-height:100vh}
+.header{background:linear-gradient(135deg,#1a1a2e 0%,#2d2d44 100%);color:#fff;padding:48px 32px 40px;text-align:center}
+.header h1{font-size:1.5rem;font-weight:600;margin-bottom:6px}
+.header p{font-size:0.875rem;opacity:0.6}
+.container{max-width:960px;margin:0 auto;padding:32px}
+.section-title{font-size:1.1rem;font-weight:600;margin:40px 0 16px;color:var(--text);display:flex;align-items:center;gap:8px}
+.section-title::before{content:'';width:4px;height:20px;background:var(--accent);border-radius:2px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.card{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:16px;transition:all 0.15s}
+.card:hover{border-color:var(--accent);box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.card .rank{font-size:0.75rem;color:var(--accent);font-weight:600;margin-bottom:4px}
+.card h3{font-size:0.9rem;font-weight:500;line-height:1.5;margin-bottom:6px}
+.card h3 a{color:var(--text);text-decoration:none}
+.card h3 a:hover{color:var(--accent);text-decoration:underline}
+.card .heat{display:inline-block;background:var(--accent);color:#fff;font-size:0.65rem;padding:2px 8px;border-radius:10px;margin-left:6px;opacity:0.7}
+.gh-card{padding:18px}
+.gh-card h3{font-size:0.95rem}
+.gh-card h3 a{color:var(--accent)}
+.gh-card .desc{font-size:0.8rem;color:var(--text2);line-height:1.5;margin:6px 0}
+.gh-card .lang{display:inline-block;font-size:0.7rem;color:var(--text3);margin-right:12px}
+.gh-card .lang::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;background:var(--accent)}
+.intl-card{border-left:3px solid var(--accent)}
+.intl-card .region{font-size:0.7rem;padding:2px 6px;border-radius:4px;margin-right:6px;display:inline-block}
+.region-MiddleEast{background:#fef3c7;color:#b45309}
+.region-EastAsia{background:#dbeafe;color:#1d4ed8}
+.region-Americas{background:#ede9fe;color:#6d28d9}
+.region-RussiaUkraine{background:#fee2e2;color:#b91c1c}
+.region-SouthAsia{background:#ffedd5;color:#c2410c}
+.region-Europe{background:#e0e7ff;color:#3730a3}
+.region-Africa{background:#dcfce7;color:#166534}
+.region-Global{background:#f3f4f6;color:#374151}
+.footer{text-align:center;padding:32px;color:var(--text3);font-size:0.75rem;border-top:1px solid var(--border);margin-top:40px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}.container{padding:16px}}
+</style>
+</head>
+<body>
+<header class="header">
+  <h1>&#x1F4F0; 每日新闻日报</h1>
+  <p>2026年07月03日 &middot; 周五</p>
+</header>
+
+<div class="container">
+
+<!-- GitHub Trending -->
+<h2 class="section-title">&#x1F525; GitHub Trending</h2>
+<div class="grid2" id="gh-grid"></div>
+
+<!-- 官方媒体 -->
+<h2 class="section-title">&#x1F4E1; 官方媒体</h2>
+<div class="grid2" id="official-grid"></div>
+
+<!-- International News -->
+<h2 class="section-title">&#x1F30D; 国际新闻</h2>
+<div class="grid2" id="intl-grid"></div>
+
+<!-- Baidu Hot Search -->
+<h2 class="section-title">&#x1F525; 今日热搜</h2>
+<div class="grid2" id="hot-grid"></div>
+
+</div>
+
+<footer class="footer">数据来源：百度热搜 &middot; GitHub Trending &middot; Google News &middot; 2026-07-03</footer>
+
+<script>
+  var ghData = [
+    {"rank": 1, "owner": "asz798838958", "name": "FrciblyK12", "url": "https://github.com/asz798838958/FrciblyK12", "description": "多线程全自动注册工具，支持批量注册免费账号并获取K12云存储空间权限。通过高效的并发处理机制大幅提升注册效率，适用于需要大量云存储账号的开发者与用户群体，帮助快速获取和管理云端存储资源", "language": "Python", "stars": "316", "starsToday": "316"},
+    {"rank": 2, "owner": "vidhitam", "name": "Data_Recovery", "url": "https://github.com/vidhitam/Data_Recovery", "description": "多功能数据恢复工具，支持从硬盘、固态硬盘、U盘和存储卡中恢复误删除的各类文件。提供快速扫描与深度扫描两种模式，兼容多种文件系统格式，帮助用户最大程度挽回因误操作或格式化导致丢失的重要数据", "language": "Python", "stars": "264", "starsToday": "264"},
+    {"rank": 3, "owner": "smileyprathu", "name": "Color_Picker", "url": "https://github.com/smileyprathu/Color_Picker", "description": "全屏取色器工具，可从屏幕任意位置快速拾取颜色并即时获取十六进制与RGB色值。支持构建和管理自定义调色板，面向设计师与前端开发者的日常配色需求，简化色彩提取工作流程，有效提升设计效率与色彩管理体验", "language": "Python", "stars": "260", "starsToday": "260"},
+    {"rank": 4, "owner": "CaptainCodex", "name": "Among_Us_Ghost_Mode", "url": "https://github.com/CaptainCodex/Among_Us_Ghost_Mode", "description": "Among Us幽灵模式辅助工具，可透视查看所有玩家角色身份、任务进度和完整聊天记录。提供幽灵视野、任务追踪、角色揭示和聊天日志等核心功能，支持房主与客户端双模式使用，帮助玩家全面掌握对局动态与隐藏信息", "language": "Python", "stars": "260", "starsToday": "260"},
+    {"rank": 5, "owner": "JokiTsien", "name": "App_Store_Play_Store_Review_Bot", "url": "https://github.com/JokiTsien/App_Store_Play_Store_Review_Bot", "description": "应用商店自动评论机器人，支持在Google Play和Apple App Store上批量发布评分与评论。帮助开发者快速积累用户评价与社交证明，有效提升应用商店排名和产品可信度，适用于新应用上线初期的口碑建设和长期评价维护场景", "language": "Python", "stars": "260", "starsToday": "260"},
+    {"rank": 6, "owner": "subairnifras", "name": "Audio_Equalizer__System-wide_", "url": "https://github.com/subairnifras/Audio_Equalizer__System-wide_", "description": "系统级音频均衡器，内置音乐、电影、游戏等场景预设音效模式并支持自定义频段调节。通过系统级音频处理引擎全面优化各场景下的音质输出表现，让音乐更动人、电影更震撼、游戏更沉浸，带来专业级听音体验", "language": "Python", "stars": "260", "starsToday": "260"},
+    {"rank": 7, "owner": "sagarbabu9", "name": "Docker_Container_Manager", "url": "https://github.com/sagarbabu9/Docker_Container_Manager", "description": "Docker容器可视化管理工具，通过简洁直观的图形界面管理容器、镜像、数据卷和网络资源。支持启动、停止、重启和实时日志查看等常用操作，专为本地开发环境设计，让容器运维更加便捷高效，大幅降低Docker日常使用门槛", "language": "Python", "stars": "260", "starsToday": "260"},
+    {"rank": 8, "owner": "mariusboiti", "name": "Clipboard_Sync", "url": "https://github.com/mariusboiti/Clipboard_Sync", "description": "跨设备剪贴板实时同步工具，通过云端在PC、Android和iOS设备间无缝同步剪贴板内容。支持文本、图片和文件的即时共享传输，彻底打破设备壁垒，让多端协作更加顺畅高效，适用于日常办公和多设备切换使用场景", "language": "Python", "stars": "259", "starsToday": "259"},
+    {"rank": 9, "owner": "dev-shamsali", "name": "Evade_-_Auto-Dodge___ESP", "url": "https://github.com/dev-shamsali/Evade_-_Auto-Dodge___ESP", "description": "Evade游戏自动闪避与透视辅助工具，专为拥有87亿次访问量的3D Nextbots生存游戏设计。支持自动闪避Nextbots攻击并通过穿墙透视精准定位敌人位置，帮助玩家在每一轮挑战中顺利存活，从容应对更高难度的游戏对战", "language": "Python", "stars": "259", "starsToday": "259"},
+    {"rank": 10, "owner": "fadilr8", "name": "Bluesky_Auto-Reply___Like_Bot", "url": "https://github.com/fadilr8/Bluesky_Auto-Reply___Like_Bot", "description": "Bluesky社交平台自动互动机器人，可自动点赞和回复目标用户的帖子内容。帮助用户在去中心化社交网络Bluesky上快速提升互动率与账号影响力，自动化执行日常社交互动任务，轻松建立和维护社交连接与粉丝关系", "language": "Python", "stars": "259", "starsToday": "259"}
+  ];
+  var intlData = [
+    {"title": "C罗点球破门！葡萄牙2-1克罗地亚", "region": "欧洲", "regionClass": "Europe", "summary": "世界杯1/16决赛，葡萄牙2-1淘汰克罗地亚，C罗点球破门收获淘汰赛首球", "source": "综合", "url": "https://www.baidu.com/s?wd=C%E7%BD%97%E7%82%B9%E7%90%83%E7%A0%B4%E9%97%A8%EF%BC%81%E8%91%A1%E8%90%84%E7%89%992-1%E5%85%8B%E7%BD%97%E5%9C%B0%E4%BA%9A&sa=fyb_news"},
+    {"title": "克罗地亚103分钟绝平进球被吹", "region": "欧洲", "regionClass": "Europe", "summary": "克罗地亚103分钟“绝平”进球被VAR判定无效，葡萄牙惊险晋级", "source": "综合", "url": "https://www.baidu.com/s?wd=%E5%85%8B%E7%BD%97%E5%9C%B0%E4%BA%9A103%E5%88%86%E9%92%9F%E7%BB%9D%E5%B9%B3%E8%BF%9B%E7%90%83%E8%A2%AB%E5%90%B9&sa=fyb_news"},
+    {"title": "世界杯2天3队内讧", "region": "欧洲", "regionClass": "Europe", "summary": "比利时、奥地利接连爆发内讧，世界杯赛场风波不断", "source": "综合", "url": "https://www.baidu.com/s?wd=%E4%B8%96%E7%95%8C%E6%9D%AF2%E5%A4%A93%E9%98%9F%E5%86%85%E8%AE%A7&sa=fyb_news"},
+    {"title": "韩国博主在日本整治“撞人族”", "region": "东亚", "regionClass": "EastAsia", "summary": "韩国博主在大阪街头制止故意冲撞行人的男子，视频引发日本社会关注", "source": "综合", "url": "https://www.baidu.com/s?wd=%E9%9F%A9%E5%9B%BD%E5%8D%9A%E4%B8%BB%E5%9C%A8%E6%97%A5%E6%9C%AC%E6%95%B4%E6%B2%BB%E2%80%9C%E6%92%9E%E4%BA%BA%E6%97%8F%E2%80%9D&sa=fyb_news"},
+    {"title": "C罗安慰莫德里奇", "region": "欧洲", "regionClass": "Europe", "summary": "葡萄牙晋级后C罗第一时间拥抱安慰40岁老队友莫德里奇，世界杯温情一幕", "source": "综合", "url": "https://www.baidu.com/s?wd=C%E7%BD%97%E5%AE%89%E6%85%B0%E8%8E%AB%E5%BE%B7%E9%87%8C%E5%A5%87&sa=fyb_news"}
+  ];
+  var officialData = [
+    {"title": "庆祝建党105周年大会举行", "summary": "庆祝中国共产党成立105周年大会在京隆重举行，习近平总书记发表重要讲话", "source": "新华社", "url": "https://www.baidu.com/s?wd=%E5%BA%86%E7%A5%9D%E5%BB%BA%E5%85%9A105%E5%91%A8%E5%B9%B4%E5%A4%A7%E4%BC%9A%E6%B8%A9%E6%9A%96%E7%9E%AC%E9%97%B4&sa=fyb_news"},
+    {"title": "各地多措并举助推高质量发展", "summary": "各地立足自身优势，铆足干劲、担当作为，多措并举助推高质量发展", "source": "人民日报", "url": "https://www.baidu.com/s?wd=%E5%90%84%E5%9C%B0%E5%A4%9A%E6%8E%AA%E5%B9%B6%E4%B8%BE%E5%8A%A9%E6%8E%A8%E9%AB%98%E8%B4%A8%E9%87%8F%E5%8F%91%E5%B1%95&sa=fyb_news"},
+    {"title": "火箭军营区战备警示牌写着“0天”", "summary": "火箭军营区战备警示牌“0天”意味着战备状态始终归零，时刻准备应对任何突发状况", "source": "央视新闻", "url": "https://www.baidu.com/s?wd=%E7%81%AB%E7%AE%AD%E5%86%9B%E8%90%A5%E5%8C%BA%E6%88%98%E5%A4%87%E8%AD%A6%E7%A4%BA%E7%89%8C%E5%86%99%E7%9D%80%E2%80%9C0%E5%A4%A9%E2%80%9D&sa=fyb_news"},
+    {"title": "清华学霸夫妻毕业携手献身国防事业", "summary": "清华博士夫妻王曦婷和蒋金岑毕业后共赴四川投身国防科研一线", "source": "人民日报", "url": "https://www.baidu.com/s?wd=%E6%B8%85%E5%8D%8E%E5%AD%A6%E9%9C%B8%E5%A4%AB%E5%A6%BB%E6%AF%95%E4%B8%9A%E6%90%BA%E6%89%8B%E7%8C%AE%E8%BA%AB%E5%9B%BD%E9%98%B2%E4%BA%8B%E4%B8%9A&sa=fyb_news"},
+    {"title": "鸿蒙因不兼容多CPU架构落选重要集采", "summary": "鸿蒙因仅适配ARM架构落选中央国家机关桌面系统集采，统信等三款国产系统入围", "source": "科技日报", "url": "https://www.baidu.com/s?wd=%E9%B8%BF%E8%92%99%E5%9B%A0%E4%B8%8D%E5%85%BC%E5%AE%B9%E5%A4%9ACPU%E6%9E%B6%E6%9E%84%E8%90%BD%E9%80%89%E9%87%8D%E8%A6%81%E9%9B%86%E9%87%87&sa=fyb_news"}
+  ];
+  var hotData = [
+    {"rank": 1, "title": "庆祝建党105周年大会温暖瞬间", "heat": "790.5万", "url": "https://www.baidu.com/s?wd=%E5%BA%86%E7%A5%9D%E5%BB%BA%E5%85%9A105%E5%91%A8%E5%B9%B4%E5%A4%A7%E4%BC%9A%E6%B8%A9%E6%9A%96%E7%9E%AC%E9%97%B4&sa=fyb_news&rsv_dl=fyb_news"},
+    {"rank": 2, "title": "C罗点球破门！葡萄牙2-1克罗地亚", "heat": "780.8万", "url": "https://www.baidu.com/s?wd=C%E7%BD%97%E7%82%B9%E7%90%83%E7%A0%B4%E9%97%A8%EF%BC%81%E8%91%A1%E8%90%84%E7%89%992-1%E5%85%8B%E7%BD%97%E5%9C%B0%E4%BA%9A&sa=fyb_news&rsv_dl=fyb_news"},
+    {"rank": 3, "title": "克罗地亚103分钟绝平进球被吹", "heat": "771.3万", "url": "https://www.baidu.com/s?wd=%E5%85%8B%E7%BD%97%E5%9C%B0%E4%BA%9A103%E5%88%86%E9%92%9F%E7%BB%9D%E5%B9%B3%E8%BF%9B%E7%90%83%E8%A2%AB%E5%90%B9&sa=fyb_news&rsv_dl=fyb_news"},
+    {"rank": 4, "title": "各地多措并举助推高质量发展", "heat": "761.9万", "url": "https://www.baidu.com/s?wd=%E5%90%84%E5%9C%B0%E5%A4%9A%E6%8E%AA%E5%B9%B6%E4%B8%BE%E5%8A%A9%E6%8E%A8%E9%AB%98%E8%B4%A8%E9%87%8F%E5%8F%91%E5%B1%95&sa=fyb_news&rsv_dl=fyb_news"},
+    {"rank": 5, "title": "C罗世界杯淘汰赛个人首球", "heat": "752.0万", "url": "https://www.baidu.com/s?wd=C%E7%BD%97%E4%B8%96%E7%95%8C%E6%9D%AF%E6%B7%98%E6%B1%B0%E8%B5%9B%E4%B8%AA%E4%BA%BA%E9%A6%96%E7%90%83&sa=fyb_news&rsv_dl=fyb_news"},
+    {"rank": 6, "title": "C罗安慰莫德里奇", "heat": "742.7万", "url": "https://www.baidu.com/s?wd=C%E7%BD%97%E5%AE%89%E6%85%B0%E8%8E%AB%E5%BE%B7%E9%87%8C%E5%A5%87&sa=fyb_news&rsv_dl=fyb_news"},
+    {"rank": 7, "title": "女子自费装“电梯”给全楼用遭抵制", "heat": "733.3万", "url": "https://www.baidu.com/s?wd=%E5%A5%B3%E5%AD%90%E8%87%AA%E8%B4%B9%E8%A3%85%E2%80%9C%E7%94%B5%E6%A2%AF%E2%80%9D%E7%BB%99%E5%85%A8%E6%A5%BC%E7%94%A8%E9%81%AD%E6%8A%B5%E5%88%B6&sa=fyb_news&rsv_dl=fyb_news"},
+    {"rank": 8, "title": "C罗被换下不高兴", "heat": "723.7万", "url": "https://www.baidu.com/s?wd=C%E7%BD%97%E8%A2%AB%E6%8D%A2%E4%B8%8B%E4%B8%8D%E9%AB%98%E5%85%B4&sa=fyb_news&rsv_dl=fyb_news"},
+    {"rank": 9, "title": "高考699分女孩希望回归平静生活", "heat": "713.6万", "url": "https://www.baidu.com/s?wd=%E9%AB%98%E8%80%83699%E5%88%86%E5%A5%B3%E5%AD%A9%E5%B8%8C%E6%9C%9B%E5%9B%9E%E5%BD%92%E5%B9%B3%E9%9D%99%E7%94%9F%E6%B4%BB&sa=fyb_news&rsv_dl=fyb_news"},
+    {"rank": 10, "title": "17岁少年凌晨五点拔花生薅错地", "heat": "704.0万", "url": "https://www.baidu.com/s?wd=17%E5%B2%81%E5%B0%91%E5%B9%B4%E5%87%8C%E6%99%A8%E4%BA%94%E7%82%B9%E6%8B%94%E8%8A%B1%E7%94%9F%E8%96%85%E9%94%99%E5%9C%B0&sa=fyb_news&rsv_dl=fyb_news"},
+    {"rank": 11, "title": "神剧情！C罗从失落到眉开眼笑", "heat": "694.5万", "url": "https://www.baidu.com/s?wd=%E7%A5%9E%E5%89%A7%E6%83%85%EF%BC%81C%E7%BD%97%E4%BB%8E%E5%A4%B1%E8%90%BD%E5%88%B0%E7%9C%89%E5%BC%80%E7%9C%BC%E7%AC%91&sa=fyb_news&rsv_dl=fyb_news"},
+    {"rank": 12, "title": "“深圳全域开放无人驾驶”系误读", "heat": "685.2万", "url": "https://www.baidu.com/s?wd=%E2%80%9C%E6%B7%B1%E5%9C%B3%E5%85%A8%E5%9F%9F%E5%BC%80%E6%94%BE%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E2%80%9D%E7%B3%BB%E8%AF%AF%E8%AF%BB&sa=fyb_news&rsv_dl=fyb_news"},
+    {"rank": 13, "title": "19岁男生“扛楼”让离世父母放心", "heat": "675.3万", "url": "https://www.baidu.com/s?wd=19%E5%B2%81%E7%94%B7%E7%94%9F%E2%80%9C%E6%89%9B%E6%A5%BC%E2%80%9D%E8%AE%A9%E7%A6%BB%E4%B8%96%E7%88%B6%E6%AF%8D%E6%94%BE%E5%BF%83&sa=fyb_news&rsv_dl=fyb_news"},
+    {"rank": 14, "title": "火箭军营区战备警示牌写着“0天”", "heat": "666.6万", "url": "https://www.baidu.com/s?wd=%E7%81%AB%E7%AE%AD%E5%86%9B%E8%90%A5%E5%8C%BA%E6%88%98%E5%A4%87%E8%AD%A6%E7%A4%BA%E7%89%8C%E5%86%99%E7%9D%80%E2%80%9C0%E5%A4%A9%E2%80%9D&sa=fyb_news&rsv_dl=fyb_news"},
+    {"rank": 15, "title": "安徽药监通报月入两万被登记困难职工", "heat": "657.3万", "url": "https://www.baidu.com/s?wd=%E5%AE%89%E5%BE%BD%E8%8D%AF%E7%9B%91%E9%80%9A%E6%8A%A5%E6%9C%88%E5%85%A5%E4%B8%A4%E4%B8%87%E8%A2%AB%E7%99%BB%E8%AE%B0%E5%9B%B0%E9%9A%BE%E8%81%8C%E5%B7%A5&sa=fyb_news&rsv_dl=fyb_news"},
+    {"rank": 16, "title": "C罗魔笛紧紧相拥", "heat": "646.8万", "url": "https://www.baidu.com/s?wd=C%E7%BD%97%E9%AD%94%E7%AC%9B%E7%B4%A7%E7%B4%A7%E7%9B%B8%E6%8B%A5&sa=fyb_news&rsv_dl=fyb_news"},
+    {"rank": 17, "title": "清华学霸夫妻毕业携手献身国防事业", "heat": "637.5万", "url": "https://www.baidu.com/s?wd=%E6%B8%85%E5%8D%8E%E5%AD%A6%E9%9C%B8%E5%A4%AB%E5%A6%BB%E6%AF%95%E4%B8%9A%E6%90%BA%E6%89%8B%E7%8C%AE%E8%BA%AB%E5%9B%BD%E9%98%B2%E4%BA%8B%E4%B8%9A&sa=fyb_news&rsv_dl=fyb_news"},
+    {"rank": 18, "title": "鸿蒙因不兼容多CPU架构落选重要集采", "heat": "628.6万", "url": "https://www.baidu.com/s?wd=%E9%B8%BF%E8%92%99%E5%9B%A0%E4%B8%8D%E5%85%BC%E5%AE%B9%E5%A4%9ACPU%E6%9E%B6%E6%9E%84%E8%90%BD%E9%80%89%E9%87%8D%E8%A6%81%E9%9B%86%E9%87%87&sa=fyb_news&rsv_dl=fyb_news"},
+    {"rank": 19, "title": "世界杯2天3队内讧", "heat": "618.7万", "url": "https://www.baidu.com/s?wd=%E4%B8%96%E7%95%8C%E6%9D%AF2%E5%A4%A93%E9%98%9F%E5%86%85%E8%AE%A7&sa=fyb_news&rsv_dl=fyb_news"},
+    {"rank": 20, "title": "韩国博主在日本整治“撞人族”", "heat": "609.3万", "url": "https://www.baidu.com/s?wd=%E9%9F%A9%E5%9B%BD%E5%8D%9A%E4%B8%BB%E5%9C%A8%E6%97%A5%E6%9C%AC%E6%95%B4%E6%B2%BB%E2%80%9C%E6%92%9E%E4%BA%BA%E6%97%8F%E2%80%9D&sa=fyb_news&rsv_dl=fyb_news"}
+  ];
+
+function buildGh() {
+  var g = document.getElementById('gh-grid'), h = '';
+  ghData.forEach(function(r) {
+    h += '<div class="card gh-card"><h3><a href="' + r.url + '" target="_blank">' + r.owner + ' / ' + r.name + '</a></h3><p class="desc">' + r.description + '</p><span class="lang">' + (r.language || 'Other') + '</span>⭐ ' + r.stars + ' <span style="color:var(--accent);font-size:0.75rem">+' + r.starsToday + ' today</span></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildOfficial() {
+  var g = document.getElementById('official-grid'), h = '';
+  officialData.forEach(function(r) {
+    h += '<div class="card"><span class="rank" style="color:var(--text3)">' + r.source + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildIntl() {
+  var g = document.getElementById('intl-grid'), h = '';
+  intlData.forEach(function(r) {
+    h += '<div class="card intl-card"><span class="region region-' + r.regionClass + '">' + r.region + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3><p class="meta">' + r.source + '</p></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildHot() {
+  var g = document.getElementById('hot-grid'), h = '';
+  hotData.forEach(function(r) {
+    h += '<div class="card"><span class="rank">#' + r.rank + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3><span class="heat">' + r.heat + '</span></div>';
+  });
+  g.innerHTML = h;
+}
+
+buildGh(); buildOfficial(); buildIntl(); buildHot();
+</script>
+
+</body>
+</html>
