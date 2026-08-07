@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日新闻 · 2026-08-07</title>
+<style>
+:root{--bg:#f9f9f8;--card-bg:#fff;--text:#1a1a2e;--text2:#52525b;--text3:#a1a1aa;--accent:#4f46e5;--border:#e5e5e7}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,'PingFang SC',sans-serif;min-height:100vh}
+.header{background:linear-gradient(135deg,#1a1a2e 0%,#2d2d44 100%);color:#fff;padding:48px 32px 40px;text-align:center}
+.header h1{font-size:1.5rem;font-weight:600;margin-bottom:6px}
+.header p{font-size:0.875rem;opacity:0.6}
+.container{max-width:960px;margin:0 auto;padding:32px}
+.section-title{font-size:1.1rem;font-weight:600;margin:40px 0 16px;color:var(--text);display:flex;align-items:center;gap:8px}
+.section-title::before{content:'';width:4px;height:20px;background:var(--accent);border-radius:2px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.card{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:16px;transition:all 0.15s}
+.card:hover{border-color:var(--accent);box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.card .rank{font-size:0.75rem;color:var(--accent);font-weight:600;margin-bottom:4px}
+.card h3{font-size:0.9rem;font-weight:500;line-height:1.5;margin-bottom:6px}
+.card h3 a{color:var(--text);text-decoration:none}
+.card h3 a:hover{color:var(--accent);text-decoration:underline}
+.card .heat{display:inline-block;background:var(--accent);color:#fff;font-size:0.65rem;padding:2px 8px;border-radius:10px;margin-left:6px;opacity:0.7}
+.gh-card{padding:18px}
+.gh-card h3{font-size:0.95rem}
+.gh-card h3 a{color:var(--accent)}
+.gh-card .desc{font-size:0.8rem;color:var(--text2);line-height:1.5;margin:6px 0}
+.gh-card .lang{display:inline-block;font-size:0.7rem;color:var(--text3);margin-right:12px}
+.gh-card .lang::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;background:var(--accent)}
+.intl-card{border-left:3px solid var(--accent)}
+.intl-card .region{font-size:0.7rem;padding:2px 6px;border-radius:4px;margin-right:6px;display:inline-block}
+.region-MiddleEast{background:#fef3c7;color:#b45309}
+.region-EastAsia{background:#dbeafe;color:#1d4ed8}
+.region-Americas{background:#ede9fe;color:#6d28d9}
+.region-RussiaUkraine{background:#fee2e2;color:#b91c1c}
+.region-SouthAsia{background:#ffedd5;color:#c2410c}
+.region-Europe{background:#e0e7ff;color:#3730a3}
+.region-Africa{background:#dcfce7;color:#166534}
+.region-Global{background:#f3f4f6;color:#374151}
+.footer{text-align:center;padding:32px;color:var(--text3);font-size:0.75rem;border-top:1px solid var(--border);margin-top:40px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}.container{padding:16px}}
+</style>
+</head>
+<body>
+<header class="header">
+  <h1>&#x1F4F0; 每日新闻日报</h1>
+  <p>2026年08月07日 &middot; 周五</p>
+</header>
+
+<div class="container">
+
+<!-- GitHub Trending -->
+<h2 class="section-title">&#x1F525; GitHub Trending</h2>
+<div class="grid2" id="gh-grid"></div>
+
+<!-- 官方媒体 -->
+<h2 class="section-title">&#x1F4E1; 官方媒体</h2>
+<div class="grid2" id="official-grid"></div>
+
+<!-- International News -->
+<h2 class="section-title">&#x1F30D; 国际新闻</h2>
+<div class="grid2" id="intl-grid"></div>
+
+<!-- Baidu Hot Search -->
+<h2 class="section-title">&#x1F525; 今日热搜</h2>
+<div class="grid2" id="hot-grid"></div>
+
+</div>
+
+<footer class="footer">数据来源：百度热搜 &middot; GitHub Trending &middot; Google News &middot; 2026-08-07</footer>
+
+<script>
+  var ghData = [
+{
+"rank": 1,
+"owner": "KKKKhazix",
+"name": "human-writing",
+"url": "https://github.com/KKKKhazix/human-writing",
+"description": "让 AI 写的中文读起来像一个具体的人在说话，内置语气、节奏与中文表达习惯的校准机制，开箱即用。适合自媒体、公众号与内容创作者批量产出自然流畅的中文文案，有效降低机器感，是通用创作与改稿的一站式技能方案",
+"language": "Python",
+"stars": "1602",
+"starsToday": "1602"
+},
+{
+"rank": 2,
+"owner": "Binaryify",
+"name": "open-kimi-ppt-skill",
+"url": "https://github.com/Binaryify/open-kimi-ppt-skill",
+"description": "非官方 Kimi Slides 技能，让 AI Agent 直接生成可编辑的 PPTD 与 PPTX 演示文稿，并附带本地浏览器编辑器，支持排版预览与二次修改，打通从自然语言需求到成品幻灯片的完整链路，适合办公与汇报场景快速出稿",
+"language": "Python",
+"stars": "1382",
+"starsToday": "1382"
+},
+{
+"rank": 3,
+"owner": "0xwilliamortiz",
+"name": "claude-red",
+"url": "https://github.com/0xwilliamortiz/claude-red",
+"description": "面向 Claude 技能系统的攻击性安全技能库，每个技能以结构化 SKILL.md 呈现，覆盖 SQL 注入、Shellcode、EDR 绕过、漏洞利用等攻防方法论，供安全研究人员与渗透测试人员参考学习，帮助 AI 助手掌握专业安全测试流程",
+"language": "JavaScript",
+"stars": "429",
+"starsToday": "429"
+},
+{
+"rank": 4,
+"owner": "pengchujin",
+"name": "tower",
+"url": "https://github.com/pengchujin/tower",
+"description": "原生 SwiftUI 编写的 iOS 应用，在本机管理机场订阅与自有节点，一键生成 Surge、Clash、Shadowrocket、Loon、Quantumult X 等配置。界面简洁、数据本地保存，为网络工具爱好者提供便捷的订阅管理方案",
+"language": "Swift",
+"stars": "175",
+"starsToday": "175"
+},
+{
+"rank": 5,
+"owner": "Larryvrh",
+"name": "ComfyUI-MiniMax-H3-Turbo",
+"url": "https://github.com/Larryvrh/ComfyUI-MiniMax-H3-Turbo",
+"description": "为 ComfyUI 打造的 MiniMax H3 Turbo 模型接入节点，让用户可在本地工作流中直接调用该模型生成图像，支持自定义参数与批量出图，兼容 ComfyUI 的节点化操作方式，适合图像生成爱好者与开发者扩展自己的工作流",
+"language": "Python",
+"stars": "156",
+"starsToday": "156"
+},
+{
+"rank": 6,
+"owner": "oliverb-io1902e8",
+"name": "agent-skills-collection",
+"url": "https://github.com/oliverb-io1902e8/agent-skills-collection",
+"description": "面向 LLM 智能体的模块化技能精选合集，整理各类可复用的 Agent 技能，涵盖工具调用、任务拆解、上下文管理等场景，帮助开发者快速为智能体装配能力模块，降低重复开发成本，适合 AI 应用开发者参考与集成",
+"language": "Python",
+"stars": "152",
+"starsToday": "152"
+},
+{
+"rank": 7,
+"owner": "mika50000",
+"name": "gpt-link",
+"url": "https://github.com/mika50000/gpt-link",
+"description": "独立的 ChatGPT 会话链接提取工具，可从会话数据中提取 Session 与 accessToken 等登录凭据，供开发者自动化调用 ChatGPT 服务或调试接口。以 Python 实现、命令行使用，适合熟悉接口调试的技术爱好者研究",
+"language": "Python",
+"stars": "133",
+"starsToday": "133"
+},
+{
+"rank": 8,
+"owner": "robonuggets",
+"name": "gauntlet-loop",
+"url": "https://github.com/robonuggets/gauntlet-loop",
+"description": "将任意目标转化为简洁提示词的 Agent 编排框架，自动设定质量标准、运行构建者与批判者双角色评审、盲测对比并循环迭代直至方案胜出。以结构化循环驱动 AI 产出高质量结果，适合需要稳定优质输出的自动化创作场景",
+"language": "Python",
+"stars": "108",
+"starsToday": "108"
+},
+{
+"rank": 9,
+"owner": "0xSero",
+"name": "deepseek-v4-flash-0731-spark-sparkinfer",
+"url": "https://github.com/0xSero/deepseek-v4-flash-0731-spark-sparkinfer",
+"description": "DeepSeek V4 Flash 模型 Docker 部署配方，基于 EXL3 与 SparkInfer 框架，配备 262K NVFP4 MLA KV 缓存，针对单块 DGX Spark 调优，帮助开发者快速搭建本地大模型推理服务",
+"language": "Python",
+"stars": "107",
+"starsToday": "107"
+},
+{
+"rank": 10,
+"owner": "RidgeRookPattern",
+"name": "comix-autoclipper",
+"url": "https://github.com/RidgeRookPattern/comix-autoclipper",
+"description": "2026 年热门漫画下载器，提供图形界面与命令行双模式，支持批量抓取、自动裁剪并导出 PDF、CBZ 等主流阅读格式，内置多站点解析与断点续传功能，是漫画爱好者收藏与管理数字漫画的高效工具",
+"language": "Python",
+"stars": "94",
+"starsToday": "94"
+}
+];
+  var intlData = [
+{
+"title": "\u201cChina Cool\u201d成海外热词",
+"region": "东亚",
+"regionClass": "EastAsia",
+"summary": "中国潮流文化与国货品牌持续出海，汉服、国潮文创与中式美学在海外社交媒体引发热议，成为新的文化名片",
+"source": "综合",
+"url": "https://www.baidu.com/s?wd=%E2%80%9CChina%20Cool%E2%80%9D%E6%88%90%E6%B5%B7%E5%A4%96%E7%83%AD%E8%AF%8D&sa=fyb_news"
+},
+{
+"title": "美国科学家首次用AI设计出病毒",
+"region": "美洲",
+"regionClass": "Americas",
+"summary": "美国科研团队宣布首次利用人工智能设计出可自我复制的病毒，引发全球生物安全与伦理讨论",
+"source": "综合",
+"url": "https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%BD%E7%A7%91%E5%AD%A6%E5%AE%B6%E9%A6%96%E6%AC%A1%E7%94%A8AI%E8%AE%BE%E8%AE%A1%E5%87%BA%E7%97%85%E6%AF%92&sa=fyb_news"
+},
+{
+"title": "日韩股市高开跳水 SK海力士下挫转跌",
+"region": "东亚",
+"regionClass": "EastAsia",
+"summary": "日韩股市早盘高开后快速跳水，存储芯片股 SK 海力士由涨转跌，亚太市场波动加剧",
+"source": "综合",
+"url": "https://www.baidu.com/s?wd=%E6%97%A5%E9%9F%A9%E8%82%A1%E5%B8%82%E9%AB%98%E5%BC%80%E8%B7%B3%E6%B0%B4%20SK%E6%B5%B7%E5%8A%9B%E5%A3%AB%E4%B8%8B%E6%8C%AB%E8%BD%AC%E8%B7%8C&sa=fyb_news"
+},
+{
+"title": "世界杯不能卖 国际足联终于明白了",
+"region": "欧洲",
+"regionClass": "Europe",
+"summary": "国际足联调整世界杯版权与营销策略，业界评论称其终于理解赛事核心价值不在商业变现",
+"source": "综合",
+"url": "https://www.baidu.com/s?wd=%E4%B8%96%E7%95%8C%E6%9D%AF%E4%B8%8D%E8%83%BD%E5%8D%96%20%E5%9B%BD%E9%99%85%E8%B6%B3%E8%81%94%E7%BB%88%E4%BA%8E%E6%98%8E%E7%99%BD%E4%BA%86&sa=fyb_news"
+},
+{
+"title": "美国将对多晶硅衍生品加征15%关税",
+"region": "美洲",
+"regionClass": "Americas",
+"summary": "美国政府宣布将对多晶硅衍生品加征 15% 关税，光伏产业链与清洁能源贸易再受冲击",
+"source": "综合",
+"url": "https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%BD%E5%B0%86%E5%AF%B9%E5%A4%9A%E6%99%B6%E7%A1%85%E8%A1%8D%E7%94%9F%E5%93%81%E5%8A%A0%E5%BE%8115%25%E5%85%B3%E7%A8%8E&sa=fyb_news"
+},
+{
+"title": "曝OpenAI最快下周推出Astra AI",
+"region": "美洲",
+"regionClass": "Americas",
+"summary": "多家外媒报道称 OpenAI 最快下周推出新一代模型 Astra AI，多模态能力备受期待",
+"source": "综合",
+"url": "https://www.baidu.com/s?wd=%E6%9B%9DOpenAI%E6%9C%80%E5%BF%AB%E4%B8%8B%E5%91%A8%E6%8E%A8%E5%87%BAAstra%20AI&sa=fyb_news"
+},
+{
+"title": "台风\u201c白海豚\u201d强度反复横跳 华东全力防台",
+"region": "东亚",
+"regionClass": "EastAsia",
+"summary": "台风\u201c白海豚\u201d路径与强度多次变化，华东沿海地区提前部署防风防汛措施",
+"source": "综合",
+"url": "https://www.baidu.com/s?wd=%E5%8F%B0%E9%A3%8E%E2%80%9C%E7%99%BD%E6%B5%B7%E8%B1%9A%E2%80%9D%E5%BC%BA%E5%BA%A6%E5%8F%8D%E5%A4%8D%E6%A8%AA%E8%B7%B3%20%E5%8D%8E%E4%B8%9C%E5%85%A8%E5%8A%9B%E9%98%B2%E5%8F%B0&sa=fyb_news"
+},
+{
+"title": "俄乌冲突持续 和谈进程再成国际焦点",
+"region": "俄乌",
+"regionClass": "RussiaUkraine",
+"summary": "俄乌双方战事仍在持续，各方推动新一轮和谈努力，能源设施安全与人道主义议题突出",
+"source": "综合",
+"url": "https://www.baidu.com/s?wd=%E4%BF%84%E4%B9%8C%E5%86%B2%E7%AA%81%E6%8C%81%E7%BB%AD%20%E5%92%8C%E8%B0%88%E8%BF%9B%E7%A8%8B%E5%86%8D%E6%88%90%E5%9B%BD%E9%99%85%E7%84%A6%E7%82%B9&sa=fyb_news"
+},
+{
+"title": "中东局势紧张 多方呼吁停火降温",
+"region": "中东",
+"regionClass": "MiddleEast",
+"summary": "中东地区紧张局势持续，多国与国际组织呼吁各方保持克制、推动停火与对话降温",
+"source": "综合",
+"url": "https://www.baidu.com/s?wd=%E4%B8%AD%E4%B8%9C%E5%B1%80%E5%8A%BF%E7%B4%A7%E5%BC%A0%20%E5%A4%9A%E6%96%B9%E5%91%BC%E5%90%81%E5%81%9C%E7%81%AB%E9%99%8D%E6%B8%A9&sa=fyb_news"
+},
+{
+"title": "韩国加码HBM产能投资 存储芯片竞争白热化",
+"region": "东亚",
+"regionClass": "EastAsia",
+"summary": "韩国存储巨头宣布扩大 HBM 产能投资，全球高端存储芯片竞争进入白热化阶段",
+"source": "综合",
+"url": "https://www.baidu.com/s?wd=%E9%9F%A9%E5%9B%BD%E5%8A%A0%E7%A0%81HBM%E4%BA%A7%E8%83%BD%E6%8A%95%E8%B5%84%20%E5%AD%98%E5%82%A8%E8%8A%AF%E7%89%87%E7%AB%9E%E4%BA%89%E7%99%BD%E7%83%AD%E5%8C%96&sa=fyb_news"
+}
+];
+  var officialData = [
+{
+"title": "把党建设得更加坚强有力",
+"summary": "推动全面从严治党向纵深发展，把党建设得更加坚强有力，为各项事业发展提供坚强政治保证",
+"source": "新华社",
+"url": "https://www.baidu.com/s?wd=%E6%8A%8A%E5%85%9A%E5%BB%BA%E8%AE%BE%E5%BE%97%E6%9B%B4%E5%8A%A0%E5%9D%9A%E5%BC%BA%E6%9C%89%E5%8A%9B&sa=fyb_news"
+},
+{
+"title": "多地要求领导干部带头休假",
+"summary": "多地出台通知要求领导干部带头落实带薪休假制度，保障干部职工休息权益，激发干事创业活力",
+"source": "人民日报",
+"url": "https://www.baidu.com/s?wd=%E5%A4%9A%E5%9C%B0%E8%A6%81%E6%B1%82%E9%A2%86%E5%AF%BC%E5%B9%B2%E9%83%A8%E5%B8%A6%E5%A4%B4%E4%BC%91%E5%81%87&sa=fyb_news"
+},
+{
+"title": "越来越多高分考生放弃985选警校",
+"summary": "多地警校录取分数线持续走高，越来越多高分考生放弃 985 高校选择报考警校，就业稳定成重要考量",
+"source": "央视新闻",
+"url": "https://www.baidu.com/s?wd=%E8%B6%8A%E6%9D%A5%E8%B6%8A%E5%A4%9A%E9%AB%98%E5%88%86%E8%80%83%E7%94%9F%E6%94%BE%E5%BC%83985%E9%80%89%E8%AD%A6%E6%A0%A1&sa=fyb_news"
+},
+{
+"title": "深圳地面沉降致车辆损坏系谣言",
+"summary": "针对网传\u201c深圳地面沉降致车辆损坏\u201d消息，官方回应称系不实信息，提醒网民不传谣不信谣",
+"source": "央视新闻",
+"url": "https://www.baidu.com/s?wd=%E6%B7%B1%E5%9C%B3%E5%9C%B0%E9%9D%A2%E6%B2%89%E9%99%8D%E8%87%B4%E8%BD%A6%E8%BE%86%E6%8D%9F%E5%9D%8F%E7%B3%BB%E8%B0%A3%E8%A8%80&sa=fyb_news"
+},
+{
+"title": "今日立秋 养生千万避开六大误区",
+"summary": "今日立秋，专家提醒养生要避开盲目进补、贪凉等六大误区，顺应节气科学调养身体",
+"source": "人民日报",
+"url": "https://www.baidu.com/s?wd=%E4%BB%8A%E6%97%A5%E7%AB%8B%E7%A7%8B%20%E5%85%BB%E7%94%9F%E5%8D%83%E4%B8%87%E9%81%BF%E5%BC%80%E5%85%AD%E5%A4%A7%E8%AF%AF%E5%8C%BA&sa=fyb_news"
+}
+];
+  var hotData = [
+{
+"rank": 1,
+"title": "把党建设得更加坚强有力",
+"heat": "790.5万",
+"url": "https://www.baidu.com/s?wd=%E6%8A%8A%E5%85%9A%E5%BB%BA%E8%AE%BE%E5%BE%97%E6%9B%B4%E5%8A%A0%E5%9D%9A%E5%BC%BA%E6%9C%89%E5%8A%9B&sa=fyb_news&rsv_dl=fyb_news"
+},
+{
+"rank": 2,
+"title": "越来越多高分考生放弃985选警校",
+"heat": "780.9万",
+"url": "https://www.baidu.com/s?wd=%E8%B6%8A%E6%9D%A5%E8%B6%8A%E5%A4%9A%E9%AB%98%E5%88%86%E8%80%83%E7%94%9F%E6%94%BE%E5%BC%83985%E9%80%89%E8%AD%A6%E6%A0%A1&sa=fyb_news&rsv_dl=fyb_news"
+},
+{
+"rank": 3,
+"title": "女子开一天一夜空调后二氧化碳中毒",
+"heat": "771.3万",
+"url": "https://www.baidu.com/s?wd=%E5%A5%B3%E5%AD%90%E5%BC%80%E4%B8%80%E5%A4%A9%E4%B8%80%E5%A4%9C%E7%A9%BA%E8%B0%83%E5%90%8E%E4%BA%8C%E6%B0%A7%E5%8C%96%E7%A2%B3%E4%B8%AD%E6%AF%92&sa=fyb_news&rsv_dl=fyb_news"
+},
+{
+"rank": 4,
+"title": "\u201cChina Cool\u201d成海外热词",
+"heat": "761.8万",
+"url": "https://www.baidu.com/s?wd=%E2%80%9CChina%20Cool%E2%80%9D%E6%88%90%E6%B5%B7%E5%A4%96%E7%83%AD%E8%AF%8D&sa=fyb_news&rsv_dl=fyb_news"
+},
+{
+"rank": 5,
+"title": "华东要吹\u201c白海豚牌空调外机\u201d了",
+"heat": "752.3万",
+"url": "https://www.baidu.com/s?wd=%E5%8D%8E%E4%B8%9C%E8%A6%81%E5%90%B9%E2%80%9C%E7%99%BD%E6%B5%B7%E8%B1%9A%E7%89%8C%E7%A9%BA%E8%B0%83%E5%A4%96%E6%9C%BA%E2%80%9D%E4%BA%86&sa=fyb_news&rsv_dl=fyb_news"
+},
+{
+"rank": 6,
+"title": "立秋凉意生 来看全国哪里将暑气渐消",
+"heat": "742.6万",
+"url": "https://www.baidu.com/s?wd=%E7%AB%8B%E7%A7%8B%E5%87%89%E6%84%8F%E7%94%9F%20%E6%9D%A5%E7%9C%8B%E5%85%A8%E5%9B%BD%E5%93%AA%E9%87%8C%E5%B0%86%E6%9A%91%E6%B0%94%E6%B8%90%E6%B6%88&sa=fyb_news&rsv_dl=fyb_news"
+},
+{
+"rank": 7,
+"title": "多地要求领导干部带头休假",
+"heat": "733.0万",
+"url": "https://www.baidu.com/s?wd=%E5%A4%9A%E5%9C%B0%E8%A6%81%E6%B1%82%E9%A2%86%E5%AF%BC%E5%B9%B2%E9%83%A8%E5%B8%A6%E5%A4%B4%E4%BC%91%E5%81%87&sa=fyb_news&rsv_dl=fyb_news"
+},
+{
+"rank": 8,
+"title": "内娱第一人 戚薇开放形象AI授权",
+"heat": "723.2万",
+"url": "https://www.baidu.com/s?wd=%E5%86%85%E5%A8%B1%E7%AC%AC%E4%B8%80%E4%BA%BA%20%E6%88%9A%E8%96%87%E5%BC%80%E6%94%BE%E5%BD%A2%E8%B1%A1AI%E6%8E%88%E6%9D%83&sa=fyb_news&rsv_dl=fyb_news"
+},
+{
+"rank": 9,
+"title": "大降价！西瓜鸭梨巨峰葡萄都便宜了",
+"heat": "714.3万",
+"url": "https://www.baidu.com/s?wd=%E5%A4%A7%E9%99%8D%E4%BB%B7%EF%BC%81%E8%A5%BF%E7%93%9C%E9%B8%AD%E6%A2%A8%E5%B7%A8%E5%B3%B0%E8%91%A1%E8%90%84%E9%83%BD%E4%BE%BF%E5%AE%9C%E4%BA%86&sa=fyb_news&rsv_dl=fyb_news"
+},
+{
+"rank": 10,
+"title": "这些行为很伤大脑 你却每天都在做",
+"heat": "704.9万",
+"url": "https://www.baidu.com/s?wd=%E8%BF%99%E4%BA%9B%E8%A1%8C%E4%B8%BA%E5%BE%88%E4%BC%A4%E5%A4%A7%E8%84%91%20%E4%BD%A0%E5%8D%B4%E6%AF%8F%E5%A4%A9%E9%83%BD%E5%9C%A8%E5%81%9A&sa=fyb_news&rsv_dl=fyb_news"
+},
+{
+"rank": 11,
+"title": "美国科学家首次用AI设计出病毒",
+"heat": "695.3万",
+"url": "https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%BD%E7%A7%91%E5%AD%A6%E5%AE%B6%E9%A6%96%E6%AC%A1%E7%94%A8AI%E8%AE%BE%E8%AE%A1%E5%87%BA%E7%97%85%E6%AF%92&sa=fyb_news&rsv_dl=fyb_news"
+},
+{
+"rank": 12,
+"title": "深圳地面沉降致车辆损坏系谣言",
+"heat": "685.0万",
+"url": "https://www.baidu.com/s?wd=%E6%B7%B1%E5%9C%B3%E5%9C%B0%E9%9D%A2%E6%B2%89%E9%99%8D%E8%87%B4%E8%BD%A6%E8%BE%86%E6%8D%9F%E5%9D%8F%E7%B3%BB%E8%B0%A3%E8%A8%80&sa=fyb_news&rsv_dl=fyb_news"
+},
+{
+"rank": 13,
+"title": "日韩股市高开跳水 SK海力士下挫转跌",
+"heat": "675.6万",
+"url": "https://www.baidu.com/s?wd=%E6%97%A5%E9%9F%A9%E8%82%A1%E5%B8%82%E9%AB%98%E5%BC%80%E8%B7%B3%E6%B0%B4%20SK%E6%B5%B7%E5%8A%9B%E5%A3%AB%E4%B8%8B%E6%8C%AB%E8%BD%AC%E8%B7%8C&sa=fyb_news&rsv_dl=fyb_news"
+},
+{
+"rank": 14,
+"title": "世界杯不能卖 国际足联终于明白了",
+"heat": "666.2万",
+"url": "https://www.baidu.com/s?wd=%E4%B8%96%E7%95%8C%E6%9D%AF%E4%B8%8D%E8%83%BD%E5%8D%96%20%E5%9B%BD%E9%99%85%E8%B6%B3%E8%81%94%E7%BB%88%E4%BA%8E%E6%98%8E%E7%99%BD%E4%BA%86&sa=fyb_news&rsv_dl=fyb_news"
+},
+{
+"rank": 15,
+"title": "A股开盘：民爆、CPO等概念走强",
+"heat": "656.6万",
+"url": "https://www.baidu.com/s?wd=A%E8%82%A1%E5%BC%80%E7%9B%98%EF%BC%9A%E6%B0%91%E7%88%86%E3%80%81CPO%E7%AD%89%E6%A6%82%E5%BF%B5%E8%B5%B0%E5%BC%BA&sa=fyb_news&rsv_dl=fyb_news"
+},
+{
+"rank": 16,
+"title": "台风白海豚强度反复横跳",
+"heat": "647.6万",
+"url": "https://www.baidu.com/s?wd=%E5%8F%B0%E9%A3%8E%E7%99%BD%E6%B5%B7%E8%B1%9A%E5%BC%BA%E5%BA%A6%E5%8F%8D%E5%A4%8D%E6%A8%AA%E8%B7%B3&sa=fyb_news&rsv_dl=fyb_news"
+},
+{
+"rank": 17,
+"title": "港股开盘：智谱高开超3%",
+"heat": "637.7万",
+"url": "https://www.baidu.com/s?wd=%E6%B8%AF%E8%82%A1%E5%BC%80%E7%9B%98%EF%BC%9A%E6%99%BA%E8%B0%B1%E9%AB%98%E5%BC%80%E8%B6%853%25&sa=fyb_news&rsv_dl=fyb_news"
+},
+{
+"rank": 18,
+"title": "47岁妈妈突然产女 26岁女儿：很震惊",
+"heat": "628.2万",
+"url": "https://www.baidu.com/s?wd=47%E5%B2%81%E5%A6%88%E5%A6%88%E7%AA%81%E7%84%B6%E4%BA%A7%E5%A5%B3%2026%E5%B2%81%E5%A5%B3%E5%84%BF%EF%BC%9A%E5%BE%88%E9%9C%87%E6%83%8A&sa=fyb_news&rsv_dl=fyb_news"
+},
+{
+"rank": 19,
+"title": "美国将对多晶硅衍生品加征15%关税",
+"heat": "617.9万",
+"url": "https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%BD%E5%B0%86%E5%AF%B9%E5%A4%9A%E6%99%B6%E7%A1%85%E8%A1%8D%E7%94%9F%E5%93%81%E5%8A%A0%E5%BE%8115%25%E5%85%B3%E7%A8%8E&sa=fyb_news&rsv_dl=fyb_news"
+},
+{
+"rank": 20,
+"title": "曝OpenAI最快下周推出Astra AI",
+"heat": "609.2万",
+"url": "https://www.baidu.com/s?wd=%E6%9B%9DOpenAI%E6%9C%80%E5%BF%AB%E4%B8%8B%E5%91%A8%E6%8E%A8%E5%87%BAAstra%20AI&sa=fyb_news&rsv_dl=fyb_news"
+}
+];
+
+function buildGh() {
+  var g = document.getElementById('gh-grid'), h = '';
+  ghData.forEach(function(r) {
+    h += '<div class="card gh-card"><h3><a href="' + r.url + '" target="_blank">' + r.owner + ' / ' + r.name + '</a></h3><p class="desc">' + r.description + '</p><span class="lang">' + (r.language || 'Other') + '</span>⭐ ' + r.stars + ' <span style="color:var(--accent);font-size:0.75rem">+' + r.starsToday + ' today</span></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildOfficial() {
+  var g = document.getElementById('official-grid'), h = '';
+  officialData.forEach(function(r) {
+    h += '<div class="card"><span class="rank" style="color:var(--text3)">' + r.source + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildIntl() {
+  var g = document.getElementById('intl-grid'), h = '';
+  intlData.forEach(function(r) {
+    h += '<div class="card intl-card"><span class="region region-' + r.regionClass + '">' + r.region + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3><p class="meta">' + r.source + '</p></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildHot() {
+  var g = document.getElementById('hot-grid'), h = '';
+  hotData.forEach(function(r) {
+    h += '<div class="card"><span class="rank">#' + r.rank + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3><span class="heat">' + r.heat + '</span></div>';
+  });
+  g.innerHTML = h;
+}
+
+buildGh(); buildOfficial(); buildIntl(); buildHot();
+</script>
+
+</body>
+</html>
