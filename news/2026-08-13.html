@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日新闻 · 2026-08-13</title>
+<style>
+:root{--bg:#f9f9f8;--card-bg:#fff;--text:#1a1a2e;--text2:#52525b;--text3:#a1a1aa;--accent:#4f46e5;--border:#e5e5e7}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,'PingFang SC',sans-serif;min-height:100vh}
+.header{background:linear-gradient(135deg,#1a1a2e 0%,#2d2d44 100%);color:#fff;padding:48px 32px 40px;text-align:center}
+.header h1{font-size:1.5rem;font-weight:600;margin-bottom:6px}
+.header p{font-size:0.875rem;opacity:0.6}
+.container{max-width:960px;margin:0 auto;padding:32px}
+.section-title{font-size:1.1rem;font-weight:600;margin:40px 0 16px;color:var(--text);display:flex;align-items:center;gap:8px}
+.section-title::before{content:'';width:4px;height:20px;background:var(--accent);border-radius:2px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.card{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:16px;transition:all 0.15s}
+.card:hover{border-color:var(--accent);box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.card .rank{font-size:0.75rem;color:var(--accent);font-weight:600;margin-bottom:4px}
+.card h3{font-size:0.9rem;font-weight:500;line-height:1.5;margin-bottom:6px}
+.card h3 a{color:var(--text);text-decoration:none}
+.card h3 a:hover{color:var(--accent);text-decoration:underline}
+.card .heat{display:inline-block;background:var(--accent);color:#fff;font-size:0.65rem;padding:2px 8px;border-radius:10px;margin-left:6px;opacity:0.7}
+.gh-card{padding:18px}
+.gh-card h3{font-size:0.95rem}
+.gh-card h3 a{color:var(--accent)}
+.gh-card .desc{font-size:0.8rem;color:var(--text2);line-height:1.5;margin:6px 0}
+.gh-card .lang{display:inline-block;font-size:0.7rem;color:var(--text3);margin-right:12px}
+.gh-card .lang::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;background:var(--accent)}
+.intl-card{border-left:3px solid var(--accent)}
+.intl-card .region{font-size:0.7rem;padding:2px 6px;border-radius:4px;margin-right:6px;display:inline-block}
+.region-MiddleEast{background:#fef3c7;color:#b45309}
+.region-EastAsia{background:#dbeafe;color:#1d4ed8}
+.region-Americas{background:#ede9fe;color:#6d28d9}
+.region-RussiaUkraine{background:#fee2e2;color:#b91c1c}
+.region-SouthAsia{background:#ffedd5;color:#c2410c}
+.region-Europe{background:#e0e7ff;color:#3730a3}
+.region-Africa{background:#dcfce7;color:#166534}
+.region-Global{background:#f3f4f6;color:#374151}
+.footer{text-align:center;padding:32px;color:var(--text3);font-size:0.75rem;border-top:1px solid var(--border);margin-top:40px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}.container{padding:16px}}
+</style>
+</head>
+<body>
+<header class="header">
+  <h1>&#x1F4F0; 每日新闻日报</h1>
+  <p>2026年08月13日 &middot; 周四</p>
+</header>
+
+<div class="container">
+
+<!-- GitHub Trending -->
+<h2 class="section-title">&#x1F525; GitHub Trending</h2>
+<div class="grid2" id="gh-grid"></div>
+
+<!-- 官方媒体 -->
+<h2 class="section-title">&#x1F4E1; 官方媒体</h2>
+<div class="grid2" id="official-grid"></div>
+
+<!-- International News -->
+<h2 class="section-title">&#x1F30D; 国际新闻</h2>
+<div class="grid2" id="intl-grid"></div>
+
+<!-- Baidu Hot Search -->
+<h2 class="section-title">&#x1F525; 今日热搜</h2>
+<div class="grid2" id="hot-grid"></div>
+
+</div>
+
+<footer class="footer">数据来源：百度热搜 &middot; GitHub Trending &middot; Google News &middot; 2026-08-13</footer>
+
+<script>
+  var ghData = [
+ {
+  "rank": 1,
+  "owner": "guillaumemeyer",
+  "name": "watermarks-remover",
+  "url": "https://github.com/guillaumemeyer/watermarks-remover",
+  "description": "开源的水印移除工具，可批量清除多家 AI 生成内容中的溯源水印与来源标记，支持 Unicode 文本清洗、统计性重写钩子，以及 PNG/JPEG/SVG/PDF/DOCX/HTML/MD 等格式的 C2PA 元数据剥离，帮助内容创作者清理 AI 生成痕迹、规避溯源识别，是面向版权与合规场景的一站式文本与图像清洗方案",
+  "language": "Python",
+  "stars": "2634",
+  "starsToday": "2634"
+ },
+ {
+  "rank": 2,
+  "owner": "sohaibdevv",
+  "name": "youtube-music",
+  "url": "https://github.com/sohaibdevv/youtube-music",
+  "description": "轻量级 YouTube Music 流媒体客户端，无广告、无需订阅即可收听音乐，支持后台播放、搜索与自定义歌单，通过逆向工程 API 实现，界面简洁流畅，为希望摆脱付费墙和广告打扰的音乐爱好者提供了免费的本地优先播放方案",
+  "language": "TypeScript",
+  "stars": "851",
+  "starsToday": "851"
+ },
+ {
+  "rank": 3,
+  "owner": "milind-soni",
+  "name": "OpenMausBot",
+  "url": "https://github.com/milind-soni/OpenMausBot",
+  "description": "开源版 Grok Bot，让你在聊天应用里拥有自己的一队 AI 智能体。每个侧边栏机器人都是真实 agent——Claude 或 Codex 在本地后台运行，各自拥有独立人格、独立模型、独立云端算力与已连接的应用。像联系人一样与它们对话，观看它们工作，只批准重要操作",
+  "language": "TypeScript",
+  "stars": "642",
+  "starsToday": "642"
+ },
+ {
+  "rank": 4,
+  "owner": "shadcn-ui",
+  "name": "chatbot-template",
+  "url": "https://github.com/shadcn-ui/chatbot-template",
+  "description": "由 shadcn/ui 官方推出的极简聊天机器人模板，基于 Next.js、AI SDK 与 shadcn/ui 组件库构建，运行于 Vercel AI Gateway，开箱即用，内置流式输出、多模型切换与优雅的界面，是快速搭建 AI 对话产品的标准起点",
+  "language": "TypeScript",
+  "stars": "594",
+  "starsToday": "594"
+ },
+ {
+  "rank": 5,
+  "owner": "MSNightmare",
+  "name": "ShieldBreak",
+  "url": "https://github.com/MSNightmare/ShieldBreak",
+  "description": "针对 Windows Defender 的 0day 漏洞研究项目，聚焦微软默认安全防护的绕过技术，属于安全研究范畴的 PoC 代码，供攻防研究人员分析 Defender 检测机制的薄弱环节，评估终端安全方案的防护边界",
+  "language": "C++",
+  "stars": "420",
+  "starsToday": "420"
+ },
+ {
+  "rank": 6,
+  "owner": "dmmulroy",
+  "name": "anti-slop",
+  "url": "https://github.com/dmmulroy/anti-slop",
+  "description": "一套主观性强的 Oxlint 规则集，用于拒绝低置信度的 TypeScript 与 JavaScript 代码模式，帮助团队在 CI 阶段拦截 AI 生成代码中的常见烂写法与反模式，提升代码库的可读性与可维护性，是追求代码质量的工程团队的静态检查利器",
+  "language": "TypeScript",
+  "stars": "368",
+  "starsToday": "368"
+ },
+ {
+  "rank": 7,
+  "owner": "Hisn00w",
+  "name": "ASu-skills",
+  "url": "https://github.com/Hisn00w/ASu-skills",
+  "description": "面向中文求职场景的工作流技能集，围绕简历包装、面试准备与求职材料优化组织，提供一套可复用的中文求职工作流，帮助求职者系统化地打磨简历表述、梳理项目亮点，提升求职竞争力",
+  "language": "HTML",
+  "stars": "279",
+  "starsToday": "279"
+ },
+ {
+  "rank": 8,
+  "owner": "0xjohnnydev",
+  "name": "FilzaSlop",
+  "url": "https://github.com/0xjohnnydev/FilzaSlop",
+  "description": "FilzaJailedDS 的增强分支，为 iOS 18、iOS 26 及 iOS 27 beta 1-4 提供容器访问能力，允许越狱用户浏览与修改应用沙盒文件，是 iOS 文件管理爱好者在最新系统上进行文件操作与调试的实用工具",
+  "language": "Objective-C",
+  "stars": "217",
+  "starsToday": "217"
+ },
+ {
+  "rank": 9,
+  "owner": "RadishXN",
+  "name": "run-abroad",
+  "url": "https://github.com/RadishXN/run-abroad",
+  "description": "签证与移民路径筛选工具，用户只需填写 10 项基本信息，即可从 71 条签证/移民路径中筛出适合自己的方案，并提示当前还缺什么条件。纯静态实现、零依赖、无后端，数据本地处理，为有出国规划的人群提供快速决策参考",
+  "language": "JavaScript",
+  "stars": "216",
+  "starsToday": "216"
+ },
+ {
+  "rank": 10,
+  "owner": "frs0n",
+  "name": "GestaltEdit",
+  "url": "https://github.com/frs0n/GestaltEdit",
+  "description": "iOS 27 MobileGestalt 编辑器，允许用户直接查看与修改系统 MobileGestalt 配置项，适用于深度定制系统行为与测试系统隐藏开关，是 iOS 进阶玩家与越狱社区研究系统底层的实用工具",
+  "language": "Swift",
+  "stars": "216",
+  "starsToday": "216"
+ }
+];
+  var intlData = [
+ {
+  "title": "普京：亚太形成新军事政治集团",
+  "region": "俄乌",
+  "regionClass": "RussiaUkraine",
+  "summary": "俄罗斯总统普京表示亚太地区正形成新的军事政治集团，地区安全架构面临调整，引发国际社会对地缘格局变化的关注",
+  "source": "综合",
+  "url": "https://www.baidu.com/s?wd=%E6%99%AE%E4%BA%AC%EF%BC%9A%E4%BA%9A%E5%A4%AA%E5%BD%A2%E6%88%90%E6%96%B0%E5%86%9B%E4%BA%8B%E6%94%BF%E6%B2%BB%E9%9B%86%E5%9B%A2&sa=fyb_news"
+ },
+ {
+  "title": "首次！中国印尼在台岛以东联演",
+  "region": "东亚",
+  "regionClass": "EastAsia",
+  "summary": "中国与印度尼西亚首次在台岛以东海域举行联合演习，展现两国海上合作深化，引发区域安全关注",
+  "source": "综合",
+  "url": "https://www.baidu.com/s?wd=%E9%A6%96%E6%AC%A1%EF%BC%81%E4%B8%AD%E5%9B%BD%E5%8D%B0%E5%B0%BC%E5%9C%A8%E5%8F%B0%E5%B2%9B%E4%BB%A5%E4%B8%9C%E8%81%94%E6%BC%94&sa=fyb_news"
+ },
+ {
+  "title": "中国车包围俄罗斯市场",
+  "region": "俄乌",
+  "regionClass": "RussiaUkraine",
+  "summary": "中国品牌汽车在俄罗斯市场占有率持续攀升，多款车型占据销量前列，成为当地汽车消费的重要选择",
+  "source": "综合",
+  "url": "https://www.baidu.com/s?wd=%E4%B8%AD%E5%9B%BD%E8%BD%A6%E5%8C%85%E5%9B%B4%E4%BF%84%E7%BD%97%E6%96%AF%E5%B8%82%E5%9C%BA&sa=fyb_news"
+ },
+ {
+  "title": "美国海军推出首艘“无人机航母”",
+  "region": "美洲",
+  "regionClass": "Americas",
+  "summary": "美国海军公布首艘以无人机为主要舰载力量的航母方案，标志海上无人作战平台进入新阶段，引发各国对无人化海战趋势的关注",
+  "source": "综合",
+  "url": "https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%BD%E6%B5%B7%E5%86%9B%E6%8E%A8%E5%87%BA%E9%A6%96%E8%89%98%E6%97%A0%E4%BA%BA%E6%9C%BA%E8%88%AA%E6%AF%8D&sa=fyb_news"
+ },
+ {
+  "title": "想买中国存储芯片 苹果也得排队",
+  "region": "东亚",
+  "regionClass": "EastAsia",
+  "summary": "中国存储芯片产能紧张，供不应求，连苹果等国际大厂采购也需要排队等待，折射国产半导体产业的崛起态势",
+  "source": "综合",
+  "url": "https://www.baidu.com/s?wd=%E6%83%B3%E4%B9%B0%E4%B8%AD%E5%9B%BD%E5%AD%98%E5%82%A8%E8%8A%AF%E7%89%87%20%E8%8B%B9%E6%9E%9C%E4%B9%9F%E5%BE%97%E6%8E%92%E9%98%9F&sa=fyb_news"
+ },
+ {
+  "title": "英国首相拟让男犯进女子监狱服刑",
+  "region": "欧洲",
+  "regionClass": "Europe",
+  "summary": "英国首相提出将部分男犯转入女子监狱服刑的争议性方案，引发关于性别认同与监狱安置政策的激烈讨论",
+  "source": "综合",
+  "url": "https://www.baidu.com/s?wd=%E8%8B%B1%E5%9B%BD%E9%A6%96%E7%9B%B8%E6%8B%9F%E8%AE%A9%E7%94%B7%E7%8A%AF%E8%BF%9B%E5%A5%B3%E5%AD%90%E7%9B%91%E7%8B%B1%E6%9C%8D%E5%88%91&sa=fyb_news"
+ },
+ {
+  "title": "浙江一公司收到美国2.62亿元关税退税",
+  "region": "美洲",
+  "regionClass": "Americas",
+  "summary": "浙江一企业收到美国退还的 2.62 亿元关税，是中美贸易摩擦后企业通过法律途径维权退税的典型案例",
+  "source": "综合",
+  "url": "https://www.baidu.com/s?wd=%E6%B5%99%E6%B1%9F%E4%B8%80%E5%85%AC%E5%8F%B8%E6%94%B6%E5%88%B0%E7%BE%8E%E5%9B%BD2.62%E4%BA%BF%E5%85%83%E5%85%B3%E7%A8%8E%E9%80%80%E7%A8%8E&sa=fyb_news"
+ },
+ {
+  "title": "73岁奶奶将成中国首批太空游客",
+  "region": "东亚",
+  "regionClass": "EastAsia",
+  "summary": "73 岁老人通过选拔将作为中国首批太空游客之一进入太空，商业航天旅游在中国加速落地",
+  "source": "综合",
+  "url": "https://www.baidu.com/s?wd=73%E5%B2%81%E5%A5%B6%E5%A5%B6%E5%B0%86%E6%88%90%E4%B8%AD%E5%9B%BD%E9%A6%96%E6%89%B9%E5%A4%AA%E7%A9%BA%E6%B8%B8%E5%AE%A2&sa=fyb_news"
+ },
+ {
+  "title": "飞两万公里去南美洲 以为到了四川",
+  "region": "美洲",
+  "regionClass": "Americas",
+  "summary": "南美洲某地的地貌与人文景观酷似中国四川，让远赴两万公里外的中国游客产生了时空错位的奇妙感受",
+  "source": "综合",
+  "url": "https://www.baidu.com/s?wd=%E9%A3%9E%E4%B8%A4%E4%B8%87%E5%85%AC%E9%87%8C%E5%8E%BB%E5%8D%97%E7%BE%8E%E6%B4%B2%20%E4%BB%A5%E4%B8%BA%E5%88%B0%E4%BA%86%E5%9B%9B%E5%B7%9D&sa=fyb_news"
+ },
+ {
+  "title": "宇树科技黄牛收购价涨到410元",
+  "region": "东亚",
+  "regionClass": "EastAsia",
+  "summary": "宇树科技旗下产品供不应求，黄牛收购价被炒高至 410 元，反映国产机器人与智能硬件在消费市场的热度",
+  "source": "综合",
+  "url": "https://www.baidu.com/s?wd=%E5%AE%87%E6%A0%91%E7%A7%91%E6%8A%80%E9%BB%84%E7%89%9B%E6%94%B6%E8%B4%AD%E4%BB%B7%E6%B6%A8%E5%88%B0410%E5%85%83&sa=fyb_news"
+ }
+];
+  var officialData = [
+ {
+  "title": "总书记强调统筹好这几对重要关系",
+  "summary": "习近平总书记就统筹好发展与安全、当前与长远等多对重要关系作出重要论述，为高质量发展提供方法论指引",
+  "source": "新华社",
+  "url": "https://www.baidu.com/s?wd=%E6%80%BB%E4%B9%A6%E8%AE%B0%E5%BC%BA%E8%B0%83%E7%BB%9F%E7%AD%B9%E5%A5%BD%E8%BF%99%E5%87%A0%E5%AF%B9%E9%87%8D%E8%A6%81%E5%85%B3%E7%B3%BB&sa=fyb_news"
+ },
+ {
+  "title": "朱镕基同志逝世",
+  "summary": "国务院原总理朱镕基同志逝世，享年98岁。朱镕基同志为中国改革开放和社会主义现代化建设作出重要贡献",
+  "source": "新华社",
+  "url": "https://www.baidu.com/s?wd=%E6%9C%B1%E9%95%95%E5%9F%BA%E5%90%8C%E5%BF%97%E9%80%9D%E4%B8%96&sa=fyb_news"
+ },
+ {
+  "title": "第一视角从中国空间站看地球",
+  "summary": "中国空间站发布第一视角地球影像，展现航天员在轨工作生活场景，让公众近距离感受太空探索的魅力",
+  "source": "央视新闻",
+  "url": "https://www.baidu.com/s?wd=%E7%AC%AC%E4%B8%80%E8%A7%86%E8%A7%92%E4%BB%8E%E4%B8%AD%E5%9B%BD%E7%A9%BA%E9%97%B4%E7%AB%99%E7%9C%8B%E5%9C%B0%E7%90%83&sa=fyb_news"
+ },
+ {
+  "title": "梁家辉在《人民日报》撰文",
+  "summary": "著名演员梁家辉在《人民日报》撰文，结合从艺经历畅谈文化传承与艺术创作，引发社会关注",
+  "source": "人民日报",
+  "url": "https://www.baidu.com/s?wd=%E6%A2%81%E5%AE%B6%E8%BE%89%E5%9C%A8%E3%80%8A%E4%BA%BA%E6%B0%91%E6%97%A5%E6%8A%A5%E3%80%8B%E6%92%B0%E6%96%87&sa=fyb_news"
+ },
+ {
+  "title": "新规来了：禁止在居民楼开油烟餐饮",
+  "summary": "多部门出台新规，禁止在居民楼内开设产生油烟的餐饮项目，规范餐饮经营秩序，保障居民居住环境",
+  "source": "央视新闻",
+  "url": "https://www.baidu.com/s?wd=%E6%96%B0%E8%A7%84%E6%9D%A5%E4%BA%86%EF%BC%9A%E7%A6%81%E6%AD%A2%E5%9C%A8%E5%B1%85%E6%B0%91%E6%A5%BC%E5%BC%80%E6%B2%B9%E7%83%9F%E9%A4%90%E9%A5%AE&sa=fyb_news"
+ }
+];
+  var hotData = [
+ {
+  "rank": 1,
+  "title": "总书记强调统筹好这几对重要关系",
+  "heat": "790.4万",
+  "url": "https://www.baidu.com/s?wd=%E6%80%BB%E4%B9%A6%E8%AE%B0%E5%BC%BA%E8%B0%83%E7%BB%9F%E7%AD%B9%E5%A5%BD%E8%BF%99%E5%87%A0%E5%AF%B9%E9%87%8D%E8%A6%81%E5%85%B3%E7%B3%BB&sa=fyb_news&rsv_dl=fyb_news"
+ },
+ {
+  "rank": 2,
+  "title": "朱镕基同志逝世",
+  "heat": "780.8万",
+  "url": "https://www.baidu.com/s?wd=%E6%9C%B1%E9%95%95%E5%9F%BA%E5%90%8C%E5%BF%97%E9%80%9D%E4%B8%96&sa=fyb_news&rsv_dl=fyb_news"
+ },
+ {
+  "rank": 3,
+  "title": "胖东来弃租背后房东的“话事权”转移",
+  "heat": "771.4万",
+  "url": "https://www.baidu.com/s?wd=%E8%83%96%E4%B8%9C%E6%9D%A5%E5%BC%83%E7%A7%9F%E8%83%8C%E5%90%8E%E6%88%BF%E4%B8%9C%E7%9A%84%E2%80%9C%E8%AF%9D%E4%BA%8B%E6%9D%83%E2%80%9D%E8%BD%AC%E7%A7%BB&sa=fyb_news&rsv_dl=fyb_news"
+ },
+ {
+  "rank": 4,
+  "title": "第一视角从中国空间站看地球",
+  "heat": "761.7万",
+  "url": "https://www.baidu.com/s?wd=%E7%AC%AC%E4%B8%80%E8%A7%86%E8%A7%92%E4%BB%8E%E4%B8%AD%E5%9B%BD%E7%A9%BA%E9%97%B4%E7%AB%99%E7%9C%8B%E5%9C%B0%E7%90%83&sa=fyb_news&rsv_dl=fyb_news"
+ },
+ {
+  "rank": 5,
+  "title": "“找你25年了”民警吃饭时认出逃犯",
+  "heat": "752.4万",
+  "url": "https://www.baidu.com/s?wd=%E2%80%9C%E6%89%BE%E4%BD%A025%E5%B9%B4%E4%BA%86%E2%80%9D%E6%B0%91%E8%AD%A6%E5%90%83%E9%A5%AD%E6%97%B6%E8%AE%A4%E5%87%BA%E9%80%83%E7%8A%AF&sa=fyb_news&rsv_dl=fyb_news"
+ },
+ {
+  "rank": 6,
+  "title": "梁家辉在《人民日报》撰文",
+  "heat": "742.8万",
+  "url": "https://www.baidu.com/s?wd=%E6%A2%81%E5%AE%B6%E8%BE%89%E5%9C%A8%E3%80%8A%E4%BA%BA%E6%B0%91%E6%97%A5%E6%8A%A5%E3%80%8B%E6%92%B0%E6%96%87&sa=fyb_news&rsv_dl=fyb_news"
+ },
+ {
+  "rank": 7,
+  "title": "银行能办结婚证了",
+  "heat": "733.1万",
+  "url": "https://www.baidu.com/s?wd=%E9%93%B6%E8%A1%8C%E8%83%BD%E5%8A%9E%E7%BB%93%E5%A9%9A%E8%AF%81%E4%BA%86&sa=fyb_news&rsv_dl=fyb_news"
+ },
+ {
+  "rank": 8,
+  "title": "杭州最美厕所走红",
+  "heat": "723.2万",
+  "url": "https://www.baidu.com/s?wd=%E6%9D%AD%E5%B7%9E%E6%9C%80%E7%BE%8E%E5%8E%95%E6%89%80%E8%B5%B0%E7%BA%A2&sa=fyb_news&rsv_dl=fyb_news"
+ },
+ {
+  "rank": 9,
+  "title": "胖东来许昌老店关闭周边商户发声",
+  "heat": "713.6万",
+  "url": "https://www.baidu.com/s?wd=%E8%83%96%E4%B8%9C%E6%9D%A5%E8%AE%B8%E6%98%8C%E8%80%81%E5%BA%97%E5%85%B3%E9%97%AD%E5%91%A8%E8%BE%B9%E5%95%86%E6%88%B7%E5%8F%91%E5%A3%B0&sa=fyb_news&rsv_dl=fyb_news"
+ },
+ {
+  "rank": 10,
+  "title": "李雪健已经完全听不见了",
+  "heat": "704.8万",
+  "url": "https://www.baidu.com/s?wd=%E6%9D%8E%E9%9B%AA%E5%81%A5%E5%B7%B2%E7%BB%8F%E5%AE%8C%E5%85%A8%E5%90%AC%E4%B8%8D%E8%A7%81%E4%BA%86&sa=fyb_news&rsv_dl=fyb_news"
+ },
+ {
+  "rank": 11,
+  "title": "DeepSeek最新版本藏了一个大招",
+  "heat": "694.8万",
+  "url": "https://www.baidu.com/s?wd=DeepSeek%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC%E8%97%8F%E4%BA%86%E4%B8%80%E4%B8%AA%E5%A4%A7%E6%8B%9B&sa=fyb_news&rsv_dl=fyb_news"
+ },
+ {
+  "rank": 12,
+  "title": "扬州一餐厅用垃圾车运包子系谣言",
+  "heat": "685.6万",
+  "url": "https://www.baidu.com/s?wd=%E6%89%AC%E5%B7%9E%E4%B8%80%E9%A4%90%E5%8E%85%E7%94%A8%E5%9E%83%E5%9C%BE%E8%BD%A6%E8%BF%90%E5%8C%85%E5%AD%90%E7%B3%BB%E8%B0%A3%E8%A8%80&sa=fyb_news&rsv_dl=fyb_news"
+ },
+ {
+  "rank": 13,
+  "title": "顾客用餐盘喂狗餐厅致歉 到底是谁错",
+  "heat": "675.4万",
+  "url": "https://www.baidu.com/s?wd=%E9%A1%BE%E5%AE%A2%E7%94%A8%E9%A4%90%E7%9B%98%E5%96%82%E7%8B%97%E9%A4%90%E5%8E%85%E8%87%B4%E6%AD%89%20%E5%88%B0%E5%BA%95%E6%98%AF%E8%B0%81%E9%94%99&sa=fyb_news&rsv_dl=fyb_news"
+ },
+ {
+  "rank": 14,
+  "title": "天然气公司要求热水器满8年必须换",
+  "heat": "665.8万",
+  "url": "https://www.baidu.com/s?wd=%E5%A4%A9%E7%84%B6%E6%B0%94%E5%85%AC%E5%8F%B8%E8%A6%81%E6%B1%82%E7%83%AD%E6%B0%B4%E5%99%A8%E6%BB%A18%E5%B9%B4%E5%BF%85%E9%A1%BB%E6%8D%A2&sa=fyb_news&rsv_dl=fyb_news"
+ },
+ {
+  "rank": 15,
+  "title": "新规来了：禁止在居民楼开油烟餐饮",
+  "heat": "657.3万",
+  "url": "https://www.baidu.com/s?wd=%E6%96%B0%E8%A7%84%E6%9D%A5%E4%BA%86%EF%BC%9A%E7%A6%81%E6%AD%A2%E5%9C%A8%E5%B1%85%E6%B0%91%E6%A5%BC%E5%BC%80%E6%B2%B9%E7%83%9F%E9%A4%90%E9%A5%AE&sa=fyb_news&rsv_dl=fyb_news"
+ },
+ {
+  "rank": 16,
+  "title": "男子装空调坠亡 家属：免费帮朋友",
+  "heat": "646.8万",
+  "url": "https://www.baidu.com/s?wd=%E7%94%B7%E5%AD%90%E8%A3%85%E7%A9%BA%E8%B0%83%E5%9D%A0%E4%BA%A1%20%E5%AE%B6%E5%B1%9E%EF%BC%9A%E5%85%8D%E8%B4%B9%E5%B8%AE%E6%9C%8B%E5%8F%8B&sa=fyb_news&rsv_dl=fyb_news"
+ },
+ {
+  "rank": 17,
+  "title": "男子双腿被绞断 20个月后恢复行走",
+  "heat": "638.1万",
+  "url": "https://www.baidu.com/s?wd=%E7%94%B7%E5%AD%90%E5%8F%8C%E8%85%BF%E8%A2%AB%E7%BB%9E%E6%96%AD%2020%E4%B8%AA%E6%9C%88%E5%90%8E%E6%81%A2%E5%A4%8D%E8%A1%8C%E8%B5%B0&sa=fyb_news&rsv_dl=fyb_news"
+ },
+ {
+  "rank": 18,
+  "title": "游客在内蒙古被威胁打断腿 官方通报",
+  "heat": "628.4万",
+  "url": "https://www.baidu.com/s?wd=%E6%B8%B8%E5%AE%A2%E5%9C%A8%E5%86%85%E8%92%99%E5%8F%A4%E8%A2%AB%E5%A8%81%E8%83%81%E6%89%93%E6%96%AD%E8%85%BF%20%E5%AE%98%E6%96%B9%E9%80%9A%E6%8A%A5&sa=fyb_news&rsv_dl=fyb_news"
+ },
+ {
+  "rank": 19,
+  "title": "普京：亚太形成新军事政治集团",
+  "heat": "617.8万",
+  "url": "https://www.baidu.com/s?wd=%E6%99%AE%E4%BA%AC%EF%BC%9A%E4%BA%9A%E5%A4%AA%E5%BD%A2%E6%88%90%E6%96%B0%E5%86%9B%E4%BA%8B%E6%94%BF%E6%B2%BB%E9%9B%86%E5%9B%A2&sa=fyb_news&rsv_dl=fyb_news"
+ },
+ {
+  "rank": 20,
+  "title": "面馆火了却歇业 老板：流量太大避风头",
+  "heat": "608.3万",
+  "url": "https://www.baidu.com/s?wd=%E9%9D%A2%E9%A6%86%E7%81%AB%E4%BA%86%E5%8D%B4%E6%AD%87%E4%B8%9A%20%E8%80%81%E6%9D%BF%EF%BC%9A%E6%B5%81%E9%87%8F%E5%A4%AA%E5%A4%A7%E9%81%BF%E9%A3%8E%E5%A4%B4&sa=fyb_news&rsv_dl=fyb_news"
+ }
+];
+
+function buildGh() {
+  var g = document.getElementById('gh-grid'), h = '';
+  ghData.forEach(function(r) {
+    h += '<div class="card gh-card"><h3><a href="' + r.url + '" target="_blank">' + r.owner + ' / ' + r.name + '</a></h3><p class="desc">' + r.description + '</p><span class="lang">' + (r.language || 'Other') + '</span>⭐ ' + r.stars + ' <span style="color:var(--accent);font-size:0.75rem">+' + r.starsToday + ' today</span></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildOfficial() {
+  var g = document.getElementById('official-grid'), h = '';
+  officialData.forEach(function(r) {
+    h += '<div class="card"><span class="rank" style="color:var(--text3)">' + r.source + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildIntl() {
+  var g = document.getElementById('intl-grid'), h = '';
+  intlData.forEach(function(r) {
+    h += '<div class="card intl-card"><span class="region region-' + r.regionClass + '">' + r.region + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3><p class="meta">' + r.source + '</p></div>';
+  });
+  g.innerHTML = h;
+}
+
+function buildHot() {
+  var g = document.getElementById('hot-grid'), h = '';
+  hotData.forEach(function(r) {
+    h += '<div class="card"><span class="rank">#' + r.rank + '</span><h3><a href="' + r.url + '" target="_blank">' + r.title + '</a></h3><span class="heat">' + r.heat + '</span></div>';
+  });
+  g.innerHTML = h;
+}
+
+buildGh(); buildOfficial(); buildIntl(); buildHot();
+</script>
+
+</body>
+</html>
